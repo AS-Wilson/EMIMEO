@@ -1,0 +1,316 @@
+$begin '$base_index$'
+  $begin 'properties'
+    all_levels=000000000000
+    time(year=000000002021, month=000000000011, day=000000000009, hour=000000000011, min=000000000048, sec=000000000001)
+    version=000000000000
+  $end 'properties'
+  $begin '$base_index$'
+    $index$(pos=000000013143, lin=000000000293, lvl=000000000000)
+  $end '$base_index$'
+$end '$base_index$'
+$begin 'SolutionBlock26'
+	SolutionName='PortOnly'
+	SolutionID=9
+	V=620
+	$begin 'States'
+		F(VID=335, Ver=620)
+	$end 'States'
+	$begin 'Definition'
+		SamplingInterpolation=false
+		Frequencies(11500000000)
+		SolutionType=6
+		CenterFreq=0
+	$end 'Definition'
+	IsImported=false
+	IsTable=false
+	IsMatrixDataTable=false
+	SweepID=-1
+	KeepAllFastSweepFields=false
+	$begin 'M'
+		$begin 'SubData'
+			ID=0
+			M(VID=335, Ver=620, File='DV335_SOL9_M0_V620.sd')
+		$end 'SubData'
+	$end 'M'
+	$begin 'Fields'
+		IDDblMap(533, 11500000000)
+		$begin 'DataMap'
+			VID=335
+			Ver=620
+			F(DblID=533, Dir='DV335_S9_V620_F533/')
+		$end 'DataMap'
+	$end 'Fields'
+$end 'SolutionBlock26'
+$begin 'BlockMapName'
+	FileHeader='SolutionBlock1'
+	'SolutionKey(SimSetup=213, Instance=\'SetupDefinition\', Solution=-1, VersionID=341)'='SolutionBlock19'
+	'SolutionKey(SimSetup=213, Instance=\'SolutionDefinition\', Solution=214, VersionID=620)'='SolutionBlock27'
+	'SolutionKey(SimSetup=213, Instance=\'SolutionDefinition\', Solution=215, VersionID=620)'='SolutionBlock28'
+	'SolutionKey(SimSetup=213, Instance=\'SolutionDefinition\', Solution=218, VersionID=620)'='SolutionBlock29'
+	'SolutionKey(SimSetup=8, Instance=\'SetupDefinition\', Solution=-1, VersionID=341)'='SolutionBlock12'
+	'SolutionKey(SimSetup=8, Instance=\'SolutionDefinition\', Solution=9, VersionID=620)'='SolutionBlock26'
+$end 'BlockMapName'
+$begin 'SolutionBlock12'
+	SimSetupID=8
+	SimSetupName='2D_1'
+	VersionID=341
+	IsImported=false
+	IsTable=false
+	SolveSetupID=0
+	$begin 'CurrMeshes'
+		M(VID=335, Ver=341, Dir='DV335_S8_V341.cmesh/')
+	$end 'CurrMeshes'
+	MeshAssemVersionID=2
+	$begin 'NextAssemVersionID'
+		NextUniqueID=3
+		MoveBackwards=false
+	$end 'NextAssemVersionID'
+	$begin 'ADP'
+		$begin 'SubData'
+			ID=0
+			ADP(VID=335, Ver=341, Dir='DV335_S8_ADP0_V341.sd/')
+		$end 'SubData'
+	$end 'ADP'
+	$begin 'SU'
+		$begin 'SubData'
+			ID=1
+			SU(VID=335, Ver=341, File='DV335_S8_SD1_V341.su')
+		$end 'SubData'
+	$end 'SU'
+	$begin 'WaveAdapt'
+		WA(VID=335, Ver=341, A=1)
+	$end 'WaveAdapt'
+	$begin 'LastPassNumbers'
+		LP(VID=335, Ver=341, P=0)
+	$end 'LastPassNumbers'
+	$begin 'Profiles'
+		P(VID=335, Ver=341, File='DV335_S8_V341.profile')
+	$end 'Profiles'
+	$begin 'MI'
+		$begin 'SubData'
+			ID=0
+			MI(VID=335, Ver=341, Dir='DV335_S8_MI0_V341.sd/')
+		$end 'SubData'
+	$end 'MI'
+$end 'SolutionBlock12'
+$begin 'SolutionBlock27'
+	SolutionName='AdaptivePass'
+	SolutionID=214
+	V=620
+	$begin 'States'
+		F(VID=335, Ver=620)
+	$end 'States'
+	$begin 'Definition'
+		SamplingInterpolation=false
+		Frequencies(11500000000)
+		SolutionType=6
+		CenterFreq=0
+	$end 'Definition'
+	IsImported=false
+	IsTable=false
+	IsMatrixDataTable=false
+	SweepID=-1
+	KeepAllFastSweepFields=false
+	$begin 'M'
+		$begin 'SubData'
+			ID=2
+			M(VID=335, Ver=620, File='DV335_SOL214_M2_V620.sd')
+		$end 'SubData'
+		$begin 'SubData'
+			ID=3
+			M(VID=335, Ver=620, File='DV335_SOL214_M3_V620.sd')
+		$end 'SubData'
+	$end 'M'
+$end 'SolutionBlock27'
+$begin 'SolutionBlock28'
+	SolutionName='LastAdaptive'
+	SolutionID=215
+	V=620
+	$begin 'States'
+		F(VID=335, Ver=620)
+	$end 'States'
+	$begin 'Definition'
+		SamplingInterpolation=false
+		Frequencies(11500000000)
+		SolutionType=6
+		CenterFreq=0
+	$end 'Definition'
+	IsImported=false
+	IsTable=false
+	IsMatrixDataTable=false
+	SweepID=-1
+	KeepAllFastSweepFields=false
+	$begin 'M'
+		$begin 'SubData'
+			ID=0
+			M(VID=335, Ver=620, File='DV335_SOL215_M0_V620.sd')
+		$end 'SubData'
+	$end 'M'
+	$begin 'Fields'
+		IDDblMap(549, 11500000000)
+		$begin 'DataMap'
+			VID=335
+			Ver=620
+			F(DblID=549, Dir='DV335_S215_V620_F549/')
+		$end 'DataMap'
+	$end 'Fields'
+$end 'SolutionBlock28'
+$begin 'SolutionBlock29'
+	SolutionName='Sweep'
+	SolutionID=218
+	V=620
+	$begin 'States'
+		F(VID=335, Ver=620)
+	$end 'States'
+	$begin 'Definition'
+		SamplingInterpolation=false
+		Frequencies(6000000000, 6017500000, 6035000000, 6052500000, 6070000000, 6087500000, 6105000000, 6122500000, 6140000000, 6157500000, 6175000000, 6192500000, 6210000000, 6227500000, 6245000000, 6262500000, 6280000000, 6297500000, 6315000000, 6332500000, 6350000000, 6367500000, 6385000000, 6402500000, 6420000000, 6437500000, 6455000000, 6472500000, 6490000000, 6507500000, 6525000000, 6542500000, 6560000000, 6577500000, 6595000000, 6612500000, 6630000000, 6647500000, 6665000000, 6682500000, 6700000000, 6717500000, 6735000000, 6752500000, 6770000000, 6787500000, 6805000000, 6822500000, 6840000000, 6857500000, 6875000000, 6892500000, 6910000000, 6927500000, 6945000000, 6962500000, 6980000000, 6997500000, 7015000000, 7032500000, 7050000000, 7067500000, 7085000000, 7102500000, 7120000000, 7137500000, 7155000000, 7172500000, 7190000000, 7207500000, 7225000000, 7242500000, 7260000000, 7277500000, 7295000000, 7312500000, 7330000000, 7347500000, 7365000000, 7382500000, 7400000000, 7417500000, 7435000000, 7452500000, 7470000000, 7487500000, 7505000000, 7522500000, 7540000000, 7557500000, 7575000000, 7592500000, 7610000000, 7627500000, 7645000000, 7662500000, 7680000000, 7697500000, 7715000000, 7732500000, 7750000000, 7767500000, 7785000000, 7802500000, 7820000000, 7837500000, 7855000000, 7872500000, 7890000000, 7907500000, 7925000000, 7942500000, 7960000000, 7977500000, 7995000000, 8012499999.999999, 8029999999.999999, 8047499999.999999, 8064999999.999999, 8082500000, 8100000000, 8117500000, 8135000000, 8152500000, 8170000000, 8187500000, 8205000000, 8222500000, 8240000000, 8257500000, 8275000000, 8292500000, 8310000000.000001, 8327500000.000001, 8345000000.000001, 8362500000.000001, 8380000000.000001, 8397500000.000001, 8414999999.999999, 8432499999.999999, 8449999999.999999, 8467499999.999999, 8484999999.999999, 8502499999.999999, 8520000000, 8537500000, 8555000000, 8572500000, 8590000000, 8607500000, 8625000000, 8642500000, 8660000000, 8677500000, 8695000000, 8712500000, 8730000000, 8747500000, 8765000000, 8782500000, 8800000000, 8817500000, 8835000000, 8852500000, 8870000000, 8887500000, 8905000000, 8922500000, 8940000000, 8957500000, 8975000000, 8992500000, 9010000000, 9027500000, 9045000000, 9062500000, 9080000000, 9097500000, 9115000000, 9132500000, 9150000000, 9167500000, 9185000000, 9202500000, 9220000000, 9237500000, 9255000000, 9272500000, 9290000000, 9307500000, 9325000000, 9342500000, 9360000000, 9377500000, 9395000000, 9412500000, 9430000000, 9447500000, 9465000000, 9482500000, 9500000000, 9517500000, 9535000000, 9552500000, 9570000000, 9587500000, 9605000000, 9622500000, 9640000000, 9657500000, 9675000000, 9692500000, 9710000000, 9727500000, 9745000000, 9762500000, 9780000000, 9797500000, 9815000000, 9832500000, 9850000000, 9867500000, 9885000000, 9902500000, 9920000000, 9937500000, 9955000000, 9972500000, 9990000000, 10007500000, 10025000000, 10042500000, 10060000000, 10077500000, 10095000000, 10112500000, 10130000000, 10147500000, 10165000000, 10182500000, 10200000000, 10217500000, 10235000000, 10252500000, 10270000000, 10287500000, 10305000000, 10322500000, 10340000000, 10357500000, 10375000000, 10392500000, 10410000000, 10427500000, 10445000000, 10462500000, 10480000000, 10497500000, 10515000000, 10532500000, 10550000000, 10567500000, 10585000000, 10602500000, 10620000000, 10637500000, 10655000000, 10672500000, 10690000000, 10707500000, 10725000000, 10742500000, 10760000000, 10777500000, 10795000000, 10812500000, 10830000000, 10847500000, 10865000000, 10882500000, 10900000000, 10917500000, 10935000000, 10952500000, 10970000000, 10987500000, 11005000000, 11022500000, 11040000000, 11057500000, 11075000000, 11092500000, 11110000000, 11127500000, 11145000000, 11162500000, 11180000000, 11197500000, 11215000000, 11232500000, 11250000000, 11267500000, 11285000000, 11302500000, 11320000000, 11337500000, 11355000000, 11372500000, 11390000000, 11407500000, 11425000000, 11442500000, 11460000000, 11477500000, 11495000000, 11512500000, 11530000000, 11547500000, 11565000000, 11582500000, 11600000000, 11617500000, 11635000000, 11652500000, 11670000000, 11687500000, 11705000000, 11722500000, 11740000000, 11757500000, 11775000000, 11792500000, 11810000000, 11827500000, 11845000000, 11862500000, 11880000000, 11897500000, 11915000000, 11932500000, 11950000000, 11967500000, 11985000000, 12002500000, 12020000000, 12037500000, 12055000000, 12072500000, 12090000000, 12107500000, 12125000000, 12142500000, 12160000000, 12177500000, 12195000000, 12212500000, 12230000000, 12247500000, 12265000000, 12282500000, 12300000000, 12317500000, 12335000000, 12352500000, 12370000000, 12387500000, 12405000000, 12422500000, 12440000000, 12457500000, 12475000000, 12492500000, 12510000000, 12527500000, 12545000000, 12562500000, 12580000000, 12597500000, 12615000000, 12632500000, 12650000000, 12667500000, 12685000000, 12702500000, 12720000000, 12737500000, 12755000000, 12772500000, 12790000000, 12807500000, 12825000000, 12842500000, 12860000000, 12877500000, 12895000000, 12912500000, 12930000000, 12947500000, 12965000000, 12982500000, 13000000000)
+		SolutionType=5
+		CenterFreq=0
+	$end 'Definition'
+	IsImported=false
+	IsTable=false
+	IsMatrixDataTable=false
+	SweepID=0
+	KeepAllFastSweepFields=false
+	$begin 'M'
+		$begin 'SubData'
+			ID=0
+			M(VID=335, Ver=620, File='DV335_SOL218_M0_V620.sd')
+		$end 'SubData'
+	$end 'M'
+	$begin 'TransientSolveStauts'
+		SS(VID=335, Ver=620, SS=1)
+	$end 'TransientSolveStauts'
+	$begin 'SolverUsage'
+		IDDblMap(557, 13000000000, 558, 6000000000, 559, 9500000000, 560, 7750000000, 562, 12250000000, 563, 10500000000, 564, 8625000000, 565, 6875000000, 566, 6437500000, 567, 7312500000, 568, 8187500000, 569, 9062500000, 570, 6542500000, 571, 6595000000, 572, 6507500000, 573, 6577500000, 574, 6245000000, 575, 6525000000, 576, 6682500000)
+		$begin 'DataMap'
+			VID=335
+			Ver=620
+			SU(DblID=558, SU='DV335_S218_V620_F558_SU.txt')
+			SU(DblID=574, SU='DV335_S218_V620_F574_SU.txt')
+			SU(DblID=566, SU='DV335_S218_V620_F566_SU.txt')
+			SU(DblID=572, SU='DV335_S218_V620_F572_SU.txt')
+			SU(DblID=575, SU='DV335_S218_V620_F575_SU.txt')
+			SU(DblID=570, SU='DV335_S218_V620_F570_SU.txt')
+			SU(DblID=573, SU='DV335_S218_V620_F573_SU.txt')
+			SU(DblID=571, SU='DV335_S218_V620_F571_SU.txt')
+			SU(DblID=576, SU='DV335_S218_V620_F576_SU.txt')
+			SU(DblID=565, SU='DV335_S218_V620_F565_SU.txt')
+			SU(DblID=567, SU='DV335_S218_V620_F567_SU.txt')
+			SU(DblID=560, SU='DV335_S218_V620_F560_SU.txt')
+			SU(DblID=568, SU='DV335_S218_V620_F568_SU.txt')
+			SU(DblID=564, SU='DV335_S218_V620_F564_SU.txt')
+			SU(DblID=569, SU='DV335_S218_V620_F569_SU.txt')
+			SU(DblID=559, SU='DV335_S218_V620_F559_SU.txt')
+			SU(DblID=563, SU='DV335_S218_V620_F563_SU.txt')
+			SU(DblID=562, SU='DV335_S218_V620_F562_SU.txt')
+			SU(DblID=557, SU='DV335_S218_V620_F557_SU.txt')
+		$end 'DataMap'
+	$end 'SolverUsage'
+$end 'SolutionBlock29'
+$begin 'SolutionBlock19'
+	SimSetupID=213
+	SimSetupName='3D'
+	VersionID=341
+	$begin 'EmConvergenceData'
+		EmConv(VID=335, Ver=341, EmConv='DV335_S213_V341.EMConvData')
+	$end 'EmConvergenceData'
+	IsImported=false
+	IsTable=false
+	SolveSetupID=3
+	$begin 'CurrMeshes'
+		M(VID=335, Ver=341, Dir='DV335_S213_V341.cmesh/')
+	$end 'CurrMeshes'
+	MeshAssemVersionID=2
+	$begin 'NextAssemVersionID'
+		NextUniqueID=3
+		MoveBackwards=false
+	$end 'NextAssemVersionID'
+	$begin 'ADP'
+		$begin 'SubData'
+			ID=3
+			ADP(VID=335, Ver=341, Dir='DV335_S213_ADP3_V341.sd/')
+		$end 'SubData'
+	$end 'ADP'
+	$begin 'SU'
+		$begin 'SubData'
+			ID=1
+			SU(VID=335, Ver=341, File='DV335_S213_SD1_V341.su')
+		$end 'SubData'
+		$begin 'SubData'
+			ID=2
+			SU(VID=335, Ver=341, File='DV335_S213_SD2_V341.su')
+		$end 'SubData'
+		$begin 'SubData'
+			ID=3
+			SU(VID=335, Ver=341, File='DV335_S213_SD3_V341.su')
+		$end 'SubData'
+	$end 'SU'
+	$begin 'WaveAdapt'
+		WA(VID=335, Ver=341, A=1)
+	$end 'WaveAdapt'
+	$begin 'LastPassNumbers'
+		LP(VID=335, Ver=341, P=3)
+	$end 'LastPassNumbers'
+	$begin 'Profiles'
+		P(VID=335, Ver=341, File='DV335_S213_V341.profile')
+	$end 'Profiles'
+	$begin 'MI'
+		$begin 'SubData'
+			ID=0
+			MI(VID=335, Ver=341, Dir='DV335_S213_MI0_V341.sd/')
+		$end 'SubData'
+	$end 'MI'
+$end 'SolutionBlock19'
+$begin 'SolutionBlock1'
+	ProductName='HFSS'
+	CircuitName='WG-1PORT'
+	VersionID=2
+	PostProcess=false
+	LossLess=true
+	NextUniqueID=772
+	MoveBackwards=false
+	$begin 'VariationIDs'
+		Map(V='', ID=335)
+	$end 'VariationIDs'
+	$begin 'LinkedDataList'
+	$end 'LinkedDataList'
+	$begin 'InitialMeshes'
+		M(VID=335, Ver=2, Dir='DV335_V2.imesh/')
+	$end 'InitialMeshes'
+	MeshAssemVersionID=0
+	$begin 'NextAssemVersionID'
+		NextUniqueID=1
+		MoveBackwards=false
+	$end 'NextAssemVersionID'
+	$begin 'DefinitionMeshes'
+		$begin 'DefMeshes_Comp-1'
+			DefinitionID=-1
+			VersionID=0
+			VIDMap('', 527)
+			DM(VID=527, Ver=0, Dir='NDV527_V0.dmesh/')
+		$end 'DefMeshes_Comp-1'
+	$end 'DefinitionMeshes'
+	$begin 'MI'
+		$begin 'SubData'
+			ID=0
+			MI(VID=335, Ver=2, Dir='DV335_MI0_V2.sd/')
+		$end 'SubData'
+	$end 'MI'
+	VersionID2=0
+$end 'SolutionBlock1'
+$begin '$index$'
+	$begin '$index$'
+		SolutionBlock1(pos=12316, lin=256, lvl=0)
+		SolutionBlock26(pos=370, lin=1, lvl=0)
+		BlockMapName(pos=1028, lin=34, lvl=0)
+		SolutionBlock12(pos=1739, lin=43, lvl=0)
+		SolutionBlock27(pos=2692, lin=86, lvl=0)
+		SolutionBlock28(pos=3295, lin=115, lvl=0)
+		SolutionBlock29(pos=3963, lin=148, lvl=0)
+		SolutionBlock19(pos=11037, lin=202, lvl=0)
+		$base_index$(pos=0, lin=1, lvl=0)
+		$index$(pos=13143, lin=293, lvl=0)
+	$end '$index$'
+$end '$index$'

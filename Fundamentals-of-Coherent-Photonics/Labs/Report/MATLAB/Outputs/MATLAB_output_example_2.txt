@@ -1,0 +1,11 @@
+
+T5_tf =
+ 
+     1
+  -------
+  2 s + 2
+ 
+Continuous-time transfer function.
+
+Poles =
+-1

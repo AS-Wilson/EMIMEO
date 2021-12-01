@@ -1,0 +1,11 @@
+$begin 'CacheDataVersion'
+	DataVersion=-1
+$end 'CacheDataVersion'
+$begin 'VariableValues'
+	w31='35.33mm'
+	w01='20.75mm'
+	iris_len='4mm'
+	Acc_Wid='40.39mm'
+	Acc_len='15mm'
+	struct_h='22.193mm'
+$end 'VariableValues'

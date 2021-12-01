@@ -1,0 +1,12 @@
+
+T4_tf =
+ 
+        1
+  -------------
+  s^2 + 5 s + 6
+ 
+Continuous-time transfer function.
+
+Poles =
+-3
+-2

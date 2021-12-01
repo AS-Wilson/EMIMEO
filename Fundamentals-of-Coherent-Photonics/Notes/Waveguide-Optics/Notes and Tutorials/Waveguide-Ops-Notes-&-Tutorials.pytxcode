@@ -1,0 +1,155 @@
+=>PYTHONTEX#py#default#default#0#code#####601#
+import numpy as np
+
+n_clad = 1.453
+n_core = [1.456, 1.456, 1.458, 1.458, 1.46]
+radius = [2.5e-6, 3e-6, 2.5e-6, 3e-6, 2.5e-6]
+lamb_1 = 800e-9
+
+NA = []
+FRID = []
+NSF = []
+
+for i in range(len(n_core)):
+	NA.append( np.round_((np.sqrt((n_core[i]**2) - (n_clad**2))), decimals=2) )
+	
+	FRID.append( np.round_( (((n_core[i]**2)-(n_clad**2)) / (2*(n_core[i]**2))), decimals=5) )
+	
+	NSF.append( np.round_( (((2 * np.pi * radius[i]) / (lamb_1)) * NA[i]), decimals=2) )
+
+
+NA_req = 0.12
+lamb_2 = 750e-9
+v_req = 2.405
+denom = 2 * np.pi * NA_req
+
+a_min = (np.round_(((v_req * lamb_2) / denom), decimals=8))
+a_max = (np.round_(((v_req * lamb_1) / denom), decimals=8))
+
+a_min = (np.round_(a_min * (10e5), decimals=4))
+a_max = (np.round_(a_max * (10e5), decimals=4))
+
+d_min = np.round_((a_min * 2), decimals=2)
+d_max = np.round_((a_max * 2), decimals=2)
+
+
+lamb_A = 457e-9
+NSF_3A = ( np.round_( (((2 * np.pi * radius[2]) / (lamb_A)) * NA[2]), decimals=2) )
+
+
+fibre_3_B = 2.36
+k0 = (2 * np.pi) / lamb_1
+f3_beta = np.round_((k0 * np.sqrt( ( (fibre_3_B * (NA[2]**2)) + (n_clad**2) ) )  / 10e6), decimals=3)
+=>PYTHONTEX#py#default#default#1#i#####669#
+NA[0]
+=>PYTHONTEX#py#default#default#2#i#####669#
+NA[1]
+=>PYTHONTEX#py#default#default#3#i#####669#
+NA[2]
+=>PYTHONTEX#py#default#default#4#i#####669#
+NA[3]
+=>PYTHONTEX#py#default#default#5#i#####669#
+NA[4]
+=>PYTHONTEX#py#default#default#6#i#####674#
+FRID[0]
+=>PYTHONTEX#py#default#default#7#i#####674#
+FRID[1]
+=>PYTHONTEX#py#default#default#8#i#####674#
+FRID[2]
+=>PYTHONTEX#py#default#default#9#i#####674#
+FRID[3]
+=>PYTHONTEX#py#default#default#10#i#####674#
+FRID[4]
+=>PYTHONTEX#py#default#default#11#i#####679#
+NSF[0]
+=>PYTHONTEX#py#default#default#12#i#####679#
+NSF[1]
+=>PYTHONTEX#py#default#default#13#i#####679#
+NSF[2]
+=>PYTHONTEX#py#default#default#14#i#####679#
+NSF[3]
+=>PYTHONTEX#py#default#default#15#i#####679#
+NSF[4]
+=>PYTHONTEX#py#default#default#16#i#####705#
+d_min
+=>PYTHONTEX#py#default#default#17#i#####705#
+d_max
+=>PYTHONTEX#py#default#default#18#i#####729#
+a_min
+=>PYTHONTEX#py#default#default#19#i#####729#
+a_max
+=>PYTHONTEX#py#default#default#20#i#####729#
+d_min
+=>PYTHONTEX#py#default#default#21#i#####729#
+d_max
+=>PYTHONTEX#py#default#default#18#i#####729#
+a_min
+=>PYTHONTEX#py#default#default#19#i#####729#
+a_max
+=>PYTHONTEX#py#default#default#20#i#####729#
+d_min
+=>PYTHONTEX#py#default#default#21#i#####729#
+d_max
+=>PYTHONTEX#py#default#default#22#i#####756#
+NSF_3A
+=>PYTHONTEX#py#default#default#22#i#####765#
+NSF_3A
+=>PYTHONTEX#py#default#default#23#i#####819#
+NSF[3]
+=>PYTHONTEX#py#default#default#24#i#####819#
+fibre_3_B
+=>PYTHONTEX#py#default#default#25#i#####820#
+f3_beta
+=>PYTHONTEX#py#default#default#26#i#####850#
+fibre_3_B
+=>PYTHONTEX#py#default#default#27#i#####850#
+NA[2]
+=>PYTHONTEX#py#default#default#28#i#####850#
+n_clad
+=>PYTHONTEX#py#default#default#29#i#####850#
+fibre_3_B
+=>PYTHONTEX#py#default#default#30#i#####850#
+NA[2]
+=>PYTHONTEX#py#default#default#31#i#####850#
+n_clad
+=>PYTHONTEX#py#default#default#32#i#####850#
+f3_beta
+=>PYTHONTEX#py#default#default#26#i#####850#
+fibre_3_B
+=>PYTHONTEX#py#default#default#27#i#####850#
+NA[2]
+=>PYTHONTEX#py#default#default#28#i#####850#
+n_clad
+=>PYTHONTEX#py#default#default#29#i#####850#
+fibre_3_B
+=>PYTHONTEX#py#default#default#30#i#####850#
+NA[2]
+=>PYTHONTEX#py#default#default#31#i#####850#
+n_clad
+=>PYTHONTEX#py#default#default#32#i#####850#
+f3_beta
+=>PYTHONTEX:SETTINGS#
+version=0.18
+outputdir=pythontex-files-Waveguide-Ops-Notes-&-Tutorials
+workingdir=.
+workingdirset=false
+gobble=none
+rerun=default
+hashdependencies=default
+makestderr=false
+stderrfilename=full
+keeptemps=none
+pyfuture=default
+pyconfuture=none
+pygments=true
+pygglobal=:GLOBAL||
+fvextfile=-1
+pyconbanner=none
+pyconfilename=stdin
+depythontex=false
+pygfamily=py|python3|
+pygfamily=pycon|pycon|
+pygfamily=sympy|python3|
+pygfamily=sympycon|pycon|
+pygfamily=pylab|python3|
+pygfamily=pylabcon|pycon|
