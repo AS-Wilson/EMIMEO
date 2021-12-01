@@ -1,0 +1,187 @@
+; Top Design: "FLU17XM_student_lib:analysisStran_nlin.dsn:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="FLU17XM_student_lib:analysisStran_nlin.dsn:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+; Library Name: FLU17XM_student_lib
+; Cell Name: 03.aval_taj_FLU17xm
+; View Name: schematic
+define "03\.aval_taj_FLU17xm" ( N__16  N__9  Vsintd  N__8 ) 
+;parameters 
+SDD:SDD4P1  Vgint Vsintg Vgint vddi vggit vssit N__6 Vsintd  I[2,1]=Qgd  I[4,0]=Ids_conv  
+
+Qgd1_cgd=-2*Cgdo*Vbi_cgd*(1-Vcgd/Vbi_cgd)^0.5
+Qgd2_cgd=-0.25*(Cgdo*(4*Vcgd*Vbi_cgd - 6*K_cgd*Vbi_cgd*Vcgd + Vcgd^2 - 8*Vbi_cgd^2 + 12*Vbi_cgd^2*K_cgd - 3 *Vbi_cgd^2*K_cgd^2))/(Vbi_cgd*((1 - K_cgd)^0.5)*(-1 + K_cgd))
+Qgd=if Vcgd<K_cgd*Vbi_cgd then Qgd1_cgd else Qgd2_cgd endif
+
+Cgdo=1.282e-012
+Vbi_cgd=0.7
+K_cgd=0.8
+
+Vdi=_v4
+Vgi=_v1
+Vgit=_v3
+Vgd=_v2
+Vr=-(_v2)
+Vcgd=_v2
+
+Ids_conv=if Ids < 0 then 0 else Ids endif
+
+Vgiteff=(1/(2*n1))*(n2*Vgit1+Vgitlch)
+Vgitlch=ln(2*cosh(n2*Vgit1))
+Vgiflch=ln(2*cosh(Vgif))
+Vgif=Vgit-(Vpf)
+Vgit1=Vgit-(Vp+Gamma*Vdi)
+Ids1=if Vgiteff < 1e-20 then 1e-20 else Idss*Vgiteff^(E+Ke*Vgit) endif
+Ids2= (1+(Ss*Vdi/Idss))*exp((-(Vgiflch^Delta)/Mu))
+Ids3=tanh(Sl*Vdi/(Idss*(1-Kg*Vgit)))
+Ids=Ids1*Ids2*Ids3
+
+E=1.099
+Ke=0.07078
+Mu=2422
+Delta=5.970
+Kg=-0.08187
+Idss=0.5711
+n1=6.619
+n2=4.988
+Vp=-1.450
+Vpf=1.165
+Gamma=-0.1044
+Ss=-0.01723
+Sl=1.014
+
+Tau=0.02160
+Short:I_dtotint  vddi N__16 Mode=0 SaveCurrent=yes 
+Short:IDsource  vddi N__6 Mode=0 SaveCurrent=yes 
+Short:Idgint  N__9 Vgint Mode=0 SaveCurrent=yes 
+Short:Inul  N__8 Vsintg Mode=0 SaveCurrent=yes 
+#uselib "ckt" , "VCVS"
+VCVS:SRC1  Vgint Vsintg vggit vssit G=1 T=Tau nsec R1=1e100 Ohm R2=0 Ohm F=0.0 GHz 
+end "03\.aval_taj_FLU17xm"
+
+; Library Name: FLU17XM_student_lib
+; Cell Name: 04.diode
+; View Name: schematic
+define "04\.diode" ( VG  VS ) 
+;parameters 
+
+as_igs=Alphas_igs*Vgi
+bs_igs=Alphas_igs*Vgi-Ms_igs
+I1_igs=Ins_igs*(exp(Ms_igs)*(1+bs_igs+bs_igs^2/2)-1)
+I2_igs=if as_igs<-20 then -Ins_igs else Ins_igs*(exp(as_igs)-1) endif
+Igs=if bs_igs>0 then I1_igs else I2_igs endif
+
+Ins_igs=4.822e-011
+Ms_igs=40
+Alphas_igs=29.1
+Cgso=9.592e-012
+Vbi_cgs=0.8
+K_cgs=0.8
+
+Vgi=_v1
+Short:Idiode  VG N__2 Mode=0 SaveCurrent=yes 
+SDD:SDD1P1  N__2 VS  I[1,0]=Igs  
+end "04\.diode"
+
+; Library Name: FLU17XM_student_lib
+; Cell Name: 05.Cgs_nl_schottky
+; View Name: schematic
+define "05\.Cgs_nl_schottky" ( Vg  Vs ) 
+;parameters 
+
+Vcgs=_v1
+
+Cgso=9.592e-012
+Vbi_cgs=0.8
+K_cgs=0.8
+
+Qgs1_cgs=-2*Cgso*Vbi_cgs*(1-Vcgs/Vbi_cgs)^0.5
+Qgs2_cgs=-0.25*(Cgso*(4*Vcgs*Vbi_cgs - 6*K_cgs*Vbi_cgs*Vcgs + Vcgs^2 - 8*Vbi_cgs^2 + 12*Vbi_cgs^2*K_cgs - 3 *Vbi_cgs^2*K_cgs^2))/(Vbi_cgs*((1 - K_cgs)^0.5)*(-1 + K_cgs))
+Qgs=if Vcgs<K_cgs*Vbi_cgs then Qgs1_cgs else Qgs2_cgs endif
+SDD:SDD1P1  Vg Vs  I[1,1]=Qgs  
+end "05\.Cgs_nl_schottky"
+
+; Library Name: FLU17XM_student_lib
+; Cell Name: 00.flu17xm_die
+; View Name: schematic
+define "00\.flu17xm_die" ( DRAIN_TERMINAL  GATE_TERMINAL  SOURCE_TERMINAL ) 
+;parameters 
+"03\.aval_taj_FLU17xm":X6  Vdint N__9 N__4 N__8 
+Short:Ids_int  N__4 Vsintd Mode=0 SaveCurrent=yes 
+R:R1  GATE_TERMINAL N__9 R=Rg Ohm Noise=yes 
+R:R9  N__8 Vsintd R=Ri Ohm Noise=yes 
+
+Rg=0.2
+Rd=0.2
+Rs=0.2
+Ri=1.126
+Lg=1.862
+Ld=1.273
+Cpg=0.4846
+Cpd=0.4901
+Ls=0.2969
+Cds=1.465
+R:R2  Vdint DRAIN_TERMINAL R=Rd Ohm Noise=yes 
+C:C1  Vdint Vsintd C=Cds pF 
+R:R3  SOURCE_TERMINAL Vsintd R=Rs Ohm Noise=yes 
+R:R10  N__9 Vdint R=1e9 Ohm Noise=yes 
+"05\.Cgs_nl_schottky":X7  N__9 N__8 
+"04\.diode":X8  N__9 N__8 
+end "00\.flu17xm_die"
+
+Port:Term1  N__0 0 Num=1 Z=50 Ohm Noise=yes 
+Port:Term2  N__3 0 Num=2 Z=50 Ohm Noise=yes 
+Short:DC_Block1  N__0 N__5 Mode=1 
+Short:DC_Block2  N__14 N__3 Mode=1 
+Short:DC_Feed1  N__6 N__5 Mode=-1 
+Short:DC_Feed2  N__8 N__14 Mode=-1 
+V_Source:SRC1  N__6 0 Type="V_DC" Vdc=-1 V SaveCurrent=1 
+V_Source:SRC2  N__8 0 Type="V_DC" Vdc=3 V SaveCurrent=1 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=0.5 GHz Stop=3 GHz Step=0.1 GHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+aele MaxGain1=max_gain(S);
+V_Source:SRC3  N__10 0 Type="V_DC" Vdc=-2 V SaveCurrent=1 
+V_Source:SRC4  N__2 0 Type="V_DC" Vdc=3 V SaveCurrent=1 
+Short:DC_Block3  N__7 N__9 Mode=1 
+Short:DC_Block4  N__12 N__11 Mode=1 
+Short:DC_Feed3  N__2 N__12 Mode=-1 
+Short:DC_Feed4  N__10 N__9 Mode=-1 
+Port:Term3  N__7 0 Num=3 Z=50 Ohm Noise=yes 
+Port:Term4  N__11 0 Num=4 Z=50 Ohm Noise=yes 
+Short:IdsB  N__12 N__15 Mode=0 SaveCurrent=yes 
+Short:IdsA  N__4 N__14 Mode=0 SaveCurrent=yes 
+DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
+OutputPlan="DC1_Output" 
+
+OutputPlan:DC1_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
+
+"00\.flu17xm_die":X1  N__4 N__5 0 
+"00\.flu17xm_die":X2  N__15 N__9 0 

@@ -1,0 +1,67 @@
+
+hpeesofsim (*) 450.shp Jan 21 2016, MINT version 4
+    (64-bit windows built: 01/21/16 15:34:19)
+Copyright 1995 - 2015 Keysight Technologies, 1989-2016.
+
+Warning detected by hpeesofsim in topology check during circuit set up.
+    Number of nodes with no DC path to ground (topology corrected): 2
+
+
+HB HB1[1] <Mini_projet_FLU17XM_etudiant_lib:flu17xm_hb1tone_copi:schematic>
+    Number of tones:   1.
+    Number of frequencies:   8.
+    Number of time samples:  16.
+    Number of HB equations (problem size): 600.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: direct.
+------------------------------------------------------------------------------
+Newton solver:					
+Iter	KCL residual	Damp %	Sol update
+------------------------------------------------------------------------------
+0.0*	69.8982 mA  	100.0             
+1.0 	37.6219 mA  	100.0             
+1.1 	21.8149 mA  	100.0             
+1.2 	11.9264 mA  	100.0             
+1.3 	6.70265 mA  	100.0             
+1.4 	3.84267 mA  	100.0             
+1.5 	2.18147 mA  	100.0             
+1.6 	1.24944 mA  	100.0             
+1.7 	704.184 uA  	100.0             
+1.8 	390.409 uA  	100.0             
+1.9 	215.085 uA  	100.0             
+1.10 	117.363 uA  	100.0             
+1.11 	62.9253 uA  	100.0             
+1.12 	33.1228 uA  	100.0             
+1.13 	17.1704 uA  	100.0             
+1.14 	8.86829 uA  	100.0             
+1.15 	4.4792 uA   	100.0             
+1.16 	2.25076 uA  	100.0             
+1.17*	1.12807 uA  	100.0             
+2.0 	2.69783 pA  	100.0	30.5324 pV   
+An HB truncation error may be present.
+o The HB truncation error is due to using a finite order 
+  (number of harmonics) in the representation of the
+  circuit signals.
+
+Waveform                Trunc error             Tolerance
+---------------------------------------------------------
+X1.X6.N__6              5.863e-05       >       2.959e-06
+X1.X6.vddi              5.863e-05       >       2.959e-06
+X1.X8.N__2              5.476e-06       >       1.586e-06
+X1.N__15                5.476e-06       >       1.586e-06
+X1.X6.Vgint             5.476e-06       >       1.586e-06
+
+o Number of waveforms violating the HB truncation error check:
+        9 out of 10 waveforms.
+o Estimated max HB truncation error: 5.863e-05 @ waveform X1.X6.vddi .
+o The maximal HB truncation error estimate is greater than the 
+  achieved tolerance of 2.959e-06 for this waveform.
+o A time-domain plot of the X1.X8.Idiode.i waveform may show the error as 
+  Gibbs ripples.
+o To reduce the error, increase the order (number of harmonics) 
+  and re-simulate.
+
+Resource usage:
+  Total stopwatch time     =     4.50 seconds.
+

@@ -1,0 +1,28 @@
+
+hpeesofsim (*) 450.shp Jan 21 2016, MINT version 4
+    (64-bit windows built: 01/21/16 15:34:19)
+Copyright 1995 - 2015 Keysight Technologies, 1989-2016.
+
+Warning detected by hpeesofsim in topology check during circuit set up.
+    Number of nodes with no DC path to ground (topology corrected): 2
+
+
+HB HB1[1] <Mini_projet_FLU17XM_etudiant_lib:flu17xm_hb1tone:schematic>
+    Number of tones:   1.
+    Number of frequencies:   8.
+    Number of time samples:  16.
+    Number of HB equations (problem size): 465.
+    Auto mode: on.
+    Convergence mode: Auto.
+    Linear solver: direct.
+------------------------------------------------------------------------------
+Newton solver:					
+Iter	KCL residual	Damp %	Sol update
+------------------------------------------------------------------------------
+0.0*	1.9171 mA   	100.0             
+1.0 	3.80739 uA  	100.0             
+1.1 	12.3354 nA  	100.0	320.508 nV   
+
+Resource usage:
+  Total stopwatch time     =     2.93 seconds.
+

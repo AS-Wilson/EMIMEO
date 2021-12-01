@@ -1,0 +1,14 @@
+
+hpeesofsim (*) 510.shp Jul 22 2019, MINT version 5
+    (64-bit windows built: Mon Jul 22, 2019 22:53:59 +0000)
+
+Warning detected by hpeesofsim in topology check during circuit set up.
+    Number of nodes with no DC path to ground (topology corrected): 2
+
+
+SP SP1[1] <FLU17XM_student_lib:10.flu17xm_package_Sparam:schematic>   freq=(1 GHz->5 GHz)
+
+
+Resource usage:
+  Total stopwatch time     =     1.22 seconds.
+
