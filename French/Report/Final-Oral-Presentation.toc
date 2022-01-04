@@ -1,4 +1,2 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {section}{\numberline {2}Ces Noinden Ulad - \textit {la malédiction de Macha}}{1}{section.2}%
-\contentsline {section}{\numberline {3}Fionn mac Cumhaill - \textit {Finn McCool}}{2}{section.3}%
-\contentsline {section}{\numberline {4}Cú Culainn}{2}{section.4}%

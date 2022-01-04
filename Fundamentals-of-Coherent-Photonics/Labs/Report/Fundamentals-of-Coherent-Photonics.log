@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.5.21)  2 DEC 2021 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.5.21)  21 DEC 2021 15:02
 entering extended mode
-**./Final-Oral-Presentation.tex
-(Final-Oral-Presentation.tex
+**./Fundamentals-of-Coherent-Photonics.tex
+(Fundamentals-of-Coherent-Photonics.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> xparse <2020-03-03> (altareport.cls
 Document Class: altareport 2021/04/24 - Adapted from AltaCV class for resumes.
@@ -251,8 +251,8 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 .tex) (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/pdfx\8bit.def
 File: 8bit.def 2008/03/30 v1.1d Input encoding file
 )
-** pdfx: No file Final-Oral-Presentation.xmpdata . Metadata will be incomplete!
-
+** pdfx: No file Fundamentals-of-Coherent-Photonics.xmpdata . Metadata will be 
+incomplete!
 <<sRGB.icc>>
 (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/pdfx\8bit.def
 File: 8bit.def 2008/03/30 v1.1d Input encoding file
@@ -1008,49 +1008,504 @@ LaTeX Info: Redefining \ulcshape on input line 41.
 LaTeX Info: Redefining \textsw on input line 47.
 LaTeX Info: Redefining \textssc on input line 48.
 LaTeX Info: Redefining \textulc on input line 49.
+)) (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
+Package: mathtools 2021/04/12 v1.27 mathematical typesetting tools
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count339
+\calc@Bcount=\count340
+\calc@Adimen=\dimen290
+\calc@Bdimen=\dimen291
+\calc@Askip=\skip86
+\calc@Bskip=\skip87
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count341
+\calc@Cskip=\skip88
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2020/09/23 v2.17i AMS math features
+\@mathmargin=\skip89
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen292
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count342
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count343
+\leftroot@=\count344
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count345
+\DOTSCASE@=\count346
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box80
+\strutbox@=\box81
+\big@size=\dimen293
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count347
+\c@MaxMatrixCols=\count348
+\dotsspace@=\muskip17
+\c@parentequation=\count349
+\dspbrk@lvl=\count350
+\tag@help=\toks49
+\row@=\count351
+\column@=\count352
+\maxfields@=\count353
+\andhelp@=\toks50
+\eqnshift@=\dimen294
+\alignsep@=\dimen295
+\tagshift@=\dimen296
+\tagwidth@=\dimen297
+\totwidth@=\dimen298
+\lineht@=\dimen299
+\@envbody=\toks51
+\multlinegap=\skip90
+\multlinetaggap=\skip91
+\mathdisplay@stack=\toks52
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
+\g_MT_multlinerow_int=\count354
+\l_MT_multwidth_dim=\dimen300
+\origjot=\skip92
+\l_MT_shortvdotswithinadjustabove_dim=\dimen301
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen302
+\l_MT_above_intertext_sep=\dimen303
+\l_MT_below_intertext_sep=\dimen304
+\l_MT_above_shortintertext_sep=\dimen305
+\l_MT_below_shortintertext_sep=\dimen306
+\xmathstrut@box=\box82
+\xmathstrut@dim=\dimen307
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/pythontex\pythontex.sty
+Package: pythontex 2021/06/06 v0.18 execute and typeset Python code and other l
+anguages
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/fvextra\fvextra.sty
+Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
+Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count355
+\FV@InFile=\read5
+\FV@TabBox=\box83
+\c@FancyVerbLine=\count356
+\FV@StepNumber=\count357
+\FV@OutFile=\write7
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+))
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/lineno\lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count358
+\output=\toks53
+\linenoprevgraf=\count359
+\linenumbersep=\dimen308
+\linenumberwidth=\dimen309
+\c@linenumber=\count360
+\c@pagewiselinenumber=\count361
+\c@LN@truepage=\count362
+\c@internallinenumber=\count363
+\c@internallinenumbers=\count364
+\quotelinenumbersep=\dimen310
+\bframerule=\dimen311
+\bframesep=\dimen312
+\bframebox=\box84
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\c@FV@TrueTabGroupLevel=\count365
+\c@FV@TrueTabCounter=\count366
+\FV@TabBox@Group=\box85
+\FV@TmpLength=\skip93
+\c@FV@HighlightLinesStart=\count367
+\c@FV@HighlightLinesStop=\count368
+\FV@LoopCount=\count369
+\FV@NCharsBox=\box86
+\FV@BreakIndent=\dimen313
+\FV@BreakIndentNChars=\count370
+\FV@BreakSymbolSepLeft=\dimen314
+\FV@BreakSymbolSepLeftNChars=\count371
+\FV@BreakSymbolSepRight=\dimen315
+\FV@BreakSymbolSepRightNChars=\count372
+\FV@BreakSymbolIndentLeft=\dimen316
+\FV@BreakSymbolIndentLeftNChars=\count373
+\FV@BreakSymbolIndentRight=\dimen317
+\FV@BreakSymbolIndentRightNChars=\count374
+\c@FancyVerbLineBreakLast=\count375
+\FV@LineBox=\box87
+\FV@LineIndentBox=\box88
+\FV@LineWidth=\dimen318
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
+\integerpart=\count376
+\decimalpart=\count377
+)
+Package: xstring 2019/02/06 v1.83 String manipulations (CT)
+) (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/pgfopts\pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks54
+\pgfopts@list@add@b@toks=\toks55
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/newfloat\newfloat.sty
+Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/currfile\currfile.sty
+Package: currfile 2020/09/29 v0.7d Provides the file path elements of the curre
+nt input file
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/filehook\filehook.sty
+Package: filehook 2020/09/29 v0.8a Hooks for input files
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/filehook\filehook-2020.
+sty
+Package: filehook-2020 2020/09/29 v0.8a Hooks for input files
+))
+\c@currfiledepth=\count378
+)
+\pytx@codefile=\write8
+\openout8 = `Fundamentals-of-Coherent-Photonics.pytxcode'.
+
+\c@pytx@FancyVerbLineTemp=\count379
+\c@pytx@py@default@default=\count380
+\c@pytx@pycon@default@default=\count381
+\c@pytx@sympy@default@default=\count382
+\c@pytx@sympycon@default@default=\count383
+\c@pytx@pylab@default@default=\count384
+\c@pytx@pylabcon@default@default=\count385
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.sty
+Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.s
+ty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box89
+)
+\tc@llx=\dimen319
+\tc@lly=\dimen320
+\tc@urx=\dimen321
+\tc@ury=\dimen322
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen323
+\adjbox@Height=\dimen324
+\adjbox@Depth=\dimen325
+\adjbox@Totalheight=\dimen326
+\adjbox@pwidth=\dimen327
+\adjbox@pheight=\dimen328
+\adjbox@pdepth=\dimen329
+\adjbox@ptotalheight=\dimen330
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count386
+LaTeX Info: Redefining \checkoddpage on input line 45.
+) (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box90
+\sift@deathcycles=\count387
+\@vwid@loff=\dimen331
+\@vwid@roff=\dimen332
+))
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/karnaugh-map\karnaugh-m
+ap.sty
+Package: karnaugh-map 2017/02/20 v1.1 Draw Karnaugh Maps
+\@karnaughmap@var@colorindex@=\count388
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/matlab-prettifier\matla
+b-prettifier.sty
+Package: matlab-prettifier 2014/06/19 v0.3 A package for prettyprinting Matlab 
+source code
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count389
+\lst@gtempboxa=\box91
+\lst@token=\toks56
+\lst@length=\count390
+\lst@currlwidth=\dimen333
+\lst@column=\count391
+\lst@pos=\count392
+\lst@lostspace=\dimen334
+\lst@width=\dimen335
+\lst@newlines=\count393
+\lst@lineno=\count394
+\lst@maxwidth=\dimen336
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count395
+\lst@skipnumbers=\count396
+\lst@framebox=\box92
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+\netBracketCount@mlpr=\count397
+\blkLvl@mlpr=\count398
+\blkLvlAtClassdef@mlpr=\count399
+\emHeight@mlpr=\skip94
+\jayDepth@mlpr=\skip95
+\sectionRuleOffset@mlpr=\skip96
+\toks@mlpr=\toks57
+)
+Package Listings Info: Made " a short reference for \lstinline on input line 73
+.
+ (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.rev
+ision.tex)
+Package: pgfplots 2020/02/29 v1.17 Data Visualization (1.17)
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.cod
+e.tex
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscore
+.code.tex
+\t@pgfplots@toka=\toks58
+\t@pgfplots@tokb=\toks59
+\t@pgfplots@tokc=\toks60
+\pgfplots@tmpa=\dimen337
+\c@pgfplots@coordindex=\count400
+\c@pgfplots@scanlineindex=\count401
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplots
+sysgeneric.code.tex))
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfplot
+slibrary.code.tex)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompat
+ib\pgfplotsoldpgfsupp_loader.code.tex
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryfpu.code.tex))
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+sutil.code.tex
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsliststructure.code.tex)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsliststructureext.code.tex)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count402
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsmatrix.code.tex)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pgf
+plotstableshared.code.tex
+\c@pgfplotstable@counta=\count403
+\t@pgfplotstable@a=\toks61
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
+e\pgfplotsdeque.code.tex)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+sbinary.code.tex
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+sbinary.data.code.tex))
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+sutil.verb.code.tex)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibr
+arypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count404
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibra
+rypgfplots.surfshading.pgfsys-pdftex.def)))
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+scolormap.code.tex
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplot
+scolor.code.tex))
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsstac
+kedplots.code.tex)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsplot
+handlers.code.tex
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmesh
+plothandler.code.tex
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmesh
+plotimage.code.tex)))
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.sca
+ling.code.tex)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscoor
+dprocessing.code.tex)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.err
+orbars.code.tex)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.mar
+kers.code.tex)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotstick
+s.code.tex)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.pat
+hs.code.tex)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarydecorations.code.tex
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+decorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen338
+\pgfdecoratedremainingdistance=\dimen339
+\pgfdecoratedinputsegmentcompleteddistance=\dimen340
+\pgfdecoratedinputsegmentremainingdistance=\dimen341
+\pgf@decorate@distancetomove=\dimen342
+\pgf@decorate@repeatstate=\count405
+\pgfdecorationsegmentamplitude=\dimen343
+\pgfdecorationsegmentlength=\dimen344
+)
+\tikz@lib@dec@box=\box93
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarydecorations.pathmorphing.code.tex
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorat
+ions\pgflibrarydecorations.pathmorphing.code.tex))
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarydecorations.pathreplacing.code.tex
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorat
+ions\pgflibrarydecorations.pathreplacing.code.tex))
+\pgfplots@numplots=\count406
+\pgfplots@xmin@reg=\dimen345
+\pgfplots@xmax@reg=\dimen346
+\pgfplots@ymin@reg=\dimen347
+\pgfplots@ymax@reg=\dimen348
+\pgfplots@zmin@reg=\dimen349
+\pgfplots@zmax@reg=\dimen350
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)))
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgfarrowinset=\dimen351
+\pgfarrowlength=\dimen352
+\pgfarrowwidth=\dimen353
+\pgfarrowlinewidth=\dimen354
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlib
+rarypgfplots.groupplots.code.tex
+\pgfplots@group@current@plot=\count407
+\pgfplots@group@current@row=\count408
+\pgfplots@group@current@column=\count409
+)
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlib
+rarypgfplots.dateplot.code.tex
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfcalend
+ar.sty
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfcale
+ndar.code.tex
+File: pgfcalendar.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
+tex)
+\pgfcalendarcurrentjulian=\count410
+\pgf@cal@easter@Y=\count411
+\pgf@cal@easter@G=\count412
+\pgf@cal@easter@C=\count413
+\pgf@cal@easter@X=\count414
+\pgf@cal@easter@Z=\count415
+\pgf@cal@easter@D=\count416
+\pgf@cal@easter@E=\count417
+\pgf@cal@easter@N=\count418
+\pgf@cal@easter@M=\count419
+\pgf@cal@easter@julianday=\count420
+)))
+\@input{references.bib.aux}
+\openout2 = `references.bib.aux'.
+
+No file references.bib.tex.
 LaTeX Font Info:    Trying to load font information for T1+PTSerif-TLF on input
- line 96.
+ line 184.
 
 (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/paratype\t1ptserif-tlf.
 fd
 File: T1PTSerif-TLF.fd 2014/02/02 Font definitions for T1/PTSerif-TLF.
-) (Final-Oral-Presentation.aux)
-\openout1 = `Final-Oral-Presentation.aux'.
+)
+No file Fundamentals-of-Coherent-Photonics.aux.
+\openout1 = `Fundamentals-of-Coherent-Photonics.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
 
 (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count339
-\scratchdimen=\dimen290
-\scratchbox=\box80
-\nofMPsegments=\count340
-\nofMParguments=\count341
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count342
-\MPscratchDim=\dimen291
-\MPnumerator=\count343
-\makeMPintoPDFobject=\count344
-\everyMPtoPDFconversion=\toks50
+\scratchcounter=\count421
+\scratchdimen=\dimen355
+\scratchbox=\box94
+\nofMPsegments=\count422
+\nofMParguments=\count423
+\everyMPshowfont=\toks62
+\MPscratchCnt=\count424
+\MPscratchDim=\dimen356
+\MPnumerator=\count425
+\makeMPintoPDFobject=\count426
+\everyMPtoPDFconversion=\toks63
 )
 (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -1058,7 +1513,7 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-Package hyperref Info: Link coloring ON on input line 96.
+Package hyperref Info: Link coloring ON on input line 184.
 
 (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1070,14 +1525,13 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count345
+\c@section@level=\count427
 )
-LaTeX Info: Redefining \ref on input line 96.
-LaTeX Info: Redefining \pageref on input line 96.
-LaTeX Info: Redefining \nameref on input line 96.
- (Final-Oral-Presentation.out) (Final-Oral-Presentation.out)
-\@outlinefile=\write7
-\openout7 = `Final-Oral-Presentation.out'.
+LaTeX Info: Redefining \ref on input line 184.
+LaTeX Info: Redefining \pageref on input line 184.
+LaTeX Info: Redefining \nameref on input line 184.
+\@outlinefile=\write9
+\openout9 = `Fundamentals-of-Coherent-Photonics.out'.
 
 
 *geometry* driver: auto-detecting
@@ -1114,100 +1568,156 @@ LaTeX Info: Redefining \nameref on input line 96.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package ragged2e Info: ABD: executing \RaggedRight on input line 96.
+Package ragged2e Info: ABD: executing \RaggedRight on input line 184.
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 96.
+LaTeX Info: Redefining \selectfont on input line 184.
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/fmtcount\fc-english.def
 File: fc-english.def 2016/01/12
 )
-\c@mv@tabular=\count346
-\c@mv@boldtabular=\count347
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 98.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 98.
-<Images/UNILIM-Logo.png, id=25, 489.83pt x 160.6pt>
+\c@mv@tabular=\count428
+\c@mv@boldtabular=\count429
+
+No file pythontex-files-Fundamentals-of-Coherent-Photonics/Fundamentals-of-Cohe
+rent-Photonics.pytxmcr.
+Run PythonTeX to create it.
+Package newfloat Info: New float `listing' with options `fileext=lopytx' on inp
+ut line 184.
+\c@listing=\count430
+\newfloat@ftype=\count431
+Package newfloat Info: float type `listing'=8 on input line 184.
+\c@lstlisting=\count432
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.17}).
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 186
+.
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 186
+.
+
+(C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<Images/UNILIM-Logo.png, id=9, 489.83pt x 160.6pt>
 File: Images/UNILIM-Logo.png Graphic file (type png)
 <use Images/UNILIM-Logo.png>
-Package pdftex.def Info: Images/UNILIM-Logo.png  used on input line 98.
+Package pdftex.def Info: Images/UNILIM-Logo.png  used on input line 186.
 (pdftex.def)             Requested size: 284.52756pt x 93.29018pt.
- [1
+
+[1
+
+
+
 
  <./Images/UNILIM-Logo.png>]
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree0 on i
-nput line 123.
+nput line 211.
 
 (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontaweso
 mefree0.fd)
 LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on
- input line 123.
+ input line 211.
 
 (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontaweso
 mebrands0.fd)
 LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <8> not a
 vailable
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
-n input line 123.
+n input line 211.
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree2 on i
-nput line 123.
+nput line 211.
 
 (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontaweso
-mefree2.fd) (Final-Oral-Presentation.toc)
-\tf@toc=\write8
-\openout8 = `Final-Oral-Presentation.toc'.
+mefree2.fd)
+\tf@toc=\write10
+\openout10 = `Fundamentals-of-Coherent-Photonics.toc'.
 
- [1]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) 
-has been already used, duplicate ignored
+
+
+LaTeX Warning: Citation `JenningsWilson2021' on page i undefined on input line 
+244.
+
+[1]
+Overfull \hbox (5.93935pt too wide) in paragraph at lines 310--310
+|[]\T1/PTSerif-TLF/b/n/10 Measurement of Power Vari-a-tion or Losses Us-ing the
+ ``Power Dif-fer-ence $\OT1/cmr/m/n/10 $\T1/PTSerif-TLF/b/n/10 '' Mode of the 
+Power Me-tre| 
+ []
+
+
+Overfull \hbox (3.84424pt too wide) in paragraph at lines 318--318
+|[]\T1/PTSerif-TLF/b/n/12 Measurement Five: Mea-sure-ment of the Lin-ear Prop-a
+-ga-tion Loss as well as the Fi-bre
+ []
+
+
+Overfull \hbox (61.22821pt too wide) in paragraph at lines 322--322
+|[]\T1/PTSerif-TLF/b/n/12 Measurement Six: Mea-sure-ment of the Lin-ear Prop-a-
+ga-tion Loss Us-ing the Cut-Back Tech-nique| 
+ []
+
+
+Overfull \hbox (12.25621pt too wide) in paragraph at lines 326--326
+|[]\T1/PTSerif-TLF/b/n/12 Measurement Seven: Mea-sure-ment of the Splic-ing Los
+s Us-ing the Cut-Back Tech-nique| 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.172 \end{document}
-                     [1] (Final-Oral-Presentation.aux)
+l.333 \newpage
+               [1]
+No file Fundamentals-of-Coherent-Photonics.bbl.
+(Fundamentals-of-Coherent-Photonics.aux)
 
-Package rerunfilecheck Warning: File `Final-Oral-Presentation.out' has changed.
+LaTeX Warning: There were undefined references.
 
+
+Package rerunfilecheck Warning: File `Fundamentals-of-Coherent-Photonics.out' h
+as changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
-Package rerunfilecheck Info: Checksums for `Final-Oral-Presentation.out':
-(rerunfilecheck)             Before: 9BCD91862B69E95CC8750BE62FDCF14D;281
-(rerunfilecheck)             After:  694DA9B1F0325AEFB9AD8AD6CF55976C;148.
+Package rerunfilecheck Info: Checksums for `Fundamentals-of-Coherent-Photonics.
+out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  DED3B8EA12EEEBF80E6F2FF7652860D1;1193.
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 75 (\begingroup)
+### semi simple group (level 1) entered at line 158 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 33469 strings out of 479334
- 640141 string characters out of 2857084
- 930287 words of memory out of 3000000
- 50317 multiletter control sequences out of 15000+200000
- 515695 words of font info for 63 fonts, out of 3000000 for 9000
+ 50474 strings out of 479334
+ 1110190 string characters out of 2857084
+ 1561667 words of memory out of 3000000
+ 67030 multiletter control sequences out of 15000+200000
+ 498200 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,11n,130p,1145b,3063s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{section.4} has been referenced but 
-does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.3} has been referenced but does not exist, 
-replaced by a fixed one
-
-{C:/Users/andyw/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/paratype/ptserif_
-t1.enc}{C:/Users/andyw/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesom
-e5/fa5free2.enc}{C:/Users/andyw/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/f
-ontawesome5/fa5brands0.enc}{C:/Users/andyw/AppData/Local/Programs/MiKTeX/fonts/
-enc/dvips/fontawesome5/fa5free0.enc}<C:/Users/andyw/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb><C:/Users/and
-yw/AppData/Local/Programs/MiKTeX/fonts/type1/public/fontawesome5/FontAwesome5Fr
-ee-Solid.pfb><C:/Users/andyw/AppData/Local/Programs/MiKTeX/fonts/type1/paratype
-/ptserif/PTF55F.pfb><C:/Users/andyw/AppData/Local/Programs/MiKTeX/fonts/type1/p
-aratype/ptserif/PTF56F.pfb><C:/Users/andyw/AppData/Local/Programs/MiKTeX/fonts/
-type1/paratype/ptserif/PTF75F.pfb><C:/Users/andyw/AppData/Local/Programs/MiKTeX
-/fonts/type1/paratype/ptserif/PTF76F.pfb>
-Output written on Final-Oral-Presentation.pdf (3 pages, 139992 bytes).
+ 128i,11n,130p,1156b,3651s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/andyw/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/f
+ontawesome5/fa5free2.enc}{C:/Users/andyw/AppData/Local/Programs/MiKTeX/fonts/en
+c/dvips/fontawesome5/fa5brands0.enc}{C:/Users/andyw/AppData/Local/Programs/MiKT
+eX/fonts/enc/dvips/fontawesome5/fa5free0.enc}{C:/Users/andyw/AppData/Local/Prog
+rams/MiKTeX/fonts/enc/dvips/paratype/ptserif_t1.enc}<C:/Users/andyw/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.p
+fb><C:/Users/andyw/AppData/Local/Programs/MiKTeX/fonts/type1/public/fontawesome
+5/FontAwesome5Free-Solid.pfb><C:/Users/andyw/AppData/Local/Programs/MiKTeX/font
+s/type1/paratype/ptserif/PTF55F.pfb><C:/Users/andyw/AppData/Local/Programs/MiKT
+eX/fonts/type1/paratype/ptserif/PTF75F.pfb><C:/Users/andyw/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/andyw/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on Fundamentals-of-Coherent-Photonics.pdf (3 pages, 129117 bytes
+).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 7 named destinations out of 1000 (max. 500000)
- 62 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 83 PDF objects out of 1000 (max. 8388607)
+ 13 named destinations out of 1000 (max. 500000)
+ 30 words of extra memory for PDF output out of 10000 (max. 10000000)
 
