@@ -1,0 +1,267 @@
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor loss (f=6) is outside simulation frequency range and will be
+                      ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor loss (f=6) is only available for dielectric or magnetic losses and
+                      will be ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor power (f=6) is outside simulation frequency range and will be
+                      ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor h-field (f=6) is outside simulation frequency range and will be
+                      ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor e-field (f=6) is outside simulation frequency range and will be
+                      ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor loss (f=5) is outside simulation frequency range and will be
+                      ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor loss (f=5) is only available for dielectric or magnetic losses and
+                      will be ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor power (f=5) is outside simulation frequency range and will be
+                      ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor h-field (f=5) is outside simulation frequency range and will be
+                      ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor e-field (f=5) is outside simulation frequency range and will be
+                      ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor loss (f=4) is outside simulation frequency range and will be
+                      ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor loss (f=4) is only available for dielectric or magnetic losses and
+                      will be ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor power (f=4) is outside simulation frequency range and will be
+                      ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor h-field (f=4) is outside simulation frequency range and will be
+                      ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor e-field (f=4) is outside simulation frequency range and will be
+                      ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor farfield (f=4) is outside the simulation frequency range and will
+                      be ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor farfield (f=5) is outside the simulation frequency range and will
+                      be ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      The monitor farfield (f=6) is outside the simulation frequency range and will
+                      be ignored.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  *** Warning ***
+                      
+                      This software is licensed for personal and educational purposes only.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  The following farfield monitor(s) have been adjusted to model box [-50.4627,
+                      50.4627, -1.9977, 1.9977, -1.9977, 1.9977].
+                        farfield (f=4), farfield (f=5), farfield (f=6). More...
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:10  
+                      Solver started at: 03:14 PM Wednesday, 09. March 2022 (Romance Standard Time)
+                      
+                        Module:  Time Domain: S-Parameter (Win 64)
+                        Version: 2021.4 Release from 2021-05-18 (change 873153)
+                      
+
+                      ------------------------------------------------------------------------------
+
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:11  ======================================================================
+                       Solver cycle: 1
+                      ======================================================================
+                      
+                      Stimulation at discrete port 1 
+                      
+                      
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:11  Units settings: 
+                      
+                        Dimensions: mm
+                        Frequency:  GHz
+                        Time:       ps
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:21  The following discrete face port is connected to metal material:
+                      	1
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:22  Mesh statistics:
+                      
+                         Hexahedral mesh type: PBA [Version: default]
+                      
+                         Parallelization type: domain decomposition
+                            Number of parallel working threads: 1
+                            Number of calculation domains used: 1
+                      
+                         Used point accuracy enhancement value: 75.00%.
+                         PBA fill limit: 99.00% (inverse)
+
+09/Mar/2022 15:14:23  Boundary conditions: 
+                      
+                        YZsymmetry: none
+                        XZsymmetry: none
+                        XYsymmetry: none
+                      
+                        Xmin: expanded open, 4 Layer, depth 23.1934 mm
+                        Xmax: expanded open, 4 Layer, depth 23.1934 mm
+                      
+                        Ymin: expanded open, 4 Layer, depth 23.1934 mm
+                        Ymax: expanded open, 4 Layer, depth 23.1934 mm
+                      
+                        Zmin: expanded open, 4 Layer, depth 23.1934 mm
+                        Zmax: expanded open, 4 Layer, depth 23.1934 mm
+                      
+                        PML-Type: Convolution PML
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:23  Frequency settings: 
+                      
+                        Fmin:         1
+                        Fmax:         3
+                        Nfsteps(lin): 1001
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:23  Field update statistics:
+                      
+                        Number of components in total: 	250647
+                      
+                      Subcycling state:      Automatically deactivated
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:23  Port: 1
+                      
+09/Mar/2022 15:14:23    Discrete element, reference impedance = 73 Ohm
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:29  
+                      --------------------------------------------------------------------------------
+09/Mar/2022 15:14:29  Steady state energy criterion met, solver finished successfully.
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:29  Frequency domain results normalized to default signal.
+                      
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:29  
+                        ----------------------------------------------------------------------------
+                                            Peak memory used (kB)         Free physical memory (kB) 
+                                                                          At begin     Minimum      
+                        ----------------------------------------------------------------------------
+                        CAD preparation     19404                         4242360      4242360      
+                        Matrices calc.      41015                         4592773      4154296      
+                        Solver run total    39536                         4273512      4166600      
+                        ----------------------------------------------------------------------------
+                      
+                      --------------------------------------------------------------------------------
+                      Solver Statistics:
+                      
+                        Hardware:
+                           Computer name:                 	Zephyrus-G14 
+                      
+                           Number of CPU threads:               8
+                           Hardware info:                  	Hardware Accelerator Device not activated
+                      
+                        Number of mesh cells:             	39884
+                        Excitation duration:              	3.55454875e+003 ps 
+                        Calculation time for excitation:  	0 	s
+                        Number of calculated pulse widths:	1.18587 
+                        Steady state accuracy limit:      	-40	dB 
+                        Simulated number of time steps:   	6498 
+                        Maximum number of time steps:     	109590 
+                        Time step width:
+                           without subcycles:             	6.486992892e-001 ps
+                           used:                          	6.486992892e-001 ps
+                      
+                        CAD preparation time:             	0      	s
+                        Matrix calculation time:          	11 	s
+                        Solver setup time:                	1 	s
+                        Solver loop time:                 	5 	s
+                        Solver post-processing time:      	0 	s
+                                                          	------------
+                        Total solver time:                	17 	s
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:29  
+                        Adaptive port meshing time:          	0      	s
+                        Total solver time (all cycles):      	17     	s
+                        solver initialization and clean-up:  	1      	s
+                                                             	------------
+                        Total simulation time:               	18     	s
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:29  Solver finished at: 03:14 PM Wednesday, 09. March 2022
+                      
+                      
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:45  *** Error ***
+                      
+                      Template based post-processing result "Directivity, constant Phi=0":
+                      Error in calling "Evaluate1D" function ((9999) No calculated Farfield Result
+                      available.(Line:2234))
+                      
+                      ------------------------------------------------------------------------------
+09/Mar/2022 15:14:45  Creating parametric 1D results for Run ID 2
+                      
+                      ------------------------------------------------------------------------------

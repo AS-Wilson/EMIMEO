@@ -1,0 +1,20 @@
+==================================================================================================================================================================================================================
+== CST Matrix Calculation Priority Log                                                                                                                                                                          ==
+==================================================================================================================================================================================================================
+ 
+Priorities are sorted in ascending order beginning with the lowest priority
+ 
+Priority-group:   1, shape   4: </cst/Boundaries/> Low^X,   material: $NFSMaterial$,  user-priority: 0,  material-attributes: normal.vacuum,  shape-attributes: boundary,   
+Priority-group:   1, shape   5: </cst/Boundaries/> Low^Y,   material: $NFSMaterial$,  user-priority: 0,  material-attributes: normal.vacuum,  shape-attributes: boundary,   
+Priority-group:   1, shape   6: </cst/Boundaries/> Low^Z,   material: $NFSMaterial$,  user-priority: 0,  material-attributes: normal.vacuum,  shape-attributes: boundary,   
+Priority-group:   1, shape   7: </cst/Boundaries/> Up^X,    material: $NFSMaterial$,  user-priority: 0,  material-attributes: normal.vacuum,  shape-attributes: boundary,   
+Priority-group:   1, shape   8: </cst/Boundaries/> Up^Y,    material: $NFSMaterial$,  user-priority: 0,  material-attributes: normal.vacuum,  shape-attributes: boundary,   
+Priority-group:   1, shape   9: </cst/Boundaries/> Up^Z,    material: $NFSMaterial$,  user-priority: 0,  material-attributes: normal.vacuum,  shape-attributes: boundary,   
+Priority-group:   2, shape  10: </cst/Ports/> discrete_face_port:1^t0,  material: PEC,    user-priority: 0,  material-attributes: pec,    shape-attributes: face-element.face-port.sheet,   
+Priority-group:   2, shape  11: </cst/Ports/> discrete_face_port:1^t1,  material: PEC,    user-priority: 0,  material-attributes: pec,    shape-attributes: face-element.face-port.sheet,   
+Priority-group:   3, shape   1: component1:Dipole,  material: PEC,    user-priority: 0,  2D/3D-geometry: true, material-attributes: pec,    shape-attributes: solid,  
+Priority-group:   3, shape   3: component1:Dipole (Lump 2), material: PEC,    user-priority: 0,  2D/3D-geometry: true, material-attributes: pec,    shape-attributes: solid,  
+Priority-group:   4, shape   2: discrete_face_port:1,   material: PEC,    user-priority: 0,  2D/3D-geometry: true, material-attributes: pec,    shape-attributes: face-center-gap.face-element.face-port.sheet,   
+ 
+==================================================================================================================================================================================================================
+ 

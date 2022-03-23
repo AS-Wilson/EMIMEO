@@ -3,8 +3,22 @@
 \contentsline {subsection}{\numberline {1.2}Measurement Two: Light Injection into an Optical Fibre}{1}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Measurement Three: Study of the Operation of the Thorlabs Optical Power Metre}{1}{subsection.1.3}%
 \contentsline {subsubsection}{\numberline {1.3.1}Calibration of the Power Metre}{1}{subsubsection.1.3.1}%
+\contentsline {paragraph}{Note the calibration wavelength on power meter, justify its value.}{1}{subsubsection.1.3.1}%
+\contentsline {paragraph}{Note the value of the power on meter, in dBm and mW.}{1}{subsubsection.1.3.1}%
+\contentsline {paragraph}{Change the calibration wavelength, and measure the power in dBm and mW for each.}{1}{subsubsection.1.3.1}%
+\contentsline {paragraph}{Return the calibration wavelength to 633nm and check power in dBm seems correct.}{1}{subsubsection.1.3.1}%
 \contentsline {subsubsection}{\numberline {1.3.2}Measurement of Power Variation or Losses Using the ``Power Difference $\Delta $'' Mode of the Power Metre}{1}{subsubsection.1.3.2}%
+\contentsline {paragraph}{Press $\Delta $ on the power metre, why is the power now ``0dB'', why have the units changed from ``dBm'' to ``dB''?}{1}{subsubsection.1.3.2}%
+\contentsline {paragraph}{Comment on the evolution of the power as the launching conditions of light into the optical fiber are modified slightly.}{1}{subsubsection.1.3.2}%
 \contentsline {subsection}{\numberline {1.4}Measurement Four: Realisation of a Splice between Two Multi-mode Fibres}{1}{subsection.1.4}%
+\contentsline {paragraph}{After splicing fibre no.2 and no.1, measure the optical power at the output of the second fibre, $P_3$ (dBm).}{1}{subsection.1.4}%
+\contentsline {paragraph}{Deduce the insertion loss, noted $A_1$(dB), of the fibre made by ``fiber splice + fiber no.2''.}{1}{subsection.1.4}%
 \contentsline {subsection}{\numberline {1.5}Measurement Five: Measurement of the Linear Propagation Loss as well as the Fibre Length Using an OTDR}{1}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}Measurement Six: Measurement of the Linear Propagation Loss Using the Cut-Back Technique}{1}{subsection.1.6}%
-\contentsline {subsection}{\numberline {1.7}Measurement Seven: Measurement of the Splicing Loss Using the Cut-Back Technique}{1}{subsection.1.7}%
+\contentsline {paragraph}{Measure, for the two working wavelengths of the OTDR (850nm \& 1300nm); the linear loss (dB/km) of each fiber drum, the length of each fiber, the splicing loss (dB).}{1}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Measurement Six: Measurement of the Linear Propagation Loss Using the Cut-Back Technique}{2}{subsection.1.6}%
+\contentsline {paragraph}{Measure the power at the output of fibre No.2. If the value measured is not equal to $P_3$, re-optimize the launching conditions into Fibre No.1.}{2}{subsection.1.6}%
+\contentsline {paragraph}{After cutting the fibre 15cm downstream of the splice, measure the optical power, $P_2$ (dBm).}{2}{subsection.1.6}%
+\contentsline {paragraph}{Knowing the length of fibre No.2 (obtained with the OTDR), calculate for $\lambda =633nm$ the average linear propagation loss (dB/km), compare this calculated value with that obtained with the OTDR.}{2}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Measurement Seven: Measurement of the Splicing Loss Using the Cut-Back Technique}{2}{subsection.1.7}%
+\contentsline {paragraph}{After cutting the fibre 1cm upstream of the splice, measure the optical power(dBm), ensure this power corresponds to $P_1$.}{2}{subsection.1.7}%
+\contentsline {paragraph}{Deduce the insertion loss of the splice, i.e. the splicing loss, expressed in dB. Compare the measured value with that of the OTDR.}{2}{subsection.1.7}%

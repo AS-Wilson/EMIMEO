@@ -1,0 +1,29 @@
+{
+    "parameters": [
+        {
+            "descr": "5.58GHz Wavelength",
+            "expr": "199.86",
+            "name": "Lambda",
+            "value": "199.86"
+        },
+        {
+            "descr": "Dipole Length (Lambda / 2)",
+            "expr": "0.5*Lambda",
+            "name": "L",
+            "value": "99.93"
+        },
+        {
+            "descr": "Gap distance between monopoles",
+            "expr": "0.02*Lambda",
+            "name": "G",
+            "value": "3.9972"
+        },
+        {
+            "descr": "Dipole Radius",
+            "expr": "1.5",
+            "name": "R",
+            "value": "1.5"
+        }
+    ],
+    "version": 1
+}

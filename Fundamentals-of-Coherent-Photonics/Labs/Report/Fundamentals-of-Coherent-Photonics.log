@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.5.21)  21 DEC 2021 15:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.5.21)  4 JAN 2022 13:47
 entering extended mode
 **./Fundamentals-of-Coherent-Photonics.tex
 (Fundamentals-of-Coherent-Photonics.tex
@@ -1469,8 +1469,7 @@ LaTeX Font Info:    Trying to load font information for T1+PTSerif-TLF on input
 (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/paratype\t1ptserif-tlf.
 fd
 File: T1PTSerif-TLF.fd 2014/02/02 Font definitions for T1/PTSerif-TLF.
-)
-No file Fundamentals-of-Coherent-Photonics.aux.
+) (Fundamentals-of-Coherent-Photonics.aux)
 \openout1 = `Fundamentals-of-Coherent-Photonics.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
@@ -1530,6 +1529,8 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 184.
 LaTeX Info: Redefining \pageref on input line 184.
 LaTeX Info: Redefining \nameref on input line 184.
+ (Fundamentals-of-Coherent-Photonics.out)
+(Fundamentals-of-Coherent-Photonics.out)
 \@outlinefile=\write9
 \openout9 = `Fundamentals-of-Coherent-Photonics.out'.
 
@@ -1604,7 +1605,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 186
 (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Images/UNILIM-Logo.png, id=9, 489.83pt x 160.6pt>
+<Images/UNILIM-Logo.png, id=41, 489.83pt x 160.6pt>
 File: Images/UNILIM-Logo.png Graphic file (type png)
 <use Images/UNILIM-Logo.png>
 Package pdftex.def Info: Images/UNILIM-Logo.png  used on input line 186.
@@ -1634,7 +1635,7 @@ LaTeX Font Info:    Trying to load font information for U+fontawesomefree2 on i
 nput line 211.
 
 (C:\Users\andyw\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontaweso
-mefree2.fd)
+mefree2.fd) (Fundamentals-of-Coherent-Photonics.toc)
 \tf@toc=\write10
 \openout10 = `Fundamentals-of-Coherent-Photonics.toc'.
 
@@ -1644,64 +1645,57 @@ LaTeX Warning: Citation `JenningsWilson2021' on page i undefined on input line
 244.
 
 [1]
-Overfull \hbox (5.93935pt too wide) in paragraph at lines 310--310
+Overfull \hbox (5.93935pt too wide) in paragraph at lines 322--322
 |[]\T1/PTSerif-TLF/b/n/10 Measurement of Power Vari-a-tion or Losses Us-ing the
  ``Power Dif-fer-ence $\OT1/cmr/m/n/10 $\T1/PTSerif-TLF/b/n/10 '' Mode of the 
 Power Me-tre| 
  []
 
 
-Overfull \hbox (3.84424pt too wide) in paragraph at lines 318--318
+Overfull \hbox (3.84424pt too wide) in paragraph at lines 340--340
 |[]\T1/PTSerif-TLF/b/n/12 Measurement Five: Mea-sure-ment of the Lin-ear Prop-a
 -ga-tion Loss as well as the Fi-bre
  []
 
 
-Overfull \hbox (61.22821pt too wide) in paragraph at lines 322--322
+Overfull \hbox (61.22821pt too wide) in paragraph at lines 347--347
 |[]\T1/PTSerif-TLF/b/n/12 Measurement Six: Mea-sure-ment of the Lin-ear Prop-a-
 ga-tion Loss Us-ing the Cut-Back Tech-nique| 
- []
-
-
-Overfull \hbox (12.25621pt too wide) in paragraph at lines 326--326
-|[]\T1/PTSerif-TLF/b/n/12 Measurement Seven: Mea-sure-ment of the Splic-ing Los
-s Us-ing the Cut-Back Tech-nique| 
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.333 \newpage
-               [1]
+l.351 ... measure the optical power, $P_2$ (dBm).}
+                                                   [1]
+Overfull \hbox (12.25621pt too wide) in paragraph at lines 359--359
+|[]\T1/PTSerif-TLF/b/n/12 Measurement Seven: Mea-sure-ment of the Splic-ing Los
+s Us-ing the Cut-Back Tech-nique| 
+ []
+
+[2]
 No file Fundamentals-of-Coherent-Photonics.bbl.
 (Fundamentals-of-Coherent-Photonics.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-Package rerunfilecheck Warning: File `Fundamentals-of-Coherent-Photonics.out' h
-as changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Fundamentals-of-Coherent-Photonics.
-out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  DED3B8EA12EEEBF80E6F2FF7652860D1;1193.
+Package rerunfilecheck Info: File `Fundamentals-of-Coherent-Photonics.out' has 
+not changed.
+(rerunfilecheck)             Checksum: DED3B8EA12EEEBF80E6F2FF7652860D1;1193.
  )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 158 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 50474 strings out of 479334
- 1110190 string characters out of 2857084
- 1561667 words of memory out of 3000000
- 67030 multiletter control sequences out of 15000+200000
+ 50494 strings out of 479334
+ 1111003 string characters out of 2857084
+ 1565667 words of memory out of 3000000
+ 67041 multiletter control sequences out of 15000+200000
  498200 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,11n,130p,1156b,3651s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 128i,11n,130p,1156b,3681s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/andyw/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/f
 ontawesome5/fa5free2.enc}{C:/Users/andyw/AppData/Local/Programs/MiKTeX/fonts/en
 c/dvips/fontawesome5/fa5brands0.enc}{C:/Users/andyw/AppData/Local/Programs/MiKT
@@ -1713,11 +1707,12 @@ fb><C:/Users/andyw/AppData/Local/Programs/MiKTeX/fonts/type1/public/fontawesome
 s/type1/paratype/ptserif/PTF55F.pfb><C:/Users/andyw/AppData/Local/Programs/MiKT
 eX/fonts/type1/paratype/ptserif/PTF75F.pfb><C:/Users/andyw/AppData/Local/Progra
 ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/andyw/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on Fundamentals-of-Coherent-Photonics.pdf (3 pages, 129117 bytes
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/andyw/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+Output written on Fundamentals-of-Coherent-Photonics.pdf (4 pages, 151554 bytes
 ).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 13 named destinations out of 1000 (max. 500000)
- 30 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 134 PDF objects out of 1000 (max. 8388607)
+ 14 named destinations out of 1000 (max. 500000)
+ 94 words of extra memory for PDF output out of 10000 (max. 10000000)
 
