@@ -1,0 +1,37 @@
+{
+    "parameter sweep": {
+        "options": {
+            "restore parameter values after run": "false",
+            "simulation type": "Transient",
+            "skip existing combinations": "true",
+            "start active solver": "true"
+        },
+        "sequences": {
+            "Sequence 1": [
+                {
+                    "from": "176",
+                    "samples": "8",
+                    "to": "180",
+                    "type": "linear",
+                    "varname": "Lambda"
+                },
+                {
+                    "index": 1
+                }
+            ],
+            "Sequence 2": [
+                {
+                    "from": "180",
+                    "samples": "12",
+                    "to": "200",
+                    "type": "linear",
+                    "varname": "Lambda"
+                },
+                {
+                    "index": 2
+                }
+            ]
+        },
+        "version": 1
+    }
+}

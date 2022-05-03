@@ -1,0 +1,885 @@
+\documentclass[colorlinks,11pt,a4paper,normalphoto,withhyper,ragged2e]{altareport}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% DEFAULT PACKAGES & SETTINGS %%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{setspace} %1.5 line spacing
+\usepackage{notoccite} %% Citation numbering
+\usepackage{lscape} %% Landscape table
+\usepackage{caption} %% Adds a newline in the table caption
+
+%% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+\usepackage[none]{hyphenat}
+
+%% Document and Theme Fonts
+\usepackage[T1]{fontenc}
+\usepackage{paratype}
+\usepackage[defaultsans]{lato}
+%\usepackage[sfdefault,light,condensed]{roboto}
+%\usepackage[rm]{roboto}
+%\usepackage[defaultsans]{lato}
+%\usepackage{sourcesanspro}
+%\usepackage[rm]{merriweather}
+
+\setlength{\intextsep}{4pt} % Set defualt spacing around floats
+
+\captionsetup{font=footnotesize} % Make Captions a sensible size
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% THEMES %%%%%%%%%%
+
+%% Standard theme options are below, leave blank for B&W / no colours (BoringDefault). Note the theme will be set to default if you enter a non-exsistant theme name.
+\SetTheme{UNIBS}
+%% UNIBS
+%% UNILIM
+%% PastelBlue
+%% GreenAndGold
+%% Purple
+%% PastelRed
+%% BoringDefault (Leave blank / enter anything not found above)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% DOCUMENT SPECIFIC PACKAGES %%%%%%%%%%
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{relsize}
+
+\usepackage{pythontex} % Run python code in this latex doc
+
+%%%%%%%%% Karnaugh Map Package & Settings %%%%%%%%%
+\usepackage[export]{adjustbox}
+
+\usetikzlibrary{matrix,calc}
+\usepackage{karnaugh-map}
+
+\colorlet{LightRed}{red!60!}
+\colorlet{LightBlue}{blue!60!}
+\colorlet{LightYellow}{yellow!60!}
+\colorlet{LightGreen}{green!60!}
+\colorlet{LightOrange}{orange!60!}
+
+%%%%%%%%% MATLAB Language Settings %%%%%%%%%
+\usepackage[numbered,framed]{matlab-prettifier} % To add code listings from matlab
+\lstMakeShortInline[style=Matlab-editor]" %% This makes " an escape character to write in matlab editor font
+
+
+%%%%% Settings for python pgf graphs %%%%%
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta}
+
+\pgfplotsset{compat=newest,
+    width=6cm,
+    height=3cm,
+    scale only axis=true,
+    max space between ticks=25pt,
+    try min ticks=5,
+    every axis/.style={
+        axis y line=left,
+        axis x line=bottom,
+        axis line style={thick,->,>=latex, shorten >=-.4cm}
+    },
+    every axis plot/.append style={thick},
+    tick style={black, thick}
+}
+\tikzset{
+    semithick/.style={line width=0.8pt},
+}
+
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{dateplot}
+
+
+% Reduce space around captions
+% \captionsetup{aboveskip=5pt, belowskip=5pt}
+
+
+%%%%% Python Code Listings %%%%%
+
+\usepackage{color} 
+\usepackage{listings} 
+\usepackage{setspace} 
+ 
+\definecolor{Code}{HTML}{181818} 
+\definecolor{Decorators}{HTML}{3C57AE} 
+\definecolor{Numbers}{HTML}{77787E} 
+\definecolor{MatchingBrackets}{HTML}{181818} 
+\definecolor{Keywords}{HTML}{3C57AE}
+\definecolor{self}{HTML}{3C57AE}
+\definecolor{Strings}{HTML}{628D3D} 
+\definecolor{Comments}{HTML}{9876AA}
+\definecolor{Backquotes}{HTML}{181818} 
+\definecolor{Classname}{HTML}{BF8F00} 
+\definecolor{FunctionName}{HTML}{BF8F00}
+\definecolor{Operators}{HTML}{181818}  
+\definecolor{Background}{HTML}{FFFFFF} 
+
+
+\lstset{
+	language=Python,
+	showstringspaces=false,
+	formfeed=\newpage,
+	numbers=left,
+	numberstyle=\tiny\color{Numbers}, 
+	numbersep=1em, 
+	xleftmargin=0.5cm, 
+	framextopmargin=2em, 
+	framexbottommargin=2em, 
+	showspaces=false, 
+	showtabs=false, 
+	showstringspaces=false, 
+	frame=l, 
+	tabsize=4, 
+	% Basic 
+	basicstyle=\ttfamily\scriptsize\setstretch{1}, 
+	backgroundcolor=\color{Background}, 
+	% Comments 
+	commentstyle=\color{Comments}, 
+	% Strings 
+	stringstyle=\color{Strings}, 
+	morecomment=[s][\color{Strings}]{"""}{"""}, 
+	morecomment=[s][\color{Strings}]{'''}{'''}, 
+	% keywords 
+	morekeywords = {import,from,class,def,for,while,if,is,in,elif,else,not,and,or,print,break,continue,return,True,False,None,access,as,,del,except,exec,finally,global,import,lambda,pass,print,raise,try,assert}, 
+	keywordstyle={\color{Keywords}\bfseries}, 
+	% additional keywords 
+	morekeywords={[2]@invariant,pylab,numpy,np,scipy}, 
+	keywordstyle={[2]\color{Decorators}\slshape}, 
+	emph={self}, 
+	emphstyle={\scriptsize\color{self}\slshape},
+} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% USEFUL SETTINGS %%%%%%%%%%
+%% Change some font sizes, this will override the defaults
+\renewcommand{\ReportTitleFont}{\Huge\rmfamily\bfseries} %% Title Page - Main Title
+\renewcommand{\ReportSubTitleFont}{\huge\bfseries} %% Title Page - Sub-Title
+\renewcommand{\ReportSectionFont}{\LARGE\rmfamily\bfseries} %% Section Title
+\renewcommand{\ReportSubSectionFont}{\large\bfseries} %% SubSection Title
+\renewcommand{\FootNoteFont}{\footnotesize} %% Footnotes and Header/Footer
+
+%% Change the bullets for itemize and rating marker
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Change the page layout
+\geometry{left=1.5cm,right=1.5cm,top=3cm,bottom=3cm,columnsep=8mm}
+\onehalfspace   % 1.5 line spacing
+
+\definecolor{CommentGreen}{HTML}{228B22}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{references.bib}
+
+%%%%%%%%%% TITLE PAGE INFO %%%%%%%%%%
+\ReportTitle{Optical Communication Networks}
+\SubTitle{Notes \& Tutorials}
+\Author{Andrew Simon Wilson}
+\ReportDate{\today}
+\FacultyOrLocation{EMIMEO Programme}
+\ModCoord{Prof. Fabio Baronio}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=0.5pt] (char) {#1};}}
+
+
+\begin{document}
+
+\MakeReportTitlePage
+
+
+%%%%% CONTENTS %%%%%
+\pagenumbering{roman} % Start roman numbering
+\setcounter{page}{1}
+
+
+%%%%%%%%%% YOUR NAME, PROFESSION, PORTRAIT, CONTACT INFO, SOCIAL MEDIA ETC. %%%%%%%%%%
+\name{Andrew Simon Wilson, BEng}
+\tagline{Post-graduate Master's Student - EMIMEO Programme}
+
+\personalinfo{
+  \email{andrew.s.wilson@protonmail.com}
+  \linkedin{andrew-simon-wilson} 
+  \github{AS-Wilson}
+  \phone{+44 7930 560 383}
+}
+
+%% You can add multiple photos on the left or right
+% \photoR{3cm}{Images/a-wilson-potrait.jpg}
+% \photoL{3cm}{Yacht_High,Suitcase_High}
+
+
+\section*{Author Details}
+\makeauthordetails
+
+%% Table of contents print level -1: part, 0: chapter, 1: section, 2:sub-section, 3:sub-sub-section, etc.
+\setcounter{tocdepth}{2} 
+\tableofcontents %% Prints a list of all sections based on the above command
+%\listoffigures %% Prints a list of all figures in the report
+%\listoftables %% Prints a list of all tables in the report
+
+
+
+
+%%%%%%%%%% DOCUMENT CONTENT BEGINS HERE %%%%%%%%%%
+
+%%%%% INTRO %%%%%
+\section*{Introduction}
+I wrote this document for the students studying Optical Communication Networks to have a nice set of notes, and correct reference code and graphs for the module. I hope that it is sufficient for this task and it helps all of your studies. \linebreak
+I spent have spent a lot of time developing the template used to make this {\LaTeX} document, I want others to benefit from this work so the source code for this template is available on GitHub \cite{latex_template_github}.
+\newpage
+\pagenumbering{arabic} % Start document numbering - roman numbering
+
+
+
+
+\section{Introduction, The NLSE, and Optical Fibre Propagation}
+
+	\subsection{Introduction}
+	The main goal of this class is the investigation of the evolution of the optical pulses which propagate in an optical fibre. \linebreak
+	
+	We will consider the propagation of pulses from two perspectives:
+	\begin{enumerate}[leftmargin=1cm]
+		\item Theoretically
+		\item Via numerical simulation, using software such as MATLAB, Python, or C/C++
+	\end{enumerate}
+	
+	\vspace{5mm}
+	
+	We will analyse and understand a number of different optical effects and regimes / models. These include:
+	\begin{itemize}[leftmargin=1cm]
+		\item Group Velocity Dispersion (GVD, this is a linear effect)
+		\item Self-Phase Modulation (this is a non-linear effect)
+		\item Optical, Self-Trapped Waves (Solitons)
+		\item Abnormal, Extreme Waves
+		\item Optical Shocks
+	\end{itemize}
+	
+	\vspace{5mm}
+	
+	The assessment for the course will consist of a piece of coursework on the numerical dynamics of optical pulses propagating under different linear and non-linear regimes.
+	After this coursework is handed in, a type of oral examination will be performed with each student about their coursework. \linebreak
+	Each of you is invited to work in groups of 2-3 persons, each with different jobs. \linebreak
+	
+	Finally, should the lectures leave you with any confusion, or you wish to study further, the suggested textbook for this course to aid in study (if this is needed) is Non-linear Fibre Optics by Govind P. Agrawal \cite{nl_fibre_optics}.
+
+
+	\pagebreak
+
+
+	\subsection{The Non Linear Schr\"{o}dinger Equation (3+3D)}
+	The first step to considering the propagation of optical pules in a fibre is to know that an optical fibre is a non-linear and dispersive medium and that any propagation with this waveguide is governed by the fundamental and universal modal of optical wave dynamics; the Non Linear Schr\"{o}dinger Equation (NLSE). \linebreak
+	
+	In Optical Communication Components Prof. Constantino De Angelis will analytically study the properties of the NLSE. This course, however, will consider different regimes from theoretical viewpoints, as well as numerical simulation of each of these regimes to understand the linear and non-liner effects and their uses. \linebreak
+	
+	So, without further ado, the Non Linear Schr\"{o}dinger Equation (NLSE) (3+3D) is given by Equation \ref{eq:nlse}:
+	\begin{equation} \label{eq:nlse}
+       \mathlarger{ j \frac{\partial A(r,t)}{\partial z} + \frac{1}{2 \beta} \frac{\partial^2 A(r,t)}{\partial x^2} + \frac{1}{2 \beta} \frac{\partial^2 A(r,t)}{\partial y^2} - \frac{ \beta ''}{2} \frac{\partial^2 A(r,t)}{\partial t^2} + \chi^{(3)} |A(r,t)|^2 A(r,t) = 0 }
+	\end{equation}
+	
+	\begin{align*}
+		\text{Where:}& \\
+		r & = (x, y, z) \text{, this is the 3-dimensional spatial coordinates} \\
+		t & \text{, is the time coordinate} \\
+		A & (r,t) \text{, is the slowly varying (compared to the carrier signal) envelope of the signal} \\
+		E & (r,t) = Re[A(r,t) e^{i(\omega_0t + \beta_0z)}] \text{, is the electrical field of the pulse and the carrier signal} \\
+		e&^{{i(\omega_0t + \beta_0z)}} \text{, is the optical carrier signal at the angular frequency } \omega_0 \text{ and `wavenumber' } \beta_0 
+	\end{align*}
+	
+	
+	\pagebreak
+	
+	
+	\subsubsection{A Quick Detour - The Gaussian Pulse} \label{sec:detour_gaussian}
+	The type of communication signal model that we will deal with most often initially in the course is that of the Pulsed Gaussian or Gaussian Pulse. This signal is the combination of a lower frequency Gaussian (this is where the information is really communicated) and a higher frequency carrier sine/cosine component, due to how high the frequency of the carrier typically is (10THz) it cannot be easily sampled, so we instead send information via the slowly varying envelope. To give an idea of what the this model looks like these individual signals are shown separately in Figure \ref{fig:gaussian_decon}. \linebreak
+	
+	Please note that we will give the Gaussian as a function most simply described by Equation \ref{eq:gaussian_time_def}:
+	
+	\begin{equation} \label{eq:gaussian_time_def}
+		\mathlarger{ \mathlarger{ f(t) = I e^{-\frac{t^2}{2t^2_0}} } }
+	\end{equation}
+	
+	{\footnotesize Also note $t_0$ is expressed here as the half-waist duration at an intensity of $\frac{1}{e}$, there are other definitions which are useful for other purposes} \linebreak
+	
+	If one has a linear system (or one that can be approximated as such a type of system) these two signals can be super-positioned to create a Gaussian pulse, which is shown in Figure \ref{fig:gaussian_demo} \linebreak
+	
+	\begin{figure}[h]
+		\centering
+		\scalebox{0.85}{\input{./Graphs/gaussian-decon.pgf}}
+		\caption{\centering{An example graph demonstrating the de-constructed elements of a Gaussian pulse, the carrier signal is on the left and the positive portion of Gaussian on the right}}
+		\label{fig:gaussian_decon}
+	\end{figure}	
+	
+	\vspace{5mm}
+	
+	\begin{figure}[h]
+		\centering
+		\scalebox{0.85}{\input{./Graphs/gaussian-demo.pgf}}
+		\caption{\centering{An example graph of the Gaussian Pulse, the envelope signal is shown as a dotted line, the signal propagated in the medium is the solid line.}}
+		\label{fig:gaussian_demo}
+	\end{figure}	
+	
+	\pagebreak
+	
+	It is also important to note here that the envelope signal is itself comprised of two components, a positive and a negative portion, this is easily displayed in the frequency domain, observe the spectrum (Figure \ref{fig:gaussian_spectrum}) of the propagating signal (displayed before in Figure \ref{fig:gaussian_demo}), there are a positive and negative frequency components: \linebreak
+	
+	\begin{figure}[h]
+		\centering
+		\scalebox{0.85}{\input{./Graphs/gaussian-demo-spectrum.pgf}}
+		\caption{\centering{The Gaussian Pulse spectrum}}
+		\label{fig:gaussian_spectrum}
+	\end{figure}
+	
+	\vspace{5mm}
+	
+	Note that the two Gaussians are centred at the carrier frequency and that the waist frequency interval at 1/e intensity ($\Delta\omega$) must be significantly smaller than the carrier frequency of the signal ($\omega_0$), i.e. ${\Delta\omega}\ll{\omega_0}$. This is shown in the normalised frequency spectrum graph, Figure \ref{fig:gaussian_spectrum_normalised}: \linebreak
+	
+	\begin{figure}[h]
+		\centering
+		\scalebox{0.85}{\input{./Graphs/gaussian-demo-normalised-spectrum.pgf}}
+		\caption{\centering{The Gaussian Pulse on the normalised frequency spectrum}}
+		\label{fig:gaussian_spectrum_normalised}
+	\end{figure}
+	
+	\pagebreak
+	
+	
+	
+	\subsubsection{The Components of the NLSE}
+	
+	The various components of the NLSE shown before (in Equation \ref{eq:nlse} and repeated below for completeness), can be summarised as follows:
+	\begin{equation*}
+       \mathlarger{ j \frac{\partial A(r,t)}{\partial z} + \frac{1}{2 \beta} \frac{\partial^2 A(r,t)}{\partial x^2} + \frac{1}{2 \beta} \frac{\partial^2 A(r,t)}{\partial y^2} - \frac{ \beta ''}{2} \frac{\partial^2 A(r,t)}{\partial t^2} + \chi^{(3)} |A(r,t)|^2 A(r,t) = 0 }
+	\end{equation*}
+	
+	\begin{center}
+	\begin{table}[htbp!]
+	    \centering
+	    %\def\arraystretch{0.1}
+	    \begin{tabular}{p{5cm} p{8cm}}
+	        $\mathlarger{ \mathlarger{ j \frac{\partial A(r,t)}{\partial z} } }$ \vspace{5mm} & This takes into account the propagation along the z-axis \\
+	        $\mathlarger{ \mathlarger{ \frac{1}{2 \beta} \frac{\partial^2 A(r,t)}{\partial x^2} } }$ \vspace{5mm} & Is the dispersion term along the x-axis \\
+	        $\mathlarger{ \mathlarger{ \frac{1}{2 \beta} \frac{\partial^2 A(r,t)}{\partial y^2} } }$ \vspace{5mm} & Is the dispersion term along the y-axis \\
+	        $\mathlarger{ \mathlarger{ - \frac{ \beta ''}{2} \frac{\partial^2 A(r,t)}{\partial t^2} } }$ \vspace{5mm} & Is the dispersion term along the t-axis \\
+	        $\mathlarger{ \mathlarger{ \chi^{(3)} |A(r,t)|^2 A(r,t) } }$ \vspace{5mm} & Is the non-linear term \\
+	        $\mathlarger{ \mathlarger{ \beta = \frac{\omega}{c} n(\omega) } }$ \vspace{5mm} & Is the propagation constant \\
+	        $\mathlarger{ \mathlarger{ \beta '' } }$ \vspace{5mm} & Is the group velocity dispersion \\
+	        $\mathlarger{ \mathlarger{ \chi^{(3)} } \quad n = \sqrt{1+\chi^{(\omega)}}}$ \vspace{5mm} & Accounts for non-linear cubic response of the medium \\
+	    \end{tabular}
+	    \label{table_lin_eq}
+	\end{table}
+	\end{center}
+	
+	In general, the NLSE is a (3+1) Dimension ($z, y, z, t$) model ((3+1)D model) which describes the evolution of an optical light pulse in space and time.
+	In optical fibres, the envelope of the pulse, $A(r,t)$ can be expressed (using separation of variables) as shown below in Equation \ref{eq:sep_of_vars_envelope}: \linebreak
+	
+	\begin{equation} \label{eq:sep_of_vars_envelope}
+		\mathlarger{ \mathlarger{ A(r,t) = A(x, y, z, t) = F(z, t) \cdot M(x, y) \cdot e^{i \delta \beta z} } }
+	\end{equation}
+	
+	\begin{align*}
+		\text{Where:}& \\
+		M(z, y) & \text{, defines the mode profiles} \\
+		\partial \beta \text{, is } & \text{the correction of the propagation constant } \implies \beta = \beta_0 + \partial \beta \\
+		\therefore M(z, &y) \cdot e^{i \delta \beta z} \text{, describes the modal distribution in the x-y plane at a given z, and;} \\
+		F(z, t) & \text{, describes the slowly varying (compared to the carrier) pulse envelope in the z-t plane}
+	\end{align*}
+	
+	\pagebreak
+	
+	
+	
+	
+	\subsection{Spatio-Temporal Regime, the NLSE (1+1D)}
+	
+	The first regime we will focus on is the spatio-temporal evolution of $F(z,t)$, ignoring other sections of our pulse. From the NLSE (3+1D) one can derive a model for $F(z,t)$ to obtain the NLSE (1+1D), given by Equation \ref{eq:nlse_1_1d}: \linebreak
+	
+	\begin{equation} \label{eq:nlse_1_1d}
+       j \frac{\partial F(z,t)}{\partial z} - \frac{ \beta ''}{2} \frac{\partial^2 F(z,t)}{\partial t^2} + \gamma |F(z,t)|^2 F(z,t) = 0
+	\end{equation}
+	
+	\begin{align}
+		\text{Where:}& \nonumber\\
+		z & \text{, is the propagation or evolution coordinate} \nonumber\\
+		t & \text{, is the temporal coordinate} \nonumber\\
+		\beta '' & \text{, is the Group Velocity Dispersion (GVD) inside the fibre} \nonumber\\
+		\gamma & \text{, is the effective non-linear term, related to } \chi^{(3)} \nonumber
+	\end{align}
+	
+	\vspace{5mm}
+	
+	It should be noted that both the (3+1D) and (1+1D) NLSEs are non-linear, partial differential equations that do not trivially lend themselves to analytical solutions, except in some very specific cases. It is more likely that one could successfully perform an analytical study of the (1+1D) NLSE as compared to the (3+1D) NLSE for obvious reasons, however it is even more practical to take a numerical approach to each of these equations to understand their linear and non-linear effects in optical fibres. \linebreak
+	
+	A large number of specific numerical methods may be performed, but they all fall into two general families: \linebreak
+	\begin{itemize}[leftmargin=1cm]
+		\item Finite-Difference methods
+		\item Pseudo-Spectral methods (these are generally faster by an order of magnitude whilst achieving the same accuracy as the above methods)
+	\end{itemize}
+	
+	\vspace{5mm}
+	
+	One pseudo-spectral method which has been used extensively to solve pulse propagation in non-linear, dispersive media is the \textbf{split-step Fourier method} (also known as the Beam Propagation Method - BPM), the relative speed of this method when compared with finite-difference schemes can be attributed to the Fast Fourier Transform (FFT) algorithm.
+	
+	\pagebreak
+
+	
+	
+	
+\section{Numerical Techniques}
+
+	As mentioned in the previous section one of the most practical and efficient methods to solve pulse propagation in optical fibres, and the one we will heavily focus on in the course, is the split-step Fourier method. To understand the methodology of, and use, the split-step Fourier method one must write the NLSE in the form shown below in Equation \ref{eq:split_step_fourier_nlse}:
+	
+	\begin{equation} \label{eq:split_step_fourier_nlse}
+       \mathlarger{ \frac{\partial F(z,t)}{\partial z} = (\tilde{D} + \tilde{N}) F }
+	\end{equation}
+	
+	
+	\vspace{5mm}
+	
+	
+	$\tilde{D}$ is a differential operator that accounts for dispersion in a linear medium (however it can account for absorption and/or higher order dispersions) and is given by Equation \ref{eq:disp_operator}:
+	
+	\begin{equation} \label{eq:disp_operator}
+       \mathlarger{ \tilde{D} = - j \frac{ \beta ''}{2} \frac{\partial^2}{\partial t^2} }
+	\end{equation}
+	
+	
+	\vspace{5mm}
+	
+	
+	$\tilde{N}$ is a non-linear operator that governs the effect of fibre non-linearity on pulse propagation, e.g. Kerr non-linearity (but it can account for other non-linear phenomena like Raman effects). $\tilde{N}$ is given by Equation \ref{eq:non_lin_operator}:
+	
+	\begin{equation} \label{eq:non_lin_operator}
+       \mathlarger{ \tilde{N} = - j \gamma |F|^2 }
+	\end{equation}
+	
+	
+	\vspace{5mm}
+	
+	
+	In general the dispersion, $\tilde{D}$, and non-linearity, $\tilde{N}$, act together along the fibre, but the Split-Step Fourier method obtains an \textbf{approximate solution} by assuming that by propagating the envelope over a small distance, $h$, the dispersive and non-linear effects can be considered to act independently. \linebreak 
+	More specifically, the propagation from a point, $z$, to another, $z+h$, can be described via two steps of calculation (the astute reader will note this is why the method is called split-step): \vspace{5mm}
+	
+	\begin{enumerate}[leftmargin=1cm]
+		\item Calculating the propagation accounting only for non-linear effects, $\tilde{D} = 0$
+		\item Calculating the propagation accounting only for dispersive effects, $\tilde{N} = 0$
+	\end{enumerate}
+	
+	
+	\vspace{5mm}
+	
+	
+	Mathematically this process is described by Equation \ref{eq:split_step_fourier_nlse_2}:
+	
+	\begin{equation} \label{eq:split_step_fourier_nlse_2}
+		\mathlarger{ F(z + h, t) \approx e^{h \tilde{D}} \cdot e^{h \tilde{N}} \cdot F(z, t) }
+	\end{equation}
+	
+	
+	\vspace{5mm}
+	
+	
+	Later we will show that the term $e^{h \tilde{D}}$  can be evaluated in the Fourier domain using Equation \ref{eq:split_step_dispersive_approx}:
+	
+	\begin{equation} \label{eq:split_step_dispersive_approx}
+		\mathlarger{ e^{h \tilde{D}} \cdot F(z, t) = \mathcal{FT}^{-1}[e^{h \tilde{D}(j\omega)}] \quad \mathcal{FT}[F(z, t)] }
+	\end{equation}
+	
+	
+	\vspace{5mm}
+	
+	
+	For full clarity (to avoid any confusion with notation used) $\mathcal{FT}$ denotes the Fourier Transform, and $\tilde{D}(j\omega)$ is obtained by replacing the differential operators in time domain; $\frac{\partial}{\partial t} \to j\omega$ and $\frac{\partial^2}{\partial ^2t} \to (j\omega)^2 = -\omega^2$. As $\tilde{D}(j\omega)$ is a number in Fourier space, the evaluation of the term mathematically, and numerically with the FFT, is fast and simple. \linebreak
+	
+	
+	\pagebreak
+	
+	
+	To estimate the accuracy of the split-step method, one must observe the formal solution of the NLSE compared to the approximate solution we have formed, the formal solution is given by Equation \ref{eq:split_step_dispersive_exact} (assuming $\tilde{N}$ is z-independent):
+	
+	\begin{equation} \label{eq:split_step_dispersive_exact}
+		\mathlarger{ F(z+h, t) = e^{h (\tilde{D} + \tilde{N})} F(z, t) }
+	\end{equation}
+	
+	
+	\vspace{5mm}
+	
+	
+	The comparison of this equation and the approximate solution leads us to a topic of mathematics you may not be familiar with, the Baker-Campbell-Hausdorff proof; \linebreak
+	
+	\subsection{The Baker-Campbell-Hausdorff Formula}
+		Now is a good time to recall the Baker-Campbell-Hausdorff formula \cite{baker_campbell_hausdorff_wiki} which is a solution for an equation such as that shown below in Equation \ref{eq:baker_campbell_hausdorff}:
+			
+		\begin{equation} \label{eq:baker_campbell_hausdorff}
+			\mathlarger{\mathlarger{ e^{\tilde{a}} e^{\tilde{b}} = e^{\tilde{c}} }}
+		\end{equation}
+		
+		
+		\vspace{5mm}
+		
+		
+		The solution to which is given by Equation \ref{eq:baker_campbell_hausdorff_solution}:
+		
+		\begin{equation} \label{eq:baker_campbell_hausdorff_solution}
+			\mathlarger{\mathlarger{ e^{\tilde{c}} = e^{\tilde{a} + \tilde{b} + \frac{1}{2}[\tilde{a}, \tilde{b}] + \frac{1}{12}[\tilde{a}, [\tilde{a}, \tilde{b}]] - \frac{1}{12}[\tilde{b}, [\tilde{a}, \tilde{b}]] + \dots} }}
+		\end{equation}
+		
+		
+		\vspace{5mm}
+		
+		 
+		Where:
+		\begin{equation}
+			\mathlarger{ [\tilde{a}, \tilde{b}] = \tilde{a} \tilde{b} - \tilde{b} \tilde{a} } \nonumber
+		\end{equation}
+		
+		And:		
+		\begin{align}
+			\text{If } [\tilde{a}, \tilde{b}] & = 0 \text{ the operators commutate} \nonumber\\
+			\text{If } [\tilde{a}, \tilde{b}] & \neq 0 \text{ the operators do not commutate} \nonumber
+		\end{align}
+		
+		
+		\vspace{5mm}
+		
+		
+		Comparing Equations \ref{eq:split_step_fourier_nlse_2} and \ref{eq:split_step_dispersive_exact} exactly indicates that the Split-Step method ignores the non-commutating nature of the $\tilde{D}$ and $\tilde{N}$ operators. However, if we cheat a bit and insert $\tilde{a} = h \tilde{D} $ and $\tilde{b} = h \tilde{N} $ into Equation \ref{eq:baker_campbell_hausdorff_solution} and compare it to Equation \ref{eq:split_step_dispersive_exact} the third exponent term will be $\frac{1}{2}[\tilde{a}, \tilde{b}] = \frac{1}{2} h^2 [\tilde{D}, \tilde{N}]$. Thus, the Split-Step Fourier method is accurate to the second order when using the step size of $h$ (i.e. the equations match until the third exponential term and thus can be said to be approximate to a certain degree), one must emphasise what this signifies: \textbf{as long as $h$ is small the errors of calculation will also be small (insignificant).}
+	
+	
+	
+	
+	\pagebreak
+	
+	
+	
+	
+	\subsection{Numeric Implementation}
+		To summarise the previous section, the general implementation of the Split-Step Fourier method is given by Equation \ref{eqn:split_step_fourier_general}: \linebreak
+		
+		\begin{equation} \label{eqn:split_step_fourier_general}
+			\mathlarger{ F(z+h, t) = e^{h (\tilde{D} + \tilde{N})} F(z, t) \approx e^{h \tilde{D}} \cdot e^{h \tilde{N}} \cdot F(z, t)  }
+		\end{equation}
+		
+		\vspace{5mm}
+		
+		And thus, to simulate the propagation from $z$ to $z+h$ we will follow the previously set out steps, repeated below for completeness (this could be completed in reverse order just as effectively): \linebreak
+		
+		\begin{enumerate}[leftmargin=1cm]
+			\item Calculating the propagation accounting only for non-linear effects, $\tilde{D} = 0$
+			\item Calculating the propagation accounting only for dispersive effects, $\tilde{N} = 0$
+		\end{enumerate}
+		
+		\vspace{5mm}
+		
+		
+		\subsubsection{Considerations for Numeric Implementation}
+		
+			For the envelope $F(z, t)$, we must take into account that it's profile, for numerical applications, will be recorded in a matrix (or vector), via appropriate sampling of the signal, $F$, e.g. Shannon-Nyquist Sampling Theorem \cite{MechatronicsBolton2015} \cite{shannon_nyquist_sampling_theorem}. This is displayed below in Figure \ref{fig:envelope_continuous_discrete}, the dotted line displays the discrete sampling of the signal and the solid line the continuous signal that exists in reality: \linebreak
+			
+			
+			\begin{figure}[h]
+				\centering
+				\scalebox{0.85}{\input{./Graphs/envelope-discrete-vs-continuous.pgf}}
+				\caption{\centering{The difference between the continuous signal and discretely measured data-points of the signal}}
+				\label{fig:envelope_continuous_discrete}
+			\end{figure}	
+			
+			\textbf{TODO: something about having to use multiple matrices}
+			
+			
+			\pagebreak
+			
+			
+		\subsubsection{Dispersive Step}
+			To solve for the dispersive step of the equation, we have to solve Equation \ref{eq:dispersive_solution}: 
+			
+			\begin{equation} \label{eq:dispersive_solution}
+				\frac{\partial F(z, t)}{\partial z} = - j \frac{ \beta ''}{2} \frac{\partial^2}{\partial t^2}
+			\end{equation}
+			
+			\vspace{5mm}
+			
+			To do this we must consider the Fourier transform of $F(z, t)$, given by Equation \ref{eq:dispersive_solution_ft}:
+			
+			\begin{equation} \label{eq:dispersive_solution_ft}
+				\mathlarger{\tilde{F}(z, \omega) = \int_{-\infty}^{+\infty} F(z, t) e^{-j \omega} dt}
+			\end{equation}
+			
+			
+			\vspace{5mm}
+			
+			
+			We are interested in change with propagation, so computing this integral produces and differentiating gives:
+			\begin{equation}
+				\mathlarger{\frac{\partial \tilde{F}(z, \omega)}{\partial z} = (+ j \frac{\omega^2}{2} \beta '') \tilde{F}(z, \omega)} \nonumber
+			\end{equation}
+			
+			\vspace{5mm}
+			
+			And finally to form a general solution to calculate the new signal value after each dispersive portion of the step, $h$, the necessary calculations before completing the non-linear portion are shown in frequency and time domain as Equations \ref{eq:dispersive_solution_freq} and \ref{eq:dispersive_solution_time}:
+			
+			\begin{gather} \label{eq:dispersive_solution_freq} 
+				\mathlarger{\tilde{F}(z+h, \omega) =  \tilde{F}(z, \omega) e^{+ j \frac{\omega^2}{2} \beta '' \cdot h} }\\
+				\mathlarger{F(z+h, t) = \mathcal{FT}^{-1} \begin{bmatrix} \tilde{F}(z+h, \omega) \end{bmatrix}} \label{eq:dispersive_solution_time}
+			\end{gather}
+			
+			\vspace{5mm}
+		
+		
+		\subsubsection{Non-Linear Step}
+			For the non-linear portion of our regime we begin with Equation \ref{eq:non_linear_solution}:
+			
+			\begin{equation} \label{eq:non_linear_solution}
+				\mathlarger{\frac{\partial F(z, t)}{\partial z} = j \gamma |F|^2 F}
+			\end{equation}
+			
+			\vspace{5mm}
+			
+			Since one can demonstrate that $|F|^2$ is z-independent, the final solution is given by Equation \ref{eq:non_linear_solution_final}:
+
+			\begin{equation} \label{eq:non_linear_solution_final}
+				\mathlarger{ F(z+h, t) =  F(z, t) e^{j \gamma |F(z, t)|^2 \cdot h}}
+			\end{equation}
+			
+			{\footnotesize Recall that $h$ will be our step size in the z-axis. Also note this is no th}
+			
+			
+			\pagebreak
+			
+			
+	\subsection{Summary of the Scheme for Numeric Algorithm}
+		The summary of the steps we will take in order to complete the numeric implementation of everything we have covered in this section is as follows: \linebreak
+		
+		\begin{enumerate}[leftmargin=1cm]
+			\item Initialisation (of variables, matrices, and any necessary functions or classes)
+			\item Definition of:
+				\begin{itemize}
+					\item Temporal and Spatial Co-Ordinates
+					\item Frequency Domain Co-Ordinates
+					\item Quantities relevant to our signal (intensities, envelope definition, etc.)
+				\end{itemize}
+			\item Perform the Split-Step Fourier Method:
+				\begin{itemize}
+					\item The Dispersive Step
+					\item The Non-Linear Step
+					\item Save the data for each $z$ step at each time index
+				\end{itemize}
+			\item Display the results appropriately
+		\end{enumerate}
+		
+		
+		\pagebreak
+		
+		
+	\subsection{Numeric Implementation in Python}
+		The code can be found below in Section \ref{code:Split_step_fourier_intro}, it has been purposefully made more difficult to copy and paste so that you will, at the very least, type the code out manually and perhaps absorb some of the essential information regarding the implementation of the Split-Step Fourier Method. \linebreak
+		
+		This is only introductory code, so we aren't actually going to look at any propagation that involves dispersion or non-linearity, but the two relevant terms, $\beta ''$ and $\gamma$, can be changed to observe this (in the next sections this is what will be done in order to produce the graphs to observe the various effects). \linebreak
+		
+		The first graph shown below, Figure \ref{fig:split-step-intro-2d-time}, displays the input envelope and final, output envelope in the time domain. In this case it is a simple Gaussian signal with a half-waist of 1 second and an absolute intensity of 1. \linebreak
+		
+		\begin{figure}[h]
+			\centering
+			\scalebox{0.85}{\input{./Graphs/split-step-intro-2d-time.pgf}}
+			\caption{\centering{Split-Step Fourier Method Introduction - 2D Graph of the Initial and Final Envelope in the Time Domain}}
+			\label{fig:split-step-intro-2d-time}
+		\end{figure}
+		
+		The next important graph, Figure \ref{fig:split-step-intro-2d-freq}, is the input and output envelopes in the frequency domain. \linebreak
+		
+		\begin{figure}[h]
+			\centering
+			\scalebox{0.8}{\input{./Graphs/split-step-intro-2d-freq.pgf}}
+			\caption{\centering{Split-Step Fourier Method Introduction - 2D Graph of the Initial and Final Envelope in the Frequency Domain}}
+			\label{fig:split-step-intro-2d-freq}
+		\end{figure}	
+		
+		\pagebreak
+		
+		Then finally we have the two 3D plots of the propagation in both the time domain and frequency domain, Figures \ref{fig:split-step-intro-3d-time} and \ref{fig:split-step-intro-3d-freq}: \linebreak
+				
+		\begin{figure}[h]
+			\centering
+			\scalebox{0.7}{\input{./Graphs/split-step-intro-3d-time.pgf}}
+			\caption{\centering{Split-Step Fourier Method Introduction - 3D Propagation Graph Envelope in the Time Domain}}
+			\label{fig:split-step-intro-3d-time}
+		\end{figure}	
+		
+		\vspace{5mm}
+		
+		\begin{figure}[h]
+			\centering
+			\scalebox{0.7}{\input{./Graphs/split-step-intro-3d-freq.pgf}}
+			\caption{\centering{Split-Step Fourier Method Introduction - 3D Propagation Graph Envelope in the Frequency Domain}}
+			\label{fig:split-step-intro-3d-freq}
+		\end{figure}	
+		
+		
+		\pagebreak
+		
+		
+		\subsection{Split-Step Fourier Method in Python - Introduction} \label{code:Split_step_fourier_intro}
+			\lstinputlisting{./Python/Split-Step-Fourier-Method-Intro.py}
+		
+		
+		\pagebreak
+		
+		
+\section{Group Velocity Dispersion, GVD}
+
+Also known as Dispersion Induced Pulse Broadening, the effects of GVD on optical pulses propagating in an optical fibre are studied by setting the non-linear term to zero, $\gamma = 0$, $F(z, t)$ then satisfies Equation \ref{eq:gvd_satisfaction}:
+
+	\begin{equation} \label{eq:gvd_satisfaction}
+		\mathlarger{ j \frac{\partial F(z, t)}{\partial z} \approx \frac{ \beta_2}{2} \frac{\partial^2 F}{\partial t^2} }
+	\end{equation}
+	
+	{\footnotesize Be careful, $\beta_2 \neq \beta ''$} \linebreak	
+	
+	\vspace{5mm}
+
+Equation \ref{eq:gvd_satisfaction} is trivially solved using the Fourier Transform, if $\tilde{F}(z, \omega$ is the signal $F(z, t)$ in frequency domain, such that it satisfies Equation \ref{eq:gvd_satisfaction_fourier}, then it also satisfies Equation \ref{eq:ode_gvd_satisfaction}:
+	
+	\begin{equation} \label{eq:gvd_satisfaction_fourier}
+		\mathlarger{F(z, t) = \frac{1}{2 \pi} \int_{-\infty}^{+\infty} \tilde{F}(z, \omega) e^{-j \omega t} d \omega}
+	\end{equation}
+	
+	\vspace{5mm}
+
+	\begin{equation} \label{eq:ode_gvd_satisfaction}
+		\mathlarger{ j \frac{\partial F(z, t)}{\partial z} = \frac{1}{2} \beta_2 \omega^2 \tilde{F} }
+	\end{equation}
+	
+	\vspace{5mm}
+	
+The solution to this ODE is given by Equation \ref{eq:gvd_ode_solution}, it is clear from this solution that each spectral component of the signal will have it's phase changed differently for a given propagation distance, $z$, and frequency, $\omega$.
+	
+	\begin{equation} \label{eq:gvd_ode_solution}
+		\mathlarger{ \tilde{F}(z, \omega) = \tilde{F}(z=0, \omega) e^{j \frac{1}{2} \beta_2 \omega^2 z} }
+	\end{equation}
+
+	\vspace{5mm}
+
+If one substitutes Equation \ref{eq:gvd_ode_solution} into Equation \ref{eq:gvd_satisfaction_fourier} the general solution to Equation \ref{eq:gvd_satisfaction} is obtained, shown below in Equation \ref{eq:dispersive_solution_general}:
+
+	\begin{equation} \label{eq:dispersive_solution_general}
+		\mathlarger{F(z, t) = \frac{1}{2 \pi} \int_{-\infty}^{+\infty} \tilde{F(0, \omega)} e^{-j \frac{1}{2} \beta_2 \omega^2 z - j \omega t} d \omega}
+	\end{equation}
+
+	{\footnotesize Where $\tilde{F(0, \omega)}$ is the Fourier Transform of the input signal.} \linebreak	
+
+	\vspace{5mm}
+	
+	This Equation (\ref{eq:dispersive_solution_general}) can be used for input functions of almost any shape, making this equation rather powerful. \linebreak
+	
+	
+	\subsection{GVD with a Gaussian Pulse Input - Analytical Solution}
+	
+	We will first analytically consider the propagation of a Gaussian Pulse with GVD, the Gaussian equation was given in Section \ref{sec:detour_gaussian} as Equation \ref{eq:gaussian_time_def}, repeated again the Gaussian is defined here as:
+	
+	\begin{equation*}
+		\mathlarger{ \mathlarger{ f(t) = I e^{-\frac{t^2}{2t^2_0}} } }
+	\end{equation*}
+	
+	Where $t_0$ is the half-width at $\frac{1}{e}$ intensity, we could also use the Full Width at Half Maximum (FWHM), we can define for the FWHM:
+	
+	\begin{gather*}
+		\mathlarger{ T_{FWHM} = 1.665 t_0 = 2 \sqrt{ln(2)} t_0 }
+	\end{gather*}
+	
+	\vspace{5mm}
+	
+	Now, if we combine Equations \ref{eq:dispersive_solution_general} and \ref{eq:gaussian_time_def} then perform the integration, we will obtain Equation \ref{eq:gauss_in_dispersive_solution}:
+	
+	\begin{equation} \label{eq:gauss_in_dispersive_solution}
+		\mathlarger{F(z, t) = \frac{t_0}{(t_0^2 - j \beta_2 z)^{\frac{1}{2}}} e^{- \frac{t^2}{2(t_0^2 - j \beta_2 z)}}
+	\end{equation}
+	
+	\vspace{5mm}
+	
+	This equation displays that a Gaussian signal will clearly maintain it's shape upon propagation, however it's intensity will lessen, and it's width in time will increase, we can define the equation for the time domain change after a given propagation distance as Equation \ref{eq:waist_change_gauss_with_dispersion}:
+	
+		\begin{equation} \label{eq:waist_change_gauss_with_dispersion}
+			\mathlarger{T_1(z) = t_0(1 + (\frac{z}{L_D})^2)^{\frac{1}{2}}
+		\end{equation}
+		
+		With $L_D = \frac{T_0^2}{|\beta_2|}$ and it is usually called the ``Dispersion Length''. This value defines how, for a given fibre length, shorter pulses will broaden more than longer ones as the dispersion length will be larger. In other words the dispersion length governs the extent of broadening. At a propagation distance equal to the dispersion length, $z = L_D$, a Gaussian will broaden by $\sqrt{2}$. \linebreak
+		
+		Comparing our Gaussian input, and calculated output after propagation (Equations \ref{eq:gaussian_time_def} and \ref{eq:gauss_in_dispersive_solution}) indicates that even though our input is un-chirped (with no phase modulation), we have a chirped output, this is probably easier to observe if we define our propagation in different terms, shown it Equations \ref{eq:waist_change_gauss_using_phi} and \ref{eq:waist_change_gauss_phi_definition}:
+		
+			\begin{equation} \label{eq:waist_change_gauss_using_phi}
+				\mathlarger{ F(z, t) = |F(z, t)| e^{j \phi(z,t)} 
+			\end{equation}
+			
+			\vspace{5mm}
+			
+			\begin{equation} \label{eq:waist_change_gauss_phi_definition}
+				\mathlarger{ \phi(z,t)  = \frac{-sin(\beta_2)(\frac{z}{L_D})}{1 + (\frac{z}{L_D})^2} \frac{t^2}{t_0^2} + \frac{1}{2} tan^{-2}(\frac{z}{L_D})
+			\end{equation}
+		
+
+
+
+
+
+
+
+
+\pagebreak
+
+
+
+
+\section{Chirped Gaussian Pulses}
+
+
+
+\section{Hyperbolic Secant Pulses}
+
+
+
+\section{GVD Induced Limitations - Dispersion Management}
+
+
+
+\section{Self Phase Modulation, SPM}
+
+
+
+\section{Changes in Pulse Spectra due to SPM}
+
+
+
+
+
+
+
+\newpage
+\setstretch{1}  % Reduce bibliography line spacing
+\bibliographystyle{IEEETran}
+\bibliography{references.bib}
+\end{document}
