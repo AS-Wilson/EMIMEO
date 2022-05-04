@@ -39,15 +39,15 @@ plt.rcParams['ytick.direction'] = 'out'
 ##### THE CODE TO IMPLEMENT THE SPLIT-STEP FOURIER METHOD #####
 
 ## The Fibre Material Properties
-beta_2 = 0 #
+beta_2 = 0.05 #
 gamma = 0 #
 
 
 ## Temporal Co-Ordinate Creation
 # The higher the number of samples for a given signal duration, the better the curved gaussian shape will be after the
 #   FFT:
-no_of_samples = 201
-signal_duration = 40
+no_of_samples = 1001
+signal_duration = 80
 
 # Create an array of time values with X number of equally-spaced values, a larger array size for a given signal
 #   duration makes for a better frequency domain transform
@@ -86,7 +86,8 @@ intensity = 1 # Signal intensity
 init_waist = 1 # Used to define the Gaussian signal, this is the half-waist size at 1/e intensity
 
 # The Gaussian (envelope) signal
-envelope = intensity * np.exp(-((time ** 2) / (2 * (init_waist ** 2))))
+envelope = (intensity * np.exp(-(((time - 5) ** 2) / (2 * (init_waist ** 2))))) + \
+           (intensity * np.exp(-(((time + 5) ** 2) / (2 * (init_waist ** 2)))))
 envelope = np.array(envelope)
 
 
@@ -110,8 +111,7 @@ dispersive_terms = [np.exp(complex(0, (((ang_freq_axis[0] ** 2) / 2) * beta_2 * 
 for i in range(1, no_of_samples):
     dispersive_terms.append(np.exp(complex(0, (((ang_freq_axis[i] ** 2) / 2) * beta_2 * z_step_distance))))
 
-
- # Since gamma is 0 in this code, this will be an array with no value, but the code is still useful
+# Since gamma is 0 in this code, this will be an array with no value, but the code is still useful
 non_linear_term = gamma * z_step_distance
 
 
@@ -156,10 +156,10 @@ for x in range(1, no_of_samples):
 plt.figure()
 
 # Plot the input envelope vs time
-plt.plot(time, envelope, color='green', label='Initial Signal')
+plt.plot(time, envelope, color='blue', label='Initial Signal')
 
 # Plot the output envelope vs time
-plt.plot(time, abs(pulse_output_time[-1, :]), color='orange', label='Final Signal')
+plt.plot(time, abs(pulse_output_time[-1, :]), color='red', label='Final Signal')
 
 # Titles and labels
 plt.title(r'Input and Output Envelope - Time Domain')
@@ -177,7 +177,7 @@ axes.set_aspect(15)
 plt.tight_layout(pad=1.2) # Place everything slightly closer together
 
 # Save graph in this location
-plt.savefig('../Graphs/split-step-intro-2d-time.pgf', bbox_inches = 'tight', pad_inches = 0)
+plt.savefig('../Graphs/split-step-gvd-2d-time.pgf', bbox_inches = 'tight', pad_inches = 0)
 
 
 
@@ -198,16 +198,16 @@ plt.legend(loc="upper left")
 
 
 # Set limits
-plt.xlim(-50, 50)
+plt.xlim(-5, 5)
 
 # Aspect Ratio
 axes = plt.gca()
-axes.set_aspect(38)
+axes.set_aspect(35)
 
 plt.tight_layout(pad=1.2) # Place everything slightly closer together
 
 # Save graph in this location
-plt.savefig('../Graphs/split-step-intro-2d-freq.pgf', bbox_inches = 'tight', pad_inches = 0)
+plt.savefig('../Graphs/split-step-gvd-2d-freq.pgf', bbox_inches = 'tight', pad_inches = 0)
 
 
 
@@ -244,7 +244,7 @@ ax.set_box_aspect((1.5, 2.0, 0.6))
 plt.tight_layout(pad=0.8) # Place everything slightly closer together
 
 # Save graph in this location
-plt.savefig('../Graphs/split-step-intro-3d-time.pgf', bbox_inches = 'tight', pad_inches = 0)
+plt.savefig('../Graphs/split-step-gvd-3d-time.pgf', bbox_inches='tight', pad_inches=0)
 
 
 
@@ -273,13 +273,13 @@ ax.set_ylabel(r'Propagation distance, z')
 ax.set_zlabel(r'$\tilde{F}(\omega)$')
 
 # Aspect ratio settings
-ax.auto_scale_xyz([-22, 22], [-5, 5], [0, 1.1])
+ax.auto_scale_xyz([-5, 5], [-5, 5], [0, 4.1])
 ax.set_box_aspect((1.5, 2.0, 0.6))
 
 plt.tight_layout(pad=0.8) # Place everything slightly closer together
 
 # Save graph in this location
-plt.savefig('../Graphs/split-step-intro-3d-freq.pgf', bbox_inches = 'tight', pad_inches = 0)
+plt.savefig('../Graphs/split-step-gvd-3d-freq.pgf', bbox_inches='tight', pad_inches=0)
 
 # Display a window of each graph now that we're finished
 plt.show()

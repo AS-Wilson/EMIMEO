@@ -816,7 +816,7 @@ If one substitutes Equation \ref{eq:gvd_ode_solution} into Equation \ref{eq:gvd_
 	Now, if we combine Equations \ref{eq:dispersive_solution_general} and \ref{eq:gaussian_time_def} then perform the integration, we will obtain Equation \ref{eq:gauss_in_dispersive_solution}:
 	
 	\begin{equation} \label{eq:gauss_in_dispersive_solution}
-		\mathlarger{F(z, t) = \frac{t_0}{(t_0^2 - j \beta_2 z)^{\frac{1}{2}}} e^{- \frac{t^2}{2(t_0^2 - j \beta_2 z)}}
+		\mathlarger{F(z, t) = \frac{t_0}{(t_0^2 - j \beta_2 z)^{\frac{1}{2}}} e^{- \frac{t^2}{2(t_0^2 - j \beta_2 z)}} }
 	\end{equation}
 	
 	\vspace{5mm}
@@ -824,45 +824,66 @@ If one substitutes Equation \ref{eq:gvd_ode_solution} into Equation \ref{eq:gvd_
 	This equation displays that a Gaussian signal will clearly maintain it's shape upon propagation, however it's intensity will lessen, and it's width in time will increase, we can define the equation for the time domain change after a given propagation distance as Equation \ref{eq:waist_change_gauss_with_dispersion}:
 	
 		\begin{equation} \label{eq:waist_change_gauss_with_dispersion}
-			\mathlarger{T_1(z) = t_0(1 + (\frac{z}{L_D})^2)^{\frac{1}{2}}
+			\mathlarger{T_1(z) = t_0(1 + (\frac{z}{L_D})^2)^{\frac{1}{2}} }
 		\end{equation}
 		
-		With $L_D = \frac{T_0^2}{|\beta_2|}$ and it is usually called the ``Dispersion Length''. This value defines how, for a given fibre length, shorter pulses will broaden more than longer ones as the dispersion length will be larger. In other words the dispersion length governs the extent of broadening. At a propagation distance equal to the dispersion length, $z = L_D$, a Gaussian will broaden by $\sqrt{2}$. \linebreak
+	With $L_D = \frac{T_0^2}{|\beta_2|}$ and it is usually called the ``Dispersion Length''. This value defines how, for a given fibre length, shorter pulses will broaden more than longer ones as the dispersion length will be larger. In other words the dispersion length governs the extent of broadening. At a propagation distance equal to the dispersion length, $z = L_D$, a Gaussian will broaden by $\sqrt{2}$. \linebreak
 		
-		Comparing our Gaussian input, and calculated output after propagation (Equations \ref{eq:gaussian_time_def} and \ref{eq:gauss_in_dispersive_solution}) indicates that even though our input is un-chirped (with no phase modulation), we have a chirped output, this is probably easier to observe if we define our propagation in different terms, shown it Equations \ref{eq:waist_change_gauss_using_phi} and \ref{eq:waist_change_gauss_phi_definition}:
+	Comparing our Gaussian input, and calculated output after propagation (Equations \ref{eq:gaussian_time_def} and \ref{eq:gauss_in_dispersive_solution}) indicates that even though our input is un-chirped (with no phase modulation), we have a chirped output, this is probably easier to observe if we define our propagation in different terms, shown it Equations \ref{eq:waist_change_gauss_using_phi} and \ref{eq:waist_change_gauss_phi_definition}:
 		
-			\begin{equation} \label{eq:waist_change_gauss_using_phi}
-				\mathlarger{ F(z, t) = |F(z, t)| e^{j \phi(z,t)} 
-			\end{equation}
+		\begin{equation} \label{eq:waist_change_gauss_using_phi}
+			\mathlarger{ F(z, t) = |F(z, t)| e^{j \phi(z,t)} }
+		\end{equation}
 			
-			\vspace{5mm}
+		\vspace{5mm}
 			
-			\begin{equation} \label{eq:waist_change_gauss_phi_definition}
-				\mathlarger{ \phi(z,t)  = \frac{-sin(\beta_2)(\frac{z}{L_D})}{1 + (\frac{z}{L_D})^2} \frac{t^2}{t_0^2} + \frac{1}{2} tan^{-2}(\frac{z}{L_D})
-			\end{equation}
+		\begin{equation} \label{eq:waist_change_gauss_phi_definition}
+			\mathlarger{ \phi(z,t)  = \frac{-sin(\beta_2)(\frac{z}{L_D})}{1 + (\frac{z}{L_D})^2} \frac{t^2}{t_0^2} + \frac{1}{2} tan^{-2}(\frac{z}{L_D}) }
+		\end{equation}
+			
+		\vspace{5mm}
+			
+	As the phase changes with respect to time, the change in the frequency domain of the signal due to dispersion after propagation will be different for a given frequency. This difference can be obtained by differentiating with respect to time, given in Equation \ref{eq:waist_change_gauss_phi_wrt_time}, $\partial \omega$ is the chirp and clearly depends on the sign and value of $\beta_2$:
+						
+		\begin{equation} \label{eq:waist_change_gauss_phi_wrt_time}
+			\mathlarger{ \partial \omega (t) = -\frac{\partial \phi(z,t)}{\partial t}  = \frac{-sin(\beta_2)(\frac{2z}{L_D}) t}{1 + (\frac{z}{L_D})^2 t_0^2} }
+		\end{equation}
+			
+		\vspace{5mm}
 		
+	Dispersion-Induced pulse broadening is an important phenomena to understand, there is also some unmentioned (thus far) terminology attached to it; when the dispersive term is greater than zero, $\beta_2 > 0$, long wavelengths (e.g. red light) travel faster than short wavelengths (e.g. blue light) and we term this type of dispersion normal, whilst the opposite ($\beta_2 < 0$) is termed anomalous dispersion. \linebreak
+	
+	
+	
+	
+	\subsection{GVD with a Gaussian Pulse Input - Numerical Simulation}
+	
+
+
+
+	\pagebreak
 
 
 
 
+	\subsection{GVD with a Chirped Gaussian Pulse Input - Analytical Solution}
+	
+	
+	\subsection{GVD with a Chirped Gaussian Pulse Input - Numerical Simulation}
 
 
 
 
-\pagebreak
+	\subsection{GVD with Hyperbolic-Secant Pulse Input - Analytical Solution}
+	
+	
+	\subsection{GVD with Hyperbolic-Secant Pulse Input - Numerical Simulation}
 
 
 
 
-\section{Chirped Gaussian Pulses}
+	\subsection{GVD Induced Limitations - Dispersion Management}
 
-
-
-\section{Hyperbolic Secant Pulses}
-
-
-
-\section{GVD Induced Limitations - Dispersion Management}
 
 
 
@@ -870,7 +891,12 @@ If one substitutes Equation \ref{eq:gvd_ode_solution} into Equation \ref{eq:gvd_
 
 
 
-\section{Changes in Pulse Spectra due to SPM}
+	\subsection{Changes in Pulse Spectra due to SPM}
+
+
+
+
+\section{Competition of SPM and GVD}
 
 
 
