@@ -1,4 +1,0 @@
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Introduction}{1}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}The Non Linear Schr\"{o}dinger Equation (3+3D)}{2}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}A Quick Detour - The Gaussian Pulse}{3}{subsubsection.1.2.1}%
