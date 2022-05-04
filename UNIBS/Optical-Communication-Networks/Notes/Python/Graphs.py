@@ -1,3 +1,6 @@
+#####################################################################################################################
+##### THIS IS NECESSARY, THIS GIVES US ALL THE FUNCTIONS WE NEED FOR NUMERICAL IMPLEMENTATION #####
+
 import numpy as np
 import matplotlib.pyplot as plt
 import os as sys
