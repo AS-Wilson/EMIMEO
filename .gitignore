@@ -1,0 +1,11 @@
+*.aux
+*.bcf
+*.blg
+*.log
+*.out
+*.run.xml
+*.pytxcode
+*.synctex.gz
+*.toc
+*.xmpi
+*.pgf
