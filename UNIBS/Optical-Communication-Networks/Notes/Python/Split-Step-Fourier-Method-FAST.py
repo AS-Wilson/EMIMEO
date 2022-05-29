@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 from scipy.fftpack import fft, fftshift, ifft, ifftshift
 from mpl_toolkits.mplot3d import Axes3D
 
-
 #####################################################################################################################
 ##### IGNORE THIS IF YOU WISH, THIS IS SIMPLY TO MAKE PRETTY GRAPHS #####
 
@@ -31,119 +30,166 @@ plt.rcParams['xtick.direction'] = 'out'
 plt.rcParams['ytick.direction'] = 'out'
 
 
+def propagation_terms(ang_freq, z_step_size, gamma, beta_2):
+    """Something Here: TODO Later"""
+    ## Factors used in the Split-Step Fourier Method
+    # Since gamma is 0 in this code, this will be an array with no value, but the code is still useful
+    non_linear_term = gamma * z_step_size
+
+    # Produce all the dispersive terms first as they are frequency dependent
+    for i in range(len(ang_freq)):
+        try:
+            dispersive_terms = np.column_stack((dispersive_terms, np.array(np.exp(complex(0, ((ang_freq[i] ** 2 / 2) * beta_2 * z_step_size))))))
+
+        except NameError:
+            dispersive_terms = np.array(np.exp(complex(0, ((ang_freq[i] ** 2 / 2) * beta_2 * z_step_size))))
+
+    return non_linear_term, dispersive_terms
+
+
+def get_spectrum(signal, sample_period):
+    ## Input Spectrum Calculations
+    # First the raw intensity FFT transform, that will be arranged in order from -ve frequency to +ve frequency
+    # The FFT algorithm in python is missing a component (sample_period/sqrt(2*pi)) see:
+    #   https://cvarin.github.io/CSci-Survival-Guide/fft.html
+    raw_spectrum = fftshift(fft(signal)) * sample_period / np.sqrt(2 * np.pi)
+
+    # Then one calculates the absolute intensity (|E(omega)|^2) for the input spectrum
+    abs_spectrum = abs(raw_spectrum) ** 2
+
+    return raw_spectrum, abs_spectrum
+
+
+def make_3d_graph(x, y, z, title=r'Graph', x_lab=r'X Axis', y_lab=r'Y Axis', z_lab=r'Z Axis'):
+    """Something here: TODO Later"""
+    ## 3D FREQUENCY DOMAIN GRAPH
+    # Create a mesh matrix to plot signal values against
+    X, Z = np.meshgrid(x, z)
+
+    # Create figure and axis objects
+    fig = plt.figure()
+    ax = plt.axes(projection='3d')
+
+    # Plot the signal as it propagates
+    ax.plot_surface(X, Z, y, rstride=1, cstride=1, cmap='viridis', edgecolor='none')
+
+    # Colouring the background of the graph
+    fig.patch.set_facecolor('white')
+    ax.set_facecolor('white')
+    ax.w_xaxis.set_pane_color((0.95, 0.95, 0.95, 0.95))
+    ax.w_yaxis.set_pane_color((0.95, 0.95, 0.95, 0.95))
+    ax.w_zaxis.set_pane_color((0.95, 0.95, 0.95, 0.95))
+
+    # Title and axis labels
+    ax.set_title(title)
+    ax.set_xlabel(x_lab)
+    ax.set_ylabel(y_lab)
+    ax.set_zlabel(z_lab)
+
+    # # Aspect ratio settings
+    # ax.auto_scale_xyz([-5, 5], [-5, 5], [0, 4.1])
+    # ax.set_box_aspect((1.5, 2.0, 0.6))
+    #
+    # plt.tight_layout(pad=0.8) # Place everything slightly closer together
+
+
+def split_step_fourier_method(input_signal, sample_period, no_of_samples, ang_freq_interval,
+                              non_linear_term, dispersive_terms):
+    """Something Here, TODO Later"""
+
+    signal_propagation_spectrum, abs_signal_propagation_spectrum = get_spectrum(input_signal, sample_period)
+
+    signal_propagation_time = input_signal.astype(complex)
+
+    # The actual Split-Step Fourier Method Calculations
+    for i in range(0, no_of_samples-1): #(len(signal_propagation_time) != no_of_samples):
+
+        try:
+            signal_propagation_spectrum = np.vstack((signal_propagation_spectrum,
+                                                        signal_propagation_spectrum[-1, :] * dispersive_terms))
+
+            signal_propagation_time = np.vstack((signal_propagation_time,
+                                                    ((ifft(ifftshift(signal_propagation_spectrum[-1, :])) * ang_freq_interval /
+                                                      np.sqrt(2.0 * np.pi) * no_of_samples) *
+                                                     np.exp( (non_linear_term * (abs(signal_propagation_spectrum[-1, :]) ** 2)).astype(complex) ))))
+
+        except IndexError:
+                signal_propagation_spectrum = np.vstack((signal_propagation_spectrum,
+                                                         (signal_propagation_spectrum * dispersive_terms)))
+
+                signal_propagation_time =  np.vstack((signal_propagation_time, (ifftshift(signal_propagation_spectrum[-1, :])) * ang_freq_interval / np.sqrt(2.0 * np.pi) * no_of_samples) * np.exp( (non_linear_term * (abs(signal_propagation_spectrum[-1,:]) ** 2)).astype(complex) ))
+
+
+    return signal_propagation_time, signal_propagation_spectrum
+
+
+def gaussian(time, t_0=None, FWHM=None, intensity=1, t_shift=0):
+    """Public Method for producing a Gaussian Signal after providing various parameters."""
+
+    try:
+        t_0 = FWHM / (2 * np.sqrt(2 * np.log(2)))
+        signal = intensity * np.exp(- ((time - t_shift) ** 2 / 2 * t_0 ** 2))
+        return signal
+
+    except TypeError:
+        signal = intensity * np.exp(- ((time - t_shift) ** 2 / 2 * t_0 ** 2))
+        return signal
 
 
 #####################################################################################################################
 ##### THE CODE TO IMPLEMENT THE SPLIT-STEP FOURIER METHOD #####
 
 ## The Fibre Material Properties
-beta_2 = 0.05 #
-gamma = 0 #
-
+beta_2 = 0.05  #
+gamma = 1  #
 
 ## Temporal Co-Ordinate Creation
-# The higher the number of samples for a given signal duration, the better the curved gaussian shape will be after the
-#   FFT:
-no_of_samples = 1001
+# The higher the number of samples for a given signal duration, the better the curved gaussian shape will
+#   be after the FFT:
+no_of_samples = 10001
 signal_duration = 80
 
-# Create an array of time values with X number of equally-spaced values, a larger array size for a given signal
-#   duration makes for a better frequency domain transform
-time = np.linspace(-signal_duration/2, signal_duration/2, no_of_samples)
+# Create an array of time values with X number of equally-spaced values, a larger array size for a given
+#   signal duration makes for a better frequency domain transform
+time = np.linspace(-signal_duration / 2, signal_duration / 2, no_of_samples)
 
 # This is the period between each discrete sample of the signal in the time domain
 sample_period = signal_duration / (no_of_samples - 1)
 
-
-
 ## Spatial (z-axis) Co-Ordinate Creation
 signal_propagation_distance = 10
 
-# Create an array of z-axis values with X number of equally-spaced values, a larger array size for a given signal
-#   duration makes for a better frequency domain transform
-z_axis = np.linspace(-signal_propagation_distance/2, signal_propagation_distance/2, no_of_samples)
+# Create an array of z-axis values with X number of equally-spaced values, a larger array size for a given
+#   signal duration makes for a better frequency domain transform
+z_axis = np.linspace(-signal_propagation_distance / 2, signal_propagation_distance / 2, no_of_samples)
 
 # This is the distance between each discrete sample of the signal on the z-axis
-z_step_distance = signal_propagation_distance / (no_of_samples - 1)
-
-
+z_step_size = signal_propagation_distance / (no_of_samples - 1)
 
 ## Frequency Domain Co-Ordinate Creation
-# Angular frequency
-# This is complicated but the angular frequency interval (distance between each measured discrete frequency of
-#   the FFT) is given by this calculation
+# Angular frequency this is complicated but the angular frequency interval (distance between each
+#   measured discrete frequency of the FFT) is given by this calculation
 ang_freq_interval = (2.0 * np.pi) / signal_duration
 # From the above we can then create a frequency axis with defined frequency points based on the number of
 #   samples, this will be explained in the notes
-ang_freq_axis = np.arange(-no_of_samples/2, no_of_samples/2) * ang_freq_interval 
-
-
+ang_freq = np.arange(-no_of_samples / 2, no_of_samples / 2) * ang_freq_interval
 
 ## Input Envelope Definition
-intensity = 1 # Signal intensity
-init_waist = 1 # Used to define the Gaussian signal, this is the half-waist size at 1/e intensity
+intensity = 1  # Signal intensity
+init_waist = 1  # Used to define the Gaussian signal, this is the half-waist size at 1/e intensity
+t_shift = 5
 
 # The Gaussian (envelope) signal
-envelope = (intensity * np.exp(-(((time - 5) ** 2) / (2 * (init_waist ** 2))))) + \
-           (intensity * np.exp(-(((time + 5) ** 2) / (2 * (init_waist ** 2)))))
-envelope = np.array(envelope)
+input_signal = gaussian(time, t_0=init_waist, intensity=intensity, t_shift=t_shift)
+
+## Make all the parameters for the split-step Fourier Method from the fibre properties
+non_linear_term, dispersive_terms = propagation_terms(ang_freq, z_step_size, gamma, beta_2)
+
+## Get spectrum of input signal for graphing
+raw_input_spectrum, abs_input_spectrum = get_spectrum(input_signal, sample_period)
 
 
-## Input Spectrum Calculations
-# First the raw intensity FFT transform, that will be arranged in order from -ve frequency to +ve frequency
-
-# The FFT algorithm in python is missing a component (sample_period/sqrt(2*pi)) see:
-#   https://cvarin.github.io/CSci-Survival-Guide/fft.html
-envelope_raw_spectrum = fftshift(fft(envelope)) * sample_period/np.sqrt(2*np.pi)
-envelope_raw_spectrum = np.array(envelope_raw_spectrum)
-
-# Then one calculates the absolute intensity (|E(omega)|^2) for the input spectrum
-envelope_abs_spectrum = abs(envelope_raw_spectrum)**2
-
-
-
-## Split-Step Fourier Method
-# Factors for calculating the evolution of the signal
-dispersive_terms = [np.exp(complex(0, (((ang_freq_axis[0] ** 2) / 2) * beta_2 * z_step_distance)))]
-
-for i in range(1, no_of_samples):
-    dispersive_terms.append(np.exp(complex(0, (((ang_freq_axis[i] ** 2) / 2) * beta_2 * z_step_distance))))
-
-# Since gamma is 0 in this code, this will be an array with no value, but the code is still useful
-non_linear_term = gamma * z_step_distance
-
-
-
-envelope_complex = [complex(envelope[0], 0)]
-
-for i in range(1, no_of_samples):
-    envelope_complex.append(complex(envelope[i], 0))
-
-pulse_output_time = np.r_[envelope_complex]
-pulse_output_spectrum = np.r_[envelope_raw_spectrum]
-
-
-# Create vectors to manipulate when carrying out our steps
-current_step_spectrum = envelope_raw_spectrum
-
-# The actual Split-Step Fourier Method Calculations
-for x in range(1, no_of_samples):
-
-    for j in range(no_of_samples):
-        # Dispersive (Linear) Step
-        current_step_spectrum[j] = current_step_spectrum[j] * dispersive_terms[j]
-
-    # Prep for Non-Linear Step
-    current_step_time = ifft(ifftshift(current_step_spectrum)) * ang_freq_interval / np.sqrt(2.0*np.pi) * no_of_samples
-
-    for j in range(no_of_samples):
-        # Non-Linear Step
-        current_step_time[j] = current_step_time[j] * np.exp(complex(0, (non_linear_term *
-                                                                         (abs(current_step_time[j])**2))))
-
-    pulse_output_time = np.row_stack((pulse_output_time, current_step_time))
-    pulse_output_spectrum = np.row_stack((pulse_output_spectrum, current_step_spectrum))
-
+signal_propagation_time, signal_propagation_spectrum = split_step_fourier_method(input_signal, sample_period, no_of_samples, ang_freq_interval, non_linear_term, dispersive_terms)
 
 
 
@@ -154,10 +200,10 @@ for x in range(1, no_of_samples):
 plt.figure()
 
 # Plot the input envelope vs time
-plt.plot(time, envelope, color='blue', label='Initial Signal')
+plt.plot(time, input_signal, color='blue', label='Initial Signal')
 
 # Plot the output envelope vs time
-plt.plot(time, abs(pulse_output_time[-1, :]), color='red', label='Final Signal')
+plt.plot(time, abs(signal_propagation_time[-1, :]), color='red', label='Final Signal')
 
 # Titles and labels
 plt.title(r'Input and Output Envelope - Time Domain')
@@ -175,23 +221,20 @@ plt.legend(loc="upper left")
 # plt.tight_layout(pad=1.2) # Place everything slightly closer together
 
 
-
-
 ## ENVELOPES IN FREQUENCY DOMAIN
 plt.figure()
 
 # Plot the input envelope intensity vs angular frequency
-plt.plot(ang_freq_axis, envelope_abs_spectrum, color='green', label='Initial Spectrum')
+plt.plot(ang_freq, abs_input_spectrum, color='green', label='Initial Spectrum')
 
 # Plot the output envelope vs time
-plt.plot(ang_freq_axis, abs(pulse_output_spectrum[-1, :])**2, color='orange', label='Final Spectrum')
+plt.plot(ang_freq, abs(signal_propagation_spectrum[-1, :]) ** 2, color='orange', label='Final Spectrum')
 
 # Titles and labels
 plt.title(r'Input and Output Envelope - Frequency Domain')
 plt.ylabel(r'$\tilde{F}(\omega)$')
 plt.xlabel(r'Angular Frequency, $\omega$')
 plt.legend(loc="upper left")
-
 
 # # Set limits
 # plt.xlim(-5, 5)
@@ -203,73 +246,15 @@ plt.legend(loc="upper left")
 # plt.tight_layout(pad=1.2) # Place everything slightly closer together
 
 
-
-
 ## 3D TIME DOMAIN GRAPH
-# Create a mesh matrix to plot signal values against
-T, Z = np.meshgrid(time, z_axis)
-
-# Create figure and axis objects
-fig = plt.figure()
-ax = plt.axes(projection='3d')
-
-# Plot the signal as it propagates
-ax.plot_surface(T, Z, abs(pulse_output_time), rstride=1, cstride=1, cmap='viridis', edgecolor='none')
-
-# Colouring the background of the graph
-fig.patch.set_facecolor('white')
-ax.set_facecolor('white')
-ax.w_xaxis.set_pane_color((0.95, 0.95, 0.95, 0.95))
-ax.w_yaxis.set_pane_color((0.95, 0.95, 0.95, 0.95))
-ax.w_zaxis.set_pane_color((0.95, 0.95, 0.95, 0.95))
-
-# Title and axis labels
-ax.set_title(r'3D Plot of Signal Propagation in Time and Space')
-ax.set_xlabel(r'Time, t')
-ax.set_ylabel(r'Propagation distance, z')
-ax.set_zlabel(r'$F(t)$')
-
-
-# # Aspect ratio settings
-# ax.auto_scale_xyz([-22, 22], [-5, 5], [0, 1.1])
-# ax.set_box_aspect((1.5, 2.0, 0.6))
-#
-# plt.tight_layout(pad=0.8) # Place everything slightly closer together
-
-
-
+make_3d_graph(time, abs(signal_propagation_time), z_axis,
+              title=r'3D Plot of Signal Propagation in Time and Space', x_lab=r'Time, t',
+              y_lab=r'Propagation distance, z', z_lab=r'$F(t)$')
 
 ## 3D FREQUENCY DOMAIN GRAPH
-# Create a mesh matrix to plot signal values against
-S, Zs = np.meshgrid(ang_freq_axis, z_axis)
-
-# Create figure and axis objects
-fig = plt.figure()
-ax = plt.axes(projection='3d')
-
-# Plot the signal as it propagates
-ax.plot_surface(S, Zs, abs(pulse_output_spectrum)**2, rstride=1, cstride=1, cmap='viridis', edgecolor='none')
-
-# Colouring the background of the graph
-fig.patch.set_facecolor('white')
-ax.set_facecolor('white')
-ax.w_xaxis.set_pane_color((0.95, 0.95, 0.95, 0.95))
-ax.w_yaxis.set_pane_color((0.95, 0.95, 0.95, 0.95))
-ax.w_zaxis.set_pane_color((0.95, 0.95, 0.95, 0.95))
-
-# Title and axis labels
-ax.set_title(r'3D Plot of Signal Propagation in Freq. and Space')
-ax.set_xlabel(r'Angular Frequency, $\omega$')
-ax.set_ylabel(r'Propagation distance, z')
-ax.set_zlabel(r'$\tilde{F}(\omega)$')
-
-# # Aspect ratio settings
-# ax.auto_scale_xyz([-5, 5], [-5, 5], [0, 4.1])
-# ax.set_box_aspect((1.5, 2.0, 0.6))
-#
-# plt.tight_layout(pad=0.8) # Place everything slightly closer together
-
+make_3d_graph(ang_freq, abs(signal_propagation_spectrum) ** 2, z_axis,
+              title=r'3D Plot of Signal Propagation in Freq. and Space', x_lab=r'Angular Frequency, $\omega$',
+              y_lab=r'Propagation distance, z', z_lab=r'$\tilde{F}(\omega)$')
 
 # Display a window of each graph now that we're finished
 plt.show()
-
