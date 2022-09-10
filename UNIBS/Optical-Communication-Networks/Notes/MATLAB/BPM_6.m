@@ -48,7 +48,6 @@ FIN=1*amp*exp(-(t-SHIFT).^2/(2*tau0^2))+...
     1*amp*exp(-(t+5*SHIFT).^2/(2*tau0^2));
 
 
-
 FFIN=deltat*fftshift(fft(FIN)); %SPECTRAL PROFILE
 
 % figure(1)

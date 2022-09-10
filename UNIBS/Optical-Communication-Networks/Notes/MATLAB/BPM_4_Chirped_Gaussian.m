@@ -44,7 +44,7 @@ LD=tau0^2/abs(beta2);
 
 C=-2;
 
-%FIN=exp(-(1+j*C)/2*(t.^2/(tau0^2)));
+FIN=exp(-(1+j*C)/2*(t.^2/(tau0^2)));
 FABS=abs(FIN);
 ANGF=unwrap(angle(FIN));
 DER = -gradient(ANGF,t);

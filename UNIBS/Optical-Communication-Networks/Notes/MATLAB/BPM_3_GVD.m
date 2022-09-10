@@ -177,6 +177,7 @@ grid;
 figure
 plot(omega,abs(FF(:,1)),omega,abs(FF(:,end)),'r')
 xlabel('\omega')
+xlim([-5 5])
 ylabel('|F|')
 set(findall(gcf,'type','text'),'FontSize',30);
 set(gca,'FontSize',30);
