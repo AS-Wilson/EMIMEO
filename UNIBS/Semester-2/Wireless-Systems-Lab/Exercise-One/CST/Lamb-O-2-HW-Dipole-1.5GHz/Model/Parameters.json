@@ -1,0 +1,35 @@
+{
+    "parameters": [
+        {
+            "descr": "1.5GHz Wavelength",
+            "expr": "181.75",
+            "name": "Lambda",
+            "value": "181.75"
+        },
+        {
+            "descr": "Dipole Length (Lambda / 2)",
+            "expr": "0.5*Lambda",
+            "name": "L",
+            "value": "90.875"
+        },
+        {
+            "descr": "Gap distance between monopoles",
+            "expr": "0.025*Lambda",
+            "name": "G",
+            "value": "4.54375"
+        },
+        {
+            "descr": "Dipole Radius",
+            "expr": "1.5",
+            "name": "R",
+            "value": "1.5"
+        },
+        {
+            "descr": "Antenna Characteristic Impedance",
+            "expr": "73",
+            "name": "Z0",
+            "value": "73"
+        }
+    ],
+    "version": 1
+}

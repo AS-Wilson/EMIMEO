@@ -1,0 +1,592 @@
+\documentclass[colorlinks,11pt,a4paper,normalphoto,withhyper,ragged2e]{altareport}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% DEFAULT PACKAGES & SETTINGS %%%%%%%%%%
+\usepackage{setspace} %1.5 line spacing
+\usepackage{notoccite} %% Citation numbering
+\usepackage{lscape} %% Landscape table
+\usepackage{caption} %% Adds a newline in the table caption
+\usepackage[rgb]{xcolor}
+
+%% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+\usepackage[none]{hyphenat}
+
+%%% Document/Theme Fonts, Space and Text Settings
+\usepackage{fontspec}
+\setmainfont{Roboto Slab}
+\setsansfont{Lato}
+\renewcommand{\familydefault}{\sfdefault}
+\captionsetup{font=footnotesize} % Make Captions a sensible size
+\setlength{\intextsep}{4pt} % Set defualt spacing around floats
+% \captionsetup{aboveskip=5pt, belowskip=5pt} % Reduce space around captions
+\geometry{left=1.25cm,right=1.25cm,top=2.5cm,bottom=2.5cm,columnsep=8mm} % Change the page layout
+\setstretch{1.5}   % 1.5 line spacing
+\definecolor{CommentGreen}{HTML}{228B22}
+\justifying
+
+%% Math Env Text Settings
+\usepackage{mathtools}
+\usepackage{unicode-math}
+\setmathfont{XITS Math}
+\usepackage{amsmath}
+\usepackage{bm}
+\everymath=\expandafter{\the\everymath\displaystyle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% DOCUMENT SPECIFIC PACKAGES AND SETTINGS %%%%%%%%%%
+\usepackage{relsize}
+
+\usepackage{pythontex} % Run python code in this latex doc
+
+%%%%% Settings for python pgf graphs %%%%%
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta}
+
+\pgfplotsset{compat=newest,
+    width=6cm,
+    height=3cm,
+    scale only axis=true,
+    max space between ticks=25pt,
+    try min ticks=5,
+    every axis/.style={
+        axis y line=left,
+        axis x line=bottom,
+        axis line style={thick,->,>=latex, shorten >=-.4cm}
+    },
+    every axis plot/.append style={thick},
+    tick style={black, thick}
+}
+\tikzset{
+    semithick/.style={line width=0.8pt},
+}
+
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{dateplot}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% USEFUL SETTINGS %%%%%%%%%%
+%% Change some font sizes, this will override the defaults
+\renewcommand{\ReportTitleFont}{\Huge\rmfamily\bfseries} %% Title Page - Main Title
+\renewcommand{\ReportSubTitleFont}{\huge\bfseries} %% Title Page - Sub-Title
+\renewcommand{\ReportSectionFont}{\LARGE\rmfamily\bfseries} %% Section Title
+\renewcommand{\ReportSubSectionFont}{\large\bfseries} %% SubSection Title
+\renewcommand{\FootNoteFont}{\footnotesize} %% Footnotes and Header/Footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% THEMES %%%%%%%%%%
+%% Standard theme options are below, leave blank for B&W / no colours (BoringDefault). Note the theme will be set to default if you enter a non-exsistant theme name.
+\SetTheme{UNIBS}
+%% UNIBS
+%% UNILIM
+%% PastelBlue
+%% GreenAndGold
+%% Purple
+%% PastelRed
+%% BoringDefault (Leave blank / enter anything not found above)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% TITLE PAGE INFO %%%%%%%%%%
+\ReportTitle{Quantum Technologies}
+\SubTitle{Important Values and Definitions}
+\Author{Andrew Simon Wilson}
+\ReportDate{\today}
+\FacultyOrLocation{EMIMEO Programme}
+\ModCoord{Prof. Artoni Maurizio}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% TEST AREA %%%%%%%%%%
+\selectcolormodel{natural}
+\usepackage{booktabs}
+\usepackage{ninecolors}
+\selectcolormodel{rgb}
+
+\usepackage{tabularray}
+
+\UseTblrLibrary{booktabs,siunitx}
+
+
+
+
+%%%% https://tikz.net/blackbody/ %%%%
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing,decorations.markings,calc} % for random steps & snake
+\usetikzlibrary{arrows.meta} % for arrow size
+\tikzset{>=latex} % for LaTeX arrow head
+\tikzstyle{radiation}=[-{Latex[length=2,width=1.5]},red!95!black!50,opacity=0.7,very thin,decorate,decoration={snake,amplitude=0.7,segment length=2,post length=2}]
+
+
+
+
+%%%% https://tikz.net/blackbody_plots/ %%%%
+% CUSTOM COLORS
+% See https://tikz.net/blackbody_color/
+\definecolor{1000K}{rgb}{1,0.0337,0}
+\definecolor{2000K}{rgb}{1,0.2647,0.0033}
+\definecolor{3000K}{rgb}{1,0.4870,0.1411}
+\definecolor{4000K}{rgb}{1,0.6636,0.3583}
+\definecolor{5000K}{rgb}{1,0.7992,0.6045}
+\definecolor{6000K}{rgb}{1,0.9019,0.8473}
+\definecolor{8000K}{rgb}{0.7874,0.8187,1}
+\definecolor{10000K}{rgb}{0.6268,0.7039,1}
+\pgfdeclareverticalshading{rainbow}{100bp}{
+  color(0bp)=(red); color(25bp)=(red); color(35bp)=(yellow);
+  color(45bp)=(green); color(55bp)=(cyan); color(65bp)=(blue);
+  color(75bp)=(violet); color(100bp)=(violet)
+}
+\colorlet{myred}{red!70!black}
+\colorlet{mygreen}{green!70!black}
+\colorlet{mydarkgreen}{green!55!black}
+
+% PLANCK & RAYLEIGH-JEANS
+% 2hc^2/lambda^5 = 2 * 6.62607015e-34 * 299792458^2
+%                = 1.191042972e-16
+%    W.m -> kW.nm: 1.191042972e26
+%  hc/k lambda T = 6.62607015e-34*299792458/(1.38064852e-23)
+%                = 0.01438777378
+%         m -> nm: 0.01438777378e9
+% 2ckT/lambda^4  = 2 * 299792458 * 1.38064852e-23
+%                = 8.278160269e-15
+%    W.m -> kW.nm: 8.278160269e18
+\pgfmathdeclarefunction{planck}{2}{%
+  \pgfmathparse{1.191042972e26/(#1^5)/(exp(0.01439e9/(#1*#2))-1)}%
+}
+\pgfmathdeclarefunction{rayleighjeans}{2}{%
+  \pgfmathparse{8.278160269e18*#2/(#1^4)}%
+}
+\pgfmathdeclarefunction{wien}{2}{%
+  \pgfmathparse{1.191042972e26/(#1^5)*exp(-0.01439e9/(#1*#2))}%
+}
+\pgfmathdeclarefunction{lampeak}{1}{% % Wien's displacement law
+  \pgfmathparse{2.898e6/#1}%
+}
+
+
+
+
+%%%% https://tikz.net/photoelectric_effect/ %%%%
+% Circuits
+\usepackage{circuitikz}
+%% Specifications
+\ctikzset{bipoles/thickness=1.2}
+
+% Styles
+\tikzset{>=latex}
+
+% Tikz Library
+\usetikzlibrary{angles,quotes}
+
+% Define Color
+\tikzstyle{bigphoton}=[-{Latex[length=8,width=6]},red!95!black!50,opacity=0.85,very thin,decorate,decoration={snake,amplitude=2.8,segment length=8,post length=8}]
+
+
+
+
+%%%% https://tikz.net/function_average/ %%%%
+\usepackage{physics}
+\usepackage[outline]{contour} % glow around text
+\contourlength{1.0pt}
+
+\tikzset{>=latex} % for LaTeX arrow head
+\colorlet{myred_}{red!85!black}
+\colorlet{myblue_}{blue!80!black}
+\colorlet{mydarkred_}{myred_!80!black}
+\colorlet{mydarkblue_}{myblue_!60!black}
+\tikzstyle{xline}=[myblue_,thick]
+\def\tick#1#2{\draw[thick] (#1) ++ (#2:0.09) --++ (#2-180:0.18)}
+\tikzstyle{myarr_}=[myblue_!50,-{Latex[length=3,width=2]}]
+\def\N{100}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{document}
+
+\MakeReportTitlePage
+
+
+%%%%% CONTENTS %%%%%
+\pagenumbering{roman} % Start roman numbering
+\setcounter{page}{1}
+
+
+%%%%%%%%%% YOUR NAME, PROFESSION, PORTRAIT, CONTACT INFO, SOCIAL MEDIA ETC. %%%%%%%%%%
+\name{Andrew Simon Wilson, BEng}
+\tagline{Post-graduate Master's Student - EMIMEO Programme}
+
+\personalinfo{
+  \email{andrew.wilson@protonmail.com}
+  \linkedin{andrew-simon-wilson} 
+  \github{AS-Wilson}
+  \phone{+44 7930 560 383}
+}
+
+%% You can add multiple photos on the left or right
+% \photoR{3cm}{Images/a-wilson-potrait.jpg}
+% \photoL{3cm}{Yacht_High,Suitcase_High}
+
+\section*{Author Details}
+\makeauthordetails
+
+%% Table of contents print level -1: part, 0: chapter, 1: section, 2:sub-section, 3:sub-sub-section, etc.
+\setcounter{tocdepth}{2} 
+\tableofcontents %% Prints a list of all sections based on the above command
+%\listoffigures %% Prints a list of all figures in the report
+%\listoftables %% Prints a list of all tables in the report
+
+
+
+
+%%%%%%%%%% DOCUMENT CONTENT BEGINS HERE %%%%%%%%%%
+
+%%%%% INTRO %%%%%
+\section*{Explanation and Introduction of this Document}
+I wrote this document for the students studying Quantum Technologies to have a nice handout set for the important definitions involved in the course. I hope that it is sufficient for this task and it helps all of your studies. \linebreak
+I spent have spent a lot of time developing the template used to make this {\LaTeX} document, I want others to benefit from this work so the source code for this template is available on GitHub \cite{latex_template_github}.
+\newpage
+\pagenumbering{arabic} % Start document numbering - roman numbering
+
+
+	\section{Constants \& Relevant Definitions}
+		
+		\subsection{Constants}
+		
+			\begin{center}
+				\color{body}
+				\begin{longtblr}[
+					caption = {\textit{Important constants involved in Quantum Mechanics}},
+					label = {tab:important_constants_qm}
+					]{
+					colspec={|X[15,l,m]|X[28,l,m]|X[29,l,m]|},
+					rows = {abovesep=2mm,belowsep=2mm}
+					}
+			    		\hline
+					\textit{\textbf{Symbol/Definition}} & \textit{\textbf{Name/info}} & \textit{\textbf{Value}} \\ 
+					\hline
+					$\symbf{c}$ & \textit{Speed of Light in Vacuum} \cite{wiki_speed_of_light} & \textit{$2.998\times10^{8}$ metres/second (m/s)} \\ 
+					\hline
+					$\symbf{e}$ & \textit{Elementary unit of charge, charge of an electron/proton} \cite{wiki_electron} & \textit{$-1.602\times10^{-19}$ Coulomb (C)} \\ 
+					\hline
+						\SetCell[r=2]{m} $\symbf{\Planckconst}$ & 
+							\SetCell[r=2]{m} \textit{Planck's Constant} \cite{wiki_plancks_constant} & 
+								\textit{$6.626\times10^{-34}$ Joule$\cdot$second (J$\cdot$s)} \\
+						&& \textit{= $4.136\times10^{-15}$ eV$\cdot$second (eV$\cdot$s)}  \\
+					\hline
+						\SetCell[r=2]{m} $\pmb{\hbar}\symbf{=\frac{\Planckconst}{2\pi}}$ & 
+							\SetCell[r=2]{m} \textit{The reduced Planck constant, Planck's constant in terms of Radians instead of Hertz.} \cite{wiki_plancks_reduced_constant} & 
+								\textit{$1.055\times10^{-34}$ Joule$\cdot$second (J$\cdot$s)} \\
+						&& \textit{= $0.658\times10^{-15}$ eV$\cdot$second (eV$\cdot$s)} \\ 
+					\hline
+					$\symbf{k_e=\frac{1}{4\pi\epsilon_0}}$ & \textit{Coulomb's Constant, the Electric Force Constant, or the Electrostatic Constant.} \cite{wiki_coulombs_constant} & \textit{$8.988\times10^9$ $\frac{\text{Newton$\cdot$metre$^2$}}{\text{Coulomb$^2$}}$ $ \left( \frac{\text{N$\cdot$m$^2$}}{\text{C$^2$}} \right) $} \\ 
+					\hline
+					$\symbf{N_A}$ & \textit{Avogadro's Constant} \cite{wiki_avogadros_constant} & \textit{$6.022\times10^{23}$ mole$^{-1}$ or $\frac{1}{\text{mole}}$} \\
+					\hline
+						\SetCell[r=2]{m} $\symbf{G}$ & 
+							\SetCell[r=2]{m} \textit{Gravitational Constant} \cite{wiki_gravitational_constant} & 
+								\textit{$6.672 \times 10^{-11}$ $\frac{\text{metre$^3$}}{\text{Kilogram$\cdot$second$^2$}}$ $\left(\frac{\text{m$^3$}}{\text{Kg$\cdot$s$^2$}}\right)$} \\
+						 & & \textit{= $6.672 \times 10^{-8}$ $\frac{\text{centimetre$^3$}}{\text{gram$\cdot$second$^2$}} $ $\left( \frac{\text{cm$^3$}}{\text{g$\cdot$s$^2$}}  \right) $} \\
+					\hline
+						$\symbf{k_B=\frac{R}{N_A}}$ & 
+							\SetCell[r=2]{m} \textit{Boltzmann's Constant, this relates the relative kinetic energy of particles in a gas with the thermodynamic temperature of the gas.} \cite{wiki_boltzmann_constant} & 
+								\textit{$1.38\times10^{-23}$ Joule$\cdot$Kelvin (J$\cdot$K)} \\
+						\textit{$\left(\frac{\text{Molar Gas Constant}}{\textit{Number of Molecules}} \right)$} & & \textit{= $8.617\times10^{-5}$ eV$\cdot$Kelvin (eV$\cdot$K)} \\
+					\hline
+						\SetCell[r=3]{m} $\symbf{\Planckconst  c}$ & 
+							\SetCell[r=3]{m} \textit{Planck's Constant $\cdot$ Speed of Light in Vacuum} & 
+								\textit{$19.865\cdot10^{-26}$ Joules$\cdot$metre (J$\cdot$m)} \\
+						 & & \textit{$12.41\cdot10^{3}$ electronvolt$\cdot$Angstrom (eV$\cdot$\r{A})} \\
+						 & & \textit{$1241$ Mega-electronvolt$\cdot$femto-metre (MeV$\cdot$fm)} \\
+					\hline
+					\pagebreak
+						\SetCell[r=3]{m} $\pmb{\hbar} \symbf{c}$ & 
+							\SetCell[r=2]{m} \textit{Normalised Planck's Constant $\cdot$ Speed of Light in Vacuum} & 
+								\textit{$3.165\cdot10^{-26}$ Joules$\cdot$metre (J$\cdot$m)} \\
+						 & & \textit{$1973$ electronvolt$\cdot$Angstrom (eV$\cdot$\r{A})} \\
+						 & & \textit{$197.3$ Mega-electronvolt$\cdot$femto-metre (MeV$\cdot$fm)} \\
+					\hline
+					$\symbf{k_ce^2}$ & \textit{Coulomb's Constant$\cdot$energy$^2$} & \textit{$1.44$ Mega-electronvolt$\cdot$femto-metre (MeV$\cdot$fm) } \\
+					\hline
+					$\symbf{\frac{k_ce^2}{\pmb{\hbar} \, c}}$ & \textit{The Fine-Structure Constant} \cite{wiki_fine_structure_constant} & $\frac{1}{137}$ \\
+					\hline
+						\SetCell[r=2]{m} $\symbf{{\mu}_B = \frac{e \, \pmb{\hbar}}{2 \, m_e}}$ & 
+							\SetCell[r=2]{m} \textit{The Bohr Magneton} \cite{wiki_bohr_magneton} & 
+								\textit{$9.27\times10^{-24}$ Joule/Tesla (J/T) } \\
+						 & & \textit{$5.79\times10^{-5}$ electronvolt/Tesla (eV/T) } \\	
+					\hline
+			    \end{longtblr}
+			\end{center}
+		
+		
+		\subsection{Relevant Classical Definitions}
+			TODO
+			
+			\begin{table}[h!]
+				\color{body}
+				\SetTblrInner{rowsep=2.5mm}
+				\begin{tblr}{colspec={|X[c,m]|X[c,m]|}}
+			    		\hline
+					Force Moving on a Charge & Electric Field of a Charge \\
+					\hline
+					Magnetic Field of a Current & Induced Electromotive Force \\
+					\hline
+					\SetCell[c=2]{c} Energy Density in the Field \\
+					\hline
+				\end{tblr}
+				\caption{\label{tab:important_definitions_qm}\textit{Important Definitions Involved in Classical Physics that will be Relevant for Quantum Physics.}}
+			\end{table}
+			
+			
+			
+			\pagebreak
+	
+	
+	
+	
+	\section{Units Involved and Some Important Starting Equations}
+		
+		
+		\begin{center}
+		\color{body}
+			\begin{longtblr}[
+				caption = {\textit{Important Units Involved in Classical Physics that will be Relevant for Quantum Physics.}},
+				label = {tab:important_units_qm}
+				]{
+				colspec={|X[28,l,m]|X[10,c,m]|X[28,l,m]|},
+				rows = {abovesep=2mm,belowsep=2mm},
+				vline{1,4} = {5}{white},
+				vline{1,4} = {11}{white},
+				vline{1,4} = {16}{white},
+				vline{1,4} = {21}{white},
+				vline{1,4} = {25}{white},
+				}
+				\hline
+				\textit{\textbf{Measurement/Info}} & \textit{\textbf{Abbreviation}} & \textit{\textbf{SI Unit (\& Other Common/Useful Units)}} \\
+				\hline
+				Distance & $s$ & \textit{metres (m), Angstrom (\r{A}) \cite{wiki_angstrom_uom}} \\
+				\hline
+				Mass & $m$ & \textit{kilograms (kg)} \\
+				\hline
+				Time & $t$ & \textit{second (s)} \\
+				\hline
+					\SetCell[c=3]{m} \\ %% 5
+				\hline
+				Velocity & $v$ & \textit{metres/Second (m/s)} \\
+				\hline
+				Momentum & $p$ & \textit{$\frac{\text{kilogram$\cdot$metres}}{\text{second}}$ $\left(\frac{\text{kg$\cdot$m}}{\text{s}}\right)$} \\
+				\hline
+				Force & $F$ & \textit{Newtons (N), $\frac{\text{kilogram$\cdot$metres}}{\text{second$^2$}}$ $\left(\frac{\text{kg$\cdot$m}}{\text{s$^2$}}\right)$} \\
+				\hline
+				Energy, Work Done & $W, \,E$ & \textit{Joules (J) \cite{wiki_joule_uom}, electronVolts (eV) \cite{wiki_electronvolt_uom}, Newton metres (Nm)} \\
+				\hline
+				Power & $P$ & \textit{Watts (W), $\frac{\text{Joules}}{\text{second}}$ $\left(\frac{\text{J}}{\text{s}}\right)$} \\
+				\hline
+					\SetCell[c=3]{m} \\ %% 11
+				\hline
+				Electric Charge & $q$ & \textit{Coulombs (C), Ampere$\cdot$seconds (A$\cdot$s)} \\		
+				\hline
+				Electric Charge Density & $\rho$ & \textit{$\frac{\text{Coulomb}}{\text{metre$^3$}}$ $\left( \frac{\text{C}}{\text{m}^3} \right)$} \\
+				\hline
+				Electric Potential & $\varphi$ & \textit{Volts (V), $\frac{\text{Joules}}{\text{Coulomb}}$ $\left( \frac{\text{J}}{\text{C}} \right)$} \\		
+				\hline
+				Electric Field & $\vec{E}$ & \textit{$\frac{\text{Volts}}{\text{metre}}$ $\left( \frac{\text{V}}{\text{m}} \right)$, $\frac{\text{Newtons}}{\text{Coulomb}}$ $\left( \frac{\text{N}}{\text{C}} \right)$} \\
+				\hline
+					\SetCell[c=3]{m} \\ %% 16
+				\hline
+				Electric Current & $I$ & \textit{Amperes (A), $\frac{\text{Coulomb}}{\text{second}}$ $\left( \frac{\text{C}}{\text{s}} \right)$} \\
+				\hline
+				Electric Current Density & $\vec{J}$ & \textit{$\frac{\text{Amperes}}{\text{metre$^2$}}$ $\left( \frac{\text{A}}{\text{m}^2} \right)$} \\
+				\hline
+				\pagebreak
+				Resistance & $R$ & \textit{Ohm ($\Omega$), $\frac{\text{Volts}}{\text{Ampere}}$ $\left( \frac{\text{V}}{\text{A}} \right)$} \\
+				\hline
+				Resistivity & $\rho$ & \textit{Ohm$\cdot$metre ($\Omega \cdot$m)} \\
+				\hline
+					\SetCell[c=3]{m} \\  %% 21
+				\hline
+				Magnetic Flux Density & $\vec{B}$ & \textit{Tesla (T) \cite{wiki_tesla_uom}, $\frac{\text{Newtons}}{\text{Ampere$\cdot$metre}}$ $\left( \frac{\text{N}}{\text{A$\cdot$m}} \right)$} \\
+				\hline
+				Magnetic Field Strength & $\vec{H}$ & \textit{$\frac{\text{Amperes}}{\text{metre}}$ $\left( \frac{\text{A}}{\text{m}} \right)$} \\
+				\hline
+				Magnetic Flux & $\vec{\Phi}$ & \textit{Weber (W), Tesla$\cdot$metre$^2$ (T$\cdot$m$^2$)} \\
+				\hline
+					\SetCell[c=3]{m} \\ %% 25
+				\hline
+				Capacitance & $C$ & \textit{Farads (F), $\frac{\text{seconds}}{\text{Ohm}}$ $\left( \frac{\text{s}}{\Omega} \right)$} \\
+				\hline
+				Inductance & $L$ & \textit{Henries (H), Ohm$\cdot$seconds ($\Omega\cdot$s)} \\
+				\hline
+ 		    \end{longtblr}
+		\end{center}
+		
+		
+		\bigskip
+	
+	
+	
+	
+	\section{Conversions}
+		
+		\begin{table}[h!]
+			\color{body}
+			\centering
+			\SetTblrInner{rowsep=2.5mm}
+			\begin{tblr}{width=12cm,colspec={|X[1,l,m]|X[1,l,m]|}}
+			    	\hline
+				$1$ electronvolt (eV) & $1.602\times10^{-19}$ Joules (J) \\	
+				\hline
+				$1$ Angstrom (\r{A}) & $10\times10^{-10}$ metres (m) \\
+				\hline
+				$1$ Ohm ($\Omega$) & $1.13\times10^{-12}$ $\frac{\text{seconds}}{\text{centimetre}}$ $\left( \frac{\text{s}}{\text{cm}} \right)$ \\
+				\hline
+				$1$ Farad (F) & $9\times10^{8}$ metres (m) \\
+				\hline
+				$1$ Henry (H) & $1.13\times10^{-12}$ $\frac{\text{seconds}^2}{\text{centimetre}}$ $\left( \frac{\text{s}^2}{\text{cm}} \right)$ \\
+				\hline
+			\end{tblr}
+			\caption{\label{tab:important_conversions_qm}\textit{Some Conversions for Quantum Mechanics}}
+		\end{table}
+		
+		
+		
+		
+		\pagebreak
+	
+	
+	
+	
+	
+	\section{Properties of Elemental Particles}
+		
+		\begin{table}[h!]
+			\color{body}
+			\centering
+			\SetTblrInner{rowsep=2.5mm}
+			\begin{tblr}{width=12cm,colspec={|X[24,l,m]|X[12,l,m]|X[28,l,m]|}}
+				\hline
+				    	\SetCell[c=3]{c} {\color{subheading}\ReportSubSectionFont{Electron Properties}} \cite{wiki_electron} \\
+			    	\hline
+				\textit{\textbf{Property}} & \textit{\textbf{Abbreviation}} & \textit{\textbf{Value}} \\ 
+				\hline
+					\SetCell[r=2]{m} \textit{Mass at rest} & 
+						\SetCell[r=2]{m} $\symbf{m_{e}}$ & 
+							\textit{$9.109\times10^{-31}$ kilogram (kg)} \\ 
+					& & \textit{$9.109\times10^{-28}$ gram (g)} \\
+				\hline
+					\SetCell[r=2]{m} \textit{Charge} & 
+						\SetCell[r=2]{m} $\symbf{q_{e}}$, $\symbf{e^-}$ & 
+							\textit{$−1$ elementary charge (e)} \\ 
+					& & \textit{$−1.602\times10^{-19}$ Coulombs (C)} \\
+				\hline
+				\textit{Energy} & $\symbf{E_{e} = m_ec^2}$ & \textit{$0.511$ Mega electronvolt (MeV)} \\ 
+				\hline
+					\SetCell[r=2]{m} \textit{Intrinsic Magnetic Moment} & 
+						\SetCell[r=2]{m} $\symbf{\mu_{e}}$ & 
+							\textit{$−9.285\times10^{-24}$ Joule/Tesla (J/T)} \\
+					& & $−1.001$ Bohr Magneton ($\mu_B$) \\
+				\hline
+				\textit{Spin} & $\symbf{S_{e}}$ & \textit{$\pm\frac{1}{2}$} \\	
+				\hline
+			\end{tblr}
+			\caption{\label{tab:electron_properties_qm}\textit{Important Properties of the Electron for Quantum Mechanics}}
+		\end{table}
+		
+		
+		\bigskip
+		
+		
+		\begin{table}[h!]
+			\color{body}
+			\centering
+			\SetTblrInner{rowsep=2.5mm}
+			\begin{tblr}{width=12cm,colspec={|X[24,l,m]|X[12,l,m]|X[28,l,m]|}}
+			    	\hline
+				    	\SetCell[c=3]{c} {\color{subheading}\ReportSubSectionFont{Proton Properties}} \cite{wiki_proton} \\
+			    	\hline
+				\textit{\textbf{Property}} & \textit{\textbf{Abbreviation}} & \textit{\textbf{Value}} \\ 
+				\hline
+					\SetCell[r=2]{m} \textit{Mass at rest} & 
+						\SetCell[r=2]{m} $\symbf{m_{p}}$ & 
+							\textit{$1.673\times10^{-27}$ kilogram (kg)} \\ 
+					& & \textit{$1.673\times10^{-24}$ gram (g)} \\
+				\hline
+					\SetCell[r=2]{m} \textit{Charge} & 
+						\SetCell[r=2]{m} $\symbf{q_p}$, $\symbf{e^+}$ & 
+							\textit{$+1$ elementary charge (e)} \\ 
+					& & \textit{$+1.602\times10^{-19}$ Coulombs (C)} \\
+				\hline
+				\textit{Energy} & $\symbf{E_p = m_pc^2}$ & \textit{$938.3$ Mega electronvolt (MeV)} \\ 
+				\hline
+					\SetCell[r=2]{m} \textit{Intrinsic Magnetic Moment} & 
+						\SetCell[r=2]{m} $\symbf{\mu_p}$ & 
+							\textit{$+1.411\times10^{-26}$ Joule/Tesla (J/T)} \\
+					& & $+1.521\times10^{-3}$ Bohr Magneton ($\mu_B$) \\
+				\hline
+				\textit{Spin} & $\symbf{S_p}$ & \textit{$\pm\frac{1}{2}$} \\	
+				\hline
+			\end{tblr}
+			\caption{\label{tab:proton_properties_qm}\textit{Important Properties of the Proton for Quantum Mechanics}}
+		\end{table}
+		
+		
+		\pagebreak
+		
+		
+		{\color{subheading}\ReportSubSectionFont{Properties of Elemental Particles Cont...}}
+		
+		\bigskip
+		
+		
+		\begin{table}[h!]
+			\color{body}
+			\centering
+			\SetTblrInner{rowsep=2.5mm}
+			\begin{tblr}{width=12cm,colspec={|X[24,l,m]|X[12,l,m]|X[28,l,m]|}}
+			    	\hline
+					\SetCell[c=3]{c} {\color{subheading}\ReportSubSectionFont{Neutron Properties}} \cite{wiki_neutron} \\
+				\hline
+				\textit{\textbf{Property}} & \textit{\textbf{Abbreviation}} & \textit{\textbf{Value}} \\ 
+				\hline
+					\SetCell[r=2]{m} \textit{Mass at rest} & 
+						\SetCell[r=2]{m} $\symbf{m_{n}}$ & 
+							\textit{$1.675\times10^{-27}$ kilogram (kg)} \\ 
+					& & \textit{$1.675\times10^{-24}$ gram (g)} \\
+				\hline
+					\SetCell[r=2]{m} \textit{Charge} & 
+						\SetCell[r=2]{m} $\symbf{q_n}$ & 
+							\textit{$\approx 0$ elementary charge (e)} \\ 
+					& & \textit{$(-2 \pm 8) \times 10^{-22}$ e} \\
+				\hline
+				\textit{Energy} & $\symbf{E_n = m_nc^2}$ & \textit{$939.6$ Mega electronvolt (MeV)} \\ 
+				\hline
+				\textit{Intrinsic Magnetic Moment} & $\symbf{\mu_n}$ & \textit{$\approx 0$ Joule/Tesla (J/T)} \\
+				\hline
+				\textit{Spin} & $\symbf{S_n}$ & \textit{$\pm\frac{1}{2}$} \\	
+				\hline
+			\end{tblr}
+			\caption{\label{tab:neutron_properties_qm}\textit{Important Properties of the Neutron for Quantum Mechanics}}
+		\end{table}
+		
+		
+		\pagebreak
+	
+	
+	
+	
+\newpage
+\setstretch{1}  % Reduce bibliography line spacing
+\bibliography{references.bib}
+\bibliographystyle{IEEETran}
+\end{document}
