@@ -1,6 +1,0 @@
-IsBigEndian false
-$begin 'ManagedFiles'
-	ValidationCache[0:]
-	radfld[1: 'RAD1F881866016370482112.tmp']
-	svcache[1: 'HDR1F881866016370482113.tmp']
-$end 'ManagedFiles'

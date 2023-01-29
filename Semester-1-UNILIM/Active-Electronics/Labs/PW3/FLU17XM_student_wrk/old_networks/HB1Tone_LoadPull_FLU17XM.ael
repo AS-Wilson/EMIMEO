@@ -1,0 +1,5 @@
+set_simulator_type(1);
+create_item("HB1Tone_LoadPull_FLU17XM","HB1Tone_LoadPull_28V","X",16,-1,NULL,"Component Parameters",NULL,"%d:%t %# %44?0%:%31?%C%:_net%c%;%;%e %b%r%8?%29?%:%30?%p %:%k%?[%1i]%;=%p %;%;%;%e%e","HB1Tone_LoadPull_28V","%t%b%r%38?%:\n%39?all_parm%A%:%30?%s%:%k%?[%1i]%;=%s%;%;%;%e%e%;","SYM_0Port",3,NULL,0);
+set_design_type(1);
+library_group("SYM_DIODE", "*", 1, "HB1Tone_LoadPull_FLU17XM");
+library_group("*", "*", 1, "HB1Tone_LoadPull_FLU17XM");

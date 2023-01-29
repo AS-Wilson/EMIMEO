@@ -1,9 +1,0 @@
-$begin 'CacheDataVersion'
-	DataVersion=-1
-$end 'CacheDataVersion'
-$begin 'VariableValues'
-	lcav1='35.33mm'
-	ith='4mm'
-	hcav='20.193mm'
-	w12='12.4mm'
-$end 'VariableValues'

@@ -1,0 +1,52 @@
+$begin 'Profile'
+	$begin 'ProfileGroup'
+		MajorVer=2021
+		MinorVer=2
+		Name='Solution Process'
+		StartInfo='Time:  11/16/2021 10:48:53; Host: ZEPHYRUS-G14; Processor: 16; OS: NT 10.0; HFSS Version 2021.2.0'
+		TotalInfo='Elapsed time : 00:00:02 , ComEngine Memory : 76.7 M'
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'Executing from C:\\\\Program Files\\\\AnsysEM\\\\Ansys Student\\\\v212\\\\Win64\\\\HFSSCOMENGINE.exe\')', false, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'HPC Enabled\')', false, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'Allow off core: True\')', false, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'Using automatic settings\')', false, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'Machines:\')', false, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'Zephyrus-G14 [15.4 GB]: RAM Limit: 90.000000%, 4 cores\')', false, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'Solution Basis Order: 1\')', false, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'\')', false, true)
+		ProfileItem('Design Validation', 0, 0, 0, 0, 0, 'I(1, 0, \'Elapsed time : 00:00:00 , HFSS ComEngine Memory : 75 M\')', false, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'Perform full validations with standard port validations\')', false, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'\')', false, true)
+		ProfileItem('Initial Meshing', 0, 0, 0, 0, 0, 'I(1, 0, \'Time:  11/16/2021 10:48:53\')', false, true)
+		ProfileItem('Volume', 0, 0, 0, 0, 0, 'I(1, 0, \'\')', false, true)
+		ProfileItem('  Mesh Phi', 0, 0, 0, 0, 30976, 'I(1, 0, \'46 tetrahedra\')', true, true)
+		ProfileItem('  Mesh Post', 0, 0, 0, 0, 31252, 'I(1, 0, \'46 tetrahedra\')', true, true)
+		ProfileItem('Mesh Refinement', 0, 0, 0, 0, 0, 'I(1, 0, \'Lambda Based\')', false, true)
+		ProfileItem('  Mesh (lambda based)', 0, 0, 0, 0, 28204, 'I(1, 0, \'355 tetrahedra\')', true, true)
+		ProfileItem('Initial Meshing', 0, 0, 0, 0, 0, 'I(1, 0, \'Elapsed time: 00:00:00\')', false, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'\')', false, true)
+		ProfileItem('Adaptive Meshing', 0, 0, 0, 0, 0, 'I(1, 0, \'Time:  11/16/2021 10:48:54\')', false, true)
+		ProfileItem('Adaptive Pass 1', 0, 0, 0, 0, 0, 'I(1, 0, \'Eigenmode Solution\')', false, true)
+		ProfileItem('Simulation Setup', 0, 0, 0, 0, 27972, 'I(1, 0, \'Disk = 2.92 KB\')', true, true)
+		ProfileItem('Matrix Assembly', 0, 0, 0, 0, 31976, 'I(1, 0, \'Disk = 0 Bytes, 355 tetrahedra \')', true, true)
+		ProfileItem('EigenSolver DCS4', 0, 0, 0, 0, 48476, 'I(1, 0, \'Disk = 142 KB, matrix size 1818, matrix bandwidth  16.9, 79 eigen iterations\')', true, true)
+		ProfileItem('Field Recovery', 0, 0, 0, 0, 48476, 'I(1, 0, \'Disk = 474 KB, 5 computed eigenmodes\')', true, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'\')', false, true)
+		ProfileItem('Adaptive Pass 2', 0, 0, 0, 0, 0, 'I(1, 0, \'Eigenmode Solution\')', false, true)
+		ProfileItem('  Mesh (volume, adaptive)', 0, 0, 0, 0, 28416, 'I(1, 0, \'472 tetrahedra\')', true, true)
+		ProfileItem('Simulation Setup', 0, 0, 0, 0, 28328, 'I(1, 0, \'Disk = 3.29 KB\')', true, true)
+		ProfileItem('Matrix Assembly', 0, 0, 0, 0, 33596, 'I(1, 0, \'Disk = 0 Bytes, 472 tetrahedra \')', true, true)
+		ProfileItem('EigenSolver DCS4', 0, 0, 1, 0, 53228, 'I(1, 0, \'Disk = 57.2 KB, matrix size 2550, matrix bandwidth  18.1, 84 eigen iterations\')', true, true)
+		ProfileItem('Field Recovery', 0, 0, 0, 0, 53228, 'I(1, 0, \'Disk = 161 KB, 5 computed eigenmodes\')', true, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'Max Delta Freq. % = 0.13681 at adaptive pass 2\')', false, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'Adaptive Passes converged\')', false, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'\')', false, true)
+		ProfileItem('Adaptive Meshing', 0, 0, 0, 0, 0, 'I(1, 0, \'Elapsed time: 00:00:01\')', false, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'\')', false, true)
+		ProfileItem('Simulation Summary:', 0, 0, 0, 0, 0, 'I(1, 0, \'\')', false, true)
+		ProfileItem('Design Validation', 0, 0, 0, 0, 0, 'I(1, 0, \'Elapsed time: 00:00:00, total memory: 75 MB\')', false, true)
+		ProfileItem('Initial Meshing', 0, 0, 0, 0, 0, 'I(1, 0, \'Elapsed time: 00:00:00, total memory: 30.5 MB\')', false, true)
+		ProfileItem('Adaptive Meshing', 0, 0, 0, 0, 0, 'I(1, 0, \'Elapsed time: 00:00:01, total memory: 52 MB, total number of cores: 4\')', false, true)
+		ProfileItem('', 0, 0, 0, 0, 0, 'I(1, 0, \'max solved tets: 472, max matrix size: 2550, max bandwidth:  18.1\')', false, true)
+		ProfileFootnote('I(1, 0, \'Time:  11/16/2021 10:48:56, Status: Normal Completion\')', 0)
+	$end 'ProfileGroup'
+$end 'Profile'

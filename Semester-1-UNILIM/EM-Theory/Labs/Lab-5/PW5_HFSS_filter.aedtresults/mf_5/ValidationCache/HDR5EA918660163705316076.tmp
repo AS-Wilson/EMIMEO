@@ -1,0 +1,12 @@
+$begin 'ValidationCache'
+	$begin 'OneValidationResult'
+		Variation='Acc_len=\'15mm\' Acc_Wid=\'40.390000000000001mm\' iris_len=\'4mm\' struct_h=\'22.193000000000001mm\' w01=\'20mm\' w31=\'35.329999999999998mm\''
+		Status=true
+		FileName='VI5EA918660163705316077.tmp'
+	$end 'OneValidationResult'
+	$begin 'OneValidationResult'
+		Variation='Acc_len=\'15mm\' Acc_Wid=\'40.390000000000001mm\' iris_len=\'4mm\' struct_h=\'22.193000000000001mm\' w01=\'22mm\' w31=\'35.329999999999998mm\''
+		Status=true
+		FileName='VI1D3B186601637058065135.tmp'
+	$end 'OneValidationResult'
+$end 'ValidationCache'

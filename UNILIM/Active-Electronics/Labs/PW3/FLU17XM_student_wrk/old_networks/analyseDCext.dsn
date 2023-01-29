@@ -1,8 +1,0 @@
-1     7.704    0 0
-10    1    "analyseDCext"    2    1351061987    0    0    341    0
-20    0    ""    0 0 0 0 0    2 -3 1    0    0    "mm_schematic.prf" "schematic.lay"
-44    0    0    0    0    0    0    0
-21
-20    1    ""    0 0 0 0 0    4 -4 1    0    0    "mm_layout.prf" "layout.lay"
-44    0    0    0    0    0    0    0
-21

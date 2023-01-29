@@ -1,0 +1,945 @@
+1     7.704    0 0
+10    1    "HB1Tone_LoadPull_FLU17XM"    2    1350644863    0    167    341    0
+20    0    ""    -15238 -6192 13316 5555 1    2 -3 1    1350644863    0    "schematic.prf" "schematic.lay"
+90    "SIM_HOST"  3  1 0 ``
+90    "SIM_OPENDDS"  3  1 0 `ON`
+90    "SIM_HOST_MODE"  3  1 0 `Local`
+90    "SIM_DSS"  3  1 0 `HB1Tone_LoadPull_28V`
+90    "SIM_DDS"  3  1 0 `HB1Tone_LoadPull_28V`
+90    "SIM_REMOTE_JOB_MANAGEMENT"  3  1 0 `ADS`
+90    "SIM_SWEEP_VAR"  3  1 0 `real_indexs11`
+90    "SIM_SWEEP_START"  3  1 0 `1`
+90    "SIM_SWEEP_STOP"  3  1 0 `10`
+90    "SIM_SWEEP_STEP"  3  1 0 `1`
+90    "SIM_BER_STATE"  3  1 0 `OFF`
+90    "SIM_BER_NUMBER"  3  1 0 `5`
+30    28250380    1    ""    1    2    27140640    28248220    28286726    28019868    0    -6405 32 180000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    28248220    1    ""    2    2    28138778    0    28286726    28282978    0    -6155 32 0    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    28318424    1    ""    1    2    0    0    28300912    28243678    0    -7537 -273 90000    0   0   0   0   0   ""   0   ""   0   ""   ""   ""
+30    28306136    1    "SOURCE_TERMINAL"    3    2    28318424    27140640    28306068    28243678    0    -7537 -273 0    0   0   0   0   0   ""   0   ""   0   ""   ""   ""
+30    27140640    1    "DRAIN_TERMINAL"    1    2    0    28318380    28306068    28019868    0    -7537 227 0    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    28318380    1    "GATE_TERMINAL"    2    2    0    0    28306068    28288834    0    -8662 -23 180000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    28000836    1    ""    1    0    28021704    28091394    28174432    28032274    0    -15052 -141 90000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    28091394    1    ""    2    2    27982806    0    28174432    26641660    0    -15052 -1141 -90000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    27992598    1    ""    2    2    27986080    28001950    27948118    28288834    0    -12427 -141 0    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    28001950    1    ""    1    2    28063092    0    27948118    27258508    0    -13427 -141 180000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    27920804    1    ""    2    2    27955138    27920616    28166784    28042514    0    -625 -625 0    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    27920616    1    ""    1    2    28248220    0    28166784    28282978    0    -1625 -625 180000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    28138778    1    ""    2    2    0    27948936    27973068    28282978    0    -2375 625 -90000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    27948936    1    ""    1    2    27980828    0    27973068    28075984    0    -2375 1625 90000    0   0   0   0   0   ""   0   ""   0   ""   ""   ""
+30    27986080    1    ""    2    2    28318380    22737186    26733264    28288834    0    -12177 1109 -90000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    22737186    1    ""    1    2    26472004    0    26733264    27461272    0    -12177 2109 90000    0   0   0   0   0   ""   0   ""   0   ""   ""   ""
+30    27992194    1    ""    1    2    28030304    27972234    28166690    26510476    0    -13802 2109 90000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    27972234    1    ""    2    2    28032538    0    28166690    28016280    0    -13802 1109 -90000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    28030304    1    "Vs_low"    1    2    0    26472004    27991570    26510476    0    -12802 2359 180000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    26472004    1    ""    2    2    0    0    27991570    27461272    0    -12552 2359 0    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    28032538    1    ""    1    2    0    0    28011178    28016280    0    -13802 1109 90000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    27982806    1    ""    1    2    0    0    28010976    26641660    0    -15052 -1141 90000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    28021704    1    ""    1    2    0    28063092    28010594    28032274    0    -14677 109 180000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    28063092    1    ""    2    2    0    0    28010594    27258508    0    -14427 109 0    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    27955138    1    "PlusIn"    1    2    0    28041432    17378266    28042514    0    0 -625 180000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    28041432    1    "PlusOut"    2    2    26773448    0    17378266    27959764    0    1000 -625 0    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    27978154    1    ""    1    2    26975850    0    27024628    28092004    0    -1000 625 90000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    28008634    1    ""    1    2    27962824    0    28026608    28154020    0    2375 -625 90000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    28000552    1    "Vs_high"    1    2    26774044    27980828    28129462    19663264    0    -1500 1750 0    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    27980828    1    ""    2    2    0    0    28129462    28075984    0    -1750 1750 180000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    26773448    1    ""    1    0    0    27962824    27978608    27959764    0    1375 -625 180000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    27962824    1    ""    2    1    0    0    27978608    28154020    0    2375 -625 0    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    26774044    1    ""    1    2    0    26975850    28124814    19663264    0    -1000 1625 90000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+30    26975850    1    ""    2    2    0    0    28124814    28092004    0    -1000 625 -90000    0   0   1   0   0   ""   0   ""   0   ""   ""   ""
+31    28187184    -2375 125    1    0    0    0    0
+31    27148278    -12177 -141    1    0    0    0    0
+32    28286992    1    27920616    2    28187184    0    0    0    ""  0
+60    3    0    3    -2375 -625 -1625 125 1    0    0    0    0
+70    -1625 -625    -2375 125
+32    28287032    1    28248220    2    28187184    0    0    0    ""  0
+60    3    0    5    -6155 0 -2375 125 1    0    0    0    0
+70    -2375 125    -6125 0    -6155 32
+50    10    -6155 79 -5250 246 1    0    0    0    0    0    0    0    0
+62    0    167    73    -6155 79 0    1    0    0    0    12    37   "HersheyRomanNarrow"   `Voutbar`
+32    28287112    1    28138778    2    28187184    0    0    0    ""  0
+60    3    0    2    -2375 125 -2375 625 1    0    0    0    0
+70    -2375 125    0 625
+32    27143180    1    28250380    1    27140640    0    0    0    ""  0
+60    3    0    7    -7537 0 -6405 250 1    0    0    0    0
+70    -6405 32    -7000 0    -7500 250    -7537 227
+32    28319092    1    28306136    1    28318424    0    0    0    ""  0
+60    4    0    1    -7537 -273 -7537 -273 1    0    0    0    0
+70    -7537 -273
+32    28318632    1    27992598    2    27148278    0    0    0    ""  0
+60    2    0    2    -12427 -141 -12177 -141 1    0    0    0    0
+70    -12427 -141    -12177 0
+32    28319826    1    27986080    2    27148278    0    0    0    ""  0
+60    3    0    2    -12177 -141 -12177 1109 1    0    0    0    0
+70    -12177 -141    0 1109
+32    28319866    1    28318380    2    27148278    0    0    0    ""  0
+60    2    0    6    -12177 -141 -8625 -23 1    0    0    0    0
+70    -12177 -141    -12125 -125    -8625 -23    -8662 0
+32    27954630    1    28000836    1    28021704    0    0    0    ""  0
+60    3    0    3    -15052 -141 -14677 109 1    0    0    0    0
+70    -15052 -141    -14677 109
+32    27954610    1    27982806    1    28091394    0    0    0    ""  0
+60    4    0    1    -15052 -1141 -15052 -1141 1    0    0    0    0
+70    -15052 -1141
+32    28026138    1    28001950    1    28063092    0    0    0    ""  0
+60    2    0    4    -14427 -141 -13427 109 1    0    0    0    0
+70    -13427 -141    -13927 109    -14427 0
+50    10    -13677 -141 -13303 26 1    0    0    0    0    0    0    0    0
+62    0    167    9    -13677 -141 0    1    0    0    0    12    37   "HersheyRomanNarrow"   `V_In`
+32    28098630    1    27955138    1    27920804    0    0    0    ""  0
+60    2    0    2    -625 -625 0 -625 1    0    0    0    0
+70    0 -625    -625 0
+32    28098610    1    27948936    1    27980828    0    0    0    ""  0
+60    3    0    3    -2375 1625 -1750 1750 1    0    0    0    0
+70    -2375 1625    -1750 1750
+32    28098590    1    22737186    1    26472004    0    0    0    ""  0
+60    3    0    3    -12552 2109 -12177 2359 1    0    0    0    0
+70    -12177 2109    -12552 2359
+32    28098570    1    27992194    1    28030304    0    0    0    ""  0
+60    3    0    3    -13802 2109 -12802 2359 1    0    0    0    0
+70    -13802 2109    -12802 2359
+50    10    -13752 2234 -13191 2401 1    0    0    0    0    0    0    0    0
+62    0    167    73    -13752 2234 0    1    0    0    0    12    37   "HersheyRomanNarrow"   `Vs_low`
+32    28096328    1    27972234    1    28032538    0    0    0    ""  0
+60    4    0    1    -13802 1109 -13802 1109 1    0    0    0    0
+70    -13802 1109
+32    28096308    1    28041432    1    26773448    0    0    0    ""  0
+60    2    0    2    1000 -625 1375 -625 1    0    0    0    0
+70    1000 -625    1375 0
+32    28028006    1    26774044    1    28000552    0    0    0    ""  0
+60    3    0    3    -1500 1625 -1000 1750 1    0    0    0    0
+70    -1000 1625    -1500 1750
+50    10    -950 1687 -329 1854 1    0    0    0    0    0    0    0    0
+62    0    167    73    -950 1687 0    1    0    0    0    12    37   "HersheyRomanNarrow"   `Vs_high`
+32    28027946    1    26975850    1    27978154    0    0    0    ""  0
+60    4    0    1    -1000 625 -1000 625 1    0    0    0    0
+70    -1000 625
+32    27950336    1    27962824    1    28008634    0    0    0    ""  0
+60    4    0    1    2375 -625 2375 -625 1    0    0    0    0
+70    2375 -625
+40    0    0    0    0
+40    1    0    0    0
+40    4    0    0    0
+50    4    -2375 -625 -1625 125 1    0    0    0    0    0    0    0    0    28286992
+50    4    -6155 0 -2375 246 1    0    0    0    0    0    0    0    0    28287032
+50    4    -2375 125 -2375 625 1    0    0    0    0    0    0    0    0    28287112
+50    4    -7537 0 -6405 250 1    0    0    0    0    0    0    0    0    27143180
+50    4    -7537 -273 -7537 -273 1    0    0    0    0    0    0    0    0    28319092
+50    4    -12427 -141 -12177 -141 1    0    0    0    0    0    0    0    0    28318632
+50    4    -12177 -141 -12177 1109 1    0    0    0    0    0    0    0    0    28319826
+50    4    -12177 -141 -8625 -23 1    0    0    0    0    0    0    0    0    28319866
+50    4    -15052 -141 -14677 109 1    0    0    0    0    0    0    0    0    27954630
+50    4    -15052 -1141 -15052 -1141 1    0    0    0    0    0    0    0    0    27954610
+50    4    -14427 -141 -13303 109 1    0    0    0    0    0    0    0    0    28026138
+50    4    -625 -625 0 -625 1    0    0    0    0    0    0    0    0    28098630
+50    4    -2375 1625 -1750 1750 1    0    0    0    0    0    0    0    0    28098610
+50    4    -12552 2109 -12177 2359 1    0    0    0    0    0    0    0    0    28098590
+50    4    -13802 2109 -12802 2401 1    0    0    0    0    0    0    0    0    28098570
+50    4    -13802 1109 -13802 1109 1    0    0    0    0    0    0    0    0    28096328
+50    4    1000 -625 1375 -625 1    0    0    0    0    0    0    0    0    28096308
+50    4    -1500 1625 -329 1854 1    0    0    0    0    0    0    0    0    28028006
+50    4    -1000 625 -1000 625 1    0    0    0    0    0    0    0    0    28027946
+50    4    2375 -625 2375 -625 1    0    0    0    0    0    0    0    0    27950336
+50    1    3867 -2421 8367 1454 1    0    0    0    0    0    0    0    0
+90    "line_thickness_prop"  1  1 0 `3`
+60    2    0    4    3867 -2421 8367 1454 1    0    0    0    0
+70    3867 -2421    8367 1454    3867 0
+50    1    -12283 -3020 -9636 -762 1    0    0    0    0    0    0    0    0
+90    "line_thickness_prop"  1  1 0 `3`
+60    4    0    4    -12283 -3020 -9636 -762 1    0    0    0    0
+70    -12136 -3020    -9636 -3020    -9783 -783    -12283 -762
+50    5    8623 -2161 12623 1839 1    0    0    0    0    0    0    0    0
+60    1    0    4    8623 -2161 12623 1839 1    0    0    0    0
+70    12623 -161    10623 -161    360000 0    0 0
+50    5    10615 -1169 12631 847 1    0    0    0    0    0    0    0    0
+60    1    0    4    10615 -1169 12631 847 1    0    0    0    0
+70    12631 -161    11623 -161    360000 0    0 0
+50    2    8623 -161 12623 -161 1    0    0    0    0    0    0    0    0
+60    2    0    2    8623 -161 12623 -161 1    0    0    0    0
+70    12623 -161    8623 0
+50    8    10623 -161 12623 1839 1    0    0    0    0    0    0    0    0
+60    1    0    4    10623 -161 12623 1839 1    0    0    0    0
+70    10623 1839    12623 1839    89999 0    0 0
+50    8    10623 -2161 12623 -161 1    0    0    0    0    0    0    0    0
+60    1    0    4    10623 -2161 12623 -161 1    0    0    0    0
+70    12623 -161    12623 -2161    90000 0    0 0
+50    8    9395 -1802 12623 -158 1    0    0    0    0    0    0    0    0
+60    1    0    4    9395 -1801 12623 -159 1    0    0    0    0
+70    12623 -161    12498 -3911    57693 0    0 0
+50    8    9395 -164 12623 1480 1    0    0    0    0    0    0    0    0
+60    1    0    4    9395 -163 12623 1479 1    0    0    0    0
+70    12623 -161    12498 3589    -57693 0    0 0
+50    5    9350 74 10380 1104 1    0    0    0    0    0    0    0    0
+90    "line_thickness_prop"  1  1 0 `3`
+60    1    0    4    9350 74 10380 1104 1    0    0    0    0
+70    10380 589    9865 589    360000 0    0 0
+50    2    9865 -161 10615 589 1    0    0    0    0    0    0    0    0
+90    "line_thickness_prop"  1  1 0 `3`
+60    4    0    2    9865 -161 10615 589 1    0    0    0    0
+70    10615 -161    9865 589
+50    2    9865 589 10240 964 1    0    0    0    0    0    0    0    0
+90    "line_thickness_prop"  1  1 0 `3`
+60    4    0    2    9865 589 10240 964 1    0    0    0    0
+70    9865 589    10240 964
+50    1    -14300 4573 -9930 5469 1    0    0    0    0    0    0    0    0
+90    "line_thickness_prop"  1  1 0 `3`
+60    4    0    4    -14300 4573 -9930 5469 1    0    0    0    0
+70    -14300 4573    -9930 4586    -9930 5461    -14174 5469
+40    5    0    0    0
+50    6    -4900 3193 8505 5413 1    0    0    0    0    0    0    0    0
+62    0    222    9    -4900 5191 0    10    0    0    0    16    0   "HersheyRomanNarrow"   `Specify desired Fundamental Load Tuner coverage: 
+s11_rho is the radius of the circle of reflection coefficients simulated.  
+     However, the radius of the circle will be reduced if it would otherwise 
+     go outside the Smith chart.  If you want to override this and allow 
+     reflection coefficients outside the Smith chart, edit the SweepEquations 
+     VAR block, and set max_rho=mag(s11_rho)
+s11_center is the center of the circle of simulated reflection coefficients
+pts is total number of reflection coefficients simulated
+Z0 is the system reference impedance 
+`
+50    6    4117 454 6637 1204 1    0    0    0    0    0    0    0    0
+62    0    250    9    4117 954 0    3    0    0    0    18    0   "HersheyRomanNarrow"   `Set Load and Source 
+impedances at
+harmonic frequencies`
+50    6    3992 -1246 3992 -846 1    0    0    0    0    0    0    0    0
+62    0    200    9    3992 -1046 0    2    0    0    0    0    0   "HersheyRomanNarrow"   `
+`
+50    6    4492 -781 4492 -381 1    0    0    0    0    0    0    0    0
+62    0    200    9    4492 -581 0    2    0    0    0    0    0   "HersheyRomanNarrow"   `
+`
+50    6    -12074 -1226 -10325 -1004 1    0    0    0    0    0    0    0    0
+62    0    222    9    -12074 -1226 0    1    0    0    0    16    0   "HersheyRomanNarrow"   `Set these values:`
+50    6    -13860 4707 -10335 5373 1    0    0    0    0    0    0    0    0
+62    0    222    9    -13860 5151 0    3    0    0    0    16    0   "HersheyRomanNarrow"   `One Tone Load Pull Simulation; 
+output power and PAE found at 
+each fundamental load impedance`
+40    13    0    0    0
+41    27231796    0    1090519042    "ImpedanceEquations"    "VAR"    "SYM_VAR"    2047 -5932 9201 -3318 1    0 "" 0
+    0    0    71    2218 -3496 90000 1 1 0 0    0    104    0    0    1349690398    17  ""    2047 -3602 2372 -3387 1    2434 -5932 9201 -3318 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    216 -16 651 178 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -16 0    1    1    0    0    14    0   "HersheyRomanNarrow"   `VAR`
+40    7    0    0    0
+50    6    216 -258 2707 -64 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -258 0    1    2    0    0    14    0   "HersheyRomanNarrow"   `global ImpedanceEquations`
+40    8    0    0    0
+50    6    216 -2436 3452 -2242 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -2436 0    1    3    0    9    14    0   "HersheyRomanNarrow"   `isrc = min(iload,length(SrcArray))`
+50    6    216 -2194 5446 -2000 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -2194 0    1    3    0    8    14    0   "HersheyRomanNarrow"   `SrcArray =list(Z0, Z_s_fund, Z_s_2,Z_s_3,Z_s_4,Z_s_5)`
+50    6    216 -1952 2156 -1758 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -1952 0    1    3    0    7    14    0   "HersheyRomanNarrow"   `Z_s = SrcArray[isrc]`
+50    6    216 -1710 2203 -1516 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -1710 0    1    3    0    6    14    0   "HersheyRomanNarrow"   `;Source impedances=`
+50    6    216 -1468 2459 -1274 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -1468 0    1    3    0    5    14    0   "HersheyRomanNarrow"   `fg(x) =(x-Z0)/(x+Z0)`
+50    6    216 -1226 5811 -1032 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -1226 0    1    3    0    4    14    0   "HersheyRomanNarrow"   `iload = int(min(abs(freq)/RFfreq+1.5,length(LoadArray)))`
+50    6    216 -984 6983 -790 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -984 0    1    3    0    3    14    0   "HersheyRomanNarrow"   `LoadArray =list(0,indexs11, fg(Z_l_2), fg(Z_l_3), fg(Z_l_4), fg(Z_l_5))`
+50    6    216 -742 3095 -548 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -742 0    1    3    0    2    14    0   "HersheyRomanNarrow"   `LoadTuner = LoadArray[iload]`
+50    6    216 -500 2971 -306 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -500 0    1    3    0    1    14    0   "HersheyRomanNarrow"   `;Tuner reflection coefficient=`
+80    3    "Variable Value"    "list"    0    9    ""    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    ";Tuner reflection coefficient"    0   0
+80    5    ""    "VarValueForm"    0    0    ""    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "LoadTuner "    0   0
+80    5    ""    "VarValueForm"    0    0    " LoadArray[iload]"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "LoadArray "    0   0
+80    5    ""    "VarValueForm"    0    0    "list(0,indexs11, fg(Z_l_2), fg(Z_l_3), fg(Z_l_4), fg(Z_l_5))"    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "iload "    0   0
+80    5    ""    "VarValueForm"    0    0    " int(min(abs(freq)/RFfreq+1.5,length(LoadArray)))"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "fg(x) "    0   0
+80    5    ""    "VarValueForm"    0    0    "(x-Z0)/(x+Z0)"    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    ";Source impedances"    0   0
+80    5    ""    "VarValueForm"    0    0    ""    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Z_s "    0   0
+80    5    ""    "VarValueForm"    0    0    " SrcArray[isrc]"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "SrcArray "    0   0
+80    5    ""    "VarValueForm"    0    0    "list(Z0, Z_s_fund, Z_s_2,Z_s_3,Z_s_4,Z_s_5)"    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "isrc "    0   0
+80    5    ""    "VarValueForm"    0    0    " min(iload,length(SrcArray))"    0   0
+41    28322510    0    0    "Sweep2"    "ParamSweep"    "SYM_PARAMSWEEP"    -6554 -6192 -1151 -4150 1    0 "" 0
+    0    0    36    -6553 -4151 0 1 1 0 0    0    104    0    0    1347315557    17  ""    -6554 -4618 -3499 -4150 1    -6428 -6192 -1151 -4546 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    125 -589 1266 -395 1    0    0    0    0    0    0    0    0
+62    0    194    9    125 -589 0    1    1    0    0    14    0   "HersheyRomanNarrow"   `ParamSweep`
+40    7    0    0    0
+50    6    125 -831 831 -637 1    0    0    0    0    0    0    0    0
+62    0    194    9    125 -831 0    1    2    0    0    14    0   "HersheyRomanNarrow"   `Sweep2`
+40    8    0    0    0
+50    6    125 -2041 707 -1847 1    0    0    0    0    0    0    0    0
+62    0    194    9    125 -2041 0    1    3    0    5    14    0   "HersheyRomanNarrow"   `Step=`
+50    6    125 -1799 5402 -1605 1    0    0    0    0    0    0    0    0
+62    0    194    9    125 -1799 0    1    3    0    4    14    0   "HersheyRomanNarrow"   `Stop=imag(s11_center)+(max_rho-max_rho/(lines+1))`
+50    6    125 -1557 5309 -1363 1    0    0    0    0    0    0    0    0
+62    0    194    9    125 -1557 0    1    3    0    3    14    0   "HersheyRomanNarrow"   `Start=imag(s11_center)-(max_rho-max_rho/(lines+1))`
+50    6    125 -1315 2810 -1121 1    0    0    0    0    0    0    0    0
+62    0    194    9    125 -1315 0    1    3    0    2    14    0   "HersheyRomanNarrow"   `SweepVar="imag_indexs11"`
+50    6    125 -1073 1273 -879 1    0    0    0    0    0    0    0    0
+62    0    194    9    125 -1073 0    1    3    0    1    14    0   "HersheyRomanNarrow"   `SweepPlan=`
+80    5    "UseSweepPlan"    "StdForm"    0    0    ""    1   0
+80    5    "SweepPlan"    "StringAndReference"    0    0    ""    0   0
+80    5    "SweepVar"    "StringAndReference"    0    0    ""imag_indexs11""    0   0
+80    3    "SimInstanceName"    "list"    0    6    ""    0   0
+80    5    "SimInstanceName"    "StringAndReference"    0    0    ""HB1""    1   0
+80    5    "SimInstanceName"    "StringAndReference"    0    0    ""    1   0
+80    5    "SimInstanceName"    "StringAndReference"    0    0    ""    1   0
+80    5    "SimInstanceName"    "StringAndReference"    0    0    ""    1   0
+80    5    "SimInstanceName"    "StringAndReference"    0    0    ""    1   0
+80    5    "SimInstanceName"    "StringAndReference"    0    0    ""    1   0
+80    5    "StatusLevel"    "StdForm"    0    0    "2"    1   0
+80    5    "RestoreNomValues"    "StdForm"    0    0    ""    1   0
+80    5    "Start"    "StdForm"    0    0    "imag(s11_center)-(max_rho-max_rho/(lines+1))"    0   0
+80    5    "Stop"    "StdForm"    0    0    "imag(s11_center)+(max_rho-max_rho/(lines+1))"    0   0
+80    5    "Step"    "StdForm"    0    0    ""    0   0
+80    5    "Center"    "StdForm"    0    0    ""    1   0
+80    5    "Span"    "StdForm"    0    0    ""    1   0
+80    5    "Lin"    "StdForm"    0    0    "lines"    1   0
+80    5    "Dec"    "StdForm"    0    0    ""    1   0
+80    5    "Log"    "StdForm"    0    0    ""    1   0
+80    5    "Reverse"    "StdForm"    0    0    ""    1   0
+80    5    "Pt"    "StdForm"    0    0    ""    1   0
+80    5    "Sort"    "StdForm"    0    0    "LINEAR START POINTS "    1   0
+41    28287806    0    0    "HB1"    "HarmonicBalance"    "SYM_HB"    -6757 -3744 -3598 -1186 1    0 "" 0
+    0    0    31    -6768 -1182 0 1 1 0 0    0    104    0    0    1350644703    17  ""    -6757 -1654 -3598 -1186 1    -6612 -3744 -3694 -1614 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    156 -626 1731 -432 1    0    0    0    0    0    0    0    0
+62    0    194    9    156 -626 0    1    1    0    0    14    0   "HersheyRomanNarrow"   `HarmonicBalance`
+40    7    0    0    0
+50    6    156 -868 583 -674 1    0    0    0    0    0    0    0    0
+62    0    194    9    156 -868 0    1    2    0    0    14    0   "HersheyRomanNarrow"   `HB1`
+40    8    0    0    0
+50    6    156 -2562 738 -2368 1    0    0    0    0    0    0    0    0
+62    0    194    9    156 -2562 0    1    3    0    7    14    0   "HersheyRomanNarrow"   `Step=`
+50    6    156 -2320 3074 -2126 1    0    0    0    0    0    0    0    0
+62    0    194    9    156 -2320 0    1    3    0    6    14    0   "HersheyRomanNarrow"   `Stop=real(s11_center)+c_limit`
+50    6    156 -2078 2981 -1884 1    0    0    0    0    0    0    0    0
+62    0    194    9    156 -2078 0    1    3    0    5    14    0   "HersheyRomanNarrow"   `Start=real(s11_center)-c_limit`
+50    6    156 -1836 1304 -1642 1    0    0    0    0    0    0    0    0
+62    0    194    9    156 -1836 0    1    3    0    4    14    0   "HersheyRomanNarrow"   `SweepPlan=`
+50    6    156 -1594 2748 -1400 1    0    0    0    0    0    0    0    0
+62    0    194    9    156 -1594 0    1    3    0    3    14    0   "HersheyRomanNarrow"   `SweepVar="real_indexs11"`
+50    6    156 -1352 1491 -1158 1    0    0    0    0    0    0    0    0
+62    0    194    9    156 -1352 0    1    3    0    2    14    0   "HersheyRomanNarrow"   `Order[1]=10`
+50    6    156 -1110 1692 -916 1    0    0    0    0    0    0    0    0
+62    0    194    9    156 -1110 0    1    3    0    1    14    0   "HersheyRomanNarrow"   `Freq[1]=RFfreq`
+80    5    "MaxOrder"    "StdForm"    0    0    "4"    1   0
+80    3    "Freq"    "list"    0    1    ""    0   0
+80    5    "Freq"    "StdForm"    0    0    "RFfreq"    0   0
+80    3    "Order"    "list"    0    1    ""    0   0
+80    5    "Order"    "StdForm"    0    0    "10"    0   0
+80    5    "StatusLevel"    "StdForm"    0    0    "3"    1   0
+80    5    "FundOversample"    "StdForm"    0    0    "1"    1   0
+80    3    "Oversample"    "list"    0    1    ""    1   0
+80    5    "Oversample"    "StdForm"    0    0    ""    1   0
+80    5    "PackFFT"    "StdForm"    0    0    ""    1   0
+80    5    "MaxIters"    "StdForm"    0    0    "10"    1   0
+80    5    "GuardThresh"    "StdForm"    0    0    ""    1   0
+80    5    "SamanskiiConstant"    "StdForm"    0    0    "2"    1   0
+80    6    "Restart"    "No"    0    0    ""    1   0
+80    5    "ArcLevelMaxStep"    "StdForm"    0    0    "0.0"    1   0
+80    5    "MaxStepRatio"    "StdForm"    0    0    "100"    1   0
+80    5    "MaxShrinkage"    "StdForm"    0    0    "1.0e-5"    1   0
+80    5    "OutputAllSolns"    "StdForm"    0    0    ""    1   0
+80    5    "ArcMaxStep"    "StdForm"    0    0    "0.0"    1   0
+80    5    "ArcMinValue"    "StdForm"    0    0    ""    1   0
+80    5    "ArcMaxValue"    "StdForm"    0    0    ""    1   0
+80    5    "SS_MixerMode"    "StdForm"    0    0    ""    1   0
+80    5    "SS_UseSweepPlan"    "StdForm"    0    0    ""    1   0
+80    5    "SS_Plan"    "StdForm"    0    0    ""    1   0
+80    5    "SS_Start"    "StdForm"    0    0    "1.0 GHz"    1   0
+80    5    "SS_Stop"    "StdForm"    0    0    "10.0 GHz"    1   0
+80    5    "SS_Step"    "StdForm"    0    0    "1.0 GHz"    1   0
+80    5    "SS_Center"    "StdForm"    0    0    ""    1   0
+80    5    "SS_Span"    "StdForm"    0    0    ""    1   0
+80    5    "SS_Lin"    "StdForm"    0    0    ""    1   0
+80    5    "SS_Dec"    "StdForm"    0    0    ""    1   0
+80    5    "SS_Log"    "StdForm"    0    0    ""    1   0
+80    5    "SS_Reverse"    "StdForm"    0    0    ""    1   0
+80    5    "SS_Pt"    "StdForm"    0    0    ""    1   0
+80    5    "SS_Sort"    "StdForm"    0    0    "LINEAR START STEP "    1   0
+80    5    "SS_Freq"    "StdForm"    0    0    ""    1   0
+80    5    "SS_Thresh"    "StdForm"    0    0    ""    1   0
+80    5    "UseAllSS_Freqs"    "StdForm"    0    0    "yes"    1   0
+80    5    "MergeSS_Freqs"    "StdForm"    0    0    ""    1   0
+80    5    "InputFreq"    "StdForm"    0    0    "1 Hz"    1   0
+80    5    "NLNoiseMode"    "StdForm"    0    0    ""    1   0
+80    5    "NLNoiseUseSweepPlan"    "StdForm"    0    0    ""    1   0
+80    5    "NoiseFreqPlan"    "StdForm"    0    0    ""    1   0
+80    5    "NLNoiseStart"    "StdForm"    0    0    "1.0 GHz"    1   0
+80    5    "NLNoiseStop"    "StdForm"    0    0    "10.0 GHz"    1   0
+80    5    "NLNoiseStep"    "StdForm"    0    0    "1.0 GHz"    1   0
+80    5    "NLNoiseCenter"    "StdForm"    0    0    ""    1   0
+80    5    "NLNoiseSpan"    "StdForm"    0    0    ""    1   0
+80    5    "NLNoiseLin"    "StdForm"    0    0    ""    1   0
+80    5    "NLNoiseDec"    "StdForm"    0    0    ""    1   0
+80    5    "NLNoiseLog"    "StdForm"    0    0    ""    1   0
+80    5    "NLNoiseReverse"    "StdForm"    0    0    ""    1   0
+80    5    "NLNoisePt"    "StdForm"    0    0    ""    1   0
+80    5    "NLNoiseSort"    "StdForm"    0    0    "LINEAR START STEP "    1   0
+80    5    "FreqForNoise"    "StdForm"    0    0    ""    1   0
+80    5    "NoiseInputPort"    "StdForm"    0    0    "1"    1   0
+80    5    "NoiseOutputPort"    "StdForm"    0    0    "2"    1   0
+80    6    "PhaseNoise"    "No"    0    0    ""    1   0
+80    5    "FM_Noise"    "StdForm"    0    0    "no"    1   0
+80    3    "NoiseNode"    "list"    0    1    ""    1   0
+80    5    "NoiseNode"    "StdForm"    0    0    ""    1   0
+80    6    "SortNoise"    "NoiseSortOff"    0    0    ""    1   0
+80    5    "NoiseThresh"    "StdForm"    0    0    " "    1   0
+80    5    "IncludePortNoise"    "StdForm"    0    0    ""    1   0
+80    5    "NoisyTwoPort"    "StdForm"    0    0    ""    1   0
+80    5    "BandwidthForNoise"    "StdForm"    0    0    "1.0 Hz"    1   0
+80    6    "OutputBudgetIV"    "No"    0    0    ""    1   0
+80    6    "UseKrylov"    "AutoKrylovMode"    0    0    ""    1   0
+80    5    "UseInitialAWHB"    "StdForm"    0    0    ""    1   0
+80    5    "AWHB_WindowSize"    "StdForm"    0    0    " "    1   0
+80    5    "GMRES_Restart"    "StdForm"    0    0    ""    1   0
+80    5    "KrylovUsePacking"    "StdForm"    0    0    ""    1   0
+80    5    "KrylovPackingThresh"    "StdForm"    0    0    " "    1   0
+80    5    "KrylovTightTol"    "StdForm"    0    0    " "    1   0
+80    5    "KrylovLooseTol"    "StdForm"    0    0    " "    1   0
+80    5    "KrylovLooseIters"    "StdForm"    0    0    " "    1   0
+80    5    "KrylovMaxIters"    "StdForm"    0    0    " "    1   0
+80    5    "AvailableRAMsize"    "StdForm"    0    0    ""    1   0
+80    5    "KrylovSS_Tol"    "StdForm"    0    0    ""    1   0
+80    5    "KrylovUseGMRES_Float"    "StdForm"    0    0    ""    1   0
+80    5    "RecalculateWaveforms"    "StdForm"    0    0    ""    1   0
+80    5    "UseCompactFreqMap"    "StdForm"    0    0    ""    1   0
+80    5    "OscMode"    "StdForm"    0    0    ""    1   0
+80    5    "OscPortName"    "StringAndReference"    0    0    ""    1   0
+80    5    "IgnoreOscErrors"    "StdForm"    0    0    ""    1   0
+80    5    "SweepVar"    "StringAndReference"    0    0    ""real_indexs11""    0   0
+80    5    "UseSweepPlan"    "StdForm"    0    0    ""    1   0
+80    5    "SweepPlan"    "StdForm"    0    0    ""    0   0
+80    5    "Start"    "StdForm"    0    0    "real(s11_center)-c_limit"    0   0
+80    5    "Stop"    "StdForm"    0    0    "real(s11_center)+c_limit"    0   0
+80    5    "Step"    "StdForm"    0    0    ""    0   0
+80    5    "Center"    "StdForm"    0    0    ""    1   0
+80    5    "Span"    "StdForm"    0    0    ""    1   0
+80    5    "Lin"    "StdForm"    0    0    "pts_per_line"    1   0
+80    5    "Dec"    "StdForm"    0    0    ""    1   0
+80    5    "Log"    "StdForm"    0    0    ""    1   0
+80    5    "Reverse"    "StdForm"    0    0    ""    1   0
+80    5    "Pt"    "StdForm"    0    0    ""    1   0
+80    5    "Sort"    "StdForm"    0    0    "LINEAR START POINTS "    1   0
+80    3    "OutputPlan"    "list"    0    1    ""    1   0
+80    5    "OutputPlan"    "StdForm"    0    0    ""    1   0
+80    6    "UseNodeNestLevel"    "OutputPlan_BooleanYes"    0    0    ""    1   0
+80    5    "NodeNestLevel"    "SingleTextLineInteger"    0    0    "4"    1   0
+80    3    "NodeName"    "list"    0    1    ""    1   0
+80    5    "NodeName"    "StringAndReference"    0    0    ""    1   0
+80    6    "UseEquationNestLevel"    "OutputPlan_BooleanYes"    0    0    ""    1   0
+80    5    "EquationNestLevel"    "SingleTextLineInteger"    0    0    "4"    1   0
+80    3    "EquationName"    "list"    0    1    ""    1   0
+80    5    "EquationName"    "StringAndReference"    0    0    ""    1   0
+80    6    "DevOpPtLevel"    "DeviceOpNone"    0    0    ""    1   0
+80    3    "Noisecon"    "list"    0    1    ""    1   0
+80    5    "Noisecon"    "StdForm"    0    0    ""    1   0
+80    5    "NoiseConMode"    "StdForm"    0    0    ""    1   0
+80    5    "InFile"    "StringAndReference"    0    0    " "    1   0
+80    5    "UseInFile"    "StdForm"    0    0    "no"    1   0
+80    5    "OutFile"    "StringAndReference"    0    0    " "    1   0
+80    5    "UseOutFile"    "StdForm"    0    0    "no"    1   0
+80    6    "KrylovPrec"    "HBKrylovPrecDCP"    0    0    ""    1   0
+80    6    "ConvMode"    "HBConvModeADS15"    0    0    ""    1   0
+80    5    "Other"    "OtherForm"    0    0    ""    1   0
+80    6    "UseSavedEquationNestLevel"    "OutputPlan_BooleanYes"    0    0    ""    1   0
+80    5    "SavedEquationNestLevel"    "SingleTextLineInteger"    0    0    "4"    1   0
+80    3    "SavedEquationName"    "list"    0    3    ""    1   0
+80    5    "SavedEquationName"    "StringAndReference"    0    0    ""RFfreq""    1   0
+80    5    "SavedEquationName"    "StringAndReference"    0    0    ""Pavs""    1   0
+80    5    "SavedEquationName"    "StringAndReference"    0    0    ""Z0""    1   0
+80    3    "AttachedEquationName"    "list"    0    2    ""    1   0
+80    5    "AttachedEquationName"    "StringAndReference"    0    0    ""Pavs""    1   0
+80    5    "AttachedEquationName"    "StringAndReference"    0    0    ""Z0""    1   0
+80    5    "OscUseNodes"    "StdForm"    0    0    "yes"    1   0
+80    5    "OscNodePlus"    "StringAndReference"    0    0    ""    1   0
+80    5    "OscNodeMinus"    "StringAndReference"    0    0    ""    1   0
+80    5    "OscFundIndex"    "StdForm"    0    0    "1"    1   0
+80    5    "OscHarm"    "StdForm"    0    0    "1"    1   0
+80    5    "OscNumOctaves"    "StdForm"    0    0    "2.0"    1   0
+80    5    "OscSteps"    "StdForm"    0    0    "20.0"    1   0
+80    6    "TAHB_Enable"    "TAHBModeAuto"    0    0    ""    1   0
+80    5    "StopTime"    "StdForm"    0    0    ""    1   0
+80    5    "MaxTimeStep"    "StdForm"    0    0    ""    1   0
+80    5    "IV_RelTol"    "StdForm"    0    0    ""    1   0
+80    5    "AddtlTranParamsTAHB"    "TAHBOtherForm"    0    0    ""    1   0
+80    5    "OneToneTranTAHB"    "StdForm"    0    0    "yes"    1   0
+80    5    "OutputTranDataTAHB"    "StdForm"    0    0    ""    1   0
+80    6    "HBAHB_Enable"    "HBAHBModeAuto"    0    0    ""    1   0
+80    6    "MaxItersRobust"    "No"    0    0    ""    1   0
+80    6    "MaxItersFast"    "No"    0    0    ""    1   0
+80    5    "MaxItersCustom"    "StdForm"    0    0    "10"    1   0
+80    6    "SamanskiiConstantFast"    "No"    0    0    ""    1   0
+80    6    "SamanskiiConstantRobust"    "No"    0    0    ""    1   0
+80    5    "SamanskiiConstantCustom"    "StdForm"    0    0    "2"    1   0
+80    6    "GMRES_RestartRobust"    "Yes"    0    0    ""    1   0
+80    6    "GMRES_RestartLowMemory"    "No"    0    0    ""    1   0
+80    5    "GMRES_RestartCustom"    "StdForm"    0    0    ""    1   0
+80    6    "GuardThreshFast"    "Yes"    0    0    ""    1   0
+80    6    "GuardThreshRobust"    "No"    0    0    ""    1   0
+80    5    "GuardThreshCustom"    "StdForm"    0    0    ""    1   0
+80    5    "SteadyStateMinTime"    "StdForm"    0    0    ""    1   0
+80    6    "UseDeviceCurrentNestLevel"    "OutputPlan_BooleanNo"    0    0    ""    1   0
+80    5    "DeviceCurrentNestLevel"    "SingleTextLineInteger"    0    0    ""    1   0
+80    3    "DeviceCurrentName"    "list"    0    1    ""    1   0
+80    5    "DeviceCurrentName"    "StringAndReference"    0    0    ""    1   0
+41    28250312    0    1082130434    "STIMULUS1"    "VAR"    "SYM_VAR"    -15056 -4471 -8996 -3551 1    0 "" 0
+    0    0    154    -14885 -3729 90000 1 1 0 0    0    105    0    0    1349941568    17  ""    -15056 -3835 -14731 -3620 1    -14669 -4471 -8996 -3551 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    216 -16 651 178 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -16 0    1    1    0    0    14    0   "HersheyRomanNarrow"   `VAR`
+40    7    0    0    0
+50    6    216 -258 1357 -64 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -258 0    1    2    0    0    14    0   "HersheyRomanNarrow"   `STIMULUS1`
+40    8    0    0    0
+50    6    216 -742 5889 -548 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -742 0    1    3    0    2    14    0   "HersheyRomanNarrow"   `Vsource=sqrt(8*real(Z_s_fund)*10^(Pavs_dBm/10)/1000)`
+50    6    216 -500 1799 -306 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -500 0    1    3    0    1    14    0   "HersheyRomanNarrow"   `Pavs_dBm=31.5`
+80    3    "Variable Value"    "list"    0    2    ""    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Pavs_dBm"    0   0
+80    5    ""    "VarValueForm"    0    0    "31.5"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Vsource"    0   0
+80    5    ""    "VarValueForm"    0    0    "sqrt(8*real(Z_s_fund)*10^(Pavs_dBm/10)/1000)"    0   0
+41    28286726    0    0    "Ioutbar"    "I_Probe"    "SYM_CProbe"    -6530 -426 -5707 782 1    0 "" 0
+    28250380    0    93    -6405 32 0 1 1 0 0    0    105    0    0    1347013728    17  ""    -6530 32 -6030 782 1    -6322 -426 -5707 -51 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    83 -250 698 -83 1    0    0    0    0    0    0    0    0
+62    0    167    9    83 -250 0    1    1    0    0    12    0   "HersheyRomanNarrow"   `I_Probe`
+40    7    0    0    0
+50    6    83 -458 671 -291 1    0    0    0    0    0    0    0    0
+62    0    167    9    83 -458 0    1    2    0    0    12    0   "HersheyRomanNarrow"   `Ioutbar`
+80    5    "Mode"    "StdForm"    0    0    "0"    1   0
+80    5    "C"    "StdForm"    0    0    ""    1   0
+80    5    "L"    "StdForm"    0    0    ""    1   0
+80    5    "Gain"    "StdForm"    0    0    ""    1   0
+80    6    "SaveCurrent"    "Yes"    0    0    ""    1   0
+80    5    "wImax"    "StdForm"    0    0    ""    1   0
+41    28300912    0    131073    "G9"    "GROUND"    "SYM_Ground"    -7662 -523 -7412 -273 1    0 "" 0
+    28318424    0    167    -7537 -273 -90000 1 1 0 0    0    97    0    0    1350644762    0  ""    -7662 -523 -7412 -273 1    0 0 0 0 0    0 0 0 0 0 0
+41    28306068    0    16    "X1"    "flu17xm"    "flu17xm"    -8662 -891 -7312 511 1    0 "" 0
+    28306136    0    166    -7537 102 0 1 1 0 0    0    97    0    0    1350644744    17  ""    -8662 -433 -7312 511 1    -8453 -891 -7548 -516 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    -916 -785 -11 -618 1    0    0    0    0    0    0    0    0
+62    0    167    9    -916 -785 0    1    1    0    0    12    0   "HersheyRomanNarrow"   `flu17xm`
+40    7    0    0    0
+50    6    -916 -993 -658 -826 1    0    0    0    0    0    0    0    0
+62    0    167    9    -916 -993 0    1    2    0    0    12    0   "HersheyRomanNarrow"   `X1`
+41    27986336    0    1082130434    "STIMULUS"    "VAR"    "SYM_VAR"    -11995 -2702 -10203 -1298 1    0 "" 0
+    0    0    28    -11824 -1476 90000 1 1 0 0    0    104    0    0    1350048302    17  ""    -11995 -1582 -11670 -1367 1    -11608 -2702 -10203 -1298 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    216 -16 651 178 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -16 0    1    1    0    0    14    0   "HersheyRomanNarrow"   `VAR`
+40    7    0    0    0
+50    6    216 -258 1225 -64 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -258 0    1    2    0    0    14    0   "HersheyRomanNarrow"   `STIMULUS`
+40    8    0    0    0
+50    6    216 -1226 1279 -1032 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -1226 0    1    3    0    4    14    0   "HersheyRomanNarrow"   `Vlow=-1.5`
+50    6    216 -984 1209 -790 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -984 0    1    3    0    3    14    0   "HersheyRomanNarrow"   `Vhigh=50`
+50    6    216 -742 1621 -548 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -742 0    1    3    0    2    14    0   "HersheyRomanNarrow"   `RFfreq=4 GHz`
+50    6    216 -500 1077 -306 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -500 0    1    3    0    1    14    0   "HersheyRomanNarrow"   `Pavs=31`
+80    3    "Variable Value"    "list"    0    4    ""    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Pavs"    0   0
+80    5    ""    "VarValueForm"    0    0    "31"    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "RFfreq"    0   0
+80    5    ""    "VarValueForm"    0    0    "4 GHz"    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Vhigh"    0   0
+80    5    ""    "VarValueForm"    0    0    "50"    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Vlow"    0   0
+80    5    ""    "VarValueForm"    0    0    "-1.5"    0   0
+41    28229166    0    1082130434    "SweepEquations"    "VAR"    "SYM_VAR"    3718 1731 13316 5555 1    0 "" 0
+    0    0    66    3889 5377 90000 1 1 0 0    0    104    0    0    1349988634    17  ""    3718 5271 4043 5486 1    4105 1731 13316 5555 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    216 -16 651 178 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -16 0    1    1    0    0    14    0   "HersheyRomanNarrow"   `VAR`
+40    7    0    0    0
+50    6    216 -258 1683 -64 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -258 0    1    2    0    0    14    0   "HersheyRomanNarrow"   `SweepEquations`
+40    8    0    0    0
+50    6    216 -3646 930 -3452 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -3646 0    1    3    0    14    14    0   "HersheyRomanNarrow"   `Z0=50`
+50    6    216 -3404 2715 -3210 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -3404 0    1    3    0    13    14    0   "HersheyRomanNarrow"   `pts_per_line=int(pts/lines)`
+50    6    216 -3162 2854 -2968 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -3162 0    1    3    0    12    14    0   "HersheyRomanNarrow"   `lines=max(int(sqrt(pts)),1)`
+50    6    216 -2920 1077 -2726 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -2920 0    1    3    0    11    14    0   "HersheyRomanNarrow"   `pts=100`
+50    6    216 -2678 5446 -2484 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -2678 0    1    3    0    10    14    0   "HersheyRomanNarrow"   `max_rho = min(1.0 - mag(s11_center), mag(s11_rho))`
+50    6    216 -2436 2358 -2242 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -2436 0    1    3    0    9    14    0   "HersheyRomanNarrow"   `fideg_s11_center=160`
+50    6    216 -2194 2420 -2000 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -2194 0    1    3    0    8    14    0   "HersheyRomanNarrow"   `mag_s11_center =0.70`
+50    6    216 -1952 9427 -1758 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -1952 0    1    3    0    7    14    0   "HersheyRomanNarrow"   `s11_center =mag_s11_center*(cos(pi/180*fideg_s11_center) + j*sin(pi/180*fideg_s11_center))`
+50    6    216 -1710 1830 -1516 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -1710 0    1    3    0    6    14    0   "HersheyRomanNarrow"   `s11_rho =0.165`
+50    6    216 -1468 5943 -1274 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -1468 0    1    3    0    5    14    0   "HersheyRomanNarrow"   `c_limit=sqrt(if ((argument) <0) then 0 else argument endif)`
+50    6    216 -1226 5927 -1032 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -1226 0    1    3    0    4    14    0   "HersheyRomanNarrow"   `argument =max_rho^2-(imag(s11_center)-imag_indexs11)^2`
+50    6    216 -984 4306 -790 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -984 0    1    3    0    3    14    0   "HersheyRomanNarrow"   `indexs11=real_indexs11+j*imag_indexs11`
+50    6    216 -742 1915 -548 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -742 0    1    3    0    2    14    0   "HersheyRomanNarrow"   `imag_indexs11=0`
+50    6    216 -500 1822 -306 1    0    0    0    0    0    0    0    0
+62    0    194    9    216 -500 0    1    3    0    1    14    0   "HersheyRomanNarrow"   `real_indexs11=0`
+80    3    "Variable Value"    "list"    0    14    ""    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "real_indexs11"    0   0
+80    5    ""    "VarValueForm"    0    0    "0"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "imag_indexs11"    0   0
+80    5    ""    "VarValueForm"    0    0    "0"    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "indexs11"    0   0
+80    5    ""    "VarValueForm"    0    0    "real_indexs11+j*imag_indexs11"    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "argument "    0   0
+80    5    ""    "VarValueForm"    0    0    "max_rho^2-(imag(s11_center)-imag_indexs11)^2"    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "c_limit"    0   0
+80    5    ""    "VarValueForm"    0    0    "sqrt(if ((argument) <0) then 0 else argument endif)"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "s11_rho "    0   0
+80    5    ""    "VarValueForm"    0    0    "0.165"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "s11_center "    0   0
+80    5    ""    "VarValueForm"    0    0    "mag_s11_center*(cos(pi/180*fideg_s11_center) + j*sin(pi/180*fideg_s11_center))"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "mag_s11_center "    0   0
+80    5    ""    "VarValueForm"    0    0    "0.70"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "fideg_s11_center"    0   0
+80    5    ""    "VarValueForm"    0    0    "160"    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "max_rho "    0   0
+80    5    ""    "VarValueForm"    0    0    " min(1.0 - mag(s11_center), mag(s11_rho))"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "pts"    0   0
+80    5    ""    "VarValueForm"    0    0    "100"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "lines"    0   0
+80    5    ""    "VarValueForm"    0    0    "max(int(sqrt(pts)),1)"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "pts_per_line"    0   0
+80    5    ""    "VarValueForm"    0    0    "int(pts/lines)"    0   0
+80    4    "Variable Value"    "VarFormEditcompPowerVar"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Z0"    0   0
+80    5    ""    "VarValueForm"    0    0    "50"    0   0
+41    28174432    0    -2147483648    "PORT1"    "P_1Tone"    "SYM_PortPower"    -15238 -1701 -13155 -141 1    0 "" 0
+    28000836    0    6    -15052 -141 -90000 1 1 0 0    0    104    0    0    1349704975    17  ""    -15238 -1141 -14866 -141 1    -14816 -1701 -13155 -297 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    236 -350 1043 -156 1    0    0    0    0    0    0    0    0
+62    0    194    9    236 -350 0    1    1    0    0    14    0   "HersheyRomanNarrow"   `P_1Tone`
+40    7    0    0    0
+50    6    236 -592 934 -398 1    0    0    0    0    0    0    0    0
+62    0    194    9    236 -592 0    1    2    0    0    14    0   "HersheyRomanNarrow"   `PORT1`
+40    8    0    0    0
+50    6    236 -1560 1454 -1366 1    0    0    0    0    0    0    0    0
+62    0    194    9    236 -1560 0    1    3    0    4    14    0   "HersheyRomanNarrow"   `Freq=RFfreq`
+50    6    236 -1318 1897 -1124 1    0    0    0    0    0    0    0    0
+62    0    194    9    236 -1318 0    1    3    0    3    14    0   "HersheyRomanNarrow"   `P=dbmtow(Pavs)`
+50    6    236 -1076 865 -882 1    0    0    0    0    0    0    0    0
+62    0    194    9    236 -1076 0    1    3    0    2    14    0   "HersheyRomanNarrow"   `Z=Z_s`
+50    6    236 -834 1004 -640 1    0    0    0    0    0    0    0    0
+62    0    194    9    236 -834 0    1    3    0    1    14    0   "HersheyRomanNarrow"   `Num=1`
+80    5    "Num"    "StdForm"    0    0    "1"    0   0
+80    5    "Z"    "StdForm"    0    0    "Z_s"    0   0
+80    5    "P"    "StdForm"    0    0    "dbmtow(Pavs)"    0   0
+80    5    "Freq"    "StdForm"    0    0    "RFfreq"    0   0
+80    5    "PhaseNoise"    "StdForm"    0    0    ""    1   0
+80    5    "P_USB"    "StdForm"    0    0    ""    1   0
+80    5    "P_LSB"    "StdForm"    0    0    ""    1   0
+80    5    "Mod"    "StdForm"    0    0    ""    1   0
+80    6    "Noise"    "Yes"    0    0    ""    1   0
+80    5    "Pac"    "StdForm"    0    0    "dbmtow(0)"    1   0
+80    5    "FundIndex"    "StdForm"    0    0    ""    1   0
+80    5    "Vdc"    "StdForm"    0    0    ""    1   0
+80    5    "Temp"    "StdForm"    0    0    ""    1   0
+80    5    "Other"    "OtherForm"    0    0    ""    1   0
+41    28227698    0    1082130434    "VAR2"    "VAR"    "SYM_VAR"    4196 -2207 6426 407 1    0 "" 0
+    0    0    47    4367 204 90000 1 1 0 0    0    104    0    0    1349428518    17  ""    4196 98 4521 313 1    4571 -2207 6426 407 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    204 9 639 203 1    0    0    0    0    0    0    0    0
+62    0    194    9    204 9 0    1    1    0    0    14    0   "HersheyRomanNarrow"   `VAR`
+40    7    0    0    0
+50    6    204 -233 770 -39 1    0    0    0    0    0    0    0    0
+62    0    194    9    204 -233 0    1    2    0    0    14    0   "HersheyRomanNarrow"   `VAR2`
+40    8    0    0    0
+50    6    204 -2411 1903 -2217 1    0    0    0    0    0    0    0    0
+62    0    194    9    204 -2411 0    1    3    0    9    14    0   "HersheyRomanNarrow"   `Z_s_5 =Z0 + j*0`
+50    6    204 -2169 1903 -1975 1    0    0    0    0    0    0    0    0
+62    0    194    9    204 -2169 0    1    3    0    8    14    0   "HersheyRomanNarrow"   `Z_s_4 =Z0 + j*0`
+50    6    204 -1927 1903 -1733 1    0    0    0    0    0    0    0    0
+62    0    194    9    204 -1927 0    1    3    0    7    14    0   "HersheyRomanNarrow"   `Z_s_3 =Z0 + j*0`
+50    6    204 -1685 1903 -1491 1    0    0    0    0    0    0    0    0
+62    0    194    9    204 -1685 0    1    3    0    6    14    0   "HersheyRomanNarrow"   `Z_s_2 =Z0 + j*0`
+50    6    204 -1443 2059 -1249 1    0    0    0    0    0    0    0    0
+62    0    194    9    204 -1443 0    1    3    0    5    14    0   "HersheyRomanNarrow"   `Z_s_fund =5 + j*0`
+50    6    204 -1201 1942 -1007 1    0    0    0    0    0    0    0    0
+62    0    194    9    204 -1201 0    1    3    0    4    14    0   "HersheyRomanNarrow"   `Z_l_5 = Z0 + j*0`
+50    6    204 -959 1942 -765 1    0    0    0    0    0    0    0    0
+62    0    194    9    204 -959 0    1    3    0    3    14    0   "HersheyRomanNarrow"   `Z_l_4 = Z0 + j*0`
+50    6    204 -717 1872 -523 1    0    0    0    0    0    0    0    0
+62    0    194    9    204 -717 0    1    3    0    2    14    0   "HersheyRomanNarrow"   `Z_l_3 =Z0 + j*0`
+50    6    204 -475 1872 -281 1    0    0    0    0    0    0    0    0
+62    0    194    9    204 -475 0    1    3    0    1    14    0   "HersheyRomanNarrow"   `Z_l_2 =Z0 + j*0`
+80    3    "Variable Value"    "list"    0    9    ""    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Z_l_2 "    0   0
+80    5    ""    "VarValueForm"    0    0    "Z0 + j*0"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Z_l_3 "    0   0
+80    5    ""    "VarValueForm"    0    0    "Z0 + j*0"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Z_l_4 "    0   0
+80    5    ""    "VarValueForm"    0    0    " Z0 + j*0"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Z_l_5 "    0   0
+80    5    ""    "VarValueForm"    0    0    " Z0 + j*0"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Z_s_fund "    0   0
+80    5    ""    "VarValueForm"    0    0    "5 + j*0"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Z_s_2 "    0   0
+80    5    ""    "VarValueForm"    0    0    "Z0 + j*0"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Z_s_3 "    0   0
+80    5    ""    "VarValueForm"    0    0    "Z0 + j*0"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Z_s_4 "    0   0
+80    5    ""    "VarValueForm"    0    0    "Z0 + j*0"    0   0
+80    4    "Variable Value"    "VarFormStdForm"    0    2    ""    0   0
+80    5    ""    "VarNameForm"    0    0    "Z_s_5 "    0   0
+80    5    ""    "VarValueForm"    0    0    "Z0 + j*0"    0   0
+41    27948118    0    0    "C1"    "C"    "SYM_C"    -13427 -932 -12396 -16 1    0 "" 0
+    27992598    0    148    -13427 -141 0 1 1 0 0    0    105    0    0    1347351312    17  ""    -13427 -266 -12427 -16 1    -13218 -932 -12396 -349 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    209 -375 329 -208 1    0    0    0    0    0    0    0    0
+62    0    167    9    209 -375 0    1    1    0    0    12    0   "HersheyRomanNarrow"   `C`
+40    7    0    0    0
+50    6    209 -583 443 -416 1    0    0    0    0    0    0    0    0
+62    0    167    9    209 -583 0    1    2    0    0    12    0   "HersheyRomanNarrow"   `C1`
+40    8    0    0    0
+50    6    209 -791 1031 -624 1    0    0    0    0    0    0    0    0
+62    0    167    9    209 -791 0    1    3    0    1    12    0   "HersheyRomanNarrow"   `C=1.0 uF`
+80    5    "C"    "StdForm"    0    0    "1.0 uF"    0   0
+80    5    "Temp"    "StdForm"    0    0    ""    1   0
+80    5    "Trise"    "StdForm"    0    0    ""    1   0
+80    5    "Tnom"    "StdForm"    0    0    ""    1   0
+80    5    "TC1"    "StdForm"    0    0    ""    1   0
+80    5    "TC2"    "StdForm"    0    0    ""    1   0
+80    5    "wBV"    "StdForm"    0    0    ""    1   0
+80    5    "InitCond"    "StdForm"    0    0    ""    1   0
+80    5    "Model"    "StdForm"    0    0    ""    1   0
+80    5    "Width"    "StdForm"    0    0    ""    1   0
+80    5    "Length"    "StdForm"    0    0    ""    1   0
+80    5    "_M"    "StdForm"    0    0    ""    1   0
+41    28166784    0    0    "C2"    "C"    "SYM_C"    -1625 -1416 -594 -500 1    0 "" 0
+    27920804    0    149    -1625 -625 0 1 1 0 0    0    105    0    0    1347351305    17  ""    -1625 -750 -625 -500 1    -1416 -1416 -594 -833 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    209 -375 329 -208 1    0    0    0    0    0    0    0    0
+62    0    167    9    209 -375 0    1    1    0    0    12    0   "HersheyRomanNarrow"   `C`
+40    7    0    0    0
+50    6    209 -583 443 -416 1    0    0    0    0    0    0    0    0
+62    0    167    9    209 -583 0    1    2    0    0    12    0   "HersheyRomanNarrow"   `C2`
+40    8    0    0    0
+50    6    209 -791 1031 -624 1    0    0    0    0    0    0    0    0
+62    0    167    9    209 -791 0    1    3    0    1    12    0   "HersheyRomanNarrow"   `C=1.0 uF`
+80    5    "C"    "StdForm"    0    0    "1.0 uF"    0   0
+80    5    "Temp"    "StdForm"    0    0    ""    1   0
+80    5    "Trise"    "StdForm"    0    0    ""    1   0
+80    5    "Tnom"    "StdForm"    0    0    ""    1   0
+80    5    "TC1"    "StdForm"    0    0    ""    1   0
+80    5    "TC2"    "StdForm"    0    0    ""    1   0
+80    5    "wBV"    "StdForm"    0    0    ""    1   0
+80    5    "InitCond"    "StdForm"    0    0    ""    1   0
+80    5    "Model"    "StdForm"    0    0    ""    1   0
+80    5    "Width"    "StdForm"    0    0    ""    1   0
+80    5    "Length"    "StdForm"    0    0    ""    1   0
+80    5    "_M"    "StdForm"    0    0    ""    1   0
+41    27973068    0    0    "DC_Feed2"    "DC_Feed"    "SYM_DC_Feed"    -2625 625 -1234 1625 1    0 "" 0
+    28138778    0    137    -2375 1625 -90000 1 1 0 0    0    97    0    0    1347348400    17  ""    -2625 625 -2125 1625 1    -2042 1250 -1234 1625 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    333 -167 1028 0 1    0    0    0    0    0    0    0    0
+62    0    167    9    333 -167 0    1    1    0    0    12    0   "HersheyRomanNarrow"   `DC_Feed`
+40    7    0    0    0
+50    6    333 -375 1141 -208 1    0    0    0    0    0    0    0    0
+62    0    167    9    333 -375 0    1    2    0    0    12    0   "HersheyRomanNarrow"   `DC_Feed2`
+80    5    "Mode"    "StdForm"    0    0    "-1"    1   0
+80    5    "C"    "StdForm"    0    0    ""    1   0
+80    5    "L"    "StdForm"    0    0    ""    1   0
+80    5    "Gain"    "StdForm"    0    0    ""    1   0
+80    5    "wImax"    "StdForm"    0    0    ""    1   0
+41    26733264    0    0    "DC_Feed1"    "DC_Feed"    "SYM_DC_Feed"    -12427 1109 -11036 2109 1    0 "" 0
+    27986080    0    134    -12177 2109 -90000 1 1 0 0    0    97    0    0    1347348387    17  ""    -12427 1109 -11927 2109 1    -11844 1734 -11036 2109 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    333 -167 1028 0 1    0    0    0    0    0    0    0    0
+62    0    167    9    333 -167 0    1    1    0    0    12    0   "HersheyRomanNarrow"   `DC_Feed`
+40    7    0    0    0
+50    6    333 -375 1141 -208 1    0    0    0    0    0    0    0    0
+62    0    167    9    333 -375 0    1    2    0    0    12    0   "HersheyRomanNarrow"   `DC_Feed1`
+80    5    "Mode"    "StdForm"    0    0    "-1"    1   0
+80    5    "C"    "StdForm"    0    0    ""    1   0
+80    5    "L"    "StdForm"    0    0    ""    1   0
+80    5    "Gain"    "StdForm"    0    0    ""    1   0
+80    5    "wImax"    "StdForm"    0    0    ""    1   0
+41    28166690    0    0    "SRC2"    "V_DC"    "SYM_V_DC"    -13978 1109 -12611 2109 1    0 "" 0
+    27992194    0    53    -13802 2109 -90000 1 1 0 0    0    104    0    0    970101034    17  ""    -13978 1109 -13678 2109 1    -13628 1150 -12611 1828 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    174 -475 702 -281 1    0    0    0    0    0    0    0    0
+62    0    194    9    174 -475 0    1    1    0    0    14    0   "HersheyRomanNarrow"   `V_DC`
+40    7    0    0    0
+50    6    174 -717 686 -523 1    0    0    0    0    0    0    0    0
+62    0    194    9    174 -717 0    1    2    0    0    14    0   "HersheyRomanNarrow"   `SRC2`
+40    8    0    0    0
+50    6    174 -959 1191 -765 1    0    0    0    0    0    0    0    0
+62    0    194    9    174 -959 0    1    3    0    1    14    0   "HersheyRomanNarrow"   `Vdc=Vlow`
+80    5    "Vdc"    "StdForm"    0    0    "Vlow"    0   0
+80    5    "Vac"    "StdForm"    0    0    ""    1   0
+80    6    "SaveCurrent"    "y_n1"    0    0    ""    1   0
+41    27991570    0    0    "Is_low"    "I_Probe"    "SYM_CProbe"    -12927 2359 -12213 3528 1    0 "" 0
+    28030304    0    39    -12802 2359 0 1 1 0 0    0    104    0    0    970101034    17  ""    -12927 2359 -12427 3109 1    -12927 3092 -12213 3528 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    -125 975 589 1169 1    0    0    0    0    0    0    0    0
+62    0    194    9    -125 975 0    1    1    0    0    14    0   "HersheyRomanNarrow"   `I_Probe`
+40    7    0    0    0
+50    6    -125 733 457 927 1    0    0    0    0    0    0    0    0
+62    0    194    9    -125 733 0    1    2    0    0    14    0   "HersheyRomanNarrow"   `Is_low`
+80    5    "Mode"    "StdForm"    0    0    "0"    1   0
+80    5    "C"    "StdForm"    0    0    ""    1   0
+80    5    "L"    "StdForm"    0    0    ""    1   0
+80    5    "Gain"    "StdForm"    0    0    ""    1   0
+80    6    "SaveCurrent"    "Yes"    0    0    ""    1   0
+80    5    "wImax"    "StdForm"    0    0    ""    1   0
+41    28011178    0    131073    "G1"    "GROUND"    "SYM_Ground"    -13927 859 -13677 1109 1    0 "" 0
+    28032538    0    2    -13802 1109 -90000 1 1 0 0    0    97    0    0    970101034    0  ""    -13927 859 -13677 1109 1    0 0 0 0 0    0 0 0 0 0 0
+41    28010976    0    131073    "G2"    "GROUND"    "SYM_Ground"    -15177 -1391 -14927 -1141 1    0 "" 0
+    27982806    0    5    -15052 -1141 -90000 1 1 0 0    0    97    0    0    970101034    0  ""    -15177 -1391 -14927 -1141 1    0 0 0 0 0    0 0 0 0 0 0
+41    28010594    0    0    "I_In"    "I_Probe"    "SYM_CProbe"    -14843 109 -14228 1276 1    0 "" 0
+    28021704    0    84    -14677 109 0 1 1 0 0    0    105    0    0    1217022750    17  ""    -14802 109 -14302 859 1    -14843 901 -14228 1276 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    -166 1000 449 1167 1    0    0    0    0    0    0    0    0
+62    0    167    9    -166 1000 0    1    1    0    0    12    0   "HersheyRomanNarrow"   `I_Probe`
+40    7    0    0    0
+50    6    -166 792 148 959 1    0    0    0    0    0    0    0    0
+62    0    167    9    -166 792 0    1    2    0    0    12    0   "HersheyRomanNarrow"   `I_In`
+80    5    "Mode"    "StdForm"    0    0    "0"    1   0
+80    5    "C"    "StdForm"    0    0    ""    1   0
+80    5    "L"    "StdForm"    0    0    ""    1   0
+80    5    "Gain"    "StdForm"    0    0    ""    1   0
+80    6    "SaveCurrent"    "Yes"    0    0    ""    1   0
+80    5    "wImax"    "StdForm"    0    0    ""    1   0
+41    17378266    0    0    "P_Load"    "P_Probe"    "SYM_P_Probe"    0 -1208 1000 -250 1    0 "" 0
+    27955138    0    81    0 -625 0 1 1 0 0    0    105    0    0    1206940769    17  ""    0 -750 1000 -250 1    209 -1208 882 -833 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    209 -375 864 -208 1    0    0    0    0    0    0    0    0
+62    0    167    9    209 -375 0    1    1    0    0    12    0   "HersheyRomanNarrow"   `P_Probe`
+40    7    0    0    0
+50    6    209 -583 770 -416 1    0    0    0    0    0    0    0    0
+62    0    167    9    209 -583 0    1    2    0    0    12    0   "HersheyRomanNarrow"   `P_Load`
+41    27024628    0    131073    "G4"    "GROUND"    "SYM_Ground"    -1125 375 -875 625 1    0 "" 0
+    27978154    0    9    -1000 625 -90000 1 1 0 0    0    97    0    0    970101034    0  ""    -1125 375 -875 625 1    0 0 0 0 0    0 0 0 0 0 0
+41    28026608    0    131073    "G8"    "GROUND"    "SYM_Ground"    2250 -875 2500 -625 1    0 "" 0
+    28008634    0    16    2375 -625 -90000 1 1 0 0    0    97    0    0    970101034    0  ""    2250 -875 2500 -625 1    0 0 0 0 0    0 0 0 0 0 0
+41    28129462    0    0    "Is_high"    "I_Probe"    "SYM_CProbe"    -1875 1750 -1161 2919 1    0 "" 0
+    28000552    0    40    -1500 1750 180000 1 1 1 0    0    104    0    0    970101034    17  ""    -1875 1750 -1375 2500 1    -1875 2483 -1161 2919 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    -375 975 339 1169 1    0    0    0    0    0    0    0    0
+62    0    194    9    -375 975 0    1    1    0    0    14    0   "HersheyRomanNarrow"   `I_Probe`
+40    7    0    0    0
+50    6    -375 733 277 927 1    0    0    0    0    0    0    0    0
+62    0    194    9    -375 733 0    1    2    0    0    14    0   "HersheyRomanNarrow"   `Is_high`
+80    5    "Mode"    "StdForm"    0    0    "0"    1   0
+80    5    "C"    "StdForm"    0    0    ""    1   0
+80    5    "L"    "StdForm"    0    0    ""    1   0
+80    5    "Gain"    "StdForm"    0    0    ""    1   0
+80    6    "SaveCurrent"    "Yes"    0    0    ""    1   0
+80    5    "wImax"    "StdForm"    0    0    ""    1   0
+41    27978608    0    0    "S1"    "S1P_Eqn"    "SYM_Float1P"    1375 -1938 3285 -313 1    0 "" 0
+    26773448    0    15    1375 -625 0 1 1 0 0    0    104    0    0    970101034    17  ""    1375 -937 2375 -313 1    1500 -1938 3285 -1018 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    125 -587 924 -393 1    0    0    0    0    0    0    0    0
+62    0    194    9    125 -587 0    1    1    0    0    14    0   "HersheyRomanNarrow"   `S1P_Eqn`
+40    7    0    0    0
+50    6    125 -829 358 -635 1    0    0    0    0    0    0    0    0
+62    0    194    9    125 -829 0    1    2    0    0    14    0   "HersheyRomanNarrow"   `S1`
+40    8    0    0    0
+50    6    125 -1071 1910 -877 1    0    0    0    0    0    0    0    0
+62    0    194    9    125 -1071 0    1    3    0    1    14    0   "HersheyRomanNarrow"   `S[1,1]=LoadTuner`
+50    6    125 -1313 1025 -1119 1    0    0    0    0    0    0    0    0
+62    0    194    9    125 -1313 0    1    3    0    2    14    0   "HersheyRomanNarrow"   `Z[1]=Z0`
+80    5    "S[1,1]"    "StdForm"    0    0    "LoadTuner"    0   0
+80    5    "Z[1]"    "StdForm"    0    0    "Z0"    0   0
+80    5    "NFmin"    "StdForm"    0    0    ""    1   0
+80    5    "Rn"    "StdForm"    0    0    ""    1   0
+80    5    "Sopt"    "StdForm"    0    0    ""    1   0
+80    5    "Temp"    "StdForm"    0    0    ""    1   0
+80    5    "ImpNoncausalLength"    "StdForm"    0    0    ""    1   0
+80    5    "ImpMode"    "StdForm"    0    0    ""    1   0
+80    5    "ImpMaxFreq"    "StdForm"    0    0    ""    1   0
+80    5    "ImpDeltaFreq"    "StdForm"    0    0    ""    1   0
+80    5    "ImpMaxOrder"    "StdForm"    0    0    ""    1   0
+80    5    "ImpWindow"    "StdForm"    0    0    ""    1   0
+80    5    "ImpRelTol"    "StdForm"    0    0    ""    1   0
+80    5    "ImpAbsTol"    "StdForm"    0    0    ""    1   0
+41    28124814    0    0    "SRC1"    "V_DC"    "SYM_V_DC"    -1176 625 260 1625 1    0 "" 0
+    26774044    0    55    -1000 1625 -90000 1 1 0 0    0    104    0    0    970101034    17  ""    -1176 625 -876 1625 1    -826 666 260 1344 1    0 0 0 0 0 0
+40    6    0    0    0
+50    6    174 -475 702 -281 1    0    0    0    0    0    0    0    0
+62    0    194    9    174 -475 0    1    1    0    0    14    0   "HersheyRomanNarrow"   `V_DC`
+40    7    0    0    0
+50    6    174 -717 686 -523 1    0    0    0    0    0    0    0    0
+62    0    194    9    174 -717 0    1    2    0    0    14    0   "HersheyRomanNarrow"   `SRC1`
+40    8    0    0    0
+50    6    174 -959 1260 -765 1    0    0    0    0    0    0    0    0
+62    0    194    9    174 -959 0    1    3    0    1    14    0   "HersheyRomanNarrow"   `Vdc=Vhigh`
+80    5    "Vdc"    "StdForm"    0    0    "Vhigh"    0   0
+80    5    "Vac"    "StdForm"    0    0    ""    1   0
+80    6    "SaveCurrent"    "y_n1"    0    0    ""    1   0
+43    28282978    0    "Voutbar"    27920616    361    ""   0
+43    28019868    0    ""    28250380    360    ""   0
+43    28243678    0    ""    28306136    0    ""   0
+43    28288834    0    ""    27992598    359    ""   0
+43    27258508    0    "V_In"    28001950    257    ""   0
+43    19663264    0    "Vs_high"    28000552    10    ""   0
+43    26510476    0    "Vs_low"    27992194    240    ""   0
+43    28032274    0    ""    28000836    333    ""   0
+43    26641660    0    ""    28091394    0    ""   0
+43    28042514    0    ""    27920804    255    ""   0
+43    28016280    0    ""    27972234    0    ""   0
+43    27461272    0    ""    22737186    237    ""   0
+43    27959764    0    ""    28041432    24    ""   0
+43    28092004    0    ""    27978154    0    ""   0
+43    28154020    0    ""    28008634    0    ""   0
+43    28075984    0    ""    27948936    6    ""   0
+44    0    0    0    0    0    0    0
+21
+20    1    ""    0 0 0 0 0    1 -2 1    0    0    "layout.prf" "layout.lay"
+90    "MOMMODE"  3  1 0 `1`
+90    "AFS_STATE"  3  1 0 `0 25 1 0 0.000000 0.000000 GHz GHz uninit 0 ./localhost 0 Presentation1 1 0`
+44    0    0    0    0    0    0    0
+21

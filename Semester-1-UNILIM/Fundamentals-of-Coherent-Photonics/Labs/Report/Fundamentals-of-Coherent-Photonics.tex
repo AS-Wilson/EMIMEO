@@ -1,0 +1,383 @@
+\documentclass[colorlinks,11pt,a4paper,normalphoto,withhyper,ragged2e]{altareport}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% DEFAULT PACKAGES & SETTINGS %%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{setspace} %1.5 line spacing
+\usepackage{notoccite} %% Citation numbering
+\usepackage{lscape} %% Landscape table
+\usepackage{caption} %% Adds a newline in the table caption
+
+%% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+\usepackage[none]{hyphenat}
+
+%% Document and Theme Fonts
+\usepackage[T1]{fontenc}
+\usepackage{paratype}
+\usepackage[defaultsans]{lato}
+%\usepackage[sfdefault,light,condensed]{roboto}
+%\usepackage[rm]{roboto}
+%\usepackage[defaultsans]{lato}
+%\usepackage{sourcesanspro}
+%\usepackage[rm]{merriweather}
+
+\setlength{\intextsep}{4pt} % Set defualt spacing around floats
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% THEMES %%%%%%%%%%
+
+%% Standard theme options are below, leave blank for B&W / no colours (BoringDefault). Note the theme will be set to default if you enter a non-exsistant theme name.
+\SetTheme{UNILIM}
+%% UNILIM
+%% PastelBlue
+%% GreenAndGold
+%% Purple
+%% PastelRed
+%% BoringDefault (Leave blank / enter anything not found above)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% DOCUMENT SPECIFIC PACKAGES %%%%%%%%%%
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+
+\usepackage{pythontex} % Run python code in this latex doc
+
+%%%%%%%%% Karnaugh Map Package & Settings %%%%%%%%%
+\usepackage[export]{adjustbox}
+
+\usetikzlibrary{matrix,calc}
+\usepackage{karnaugh-map}
+
+\colorlet{LightRed}{red!60!}
+\colorlet{LightBlue}{blue!60!}
+\colorlet{LightYellow}{yellow!60!}
+\colorlet{LightGreen}{green!60!}
+\colorlet{LightOrange}{orange!60!}
+
+%%%%%%%%% MATLAB Language Settings %%%%%%%%%
+\usepackage[numbered,framed]{matlab-prettifier} % To add code listings from matlab
+\lstMakeShortInline[style=Matlab-editor]" %% This makes " an escape character to write in matlab editor font
+
+%%%%%%%%% Arduino Language Settings %%%%%%%%%
+\lstset{%
+  language = Octave,
+  backgroundcolor=\color{white},   
+  basicstyle=\color{body}\footnotesize\ttfamily,       
+  %breakatwhitespace=false,         
+  breaklines=true,                                
+  commentstyle=\color{CommentGreen},
+  columns=fullflexible,
+  escapeinside={\%*}{*)},
+  extendedchars=true,
+  frame=leftline,
+  keepspaces=true,
+  keywordstyle=\color{LightBlue},
+  numbersep=5pt,
+  numberstyle=\footnotesize\color{gray},
+  rulecolor=\color{black},
+  rulesepcolor=\color{black},
+  showtabs=true,
+  stringstyle=\color{LightBlue},
+  tabsize=2,                       
+  title=\lstname,
+  emphstyle=\bfseries\color{LightOrange}%  style for emph={} 
+} 
+
+%%%%% language/example specific settings: %%%%%
+\lstdefinestyle{Arduino}{%
+    language = C++,
+    keywords={void, int, boolean, char, unsigned, long, uint32_t, volatile, byte, uint8_t, HIGH, OUTPUT, LOW, INPUT},%                 define keywords
+    morecomment=[l]{//},%             treat // as comments
+    morecomment=[s]{/*}{*/},%         define /* ... */ comments
+    emph={WiFi, Serial, IPAddress, Adafruit_NeoPixel, setFrequency, println, print, delay, digitalWrite, pinMode, available, digitalPinToInterrupt, attachInterrupt, detachInterrupt, analogRead, NEO_GRB, NEO_KHZ800, noInterrupts, interrupts, strstr, endPacket, beginPacket, remoteIP, remotePort, APClientMacAddress, Color}%        keywords to emphasize
+}
+
+
+%%%%% Settings for python pgf graphs %%%%%
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta}
+
+\pgfplotsset{compat=newest,
+    width=6cm,
+    height=3cm,
+    scale only axis=true,
+    max space between ticks=25pt,
+    try min ticks=5,
+    every axis/.style={
+        axis y line=left,
+        axis x line=bottom,
+        axis line style={thick,->,>=latex, shorten >=-.4cm}
+    },
+    every axis plot/.append style={thick},
+    tick style={black, thick}
+}
+\tikzset{
+    semithick/.style={line width=0.8pt},
+}
+
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{dateplot}
+
+
+% Reduce space around captions
+% \captionsetup{aboveskip=5pt, belowskip=5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% USEFUL SETTINGS %%%%%%%%%%
+%% Change some font sizes, this will override the defaults
+\renewcommand{\ReportTitleFont}{\Huge\rmfamily\bfseries} %% Title Page - Main Title
+\renewcommand{\ReportSubTitleFont}{\huge\bfseries} %% Title Page - Sub-Title
+\renewcommand{\ReportSectionFont}{\LARGE\rmfamily\bfseries} %% Section Title
+\renewcommand{\ReportSubSectionFont}{\large\bfseries} %% SubSection Title
+\renewcommand{\FootNoteFont}{\footnotesize} %% Footnotes and Header/Footer
+
+%% Change the bullets for itemize and rating marker
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Change the page layout
+\geometry{left=1.5cm,right=1.5cm,top=3cm,bottom=3cm,columnsep=8mm}
+\onehalfspace   % 1.5 line spacing
+
+\definecolor{CommentGreen}{HTML}{228B22}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{references.bib}
+
+%%%%%%%%%% TITLE PAGE INFO %%%%%%%%%%
+\ReportTitle{Fundamentals of Coherent Photonics}
+\SubTitle{Lab Reports}
+\Author{Andrew Simon Wilson \& Alejandro Dominguez Costa}
+\ReportDate{\today}
+\FacultyOrLocation{EMIMEO Programme}
+\ModCoord{Dr. Philippe Di Bin \& Dr. Rafael Jamier}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=0.5pt] (char) {#1};}}
+
+
+\begin{document}
+
+\MakeReportTitlePage
+
+
+%%%%% CONTENTS %%%%%
+\pagenumbering{roman} % Start roman numbering
+\setcounter{page}{1}
+
+
+%%%%%%%%%% YOUR NAME, PROFESSION, PORTRAIT, CONTACT INFO, SOCIAL MEDIA ETC. %%%%%%%%%%
+\name{Andrew Simon Wilson, BEng}
+\tagline{Post-graduate Master's Student, Erasmus Mundus JMD - EMIMEO Programme}
+
+\personalinfo{
+  \email{andrew.wilson@etu.unilim.fr}
+  \linkedin{andrew-simon-wilson} 
+  \github{AS-Wilson}
+  \phone{+44 7930 560 383}
+}
+
+%% You can add multiple photos on the left or right
+% \photoR{3cm}{Images/a-wilson-potrait.jpg}
+% \photoL{3cm}{Yacht_High,Suitcase_High}
+
+
+\section*{Author Details}
+\makeauthordetails
+
+
+
+
+\section*{Co-Author Details}
+\name{Alejandro Dominguez Costa}
+\tagline{Post-graduate Master's Student, Erasmus Mundus JMD - EMIMEO Programme}
+
+\personalinfo{
+  \email{aledomcos11@gmail.com}
+  %\linkedin{LinkedIn Homepage} 
+  %\github{GitHub Account Homepage}
+  \phone{+34 622 61 19 50}
+}
+\makeauthordetails
+
+
+
+
+%% Table of contents print level -1: part, 0: chapter, 1: section, 2:sub-section, 3:sub-sub-section, etc.
+\setcounter{tocdepth}{2} 
+\tableofcontents %% Prints a list of all sections based on the above command
+%\listoffigures %% Prints a list of all figures in the report
+%\listoftables %% Prints a list of all tables in the report
+
+
+
+
+%%%%%%%%%% DOCUMENT CONTENT BEGINS HERE %%%%%%%%%%
+
+%%%%% INTRO %%%%%
+\section*{Introduction}
+A lot of time has been spent developing the template used to make this {\LaTeX} document, I want others to benefit from this work so the source code for this template is available on GitHub \cite{JenningsWilson2021}.
+\newpage
+\pagenumbering{arabic} % Start document numbering - roman numbering
+
+
+
+
+
+
+
+
+%\begin{pycode}
+%import numpy as np
+%
+%n_clad = 1.453
+%n_core_MMF = 1.456
+%MMF_radius = 25e-6
+%lamb_s = 800e-9
+%lamb_l = 
+%
+%
+%NA = np.round_((np.sqrt((n_core[i]**2) - (n_clad**2))), decimals=2)
+%MMF_FRID = np.round_( (((n_core_MMF**2)-(n_clad**2)) / (2*(n_core_MMF**2))), decimals=4)
+%MMF_NSF = np.round_( (((2 * np.pi * MMF_radius) / (lamb_s)) * (np.sqrt((n_core_MMF**2) - (n_clad**2)))), decimals=2)
+%
+%
+%\end{pycode}
+
+
+
+
+
+
+
+
+\section{Lab One - Optical Fibres Splices \& Losses}
+
+%%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%%
+\subsection{Measurement One: Observation and Cleaning of the FC-PC Connectors}
+Given that the core diameter is 125$\mu$m the core is estimated to be around 50$\mu$m in diameter (25$\mu$m in radius) meaning this is likely a multi-mode fibre. \linebreak
+
+%Given Equations 1 \& 2 the weak guidance conditions are met ($\Delta =  (<0.01)$) so only LP modes will propagate and the fibre parameter can be calculated to be between x and y (given that the wavelength of visible light is in the range x and y) meaning that this should be a multi-mode fibre.d
+%
+%%\py{NA[2]}
+%
+%\setlength{\jot}{4ex}
+%\begin{gather}
+%	\Delta = \frac{n_{core}^2 - n_{clad}^2}{2 \cdot n_{core}^2}
+%	\label{eqn:frac_ri_diff}\\
+%	V = \frac{2 \pi a}{\lambda}\sqrt{n_{core}^2 - n_{clad}^2} 
+%	\label{eqn:normalised}
+%\end{gather}
+
+After touching the end of the connector with ones finger, dirt and oil can be seen and the light is not propagating clearly. \linebreak
+
+Given that the core diameter is 125$\mu$m the core is estimated to be around 5~10$\mu$m in diameter meaning this is likely a single-mode fibre. \linebreak
+
+
+
+%%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%%
+\subsection{Measurement Two: Light Injection into an Optical Fibre}
+
+
+
+%%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%%
+\subsection{Measurement Three: Study of the Operation of the Thorlabs Optical Power Metre}
+
+\subsubsection{Calibration of the Power Metre}
+
+\paragraph{Note the calibration wavelength on power meter, justify its value.}
+
+\paragraph{Note the value of the power on meter, in dBm and mW.}
+
+\paragraph{Change the calibration wavelength, and measure the power in dBm and mW for each.}
+
+\paragraph{Return the calibration wavelength to 633nm and check power in dBm seems correct.}	
+
+
+\subsubsection{Measurement of Power Variation or Losses Using the ``Power Difference $\Delta$'' Mode of the Power Metre}
+
+\paragraph{Press $\Delta$ on the power metre, why is the power now ``0dB'', why have the units changed from ``dBm'' to ``dB''?}
+
+\paragraph{Comment on the evolution of the power as the launching conditions of light into the optical fiber are modified slightly.} (by playing, for instance, with one of the 3-axes of the fiber holder).
+
+
+
+%%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%%
+\subsection{Measurement Four: Realisation of a Splice between Two Multi-mode Fibres}
+
+\paragraph{After splicing fibre no.2 and no.1, measure the optical power at the output of the second fibre, $P_3$ (dBm).}
+
+\paragraph{Deduce the insertion loss, noted $A_1$(dB), of the fibre made by ``fiber splice + fiber no.2''.}
+
+
+
+%%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%%
+\subsection{Measurement Five: Measurement of the Linear Propagation Loss as well as the Fibre Length Using an OTDR}
+
+\paragraph{Measure, for the two working wavelengths of the OTDR (850nm \& 1300nm); the linear loss (dB/km) of each fiber drum, the length of each fiber, the splicing loss (dB).}
+
+
+
+%%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%%
+\subsection{Measurement Six: Measurement of the Linear Propagation Loss Using the Cut-Back Technique}
+
+\paragraph{Measure the power at the output of fibre No.2. If the value measured is not equal to $P_3$, re-optimize the launching conditions into Fibre No.1.}
+
+\paragraph{After cutting the fibre 15cm downstream of the splice, measure the optical power, $P_2$ (dBm).}
+
+\paragraph{Knowing the length of fibre No.2 (obtained with the OTDR), calculate for $\lambda=633nm$ the average linear propagation loss (dB/km), compare this calculated value with that obtained with the OTDR.}
+
+
+
+
+%%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%%
+\subsection{Measurement Seven: Measurement of the Splicing Loss Using the Cut-Back Technique}
+
+\paragraph{After cutting the fibre 1cm upstream of the splice, measure the optical power(dBm), ensure this power corresponds to $P_1$.}
+
+\paragraph{Deduce the insertion loss of the splice, i.e. the splicing loss, expressed in dB. Compare the measured value with that of the OTDR.}
+
+
+
+
+%%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%% %%%%%
+\section{Lab Two - YAG:ND LASER}
+
+
+
+
+
+
+
+
+
+\newpage
+\setstretch{1}  % Reduce bibliography line spacing
+\bibliographystyle{IEEETran}
+\bibliography{references.bib}
+\end{document}

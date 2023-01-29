@@ -1,0 +1,88 @@
+SimValueCacheVersionID=1
+$begin 'SimValueInfos'
+	NextUniqueID=3
+	MoveBackwards=false
+	$begin 'SimValue'
+		ID=0
+		$begin 'SimValueParams'
+			QuantityName='S(Port_1,Port_1)'
+			ValueState(90, 15, 1, 2)
+			MatrixSize(0, 0)
+		$end 'SimValueParams'
+	$end 'SimValue'
+	$begin 'SimValue'
+		ID=1
+		$begin 'SimValueParams'
+			QuantityName='S(Port_2,Port_1)'
+			ValueState(90, 15, 1, 2)
+			MatrixSize(0, 0)
+		$end 'SimValueParams'
+	$end 'SimValue'
+	$begin 'SimValue'
+		ID=2
+		$begin 'SimValueParams'
+			QuantityName='S(Port_1,Port_2)'
+			ValueState(90, 15, 1, 2)
+			MatrixSize(0, 0)
+		$end 'SimValueParams'
+	$end 'SimValue'
+$end 'SimValueInfos'
+$begin 'SimValueCache'
+	$begin 'DesignMap'
+		DesignID=5
+		$begin 'SolutionMap'
+			$begin 'ContextMap'
+				SolutionID=196
+			$end 'ContextMap'
+			$begin 'ContextMap'
+				SolutionID=197
+				$begin 'VersionMap'
+					$begin 'ReportTypeSolnDef'
+						ReportType=0
+						SimValueContext(0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'Deriv', false, '0')
+					$end 'ReportTypeSolnDef'
+					$begin 'MajorVVMap'
+						VersionID=203
+						$begin 'MinorVVMap'
+							MajorVariation='Acc_len=\'15mm\' Acc_Wid=\'40.390000000000001mm\' iris_len=\'4mm\' struct_h=\'22.193000000000001mm\' w01=\'20mm\' w31=\'35.329999999999998mm\''
+							MinorCacheFile='min1A35186601637057828126.tmp'
+						$end 'MinorVVMap'
+					$end 'MajorVVMap'
+				$end 'VersionMap'
+			$end 'ContextMap'
+			$begin 'ContextMap'
+				SolutionID=198
+				$begin 'VersionMap'
+					$begin 'ReportTypeSolnDef'
+						ReportType=0
+						SimValueContext(3, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'Deriv', false, '0')
+					$end 'ReportTypeSolnDef'
+					$begin 'MajorVVMap'
+						VersionID=203
+						$begin 'MinorVVMap'
+							MajorVariation='Acc_len=\'15mm\' Acc_Wid=\'40.390000000000001mm\' iris_len=\'4mm\' struct_h=\'22.193000000000001mm\' w01=\'20mm\' w31=\'35.329999999999998mm\''
+							MinorCacheFile='min1BDA186601637057957132.tmp'
+						$end 'MinorVVMap'
+					$end 'MajorVVMap'
+				$end 'VersionMap'
+				$begin 'VersionMap'
+					$begin 'ReportTypeSolnDef'
+						ReportType=0
+						SimValueContext(3, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
+					$end 'ReportTypeSolnDef'
+					$begin 'MajorVVMap'
+						VersionID=203
+						$begin 'MinorVVMap'
+							MajorVariation='Acc_len=\'15mm\' Acc_Wid=\'40.390000000000001mm\' iris_len=\'4mm\' struct_h=\'22.193000000000001mm\' w01=\'20mm\' w31=\'35.329999999999998mm\''
+							MinorCacheFile='min1D4F186601637058071137.tmp'
+						$end 'MinorVVMap'
+						$begin 'MinorVVMap'
+							MajorVariation='Acc_len=\'15mm\' Acc_Wid=\'40.390000000000001mm\' iris_len=\'4mm\' struct_h=\'22.193000000000001mm\' w01=\'22mm\' w31=\'35.329999999999998mm\''
+							MinorCacheFile='min1E57186601637058152143.tmp'
+						$end 'MinorVVMap'
+					$end 'MajorVVMap'
+				$end 'VersionMap'
+			$end 'ContextMap'
+		$end 'SolutionMap'
+	$end 'DesignMap'
+$end 'SimValueCache'

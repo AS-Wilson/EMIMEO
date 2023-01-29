@@ -1,0 +1,31 @@
+{
+   "execution": {
+      "classname": "SMAPowerByEmagHPCFrame",
+      "libname": "SMAPowerByEmagUI"
+   },
+   "inputVariables": [
+      {
+         "name": "Lambda",
+         "type": "float",
+         "value": 181.75
+      },
+      {
+         "name": "R",
+         "type": "float",
+         "value": 1.5
+      },
+      {
+         "name": "Z0",
+         "type": "float",
+         "value": 73.0
+      }
+   ],
+   "outputVariables": [
+      {
+         "len": 1,
+         "name": "3D\\Max Gain at selected Frequency",
+         "type": "float",
+         "value": -3.053157403714965
+      }
+   ]
+}
