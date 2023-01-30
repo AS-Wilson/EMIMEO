@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.13 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>BPSK Project - EEmaginations</title>
+	<link rel="canonical" href="https://eemaginations.com/bpsk-project/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="BPSK Project - EEmaginations" />
+	<meta property="og:description" content="Learn how to transmit text messages using the ADALM-PLUTO SDR. Also learn how to receive and decode messages using the ADALM-PLUTO and RTL-SDR radios. In this project, you will explore the basics of digital communication systems through relatively inexpensive, commercially available hardware and software." />
+	<meta property="og:url" content="https://eemaginations.com/bpsk-project/" />
+	<meta property="og:site_name" content="EEmaginations" />
+	<meta property="article:published_time" content="2019-09-24T16:58:04+00:00" />
+	<meta property="article:modified_time" content="2019-11-04T05:05:00+00:00" />
+	<meta property="og:image" content="https://eemaginations.com/wp-content/uploads/BPSK-Scatterplot.png" />
+	<meta property="og:image:width" content="420" />
+	<meta property="og:image:height" content="420" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="author" content="David Marcus" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="David Marcus" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="6 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://eemaginations.com/bpsk-project/","url":"https://eemaginations.com/bpsk-project/","name":"BPSK Project - EEmaginations","isPartOf":{"@id":"https://eemaginations.com/#website"},"primaryImageOfPage":{"@id":"https://eemaginations.com/bpsk-project/#primaryimage"},"image":{"@id":"https://eemaginations.com/bpsk-project/#primaryimage"},"thumbnailUrl":"https://eemaginations.com/wp-content/uploads/BPSK-Scatterplot.png","datePublished":"2019-09-24T16:58:04+00:00","dateModified":"2019-11-04T05:05:00+00:00","author":{"@id":"https://eemaginations.com/#/schema/person/ec5289a62432d00b9b80b82ef708d3c3"},"breadcrumb":{"@id":"https://eemaginations.com/bpsk-project/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://eemaginations.com/bpsk-project/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://eemaginations.com/bpsk-project/#primaryimage","url":"https://eemaginations.com/wp-content/uploads/BPSK-Scatterplot.png","contentUrl":"https://eemaginations.com/wp-content/uploads/BPSK-Scatterplot.png","width":420,"height":420},{"@type":"BreadcrumbList","@id":"https://eemaginations.com/bpsk-project/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://eemaginations.com/"},{"@type":"ListItem","position":2,"name":"BPSK Project"}]},{"@type":"WebSite","@id":"https://eemaginations.com/#website","url":"https://eemaginations.com/","name":"EEmaginations","description":"Everything Electrical Engineering","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://eemaginations.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Person","@id":"https://eemaginations.com/#/schema/person/ec5289a62432d00b9b80b82ef708d3c3","name":"David Marcus","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://eemaginations.com/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/7cca493265bab3eb29b4d2c542d25de8?s=96&r=g","contentUrl":"https://secure.gravatar.com/avatar/7cca493265bab3eb29b4d2c542d25de8?s=96&r=g","caption":"David Marcus"},"description":"David Marcus is the creator of EEmaginations, and is a Professional Electrical Engineer working in the aerospace industry. David has a passion for solving engineering problems, and helping others succeed educationally and professionally.","url":"https://eemaginations.com/author/admin/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+<link rel="alternate" type="application/rss+xml" title="EEmaginations &raquo; Feed" href="https://eemaginations.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="EEmaginations &raquo; Comments Feed" href="https://eemaginations.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="EEmaginations &raquo; BPSK Project Comments Feed" href="https://eemaginations.com/bpsk-project/feed/" />
+<link rel="preload" href="https://eemaginations.com/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://eemaginations.com/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/eemaginations.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<!-- eemaginations.com is managing ads with Advanced Ads --><script id="eemag-ready">
+			window.advanced_ads_ready=function(e,a){a=a||"complete";var d=function(e){return"interactive"===a?"loading"!==e:"complete"===e};d(document.readyState)?e():document.addEventListener("readystatechange",(function(a){d(a.target.readyState)&&e()}),{once:"interactive"===a})},window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[];		</script>
+		<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://eemaginations.com/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1' media='all' />
+<style id='wp-block-library-theme-inline-css'>
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-top:4px solid;border-bottom:4px solid;margin-bottom:1.75em;color:currentColor}.wp-block-pullquote__citation,.wp-block-pullquote cite,.wp-block-pullquote footer{color:currentColor;text-transform:uppercase;font-size:.8125em;font-style:normal}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;position:relative;font-style:normal}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:"0 0 1em 0"}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}
+</style>
+<link rel='stylesheet' id='wc-blocks-vendors-style-css' href='https://eemaginations.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css?ver=8.9.2' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-css' href='https://eemaginations.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-style.css?ver=8.9.2' media='all' />
+<link rel='stylesheet' id='embedpress_blocks-cgb-style-css-css' href='https://eemaginations.com/wp-content/plugins/embedpress/Gutenberg/dist/blocks.style.build.css?ver=1672685223' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://eemaginations.com/wp-includes/css/classic-themes.min.css?ver=1' media='all' />
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='titan-adminbar-styles-css' href='https://eemaginations.com/wp-content/plugins/anti-spam/assets/css/admin-bar.css?ver=7.3.4' media='all' />
+<link rel='stylesheet' id='embedpress-css' href='https://eemaginations.com/wp-content/plugins/embedpress/assets/css/embedpress.css?ver=6.1.1' media='all' />
+<link rel='stylesheet' id='ims-fme-ssc-custom-css' href='https://eemaginations.com/wp-content/plugins/import-spreadsheets-from-microsoft-excel/css/custom_plugin.css?ver=6.1.1' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css' href='https://eemaginations.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=7.2.2' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css' href='https://eemaginations.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=7.2.2' media='only screen and (max-width: 767px)' />
+<link rel='stylesheet' id='woocommerce-general-css' href='https://eemaginations.com/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=7.2.2' media='all' />
+<style id='woocommerce-inline-inline-css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='font-awesome-5-css' href='https://eemaginations.com/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/css/all.min.css?ver=2.6.1.4' media='all' />
+<link rel='stylesheet' id='ultimate-icons-css' href='https://eemaginations.com/wp-content/uploads/bb-plugin/icons/ultimate-icons/style.css?ver=2.6.1.4' media='all' />
+<link rel='stylesheet' id='fl-builder-layout-bundle-127c613e9e300fcf8eb99268fac5e01b-css' href='https://eemaginations.com/wp-content/uploads/bb-plugin/cache/127c613e9e300fcf8eb99268fac5e01b-layout-bundle.css?ver=2.6.1.4-1.4.4' media='all' />
+<link rel='stylesheet' id='tablepress-default-css' href='https://eemaginations.com/wp-content/plugins/tablepress/css/build/default.css?ver=2.0.2' media='all' />
+<link rel='stylesheet' id='dashicons-css' href='https://eemaginations.com/wp-includes/css/dashicons.min.css?ver=6.1.1' media='all' />
+<link rel='stylesheet' id='jquery-magnificpopup-css' href='https://eemaginations.com/wp-content/plugins/bb-plugin/css/jquery.magnificpopup.min.css?ver=2.6.1.4' media='all' />
+<link rel='stylesheet' id='base-css' href='https://eemaginations.com/wp-content/themes/bb-theme/css/base.min.css?ver=1.7.12.1' media='all' />
+<link rel='stylesheet' id='fl-automator-skin-css' href='https://eemaginations.com/wp-content/uploads/bb-theme/skin-63b326f267cd4.css?ver=1.7.12.1' media='all' />
+<link rel='stylesheet' id='fl-child-theme-css' href='https://eemaginations.com/wp-content/themes/bb-theme-child/style.css?ver=6.1.1' media='all' />
+<link rel='stylesheet' id='pp-animate-css' href='https://eemaginations.com/wp-content/plugins/bbpowerpack/assets/css/animate.min.css?ver=3.5.1' media='all' />
+<!--n2css--><script src='https://eemaginations.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.1' id='jquery-core-js'></script>
+<script src='https://eemaginations.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script src='https://eemaginations.com/wp-content/plugins/embedpress/assets/js/pdfobject.min.js?ver=3.6.3' id='embedpress-pdfobject-js'></script>
+<script src='https://eemaginations.com/wp-includes/js/imagesloaded.min.js?ver=6.1.1' id='imagesloaded-js'></script>
+<script src='https://eemaginations.com/wp-content/plugins/insert-pages/js/widget.js?ver=20221115' id='insertpages_widget-js'></script>
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script src='https://www.googletagmanager.com/gtag/js?id=UA-151756994-1' id='google_gtagjs-js' async></script>
+<script id='google_gtagjs-js-after'>
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["eemaginations.com"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "UA-151756994-1", {"anonymize_ip":true});
+</script>
+
+<!-- End Google Analytics snippet added by Site Kit -->
+<link rel="https://api.w.org/" href="https://eemaginations.com/wp-json/" /><link rel="alternate" type="application/json" href="https://eemaginations.com/wp-json/wp/v2/posts/730" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://eemaginations.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://eemaginations.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.1" />
+<meta name="generator" content="WooCommerce 7.2.2" />
+<link rel='shortlink' href='https://eemaginations.com/?p=730' />
+<link rel="alternate" type="application/json+oembed" href="https://eemaginations.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Feemaginations.com%2Fbpsk-project%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://eemaginations.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Feemaginations.com%2Fbpsk-project%2F&#038;format=xml" />
+		<script>
+			var bb_powerpack = {
+				ajaxurl: 'https://eemaginations.com/wp-admin/admin-ajax.php',
+				search_term: ''
+			};
+		</script>
+		<meta name="generator" content="Site Kit by Google 1.90.1" /><link rel="pingback" href="https://eemaginations.com/xmlrpc.php">
+	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	
+<!-- Google AdSense snippet added by Site Kit -->
+<meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+<meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+<!-- End Google AdSense snippet added by Site Kit -->
+
+<!-- Google AdSense snippet added by Site Kit -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3375055350186237&amp;host=ca-host-pub-2644536267352236" crossorigin="anonymous"></script>
+
+<!-- End Google AdSense snippet added by Site Kit -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3375055350186237"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+					google_ad_client: "ca-pub-3375055350186237",
+					enable_page_level_ads: true,
+					overlays: {bottom: true}
+				});</script><link rel="icon" href="https://eemaginations.com/wp-content/uploads/cropped-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://eemaginations.com/wp-content/uploads/cropped-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://eemaginations.com/wp-content/uploads/cropped-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://eemaginations.com/wp-content/uploads/cropped-favicon-270x270.png" />
+		<style id="wp-custom-css">
+			@media only screen and (min-width:320px) and (max-width:767px){
+	.mail-chimp-sign-up-form {
+		display:block!important;
+}
+	.form-fields{
+		width:100%!important;
+		margin-bottom: 3%;
+		padding:0!important
+}
+	.mail-chimp-btn{
+		width:100%!important;
+	}
+}
+div.fl-module.fl-module-subscribe-form.fl-node-5ecc67c4dfc21 div.fl-module-content.fl-node-content{
+	display:none;
+}
+body.page-id-2947 div.fl-row.fl-row-full-width.fl-row-bg-none.fl-node-5e8f2f21d1354 {
+    display: none;
+}		</style>
+		</head>
+<body class="post-template-default single single-post postid-730 single-format-standard theme-bb-theme woocommerce-no-js fl-theme-builder-footer fl-theme-builder-footer-footer fl-theme-builder-header fl-theme-builder-header-header-copy fl-theme-builder-singular fl-theme-builder-singular-projects-tools-layout fl-framework-base fl-preset-default fl-full-width fl-has-sidebar fl-search-active has-blocks aa-prefix-eemag-" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<a aria-label="Skip to content" class="fl-screen-reader-text" href="#fl-main-content">Skip to content</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><div class="fl-page">
+	<header class="fl-builder-content fl-builder-content-490 fl-builder-global-templates-locked" data-post-id="490" data-type="header" data-sticky="0" data-sticky-on="" data-sticky-breakpoint="medium" data-shrink="0" data-overlay="0" data-overlay-bg="transparent" data-shrink-image-height="50px" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader"><div class="fl-row fl-row-full-width fl-row-bg-color fl-node-5d70189b514a6" data-node="5d70189b514a6">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-5d70189b514aa fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="5d70189b514aa">
+			<div class="fl-col fl-node-5d70189b514ab fl-col-small" data-node="5d70189b514ab">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-5d70189b514ae" data-node="5d70189b514ae">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+				<a href="https://eemaginations.com/home/" target="_self" itemprop="url">
+				<img decoding="async" loading="lazy" class="fl-photo-img wp-image-638 size-full" src="https://eemaginations.com/wp-content/uploads/logo-v2-final-black.png" alt="logo-v2-final-black" itemprop="image" height="70" width="322" title="logo-v2-final-black"  data-no-lazy="1" srcset="https://eemaginations.com/wp-content/uploads/logo-v2-final-black.png 322w, https://eemaginations.com/wp-content/uploads/logo-v2-final-black-300x65.png 300w" sizes="(max-width: 322px) 100vw, 322px" />
+				</a>
+					</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-5d70189b514ac" data-node="5d70189b514ac">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-menu fl-node-5d70189b514ad" data-node="5d70189b514ad">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu fl-menu-responsive-toggle-mobile">
+	<button class="fl-menu-mobile-toggle hamburger" aria-label="Menu"><span class="fl-menu-icon svg-container"><svg version="1.1" class="hamburger-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+<rect class="fl-hamburger-menu-top" width="512" height="102"/>
+<rect class="fl-hamburger-menu-middle" y="205" width="512" height="102"/>
+<rect class="fl-hamburger-menu-bottom" y="410" width="512" height="102"/>
+</svg>
+</span></button>	<div class="fl-clear"></div>
+	<nav aria-label="Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-top-menu" class="menu fl-menu-horizontal fl-toggle-arrows"><li id="menu-item-472" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a href="https://eemaginations.com/">Home</a></li><li id="menu-item-3017" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://eemaginations.com/subscribe/">Subscribe</a></li><li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://eemaginations.com/about/">About</a></li><li id="menu-item-543" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a href="#">What We Offer</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">	<li id="menu-item-134" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://eemaginations.com/resources/">Resources</a></li>	<li id="menu-item-757" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://eemaginations.com/projects-tools/">Projects / Tools</a></li>	<li id="menu-item-145" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://eemaginations.com/professional-development/">Professional Development</a></li>	<li id="menu-item-2849" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://eemaginations.com/engineering-services/">Engineering Services</a></li></ul></li><li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://eemaginations.com/contact/">Contact</a></li><li id="menu-item-657" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://eemaginations.com/cart/">Cart</a></li></ul></nav></div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</header><div class="uabb-js-breakpoint" style="display: none;"></div>	<div id="fl-main-content" class="fl-page-content" itemprop="mainContentOfPage" role="main">
+
+		<div class="fl-builder-content fl-builder-content-748 fl-builder-global-templates-locked" data-post-id="748"><div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5d8a60c8ed17f" data-node="5d8a60c8ed17f">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-5d8a60c8ed184" data-node="5d8a60c8ed184">
+			<div class="fl-col fl-node-5d8a60c8ed185" data-node="5d8a60c8ed185">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-5d8a60c8ed186" data-node="5d8a60c8ed186">
+	<div class="fl-module-content fl-node-content">
+		<h1 class="fl-heading">
+		<span class="fl-heading-text">BPSK Project</span>
+	</h1>
+	</div>
+</div>
+<div class="fl-module fl-module-photo fl-node-5d8a60c8ed18d" data-node="5d8a60c8ed18d">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+				<img decoding="async" loading="lazy" class="fl-photo-img wp-image-734 size-full" src="https://eemaginations.com/wp-content/uploads/BPSK-Scatterplot.png" alt="BPSK Scatterplot" itemprop="image" height="420" width="420" title="BPSK Scatterplot" srcset="https://eemaginations.com/wp-content/uploads/BPSK-Scatterplot.png 420w, https://eemaginations.com/wp-content/uploads/BPSK-Scatterplot-150x150.png 150w, https://eemaginations.com/wp-content/uploads/BPSK-Scatterplot-300x300.png 300w, https://eemaginations.com/wp-content/uploads/BPSK-Scatterplot-100x100.png 100w" sizes="(max-width: 420px) 100vw, 420px" />
+					</div>
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-fl-post-content fl-node-5d8a60c8ed18a" data-node="5d8a60c8ed18a">
+	<div class="fl-module-content fl-node-content">
+		
+<p><em>EEmaginations.com is a participant in the Amazon Services LLC Associates Program. Any purchases you make from the links you click on this site, earns me a small commission, which helps keep this site up and running for you.</em></p>
+
+
+
+<h2>Introduction</h2>
+
+
+
+<p>The BPSK project is a project I worked on in college, which, as of late, turned into a hobby with the more recent availability of affordable, commercial off the shelf software defined radios (SDRs), i.e., (RTL-SDR, ADALM-PLUTO). The objective of this project is to wirelessly transmit a message from one SDR, and then receive and decode the message using either the same, or another SDR.  The project will require some knowledge of digital communication systems, RF theory, digital signal processing, and proficiency with Matlab. The overall goal of this project is to have a greater understanding and appreciation of how digital communication systems work, and how we are surrounded by the application of this project in everyday life, i.e., sending and receiving text messages between friends over vast distances using devices that output very little power.</p>
+
+
+
+<h2>Requirements</h2>
+
+
+
+<p>To get started, you will need a few things:</p>
+
+
+
+<div class="is-layout-flex wp-container-3 wp-block-columns has-2-columns">
+<div class="is-layout-flow wp-block-column">
+<p style="text-align:center"><strong>HARDWARE</strong></p>
+
+
+
+<ul><li><strong>Computer</strong><ul><li>PC/Mac capable of running MATLAB</li><li>For comparison, I am using a mid-2010, Macbook Pro with 8GB of RAM installed, and can run this project with no problem</li><li>Minimum 1 USB port</li></ul></li><li><strong>ADALM-PLUTO SDR (Link Below)</strong><ul><li>Full duplex, USB powered radio&nbsp;</li><li>Configurable between 325 MHz to 3.8 GHz<ul><li>Can be software modified to operate between 70 MHz and 6 GHz by following the instructions here: <a href="https://www.rtl-sdr.com/adalm-pluto-sdr-hack-tune-70-mhz-to-6-ghz-and-gqrx-install/">https://www.rtl-sdr.com/adalm-pluto-sdr-hack-tune-70-mhz-to-6-ghz-and-gqrx-install/</a></li></ul></li><li>Package comes with two antennas and one USB, power cable</li></ul></li><li><strong>RTL-SDR </strong><em><strong>(Optional</strong></em><strong> </strong><em><strong>&#8211; Link Below</strong></em><strong>)</strong><ul><li>USB powered, receive only radio</li></ul></li></ul>
+
+
+
+<p></p>
+</div>
+
+
+
+<div class="is-layout-flow wp-block-column">
+<p style="text-align:center"><strong>SOFTWARE</strong></p>
+
+
+
+<ul><li><strong>MATLAB</strong><ul><li>Version 2017a or higher <em>(I am running 2019b)</em></li><li>Requires the following toolboxes:<ul><li>Communication Systems Toolbox</li><li>DSP System Toolbox</li><li>Signal Processing Toolbox</li><li>Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</li><li>Communications Toolbox Support Package for RTL-SDR Radio</li></ul></li></ul></li><li>PuTTY<ul><li>Open source, terminal emulator, console program&nbsp;&nbsp;</li><li>Used to modify the software of the ADALM-PLUTO to open operational frequency range of radio</li></ul></li></ul>
+</div>
+</div>
+
+
+
+<div class="is-layout-flex wp-container-6 wp-block-columns alignwide has-2-columns">
+<div class="is-layout-flow wp-block-column">
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ac&amp;ref=tf_til&amp;ad_type=product_link&amp;tracking_id=eemaginations-20&amp;marketplace=amazon&amp;region=US&amp;placement=B079VXXKXR&amp;asins=B079VXXKXR&amp;linkId=fcbb5213259e8602d5130a98ea6aa698&amp;show_border=false&amp;link_opens_in_new_window=true&amp;price_color=333333&amp;title_color=0066c0&amp;bg_color=ffffff">
+    </iframe>
+</div>
+
+
+
+<div class="is-layout-flow wp-block-column">
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ac&amp;ref=tf_til&amp;ad_type=product_link&amp;tracking_id=eemaginations-20&amp;marketplace=amazon&amp;region=US&amp;placement=B011HVUEME&amp;asins=B011HVUEME&amp;linkId=77fe7271bf26fb84aad1a3746c2a5c69&amp;show_border=false&amp;link_opens_in_new_window=true&amp;price_color=333333&amp;title_color=0066c0&amp;bg_color=ffffff">
+    </iframe>
+</div>
+</div>
+
+
+
+<h3>ADALM-PLUTO Review</h3>
+
+
+
+<p>Unless you have access to a programmable, RF signal generator, you will need to purchase, at a minimum, the ADALM-PLUTO SDR to complete this project. Although other SDRs are available, I have found the PLUTO to be the best solution for the project for the following reasons: </p>
+
+
+
+<ul><li>Price<ul><li>One of the least expensive, commercially available, full duplex radios<ul><li>Amazon link to PLUTO is above; however, radio can also be purchased from Analog Devices, DigiKey, and other stores</li></ul></li></ul></li><li>Designed for students and hobbyists<ul><li>Easy to use and simple to deploy</li><li>Works with Mac OS/Windows/Linux</li><li>USB powered device</li></ul></li><li>MATLAB/Simulink Support<ul><li>Out of the box, this radio is ready to be used with MATLAB/Simulink</li><li>MATLAB support toolbox for PLUTO radio comes with many ready to run, built-in examples </li></ul></li><li>Performance Characteristics<ul><li>Software upgradeable to have RF bandwidth of 70 MHz to 6 GHz</li><li>12 bit ADC/DAC <ul><li>65.2 kSPS to 61.44 MSPS sample rates</li></ul></li><li>7 dBm Transmit Output Power</li></ul></li></ul>
+
+
+
+<h2>Project MATLAB Files</h2>
+
+
+
+<p>Although you do not need them to use the radios, I have developed MATLAB functions, specific to this application, to be used with the ADALM-PLUTO and RTL-SDR radios. The files contained in the zipped folder below, are to be placed into your MATLAB directory: </p>
+
+
+
+<div class="wp-block-file"><a href="https://eemaginations.com/wp-content/uploads/BPSK-Project-MATLAB-Files.zip">BPSK Project MATLAB Files</a><a href="https://eemaginations.com/wp-content/uploads/BPSK-Project-MATLAB-Files.zip" class="wp-block-file__button" download>Download</a></div>
+
+
+
+<p>The zipped folder contains MATLAB functions I&#8217;ve created to perform the following tasks: </p>
+
+
+
+<ol><li>Generate text messages and covert messages to binary</li><li>Generate frame structure for transmitting data<ol><li>Frame structure contains data guard followed by preamble (synchronization sequence), followed by message in binary format</li></ol></li><li>BPSK modulate frame</li><li>Initialize PLUTO transmitter</li><li>Apply pulse shape filtering to frame prior to transmission</li><li>Transmit frame repeatedly via PLUTO radio</li><li>Initialize PLUTO, or RTL-SDR receiver</li><li>Receive and record transmitted message</li><li>Apply matched filtering to received data prior to compensation/decoding</li><li>Compensate message</li><li>Decode message</li></ol>
+
+
+
+<p>Many of the parameters within the functions, like the center frequency and sample rate, can be modified to values of your choosing (hardware limitations apply). Nonetheless, the code can be executed by running with the default parameters:  </p>
+
+
+
+<ul><li>Center Frequency = 915 MHz</li><li>Sample Rate = 300 samples/second</li><li>Data Rate = 20 kbps</li><li>Default message = www.EEmaginations.com</li></ul>
+
+
+
+<p><strong>IMPORTANT:</strong> If modifying the transmit frequency of the PLUTO, remember to only transmit in the ISM Band.</p>
+
+
+
+<p>For individuals that do not have access to the equipment to carry out the project, DO NOT WORRY! The zipped folder contains a script that can be executed without the need of a radio. The zip also contains a sample dataset (.mat) I transmitted and received with my very own ADALM-PLUTO SDR. The dataset uses the default parameters shown above. Use the example script and dataset to experiment, and to learn more about the BPSK project before investing in extra hardware and software.</p>
+
+
+
+<h2>Completing the Project</h2>
+
+
+
+<p>To begin transmitting and receiving messages using your ADALM-PLUTO SDR, perform the following:</p>
+
+
+
+<p>Type the code below, into the MATLAB command line, to repeatedly transmit the default message with default parameters listed above:</p>
+
+
+
+<pre class="wp-block-code"><code>plutoTx = transmitPLUTOMessage;</code></pre>
+
+
+
+<p>The following will appear in the MATLAB command line to indicate the message is being successfully transmitted:</p>
+
+
+
+<pre class="wp-block-code"><code>## Establishing connection to hardware. This process can take several seconds.
+## Waveform transmission has started successfully and will repeat indefinitely. 
+## Call the release method to stop the transmission.</code></pre>
+
+
+
+<p>To receive and decode the transmitted message with the PLUTO radio, call the following function:</p>
+
+
+
+<pre class="wp-block-code"><code>[decodedMessage,rx_signal] = receivePLUTOMessage;</code></pre>
+
+
+
+<p>To receive and decode the transmitted message with the RTL-SDR, call the following function:</p>
+
+
+
+<pre class="wp-block-code"><code>[decodedMessage,rx_signal] = receiveRTLSDRMessage;</code></pre>
+
+
+
+<p>To stop the transmission call the release function as follows:</p>
+
+
+
+<pre class="wp-block-code"><code>release(plutoTx);</code></pre>
+
+
+
+<p>The receive message function is programmed to capture 10 frames of data. Plotting the power spectrum of the received signal should yield a plot similar to the following:</p>
+
+
+
+<pre class="wp-block-code"><code>plot(10*log10(abs(rx_signal)))</code></pre>
+
+
+
+<figure class="wp-block-image"><img decoding="async" loading="lazy" width="560" height="420" src="https://eemaginations.com/wp-content/uploads/Power-Plot.png" alt="" class="wp-image-943" srcset="https://eemaginations.com/wp-content/uploads/Power-Plot.png 560w, https://eemaginations.com/wp-content/uploads/Power-Plot-300x225.png 300w" sizes="(max-width: 560px) 100vw, 560px" /></figure>
+
+
+
+<p>The decoded message should read:</p>
+
+
+
+<pre class="wp-block-code"><code>decodedMessage =
+
+    'www.EEmaginations.com'</code></pre>
+
+
+
+<p>which is exactly what was transmitted. </p>
+
+
+
+<h2>The Decode Message Function</h2>
+
+
+
+<p>The <em>decodeMessage</em> function uses many of the Communication Systems Toolbox system objects to perform receiver synchronization. The coarse synchronization, carrier synchronization, and preamble detection system objects are used to compensate phase and frequency offsets in the received signal, and to determine the exact start of the message data. The simple algorithm I put together, is not enough to decode the signal 100% of the time, and you will see bit errors as a result of this. The amount of noise in your environment, multipath, and path loss are all causes for signal degradation, and make it difficult to recover the message. I leave it up to you to design a stronger algorithm, using your own methods, and/or using MATLAB&#8217;s methods, to recover the transmitted messages. </p>
+
+
+
+<h2>Conclusion</h2>
+
+
+
+<p>I hope you find this project useful, informative, and enjoyable as you explore your way through the hardware, software, and code. I ask that you improve upon the design and share! This project can be taken a step further in many ways: decode all the messages in the frame, apply higher order modulation, decode messages in near realtime, transmit different framing structures and messages types&#8230;the possibilities are endless!</p>
+
+
+
+<p>Lastly, I ask that you please review and leave comments on this project, and please email me with any comments, questions, concerns, observations, things that need to be fixed, recommendations, etc. </p>
+
+
+
+<p>Good luck, and have fun!!!</p>
+	</div>
+</div>
+<div class="fl-module fl-module-separator fl-node-5d8a60c8ed187" data-node="5d8a60c8ed187">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-separator"></div>
+	</div>
+</div>
+<div class="fl-module fl-module-fl-author-bio fl-node-5d8a6382a3ea8" data-node="5d8a6382a3ea8">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-author-bio-thumb">
+	<img alt='' src='https://secure.gravatar.com/avatar/7cca493265bab3eb29b4d2c542d25de8?s=100&#038;r=g' srcset='https://secure.gravatar.com/avatar/7cca493265bab3eb29b4d2c542d25de8?s=200&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' loading='lazy' decoding='async'/></div>
+<div class="fl-author-bio-content">
+	<h3 class="fl-author-bio-name">David Marcus</h3>
+	<div class="fl-author-bio-text">David Marcus is the creator of EEmaginations, and is a Professional Electrical Engineer working in the aerospace industry. David has a passion for solving engineering problems, and helping others succeed educationally and professionally.</div>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-separator fl-node-5d8a60c8ed18f" data-node="5d8a60c8ed18f">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-separator"></div>
+	</div>
+</div>
+<div class="fl-module fl-module-fl-post-navigation fl-node-5d8a60c8ed188" data-node="5d8a60c8ed188">
+	<div class="fl-module-content fl-node-content">
+		
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><div class="nav-next"><a href="https://eemaginations.com/decimal-to-roman-numeral-conversion/" rel="next">Decimal to Roman Numeral Conversion &rarr;</a></div></div>
+	</nav>	</div>
+</div>
+<div class="fl-module fl-module-fl-comments fl-node-5dc0348047925" data-node="5dc0348047925">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-comments">
+
+	
+		<div class="fl-comments-list">
+
+		<h3 class="fl-comments-list-title">
+			3 Comments		</h3>
+
+		<ol id="comments">
+		<li class="pingback even thread-even depth-1" id="li-comment-5708">
+	<div id="comment-5708" class="comment-body clearfix">
+
+		<div class="comment-meta">
+			<span class="comment-avatar">
+							</span>
+			<span class="comment-author-link"><a href='https://eemaginations.com/be-prepared-to-answer-this-question-during-an-interview/' rel='external nofollow ugc' class='url'>Be Prepared to Answer This Question During an Interview - EEmaginations</a></span> <span class="comment-date">on December 4, 2020 at 12:00 am</span>
+		</div><!-- .comment-meta -->
+
+		<div class="comment-content clearfix">
+						<p>[&#8230;] go into some detail regarding this project. By the way, this project can be found on my website here. Going down this route can be a good opportunity to showcase even more expertise, and open some [&#8230;]</p>
+					</div><!-- .comment-content -->
+
+		<div class="comment-reply-link"><a rel='nofollow' class='comment-reply-link' href='#comment-5708' data-commentid="5708" data-postid="730" data-belowelement="comment-5708" data-respondelement="respond" data-replyto="Reply to Be Prepared to Answer This Question During an Interview - EEmaginations" aria-label='Reply to Be Prepared to Answer This Question During an Interview - EEmaginations'>Reply</a></div>
+	</div><!-- .comment-body -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-6057">
+	<div id="comment-6057" class="comment-body clearfix">
+
+		<div class="comment-meta">
+			<span class="comment-avatar">
+				<img alt='' src='https://secure.gravatar.com/avatar/cd5e51354c7af8356db9196066ec1b2f?s=80&#038;r=g' srcset='https://secure.gravatar.com/avatar/cd5e51354c7af8356db9196066ec1b2f?s=160&#038;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' loading='lazy' decoding='async'/>			</span>
+			<span class="comment-author-link">Rilwanu AR</span> <span class="comment-date">on August 10, 2021 at 7:06 pm</span>
+		</div><!-- .comment-meta -->
+
+		<div class="comment-content clearfix">
+						<p>This is really useful for me, a nice start from which I may learn more about SDR,  and the most friendly content to me by far. Thank you David</p>
+					</div><!-- .comment-content -->
+
+		<div class="comment-reply-link"><a rel='nofollow' class='comment-reply-link' href='#comment-6057' data-commentid="6057" data-postid="730" data-belowelement="comment-6057" data-respondelement="respond" data-replyto="Reply to Rilwanu AR" aria-label='Reply to Rilwanu AR'>Reply</a></div>
+	</div><!-- .comment-body -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="li-comment-6085">
+	<div id="comment-6085" class="comment-body clearfix">
+
+		<div class="comment-meta">
+			<span class="comment-avatar">
+				<img alt='' src='https://secure.gravatar.com/avatar/9ca0e22a5d314879ecd3ebf2f66e0418?s=80&#038;r=g' srcset='https://secure.gravatar.com/avatar/9ca0e22a5d314879ecd3ebf2f66e0418?s=160&#038;r=g 2x' class='avatar avatar-80 photo' height='80' width='80' loading='lazy' decoding='async'/>			</span>
+			<span class="comment-author-link">Diego</span> <span class="comment-date">on February 2, 2022 at 11:37 am</span>
+		</div><!-- .comment-meta -->
+
+		<div class="comment-content clearfix">
+						<p>Thank you so much!. It is really helpful, well explained and clear. Great job!<br />
+Thanks again.</p>
+					</div><!-- .comment-content -->
+
+		<div class="comment-reply-link"><a rel='nofollow' class='comment-reply-link' href='#comment-6085' data-commentid="6085" data-postid="730" data-belowelement="comment-6085" data-respondelement="respond" data-replyto="Reply to Diego" aria-label='Reply to Diego'>Reply</a></div>
+	</div><!-- .comment-body -->
+</li><!-- #comment-## -->
+		</ol>
+
+		
+	</div>
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="/bpsk-project/#respond" style="display:none;">Cancel Reply</a></small></h3><form action="https://eemaginations.com/wp-comments-post.php" method="post" id="fl-comment-form" class="fl-comment-form"><label for="fl-comment">Comment</label><textarea id="fl-comment" name="comment" class="form-control" cols="60" rows="8" tabindex="4"></textarea><br /><label for="fl-author">Name (required)</label>
+									<input type="text" id="fl-author" name="author" class="form-control" value="" tabindex="1" aria-required="true" /><br />
+<label for="fl-email">Email (will not be published) (required)</label>
+									<input type="text" id="fl-email" name="email" class="form-control" value="" tabindex="2" aria-required="true" /><br />
+<label for="fl-url">Website</label>
+									<input type="text" id="fl-url" name="url" class="form-control" value="" tabindex="3" /><br />
+<p class="form-submit"><input name="submit" type="submit" id="fl-comment-form-submit" class="btn btn-primary" value="Submit Comment" /> <input type='hidden' name='comment_post_ID' value='730' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><!-- Anti-spam plugin wordpress.org/plugins/anti-spam/ --><div class="wantispam-required-fields"><input type="hidden" name="wantispam_t" class="wantispam-control wantispam-control-t" value="1675069999" /><div class="wantispam-group wantispam-group-q" style="clear: both;">
+					<label>Current ye@r <span class="required">*</span></label>
+					<input type="hidden" name="wantispam_a" class="wantispam-control wantispam-control-a" value="2023" />
+					<input type="text" name="wantispam_q" class="wantispam-control wantispam-control-q" value="7.3.4" autocomplete="off" />
+				  </div>
+<div class="wantispam-group wantispam-group-e" style="display: none;">
+					<label>Leave this field empty</label>
+					<input type="text" name="wantispam_e_email_url_website" class="wantispam-control wantispam-control-e" value="" autocomplete="off" />
+				  </div>
+</div><!--\End Anti-spam plugin --></form>	</div><!-- #respond -->
+		</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-5d8a60c8ed189 fl-col-small" data-node="5d8a60c8ed189">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-5d8a60c8ed18b" data-node="5d8a60c8ed18b">
+	<div class="fl-module-content fl-node-content">
+		<h3 class="fl-heading">
+		<span class="fl-heading-text">Featured Resources</span>
+	</h3>
+	</div>
+</div>
+<div class="fl-module fl-module-post-grid fl-node-5d8a60c8ed18c" data-node="5d8a60c8ed18c">
+	<div class="fl-module-content fl-node-content">
+			<div class="fl-post-feed" itemscope="itemscope" itemtype="https://schema.org/Blog">
+	<div class="fl-post-feed-post fl-post-align-default post-3147 post type-post status-publish format-standard has-post-thumbnail hentry category-projects-tools" itemscope itemtype="https://schema.org/BlogPosting">
+
+	<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://eemaginations.com/financial-tools/" content="Financial Tools" /><meta itemprop="datePublished" content="2020-10-19" /><meta itemprop="dateModified" content="2020-10-19" /><div itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="EEmaginations"></div><div itemscope itemprop="author" itemtype="https://schema.org/Person"><meta itemprop="url" content="https://eemaginations.com/author/admin/" /><meta itemprop="name" content="David Marcus" /></div><div itemscope itemprop="image" itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://eemaginations.com/wp-content/uploads/income-tax-491626_1920.jpg" /><meta itemprop="width" content="1920" /><meta itemprop="height" content="1280" /></div><div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter"><meta itemprop="interactionType" content="https://schema.org/CommentAction" /><meta itemprop="userInteractionCount" content="0" /></div>	
+		<div class="fl-post-feed-text">
+	
+		<div class="fl-post-feed-header">
+
+			<h2 class="fl-post-feed-title" itemprop="headline">
+				<a href="https://eemaginations.com/financial-tools/" rel="bookmark" title="Financial Tools">Financial Tools</a>
+			</h2>
+
+			
+			
+			
+			
+		</div>
+
+	
+	
+	
+		
+		
+		
+	</div>
+
+	<div class="fl-clear"></div>
+</div>
+<div class="fl-post-feed-post fl-post-align-default post-3091 post type-post status-publish format-standard has-post-thumbnail hentry category-projects-tools" itemscope itemtype="https://schema.org/BlogPosting">
+
+	<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://eemaginations.com/computer-building-project/" content="Computer Building Project" /><meta itemprop="datePublished" content="2020-07-28" /><meta itemprop="dateModified" content="2020-07-28" /><div itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="EEmaginations"></div><div itemscope itemprop="author" itemtype="https://schema.org/Person"><meta itemprop="url" content="https://eemaginations.com/author/admin/" /><meta itemprop="name" content="David Marcus" /></div><div itemscope itemprop="image" itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://eemaginations.com/wp-content/uploads/comp1.png" /><meta itemprop="width" content="514" /><meta itemprop="height" content="342" /></div><div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter"><meta itemprop="interactionType" content="https://schema.org/CommentAction" /><meta itemprop="userInteractionCount" content="0" /></div>	
+		<div class="fl-post-feed-text">
+	
+		<div class="fl-post-feed-header">
+
+			<h2 class="fl-post-feed-title" itemprop="headline">
+				<a href="https://eemaginations.com/computer-building-project/" rel="bookmark" title="Computer Building Project">Computer Building Project</a>
+			</h2>
+
+			
+			
+			
+			
+		</div>
+
+	
+	
+	
+		
+		
+		
+	</div>
+
+	<div class="fl-clear"></div>
+</div>
+<div class="fl-post-feed-post fl-post-align-default post-2234 post type-post status-publish format-standard has-post-thumbnail hentry category-featured-projects-tools category-projects-tools tag-roman-numeral-rules" itemscope itemtype="https://schema.org/BlogPosting">
+
+	<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://eemaginations.com/rules-for-writing-roman-numerals/" content="Rules for Writing Roman Numerals" /><meta itemprop="datePublished" content="2020-02-06" /><meta itemprop="dateModified" content="2020-05-18" /><div itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="EEmaginations"></div><div itemscope itemprop="author" itemtype="https://schema.org/Person"><meta itemprop="url" content="https://eemaginations.com/author/admin/" /><meta itemprop="name" content="David Marcus" /></div><div itemscope itemprop="image" itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://eemaginations.com/wp-content/uploads/julius-caesar-marble-statue-615344-scaled.jpg" /><meta itemprop="width" content="1704" /><meta itemprop="height" content="2560" /></div><div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter"><meta itemprop="interactionType" content="https://schema.org/CommentAction" /><meta itemprop="userInteractionCount" content="0" /></div>	
+		<div class="fl-post-feed-text">
+	
+		<div class="fl-post-feed-header">
+
+			<h2 class="fl-post-feed-title" itemprop="headline">
+				<a href="https://eemaginations.com/rules-for-writing-roman-numerals/" rel="bookmark" title="Rules for Writing Roman Numerals">Rules for Writing Roman Numerals</a>
+			</h2>
+
+			
+			
+			
+			
+		</div>
+
+	
+	
+	
+		
+		
+		
+	</div>
+
+	<div class="fl-clear"></div>
+</div>
+<div class="fl-post-feed-post fl-post-align-default post-2212 post type-post status-publish format-standard has-post-thumbnail hentry category-featured-projects-tools category-projects-tools tag-roman-numeral-conversion tag-roman-numeral-to-decimal-conversion" itemscope itemtype="https://schema.org/BlogPosting">
+
+	<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://eemaginations.com/roman-numeral-to-decimal-conversion/" content="Roman Numeral to Decimal Conversion" /><meta itemprop="datePublished" content="2020-02-04" /><meta itemprop="dateModified" content="2020-02-09" /><div itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="EEmaginations"></div><div itemscope itemprop="author" itemtype="https://schema.org/Person"><meta itemprop="url" content="https://eemaginations.com/author/admin/" /><meta itemprop="name" content="David Marcus" /></div><div itemscope itemprop="image" itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://eemaginations.com/wp-content/uploads/thomas-bormans-JsTmUnHdVYQ-unsplash-scaled.jpg" /><meta itemprop="width" content="2560" /><meta itemprop="height" content="1707" /></div><div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter"><meta itemprop="interactionType" content="https://schema.org/CommentAction" /><meta itemprop="userInteractionCount" content="0" /></div>	
+		<div class="fl-post-feed-text">
+	
+		<div class="fl-post-feed-header">
+
+			<h2 class="fl-post-feed-title" itemprop="headline">
+				<a href="https://eemaginations.com/roman-numeral-to-decimal-conversion/" rel="bookmark" title="Roman Numeral to Decimal Conversion">Roman Numeral to Decimal Conversion</a>
+			</h2>
+
+			
+			
+			
+			
+		</div>
+
+	
+	
+	
+		
+		
+		
+	</div>
+
+	<div class="fl-clear"></div>
+</div>
+<div class="fl-post-feed-post fl-post-align-default post-2179 post type-post status-publish format-standard has-post-thumbnail hentry category-featured-projects-tools category-projects-tools tag-decimal-to-roman-numeral-conversion tag-matlab tag-roman-numeral-code tag-roman-numeral-conversion-code" itemscope itemtype="https://schema.org/BlogPosting">
+
+	<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://eemaginations.com/decimal-to-roman-numeral-conversion/" content="Decimal to Roman Numeral Conversion" /><meta itemprop="datePublished" content="2020-02-03" /><meta itemprop="dateModified" content="2020-02-09" /><div itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="EEmaginations"></div><div itemscope itemprop="author" itemtype="https://schema.org/Person"><meta itemprop="url" content="https://eemaginations.com/author/admin/" /><meta itemprop="name" content="David Marcus" /></div><div itemscope itemprop="image" itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://eemaginations.com/wp-content/uploads/rome-1520894_1920.jpg" /><meta itemprop="width" content="1920" /><meta itemprop="height" content="1280" /></div><div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter"><meta itemprop="interactionType" content="https://schema.org/CommentAction" /><meta itemprop="userInteractionCount" content="0" /></div>	
+		<div class="fl-post-feed-text">
+	
+		<div class="fl-post-feed-header">
+
+			<h2 class="fl-post-feed-title" itemprop="headline">
+				<a href="https://eemaginations.com/decimal-to-roman-numeral-conversion/" rel="bookmark" title="Decimal to Roman Numeral Conversion">Decimal to Roman Numeral Conversion</a>
+			</h2>
+
+			
+			
+			
+			
+		</div>
+
+	
+	
+	
+		
+		
+		
+	</div>
+
+	<div class="fl-clear"></div>
+</div>
+	</div>
+<div class="fl-clear"></div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</div><div class="uabb-js-breakpoint" style="display: none;"></div>
+	</div><!-- .fl-page-content -->
+	<footer class="fl-builder-content fl-builder-content-458 fl-builder-global-templates-locked" data-post-id="458" data-type="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter"><div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5e8f2f21d1354" data-node="5e8f2f21d1354">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-5e8f2f21d8d06" data-node="5e8f2f21d8d06">
+			<div class="fl-col fl-node-5e8f2f21d8edf" data-node="5e8f2f21d8edf">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-5e8f2fc5d9454" data-node="5e8f2fc5d9454">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p>Subscribe to our email list to receive periodic updates and information. When you sign up, you will also receive a FREE PDF about "The 5 Most Useful Things I Learned as a Student".</p>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-html fl-node-5ee74bf74bb96" data-node="5ee74bf74bb96">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-html">
+	<!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup" class="sign-up-form" style="background:#fff0;">
+<form action="https://eemaginations.us4.list-manage.com/subscribe/post?u=3c8ca0dd7e5144bb62ffc6a0b&amp;id=7001987e57" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll" style="display:flex;" class="mail-chimp-sign-up-form">
+	
+<div style="width:33%;padding:0 6px;" class="mc-field-group form-fields" style="padding-right:10px;">
+	<!--<label for="mce-NAME">Name </label>-->
+	<input required="required" style="height:50px;text-indent: 8%;" type="text" value="" name="NAME" class="" id="mce-NAME" placeholder="Name">
+</div>
+<div style="width:33%;padding:0 6px;" class="mc-field-group form-fields">
+	<!--<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>-->
+<!--</label>-->
+	<input style="height:50px;text-indent: 8%;" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="E-mail Address">
+</div>
+
+	  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups
+    <!--<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3c8ca0dd7e5144bb62ffc6a0b_7001987e57" tabindex="-1" value=""></div>-->
+    <div class="clear mail-chimp-btn" style="width:33%;"><input style="height:50px;font-size:20px;width:100%;background-color:#1d5fbd;font-weight:lighter;" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style=margin-left:10px;width:100%;background:#1d5fbd!important;border:2px solid#1d5fbd;"></div>
+    </div>
+    <div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>  
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[2]='NAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup--></div>
+	</div>
+</div>
+<div class="fl-module fl-module-subscribe-form fl-node-5ecc67c4dfc21" data-node="5ecc67c4dfc21">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-subscribe-form fl-subscribe-form-inline fl-subscribe-form-name-show fl-form fl-clearfix" ><input type="hidden" id="fl-subscribe-form-nonce" name="fl-subscribe-form-nonce" value="58f62727e6" /><input type="hidden" name="_wp_http_referer" value="/bpsk-project/" />		<div class="fl-form-field">
+		<label for="fl-subscribe-form-name" class="hidden">Name</label>
+		<input type="text" aria-describedby="name-error" name="fl-subscribe-form-name" placeholder="Name" id="fl-subscribe-form-name" class="fl-subscribe-form-name" />
+		<div class="fl-form-error-message" id="name-error">Please enter your name.</div>
+	</div>
+	
+	<div class="fl-form-field">
+		<label for="fl-subscribe-form-email" class="hidden">Email Address</label>
+		<input type="email" aria-describedby="email-error" name="fl-subscribe-form-email" placeholder="Email Address" id="fl-subscribe-form-email"  class="fl-subscribe-form-email"  />
+		<div class="fl-form-error-message" id="email-error">Please enter a valid email address.</div>
+	</div>
+
+	
+	<div class="fl-form-button" data-wait-text="Please Wait...">
+	<div class="fl-button-wrap fl-button-width-full fl-button-left">
+			<a href="#" target="_self" class="fl-button" role="button">
+							<span class="fl-button-text">Subscribe!</span>
+					</a>
+</div>
+	</div>
+
+			
+			
+	<div class="fl-form-success-message"><p>Thanks for subscribing! Please check your email for further instructions.</p></div>
+
+	<div class="fl-form-error-message">Something went wrong. Please check your entries and try again.</div>
+
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-5d6fc6d206e8e" data-node="5d6fc6d206e8e">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-5d6fc6d206e8f fl-col-group-equal-height fl-col-group-align-center" data-node="5d6fc6d206e8f">
+			<div class="fl-col fl-node-5d6fc6d206e92 fl-col-small" data-node="5d6fc6d206e92">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-5d6fc6d206e9e" data-node="5d6fc6d206e9e">
+	<div class="fl-module-content fl-node-content">
+		<h3 class="fl-heading">
+		<span class="fl-heading-text">Get In Touch!</span>
+	</h3>
+	</div>
+</div>
+<div class="fl-module fl-module-icon fl-node-5d6fc6d206e97" data-node="5d6fc6d206e97">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+								<a href="mailto:david.marcus@eemaginations.com" target="_self" tabindex="-1" aria-hidden="true" aria-labelledby="fl-icon-text-5d6fc6d206e97">
+							<i class="far fa-envelope" aria-hidden="true"></i>
+						</a>
+			</span>
+			<div id="fl-icon-text-5d6fc6d206e97" class="fl-icon-text">
+						<a href="mailto:david.marcus@eemaginations.com" target="_self" class="fl-icon-text-link fl-icon-text-wrap">
+						<p><a href="mailto:david.marcus@eemaginations.com">david.marcus@eemaginations.com</a></p>						</a>
+					</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-5d6fc6d206e91 fl-col-small" data-node="5d6fc6d206e91">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-5d6fc6d206e99" data-node="5d6fc6d206e99">
+	<div class="fl-module-content fl-node-content">
+		<h3 class="fl-heading">
+		<span class="fl-heading-text">Additional Resources</span>
+	</h3>
+	</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-5d6fc6d206e9a" data-node="5d6fc6d206e9a">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p><a href="https://eemaginations.com/privacy-policy/">Privacy policy</a></p>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-5d6fc6d206e90 fl-col-small" data-node="5d6fc6d206e90">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-icon-group fl-node-5ec68ed60c58b" data-node="5ec68ed60c58b">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-group">
+	<span class="fl-icon">
+								<a href="https://facebook.com/eemaginations" target="_blank" rel="noopener" >
+							<i class="ua-icon ua-icon-facebook22" aria-hidden="true"></i>
+						</a>
+			</span>
+		<span class="fl-icon">
+								<a href="https://twitter.com/eemaginations" target="_blank" rel="noopener" >
+							<i class="ua-icon ua-icon-twitter2" aria-hidden="true"></i>
+						</a>
+			</span>
+		<span class="fl-icon">
+								<a href="https://linkedin.com/company/eemaginations" target="_blank" rel="noopener" >
+							<i class="ua-icon ua-icon-linkedin-with-circle" aria-hidden="true"></i>
+						</a>
+			</span>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-5d6fc6d206e86" data-node="5d6fc6d206e86">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-5d6fc6d206e8b" data-node="5d6fc6d206e8b">
+			<div class="fl-col fl-node-5d6fc6d206e8c fl-col-small" data-node="5d6fc6d206e8c">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-5d6fc6d206e8d" data-node="5d6fc6d206e8d">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p>© 2023 EEmaginations. All Rights Reserved.</p>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-5d6fc7552bfde fl-col-small" data-node="5d6fc7552bfde">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-5d6fc7bec7b31" data-node="5d6fc7bec7b31">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p>Designed by <a href="https://inspirewebsitedesign.com/" target="_blank" rel="noopener">Inspire Website Design</a></p>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</footer><div class="uabb-js-breakpoint" style="display: none;"></div>	</div><!-- .fl-page -->
+	<script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<style id='core-block-supports-inline-css'>
+.wp-block-columns.wp-container-3,.wp-block-columns.wp-container-6{flex-wrap:nowrap;}
+</style>
+<script src='https://eemaginations.com/wp-content/plugins/anti-spam/assets/js/anti-spam.js?ver=7.3.4' id='anti-spam-script-js'></script>
+<script src='https://eemaginations.com/wp-content/plugins/embedpress/assets/js/front.js?ver=3.6.3' id='embedpress-front-js'></script>
+<script src='https://eemaginations.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.7.2.2' id='jquery-blockui-js'></script>
+<script id='wc-add-to-cart-js-extra'>
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/eemaginations.com\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+</script>
+<script src='https://eemaginations.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=7.2.2' id='wc-add-to-cart-js'></script>
+<script src='https://eemaginations.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.7.2.2' id='js-cookie-js'></script>
+<script id='woocommerce-js-extra'>
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+</script>
+<script src='https://eemaginations.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=7.2.2' id='woocommerce-js'></script>
+<script id='wc-cart-fragments-js-extra'>
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_9824f380ef02ce16354e3960ecfb60d6","fragment_name":"wc_fragments_9824f380ef02ce16354e3960ecfb60d6","request_timeout":"5000"};
+</script>
+<script src='https://eemaginations.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=7.2.2' id='wc-cart-fragments-js'></script>
+<script src='https://eemaginations.com/wp-content/plugins/bb-plugin/js/jquery.ba-throttle-debounce.min.js?ver=2.6.1.4' id='jquery-throttle-js'></script>
+<script src='https://eemaginations.com/wp-content/plugins/bb-plugin/js/jquery.fitvids.min.js?ver=1.2' id='jquery-fitvids-js'></script>
+<script src='https://eemaginations.com/wp-content/uploads/bb-plugin/cache/74a6202fb2977eb1bc56e056512f81e7-layout-bundle.js?ver=2.6.1.4-1.4.4' id='fl-builder-layout-bundle-74a6202fb2977eb1bc56e056512f81e7-js'></script>
+<script src='https://eemaginations.com/wp-content/plugins/bb-plugin/js/jquery.magnificpopup.min.js?ver=2.6.1.4' id='jquery-magnificpopup-js'></script>
+<script src='https://eemaginations.com/wp-includes/js/comment-reply.min.js?ver=6.1.1' id='comment-reply-js'></script>
+<script id='fl-automator-js-extra'>
+var themeopts = {"medium_breakpoint":"992","mobile_breakpoint":"768"};
+</script>
+<script src='https://eemaginations.com/wp-content/themes/bb-theme/js/theme.min.js?ver=1.7.12.1' id='fl-automator-js'></script>
+<script src='https://eemaginations.com/wp-includes/blocks/file/view.min.js?ver=2a20786ca914ea00891f' id='wp-block-file-view-js'></script>
+<script>!function(){window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[],advanced_ads_ready_queue.push=window.advanced_ads_ready;for(var d=0,a=advanced_ads_ready_queue.length;d<a;d++)advanced_ads_ready(advanced_ads_ready_queue[d])}();</script></body>
+</html>
