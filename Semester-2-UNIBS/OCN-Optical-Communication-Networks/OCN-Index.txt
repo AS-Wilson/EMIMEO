@@ -1,0 +1,125 @@
+CHAPTER 1 -  INTRODUCTION
+	1.1 Historical Perspective
+	1.2 Fiber Characteristics
+	1.3 Fiber Nonlinearities
+	1.4 Overview
+	Problems
+	References
+	
+CHAPTER 2 - Pulse Propagation in Fibers
+	2.1 Maxwell's Equations
+	2.2 Fiber Modes
+	2.3 Pulse-Propagation Equation
+	2.4 Numerical Methods
+	Problems
+	References
+	
+CHAPTER 3 - Group-Velocity Dispersion
+	3.1 Different Propagation Regimes
+	3.2 Dispersion-Induced Pulse Broadening
+	3.3 Third-Order Dispersion
+	3.4 Dispersion Management
+	Problems
+	References
+	
+CHAPTER 4 - Self-Phase Modulation
+	4.1 SPM-Induced Spectral Changes
+	4.2 Effect of Group-Velocity-Dispersion
+	4.3 Semianalytic Techniques
+	4.4 Higher-Order Nonlinear Effects
+	Problems
+	References
+	
+CHAPTER 5 - Optical Solitons
+	5.1 Modulation Instability
+	5.2 Fiber Solitons
+	5.3 Other Types of Solitons
+	5.4 Perturbation of Solitons
+	5.5 Higher-Order Effects
+	Problems
+	References
+	
+CHAPTER 6 - Polarization Effects
+	6.1 Nonlinear Birefringence
+	6.2 Nonlinear Phase Shift
+	6.3 Evolution of Polarization State
+	6.4 Vector Modulation Instability
+	6.5 Birefringence and Solitons
+	6.6 Random Birefringence
+	Problems
+	References
+	
+CHAPTER 7 - Cross-Phase Modulation
+	7.1 XPM-Induced Nonlinear Coupling
+	7.2 XPM-Induced Modulation Instability
+	7.3 XPM-Paired Solitons
+	7.4 Spectral and Temporal Effects
+	7.5 Applications of XPM
+	7.6 Polarization Effects
+	7.7 XPM Effects in Birefringent Fibers
+	Problems
+	References
+	
+CHAPTER 8 - Stimulated Raman Scattering
+	8.1 Basic Concepts
+	8.2 Quasi-Continous SRS
+	8.3 SRS with Short Pump Pulses
+	8.4 Soliton Effects
+	8.5 Polarization Effects
+	Problems
+	References
+	
+CHAPTER 9 - Stimulated Brillouin Scattering
+	9.1 Basic Concepts
+	9.2 Quasi-CW SBS
+	9.3 Brillouin Fiber Amplifiers
+	9.4 SBS Dynamics
+	9.5 Brillouin-Fiber Lasers
+	Problems
+	References
+	
+CHAPTER 10 - Four-Wave Mixing
+	10.1 Origin of Four-Wave Mixing
+	10.2 Theory of Four-Wave Mixing
+	10.3 Phase-Matching Techniques
+	10.4 Parametric Application
+	10.5 Polarization Effects
+	10.6 Applications of Four-Wave Mixing
+	Problems
+	References
+	
+CHAPTER 11 - Highly Nonlinear Fibers
+	11.1 Nonlinear Parameter
+	11.2 Fibers with Silica Cladding
+	11.3 Tapered Fibers with Air Cladding
+	11.4 Microstructured Fibers
+	11.5 Non-Silica Fibers
+	11.6 Pulse Propagation in Narrow-Core Fibers
+	Problems
+	References
+	
+CHAPTER 12 - Novel Nonlinear Phenomena
+	12.1 Soliton Fission and Dispersive Waves
+	12.2 Intrapulse Raman Scattering
+	12.3 Four-Wave Mixing
+	12.4 Second-Harmonic Generation
+	12.5 Third-Harmonic Generation
+	Problems
+	References
+	
+CHAPTER 13 - Supercontinuum Generation
+	13.1 Pumping with Picosecond Pulses
+	13.2 Pumping with Femtosecond Pulses
+	13.3 Temporal and Spectral Equations
+	13.4 CW or Quasi-CW Pumping
+	13.5 Polarization Effects
+	13.6 Coherence Properties
+	13.7 Optical Rogue Waves
+	Problems
+	References
+	
+Appendix A: System of Units
+
+Appendix B: Numerical Code for the NLS Equation
+
+Appendix C: List of Acronyms
