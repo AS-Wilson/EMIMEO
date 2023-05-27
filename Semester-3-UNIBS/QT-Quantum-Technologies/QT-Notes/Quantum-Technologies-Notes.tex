@@ -662,6 +662,8 @@ I spent have spent a lot of time developing the template used to make this {\LaT
 	
 	The experimental results described by the photoelectric effect inherently disagree with, and were unexplained by, classical electromagnetics which predicts that \textit{continuous} light waves transfer energy to electrons, which would then be emitted when they accumulate enough energy. An alteration in the intensity of light would theoretically (according to classical EM) change the kinetic energy of the emitted electrons, with sufficiently dim light resulting in a delayed emission. The experimental results instead showed that electrons are dislodged \textbf{only} when the light exceeds a certain frequency - regardless of the light's intensity or duration of exposure. \linebreak
 	
+	Another thing to note here is that, if we wished, we could increase the potential of the DC voltage source the flow of electrons would eventually stop again, and a higher frequency would be required to cause the transport of electrons across the gap. \linebreak
+	
 
 	\pagebreak
 	
@@ -730,13 +732,25 @@ I spent have spent a lot of time developing the template used to make this {\LaT
 		& \label{eqn:photoelectric_th} \mathlarger{ \therefore \: \nu_{th} = \frac{\Phi}{\Planckconst} }
 	\end{align}
 	
+	Since we can also state the potential energy, $E_k$ in terms of charge and voltage, this means that we can obtain another equation (\ref{eqn:photoelectric_vstop}) to express $E_k$ based on the biasing voltage required to stop the electrons from flowing when particular frequencies of light are incident on the plates.
+	
+	\begin{align}
+		& \mathlarger{ E_k = C \times V_{stop} } \nonumber\\
+		& \label{eqn:photoelectric_vstop} \mathlarger{ \therefore \: E_k = e \times V_{stop} }
+	\end{align}
+	
+	
 	\subsection{Quanta (Photons) and Charge}
 		
 		
-	\subsection{Flux}
+	\subsection{Flux and Intensity}
+		You probably know the meaning of flux quite well in classical electromagnetic theory (namely a vector quantity describing the magnitude and direction of the flow of electromagnetic energy). But we can (an probably must) redefine the meaning of flux with our new-found knowledge of quanta, considering the discrete definition of quanta instead of non-discrete EM energy, see Equation \ref{eqn:quantum_flux}: \linebreak
 		
+		\begin{equation}
+			\label{eqn:quantum_flux} \mathlarger{Flux, F = \frac{no. of quanta, n}{area, a \times time, t}}
+		\end{equation}
 		
-	\subsection{Intensity}
+	Given the 
 		
 		
 	\pagebreak
@@ -965,6 +979,19 @@ I spent have spent a lot of time developing the template used to make this {\LaT
 	
 	
 	\pagebreak
+	
+
+\section{Some interesting Applications}
+	
+	\subsection{NMR - Nuclear Magnetic Resonance}
+	
+	\subsection{Quantum Bit}
+	
+	\subsection{Spontaneous Parametric Down Conversion}
+	
+	\subsection{No-Cloning Theorem}
+	
+	\subsection{Shor's Algorithm}
 	
 	
 	
@@ -1292,7 +1319,7 @@ I spent have spent a lot of time developing the template used to make this {\LaT
 		
 		
 		\pagebreak
-	
+		
 	
 	
 	
