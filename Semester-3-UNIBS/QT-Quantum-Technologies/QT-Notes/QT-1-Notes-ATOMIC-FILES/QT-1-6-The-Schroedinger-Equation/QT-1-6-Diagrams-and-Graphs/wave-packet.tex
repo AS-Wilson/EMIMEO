@@ -1,0 +1,43 @@
+% GAUSSIAN WAVE PACKET
+%% https://tikz.net/delta_function/
+
+\documentclass{standalone}
+
+
+\input{QT-1-6-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}
+		\def\xmin{-1.7} % min x axis
+		\def\xmax{1.7}     % max x axis
+		\def\ymin{-0.4}    % min y axis
+		\def\ymax{1.6}     % max y axis
+		
+		\tikzstyle{xline}=[ScienceRed,very thick]
+		\def\N{100}
+		
+		
+		\def\A{0.75*\ymax} % amplitude
+		
+		\def\T{0.14*\xmax} % width
+		
+		\draw[->,thick,dashed] (0,\ymin) node[below=1] {\scriptsize $\omega_r$} -- (0,\ymax) node[left] {$y$};
+		
+		\draw[<->,thick,dashed] (-\xmax,0) -- (\xmax+0.1,0) node[below=1,right=1] {$x$};
+		
+		\draw[xline,very thick,smooth,samples=\N,variable=\x,domain={-0.9*\xmax}:{0.9*\xmax}] plot(\x,{\A*exp(-((\x*\x)/(\T*\T))/2)});
+	
+		
+		\node[ScienceRed,right=0] at (0.1*\xmax,0.67*\ymax) {\scriptsize Wave Packet};
+		
+		\draw[>-<,ScienceRed,dashed,thin,line cap=round] ({-\T-\T*0.6},{\A*exp(-1/2)}) -- ({\T+\T*0.6},{\A*exp(-1/2)});
+		\draw[ScienceRed,thin,line cap=round] ({\T+\T*0.6},{\A*exp(-1/2)}) -- ({\T+\T*2},{\A*exp(-1/2)});
+		\draw[ScienceRed,thin,line cap=round] ({-\T-\T*0.6},{\A*exp(-1/2)}) -- ({-\T-\T*2},{\A*exp(-1/2)});
+		
+		
+	\end{tikzpicture}
+\end{document}
+
+
+

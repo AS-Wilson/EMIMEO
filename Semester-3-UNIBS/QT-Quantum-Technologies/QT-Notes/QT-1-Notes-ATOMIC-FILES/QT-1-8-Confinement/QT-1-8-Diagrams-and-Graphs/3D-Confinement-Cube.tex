@@ -1,0 +1,49 @@
+%% 3D CONFINEMENT CUBE - EXAMPLE FROM TIKZ.NET
+% https://tikz.dev/library-3d
+
+\documentclass{standalone}
+
+
+\input{QT-1-8-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}
+		[	cube/.style={thick,ScienceRed,dashed},
+			axis/.style={-{Stealth[length=5pt]},dotted,thick},
+			measure/.style={{Stealth[length=4pt]}-{Stealth[length=4pt]},black!40}]
+		
+		\def\maxdim{3}
+		\def\boxmax{1.5}
+		
+		
+		%draw the axes
+		\draw[axis] (0,0,0) -- (\maxdim,0,0) node[anchor=west]{\small $x$};
+		\draw[axis] (0,0,0) -- (0,\maxdim,0) node[anchor=west]{\small $y$};
+		\draw[axis] (0,0,0) -- (0,0,\maxdim) node[anchor=west]{\small $z$};
+		
+		%draw the top and bottom of the cube
+		\draw[cube] (0,0,0) -- (0,\boxmax,0) -- (\boxmax,\boxmax,0) -- (\boxmax,0,0) -- cycle;
+		\draw[cube] (0,0,\boxmax) -- (0,\boxmax,\boxmax) -- (\boxmax,\boxmax,\boxmax) -- (\boxmax,0,\boxmax) -- cycle;
+		
+		%draw the edges of the cube
+		\draw[cube] (0,0,0) -- (0,0,\boxmax);
+		\draw[cube] (0,\boxmax,0) -- (0,\boxmax,\boxmax);
+		\draw[cube] (\boxmax,0,0) -- (\boxmax,0,\boxmax);
+		\draw[cube] (\boxmax,\boxmax,0) -- (\boxmax,\boxmax,\boxmax);
+		
+		% MEASURES
+		\draw[black!40] (0,{-\boxmax*0.05},\boxmax) -- (0,{-\boxmax*0.2},\boxmax);
+		\draw[measure] (0,{-\boxmax*0.15},\boxmax) --++ (xyz cylindrical cs:radius=\boxmax) node[midway,fill=white,inner sep=1] {\scriptsize $L$};
+		\draw[black!40] (\boxmax,{-\boxmax*0.05},\boxmax) -- (\boxmax,{-\boxmax*0.2},\boxmax);
+		
+		\draw[black!40] (0,{\boxmax+\boxmax*0.05},0) -- (0,{\boxmax+\boxmax*0.2},0);
+		\draw[measure] (0,{\boxmax+\boxmax*0.15},0) --  (\boxmax,{\boxmax+\boxmax*0.15},0) node[midway,fill=white,inner sep=1] {\scriptsize $L$};
+		\draw[black!40] (\boxmax,{\boxmax+\boxmax*0.05},0) -- (\boxmax,{\boxmax+\boxmax*0.2},0);
+		
+		\draw[black!40] ({-\boxmax*0.05},0,\boxmax) -- ({-\boxmax*0.2},0,\boxmax);
+		\draw[measure] ({-\boxmax*0.15},0,\boxmax) -- ({-\boxmax*0.15},\boxmax,\boxmax) node[midway,fill=white,inner sep=1] {\scriptsize $L$};
+		\draw[black!40] ({-\boxmax*0.05},\boxmax,\boxmax) -- ({-\boxmax*0.2},\boxmax,\boxmax);
+		
+	\end{tikzpicture}
+\end{document}

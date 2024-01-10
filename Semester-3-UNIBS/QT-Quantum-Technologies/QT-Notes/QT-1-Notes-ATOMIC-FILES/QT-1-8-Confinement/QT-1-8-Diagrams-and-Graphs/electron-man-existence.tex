@@ -1,0 +1,32 @@
+% ELECTRON MAN EXISTENCE
+%% https://tex.stackexchange.com/questions/441917/is-there-a-simple-way-to-use-stick-figures-into-pgf-tikz-drawings
+
+\documentclass{standalone}
+
+
+\input{QT-1-8-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}
+		\def\xmin{-4} % min x axis
+		\def\xmax{5}     % max x axis
+		
+		\coordinate (electronman) at (0,2);
+		
+		\draw[->,dashed] (\xmin,0) -- (\xmax+0.1,0) node[below=1,right=1] {$x$};
+		
+		\node[ScienceGreen] at (electronman) {\Strichmaxerl[2]};
+		\node[below=6,ScienceBlue] at (electronman) {\scriptsize INSIDE};
+		\node[right=2,ScienceGreen] at (electronman) {\small $e^-$};
+		
+		\node[shift={(-3.5,0)},ScienceRed] at (electronman) {\scriptsize OUTSIDE};
+		\node[shift={(3.5,0)},ScienceRed] at (electronman) {\scriptsize OUTSIDE};
+		
+		\draw[->,thick,dashed] (-2.5,-0.2) node[below] {\small 0} -- (-2.5,2.5) node[above,left] {\tiny $V(-\infty \sim 0)=\infty$};
+		\draw[->,thick,dashed] (2.5,-0.2) node[below] {\small L} -- (2.5,2.5) node[above,right] {\tiny $V(0 \sim \infty)=\infty$};
+	%	
+		\draw[decoration={brace,raise=7.5pt},color=ScienceGreen!95,decorate] (2.5,-0.5) -- node[below=11,color=ScienceGreen!95] {\small Electron must exist in this region} (-2.5,-0.5) {};
+		
+	\end{tikzpicture}
+\end{document}

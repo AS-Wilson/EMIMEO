@@ -1,0 +1,27 @@
+\begin{tikzpicture}[scale=0.35]
+	% Grid
+%		\draw[help lines] (-3,-3) grid (6,6);
+	
+	% Lens		
+	\path[fill=glass, draw=black, line width = 0.6] (0,-2.5) .. controls (-0.4,0) .. (0,2.75) .. controls (0.4,0) .. (0,-2.5);
+	
+	% Axis
+	\draw[dashed, black!60] (0,-3) -- (0,3);
+	\draw[dashed, black!60] (-8.5,0) -- (8.5,0);
+	
+	% Ray
+	\draw[red, line width = 0.6, arrow inside] (-7,0) -- (-0.4,0.7);	
+	\draw[red, line width = 0.6] (-0.4,0.7) -- (0.4,0.7);
+	\draw[red, line width = 0.6, arrow inside] (0.4,0.7) -- (7,0);
+	
+	% Refractive index label
+	\draw[black!60, <-] (0.2,1.5) -- (2,2.5) node[right] {\tiny Refractive Index, $n=2.2$, Radius, $R_1$};
+	
+	%Points
+	\draw[fill=red] (-7,0) circle (1pt) node[below] {$S$};
+	\draw[fill=red] (7,0) circle (1pt) node[below] {$P$};
+	
+	% Distances
+	\midlabelline{-7,-1.5}{0,-1.5}{$s_o$}
+	\midlabelline{0,-1.5}{7,-1.5}{$s_i$}
+\end{tikzpicture} 

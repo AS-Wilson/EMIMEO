@@ -1,0 +1,39 @@
+% DELTA FUNCTION - GAUSSIAN FUNCTION
+%% https://www.researchgate.net/publication/258379289_Stability_and_Numerical_Analysis_of_the_Hebraud-Lequeux_Model_for_Suspensions?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoicHVibGljYXRpb25Eb3dubG9hZCIsInByZXZpb3VzUGFnZSI6Il9kaXJlY3QifX0
+%% DOI: 10.1155/2011/415921
+%% https://tikz.net/delta_function/
+
+\documentclass{standalone}
+
+
+\input{QT-1-6-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}
+		
+		\def\xmin{-1.7} % min x axis
+		\def\xmax{1.7}     % max x axis
+		\def\ymin{-0.4}    % min y axis
+		\def\ymax{5}     % max y axis
+		
+		\tikzstyle{xline}=[ScienceRed,very thick]
+		\def\N{100}
+		
+		
+		\def\A{0.9*\ymax} % amplitude
+		
+		\draw[->,thick,dashed] (0,\ymin) -- (0,\ymax) node[left] {$y$};
+		
+		\draw[<->,thick,dashed] (-\xmax,0) -- (\xmax+0.1,0) node[below=1,right=1] {$x$};
+		
+		\draw[xline,very thick,smooth,samples=\N,variable=\x,domain=0:{3/(2*\A)}] plot(\x,{ 4/9*(((\A*\A*\A)*(\x*\x)) - (3*(\A*\A)*\x) + ((9*\A)/4)) });
+		\draw[xline,very thick,smooth,samples=\N,variable=\x,domain=-{3/(2*\A)}:0] plot(\x,{ 4/9*(((\A*\A*\A)*(\x*\x)) + (3*(\A*\A)*\x) + ((9*\A)/4)) });
+		
+		\draw[xline,very thick,smooth,samples=\N,variable=\x,domain={3/(2*\A)}:{\xmax*0.9}] plot(\x,0);
+		\draw[xline,very thick,smooth,samples=\N,variable=\x,domain={\xmin*0.9}:{-3/(2*\A)}] plot(\x,0);
+		
+		\node[ScienceRed,right=0] at (0.1*\xmax,0.67*\ymax) {\small $\delta_\epsilon(x-x_0)$};
+		
+	\end{tikzpicture}
+\end{document}

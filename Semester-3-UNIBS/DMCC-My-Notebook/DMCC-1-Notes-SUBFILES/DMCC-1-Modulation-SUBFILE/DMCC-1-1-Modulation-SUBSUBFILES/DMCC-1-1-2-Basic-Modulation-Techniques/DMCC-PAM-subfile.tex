@@ -1,0 +1,43 @@
+%%%%%%%%%%% PAM %%%%%%%%%%
+%%%%%%%%%%% PAM %%%%%%%%%%
+%%%%%%%%%%% PAM %%%%%%%%%%
+%%%%%%%%%%% PAM %%%%%%%%%%
+%%%%%%%%%%% PAM %%%%%%%%%%
+
+
+
+Considering PAM base-band modulation, describe the Nyquist pulses and the role of the roll-off parameter.
+
+
+
+Pulse Amplitude Modulation (PAM) is a baseband modulation technique where the amplitude of pulses is varied according to the message signal. The Nyquist pulse, in the context of PAM, refers to a pulse shape that satisfies the Nyquist criterion for zero intersymbol interference (ISI). The Nyquist criterion ensures that pulses can be transmitted without overlap, allowing for reliable data transmission.
+
+In PAM, the Nyquist pulse is often represented by a sinc pulse, which is the sinc function:
+
+p(t)=sinc(tT)p(t)=sinc(Tt​)
+
+Here:
+
+p(t)p(t) is the Nyquist pulse,
+tt is time,
+TT is the symbol period.
+
+The role of the roll-off parameter (αα) comes into play when considering a modified version of the Nyquist pulse to account for practical limitations in communication systems. The roll-off parameter is associated with pulse shaping, and it influences the shape of the pulse and the spectral efficiency of the signal.
+
+The modified pulse shape, often used in practice, is given by the raised cosine pulse:
+
+p(t)=sin⁡(πt/T)πt/T⋅cos⁡(παt/T)1−(2αt/T)2p(t)=πt/Tsin(πt/T)​⋅1−(2αt/T)2cos(παt/T)​
+
+Here:
+
+αα is the roll-off factor,
+TT is the symbol period.
+
+The raised cosine pulse allows for some control over the bandwidth of the transmitted signal. The roll-off parameter αα determines how fast the pulse transitions from its peak to zero. A larger αα value results in a slower roll-off and a narrower bandwidth, while a smaller αα value leads to a faster roll-off and a wider bandwidth.
+
+The choice of the roll-off parameter is a trade-off between spectral efficiency and susceptibility to intersymbol interference. A smaller roll-off (αα) results in a more bandwidth-efficient signal but may increase the likelihood of intersymbol interference. On the other hand, a larger roll-off provides better immunity to intersymbol interference but at the cost of increased bandwidth usage.
+
+In summary, in PAM baseband modulation, the Nyquist pulse is often represented by a sinc pulse, and the roll-off parameter (αα) in the context of pulse shaping, particularly with raised cosine pulses, allows for control over the trade-off between spectral efficiency and intersymbol interference.
+
+
+

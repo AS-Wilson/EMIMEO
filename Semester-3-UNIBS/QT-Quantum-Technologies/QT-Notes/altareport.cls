@@ -18,19 +18,36 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{altareport}[2021/04/24 - Adapted from AltaCV class for resumes.]
 
+
+
+
+%%%%%%%%%%%%%%%% END CLASS OPTION DECLARATIONS %%%%%%%%%%%%%%%%
 %% v1.1: Optionally load academicons
 \newif\if@academicons
 \DeclareOption{academicons}{\@academiconstrue}
 %% v1.1.3: Choice of round/square photo
 \newif\if@normalphoto
 \DeclareOption{normalphoto}{\@normalphototrue}
+
+% \Declareoption*{} handles every option not explicitly defined.
+% \PassOptionsToClass{}{}. Passes the option inside the first pair of braces to the document class set inside the second pair of braces.
+%% i.e. Here all unknown options will be passed to the "extarticle" document class, which itself 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{extarticle}}
+
+
 \newif\if@raggedtwoe
 \DeclareOption{ragged2e}{\@raggedtwoetrue}
 %% v1.3: load hyperref for clickable hyperlinks
 \newif\if@withhyper
 \DeclareOption{withhyper}{\@withhypertrue}
-\ProcessOptions\relax
+
+% Executes the code for each option that has been called, now that all options have been declared above
+\ProcessOptions\relax 
+
+%%%%%%%%%%%%%%%% END CLASS OPTION DECLARATIONS %%%%%%%%%%%%%%%%
+
+
+
 
 \LoadClass{article}
 %% v1.3.2 Hopefully this helps make the PDF
@@ -46,6 +63,14 @@
 \RequirePackage{scrlfile}
 \RequirePackage{xparse}
 
+\RequirePackage{setspace} %1.5 line spacing
+\RequirePackage{notoccite} %% Citation numbering
+\RequirePackage{lscape} %% Landscape table
+\RequirePackage{caption} %% Adds a newline in the table caption
+
+%% The paracol package lets you typeset columns of text in parallel
+\RequirePackage{paracol}
+\RequirePackage[none]{hyphenat}
 
 
 %% v1.1: Optionally load academicons

@@ -1,0 +1,106 @@
+%% TWO SLIT - SETUP, UNOBSEVRED, RAY PATH, WITH ELECTRON GUN
+
+% https://tikz.net/optics_twoslit/
+% https://www.overleaf.com/learn/latex/Counters
+% https://tex.stackexchange.com/questions/29989/how-does-the-counter-in-tikz-foreach-work
+% https://tex.stackexchange.com/questions/45848/rotate-node-text-and-use-relative-positioning-in-tikz
+% https://tex.stackexchange.com/questions/625022/using-tikz-to-plot-angle-notations-and-various-arrows
+% https://tex.stackexchange.com/questions/449675/how-to-draw-a-coil-such-that-you-can-see-if-its-right-or-left-handed
+\documentclass{standalone}
+
+
+\input{QT-1-5-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}
+		
+		\def\L{9}       % distance between walls
+		\def\H{6}       % total wall height
+		\def\f{0.9}       % fractional height of projection point
+		\def\ang{atan((\f*\H+\a)/\L/2)} % theta
+		\def\t{0.1}      % wall thickness
+		\def\a{2}       % slit distance
+		\def\d{0.20}      % slit size
+		\coordinate (T) at (0,\a/2);
+		\coordinate (B) at (0,-\a/2);
+		\coordinate (L) at (0,0);
+		\coordinate (R) at (\L,0);
+		\coordinate (P) at (\L-0.2,\f*\H/2);
+		\coordinate (M) at ($(B)!(T)!(P)$);
+		
+		
+		% LINES
+		\draw[ScienceGreen,thick] (T) -- (P) coordinate[pos=0.3,above=5] (k11) coordinate[pos=0.4,above=5] (k12) coordinate[pos=0.35,above=4] (k1); % TOP RAY
+		\draw[->,ScienceGreen] (k11) -- (k12);
+		\draw (k1) node[color=ScienceGreen,anchor=south] {\small $\overrightarrow{k}_1$};
+		
+		\draw[ScienceGreen,thick] (B) -- (P) coordinate[pos=0.45,below=5] (k21) coordinate[pos=0.55,below=5] (k22) coordinate[pos=0.525,below=6] (k2);% BOTTOM RAY
+		\draw[->,ScienceGreen] (k21) -- (k22);
+		\draw (k2) node[color=ScienceGreen,anchor=north] {\small $\overrightarrow{k}_2$};
+		
+		\draw[ScienceGreen,thick] (T) -- (P) node[pos=0.75,above=-1] {\small $\overrightarrow{r}_1$};
+		\draw[ScienceGreen,thick] (B) -- (P) node[pos=0.75,below=3,right=6] {\small $\overrightarrow{r}_2$}; %right=6,below right=-4
+		\draw[dashed] (L) -- (P);
+		\draw[dashed,black!60] (L) -- (\L*0.22,0);% Line from middle left to theta angle starting point
+		\draw[dashed,black!60] (\L*0.3,0) -- ([shift={(25*\t,0)}]R); % continuation of horizontal centreline
+		\draw[dashed,black!60] ([shift={(2*\t,0)}]P) -- ([shift={(25*\t,0)}]P); % Top dashed line for the "y" measurement
+		
+		
+		% ANGLES
+		\draw pic[mysmallarr,"\small $\theta$",ScienceRed,draw=ScienceRed,angle radius=38,angle eccentricity=1.14]
+		{angle = R--L--P};
+		
+		
+		% MEASURES
+		\draw[<->,black] (0,-0.47*\H) --++ (\L,0) node[midway,fill=white,inner sep=3] {\small $L$};
+		\draw[<->,black] (-4*\t,-\a/2) --++ (0,\a) node[midway,fill=white,inner sep=3] {\small $d$};
+		
+		\draw[<->,black] ([shift={(20*\t,0)}]\L,\f*\H/2) -- ([shift={(20*\t,0)}]R)
+		node[midway,fill=white,inner sep=3]{\small y};
+		
+		
+		% WALL
+		\fill[ScienceBlue!30!]
+		(0,\a/2-\d/2) rectangle (-\t,-\a/2+\d/2)
+		(0,\a/2+\d/2) rectangle (-\t,\H/2)
+		(0,-\a/2-\d/2) rectangle (-\t,-\H/2)
+		(\L,-\H/2) rectangle (\L+\t,\H/2);
+		\fill[ScienceGreen!80!black] (P) circle (0.6*\t) node[right=1,above left=-1.5] {P};
+		
+		
+		% Detector
+		\DETECTOR{0.2}{0.75}{\L-\t}{\f*\H/2}
+		\draw[color=darkgray!85] (\L-\t,\f*\H/2) node[color=darkgray!75, above = 20,left = 0.25] {\small Detector};
+		
+		\draw[<->,darkgray!75] ([shift={(4*\t,3*\t)}]P) -- ([shift={(4*\t,-3*\t)}]P) node[midway,right=3,fill=white,inner sep=3,rotate=90,anchor=north]{\scriptsize Moving};
+		\fill[color=darkgray!75] ([shift={(4*\t,0)}]P) circle (0.4*\t);
+		
+		% Electron Gun
+		\ElectronGun{2}{0.75}{-\L*0.65}{0}
+		\draw[color=darkgray!85] (-\L*0.65,0) node[color=darkgray!75, above = 8] {\small Electron Gun};
+		
+		% Electron Beams
+		%https://wiki.physik.uzh.ch/cms/latex:tikz
+		\def\R{\L*0.35} % radius/length of lines
+		\def\r{\L*0.05}
+		
+		\foreach \t/\e/\b in {0/0.65/0.35,10/0.7/0.65,20/0.75/0.72,30/0.8/0.78,40/0.85/0.84)}{
+			\draw[->,dashed,ScienceGreen!75,thick]
+			({-\L*0.5+\r*cos(\t)},{0+\r*sin(\t)}) -- ({-\L*0.5+\R*cos(\t)},{0+\R*sin(\t)});
+			\draw[fill=ScienceGreen!60] ({-\L*0.5+\R*cos(\t)*\e},{0+\R*sin(\t)*\e}) circle [radius = 0.1];
+			\node[anchor=center] at ({-\L*0.5+\R*cos(\t)*\e},{0+\R*sin(\t)*\b}) {\tiny -};
+		}
+		
+		\foreach \t/\e/\b in {10/0.6/0.65,20/0.55/0.58,30/0.495/0.515,40/0.44/0.455}{
+			\draw[->,dashed,ScienceGreen!75,thick]
+			({-\L*0.5+\r*cos(\t)},{0-\r*sin(\t)}) -- ({-\L*0.5+\R*cos(\t)},{0-\R*sin(\t)});
+			\draw[fill=ScienceGreen!60] ({-\L*0.5+\R*cos(\t)*\e},{0-\R*sin(\t)*\e}) circle [radius = 0.1];
+			\node[anchor=center] at ({-\L*0.5+\R*cos(\t)*\e},{0-\R*sin(\t)*\b}) {\tiny -};
+		}
+		
+		
+		
+		
+	\end{tikzpicture}
+\end{document}

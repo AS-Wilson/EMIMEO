@@ -1,0 +1,124 @@
+%% ATOMIC (XRAY) DIFFRACTION
+%% https://tikz.net/optics_twoslit/
+\documentclass{standalone}
+
+
+\input{QT-1-5-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}[atomplane/.style={ScienceBlue!50,dashed,thin}]
+		
+		\def\dPlaneHeight{1}
+		\def\PlaneWidth{5.5}
+		
+		\def\NumAtomstoDisplay{5}
+		\def\AtomGap{\PlaneWidth/\NumAtomstoDisplay}
+		
+		
+		
+		\coordinate (P0Left) at (-\PlaneWidth/2,-\dPlaneHeight);
+		\coordinate (P0Right) at (\PlaneWidth/2,-\dPlaneHeight);
+		
+		\coordinate (P1Left) at (-\PlaneWidth/2,0);
+		\coordinate (P1Right) at (\PlaneWidth/2,0);
+		
+		\coordinate (P2Left) at (-\PlaneWidth/2,\dPlaneHeight);
+		\coordinate (P2Right) at (\PlaneWidth/2,\dPlaneHeight);
+		
+		
+		\draw[atomplane] (P2Left) -- (P2Right);
+		\draw[atomplane] (P1Left) -- (P1Right);
+		\draw[atomplane] (P0Left) -- (P0Right);
+		
+		\draw[atomplane,<->] ([shift={(0.1*\PlaneWidth/2,0)}]P2Left) -- node[ScienceBlue!60,left=1pt] {\scriptsize d} ([shift={(0.1*\PlaneWidth/2,0)}]P1Left);
+		
+		\foreach \atom in {0,1,2}{
+			\fill[color=ScienceBlue] ({\atom*\AtomGap},-\dPlaneHeight) circle (0.075);
+			\fill[color=ScienceBlue] ({-\atom*\AtomGap},-\dPlaneHeight) circle (0.075);
+			
+			\fill[color=ScienceBlue] ({\atom*\AtomGap},0) circle (0.075);
+			\fill[color=ScienceBlue] ({-\atom*\AtomGap},0) circle (0.075);
+			
+			\fill[color=ScienceBlue] ({\atom*\AtomGap},\dPlaneHeight) circle (0.075);
+			\fill[color=ScienceBlue] ({-\atom*\AtomGap},\dPlaneHeight) circle (0.075);
+		}
+		
+		\node[inner sep=3,anchor=north east,ScienceBlue] at ({-\AtomGap*2},-\dPlaneHeight) {\scriptsize Atom(s)};
+		
+		
+		\draw[decoration={brace,raise=7.5pt},color=ScienceBlue!75,decorate] (\PlaneWidth/2,\dPlaneHeight+0.075) -- node[color=ScienceBlue!75,right=11pt] {\scriptsize"Atomic Planes"} (\PlaneWidth/2,-\dPlaneHeight-0.075);
+		
+		
+		\coordinate (MatLeft) at ({-(\PlaneWidth/2)-(0.5*\AtomGap)},\dPlaneHeight);
+		\coordinate (MatRight) at ({-(\PlaneWidth/2)-(2.5*\AtomGap)},\dPlaneHeight);
+		
+		\coordinate (VacBot) at ({-(\PlaneWidth/2)-(1*\AtomGap)},\dPlaneHeight);
+		\coordinate (VacTop) at ({-(\PlaneWidth/2)-(1*\AtomGap)},{\dPlaneHeight+(\dPlaneHeight*0.5)});
+		
+		\coordinate (MatTop) at ({-(\PlaneWidth/2)-(2*\AtomGap)},\dPlaneHeight);
+		\coordinate (MatBot) at ({-(\PlaneWidth/2)-(2*\AtomGap)},{\dPlaneHeight-(\dPlaneHeight*0.5)});
+		
+		
+		\draw[atomplane] (MatLeft) -- (MatRight);
+		\draw[->,ScienceBlue!50] (VacBot) --(VacTop) node[color=ScienceBlue!50,above=4pt] {\scriptsize Vacuum};
+		\draw[->,ScienceBlue!50] (MatTop) -- (MatBot) node[color=ScienceBlue!50,below=4pt] {\scriptsize Material};
+		
+		
+		
+		
+		\coordinate (E1) at ({-2*\AtomGap},{3*\dPlaneHeight});
+		\coordinate (E2) at ({-2*\AtomGap},{2*\dPlaneHeight});
+		
+		
+		%% ELECTRON ONE
+		\draw[->,dashed,ScienceGreen!75] (E1) node[color=ScienceGreen!75,above=0.5pt] {\scriptsize $e_1^-$} -- (0,\dPlaneHeight);
+		\draw[fill=ScienceGreen!60] ({-1.5*\AtomGap},{2.5*\dPlaneHeight}) circle [radius = 0.1];
+		\node[anchor=center] at ({-1.5*\AtomGap},{2.47*\dPlaneHeight}) {\tiny -};
+		
+		%% ELECTRON TWO
+		\draw[->,dashed,ScienceGreen!75] (E2) node[color=ScienceGreen!75,above=0.5pt] {\scriptsize $e_2^-$} -- (0,0);
+		\draw[fill=ScienceGreen!60] ({-1.5*\AtomGap},{1.5*\dPlaneHeight}) circle [radius = 0.1];
+		\node[anchor=center] at ({-1.5*\AtomGap},{1.47*\dPlaneHeight}) {\tiny -};
+		
+		
+		%% ANGLE OF INCIDENCE
+		\coordinate (mid) at ({-1*\AtomGap},\dPlaneHeight);
+		\coordinate (last) at ({-1.5*\AtomGap},\dPlaneHeight);
+		\draw pic[mysmallarr,"\small $\theta$",ScienceRed,draw=ScienceRed,angle radius=27,angle eccentricity=1.14] {angle = E2--mid--last};
+		
+		
+		
+		\coordinate (E1end) at ({2*\AtomGap},{3*\dPlaneHeight});
+		\coordinate (E2end) at ({2*\AtomGap},{2*\dPlaneHeight});
+		
+		\draw[->,dashed,ScienceGreen!75] (0,\dPlaneHeight) -- (E1end);
+		\draw[->,dashed,ScienceGreen!75] (0,0) -- (E2end);
+		
+		
+		
+		%% RIGHT ANGLE AND THETA PRIME DEMONSTRATION
+		\coordinate (A) at ({-\AtomGap},{\dPlaneHeight});
+		\coordinate (B) at ({-0.5*\AtomGap},{0.485*\dPlaneHeight});
+		\coordinate (C) at (0,\dPlaneHeight);
+		\coordinate (D) at ($(E2)!(B)!(C)$);
+			
+		\draw[dashed] (0,\dPlaneHeight) -- (0,{0.25*\dPlaneHeight});
+		\draw[dashed] (0,\dPlaneHeight) -- ({-0.7*\AtomGap},{0.3*\dPlaneHeight});
+		
+		\rightAngle{E2}{B}{C}{0.2}
+		
+		\coordinate (start2) at ({-0.7*\AtomGap},{0.3*\dPlaneHeight});
+		\coordinate (mid2) at (0,\dPlaneHeight);
+		\coordinate (last2) at (0,{0.25*\dPlaneHeight});
+		\draw pic[mysmallarr,"\tiny $\theta'$",ScienceRed,draw=ScienceRed,angle radius=10,angle eccentricity=1.4] {angle = start2--mid2--last2};
+		
+		
+		%% DISTANCE MEASUREMENT
+		\draw[<->,black!60] ({-0.1*\AtomGap},{-0.1*\dPlaneHeight}) -- ({-0.6*\AtomGap},{0.4*\dPlaneHeight}) node[midway,fill=white,inner sep=0.5]{\tiny y};
+		\draw[dashed,black!60] (0,0) -- ({-0.15*\AtomGap},{-0.15*\dPlaneHeight});
+		
+		
+		
+	\end{tikzpicture}
+\end{document}

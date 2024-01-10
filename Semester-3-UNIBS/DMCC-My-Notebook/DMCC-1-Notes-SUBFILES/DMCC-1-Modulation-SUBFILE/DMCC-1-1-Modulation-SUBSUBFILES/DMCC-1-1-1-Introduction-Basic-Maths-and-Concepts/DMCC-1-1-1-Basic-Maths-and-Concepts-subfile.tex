@@ -1,0 +1,703 @@
+%%%%%%%%%%% DMCC-1-1-1 BASIC MATHS/CONCEPTS %%%%%%%%%%
+%%%%%%%%%%% DMCC-1-1-1 BASIC MATHS/CONCEPTS %%%%%%%%%%
+%%%%%%%%%%% DMCC-1-1-1 BASIC MATHS/CONCEPTS %%%%%%%%%%
+%%%%%%%%%%% DMCC-1-1-1 BASIC MATHS/CONCEPTS %%%%%%%%%%
+%%%%%%%%%%% DMCC-1-1-1 BASIC MATHS/CONCEPTS %%%%%%%%%%
+
+
+\documentclass[../../../../DMCC-My-Notebook]{subfiles}
+
+\ReportTitle{Section One - BASIC MATHS/CONCEPTS}
+
+
+\begin{document}
+	\ifSubfilesClassLoaded{ \pagestyle{fancy} }{}
+	
+	
+	
+	\subsection{Basic Maths and Concepts}
+		
+		\subsubsection{Quick Intro to the Chapter and Section}
+			Digital modulation techniques are fundamental in modern communication systems, enabling the transmission of digital information over analog channels. Several key mathematical concepts and equations are essential to understanding and implementing digital modulation techniques. In this Section we shall present some of the most basic modulation techniques, concepts, and specifications, keep in mind though that specific modulation schemes may have variations and additional considerations depending on factors like channel characteristics and system requirements. \linebreak
+	
+		
+		\subsubsection{}
+		
+		\subsection{Baseband Representation of Digital Signals}
+	    	Digital signals are typically represented in baseband using pulse waveforms. A simple rectangular pulse can be represented with the equation:
+	    	
+	    	\begin{equation}
+	    		p(t) = \sum_{n=-\infty}^{\infty} A_n p_0(t - nT)
+	    	\end{equation}\label{eqn:baseband_rep}
+	    	
+	    	Where:
+	    	\begin{itemize}[leftmargin=1cm]
+	    		\item $A_n$ is the amplitude of the $n^{th}$ pulse.
+	    		\item $p_0$ is the basic pulse shape (often a rectangular pulse, but it can be other shapes).
+	    		\item $T$ is the pulse duration or the time between the start of successive pulses.
+	    	\end{itemize}
+	    	
+	    	Equation \ref{eqn:baseband_rep} essentially states that the digital signal is composed of a series of pulses, each shifted by multiples of $T$ seconds. The amplitudes $A_n$​ determine the information content of each pulse. For a rectangular pulse $p(t)$ is defined as:
+	    	
+	    	\begin{gather*}
+	    		p(t) = \text{rect}\left(\frac{t}{T}\right) =
+	    		\begin{cases} 
+	    			1, & \text{if } |t| < \frac{T}{2} \\
+	    			0, & \text{otherwise}
+	    		\end{cases}
+	    	\end{gather*}\label{eqn:rect_pulse}
+	    	
+	    	To be clear, in equation \ref{eqn:rect_pulse}, "rect" is the rectangular function, and $T$ is the duration of the pulse. \linebreak
+	    	\textbf{This representation is foundational for understanding how digital signals are formed and transmitted.} It forms the basis for various modulation techniques, where the information is encoded in the characteristics of these pulses.
+			
+			
+			
+			
+		\subsubsection{Amplitude Modulation Techniques - AM and ASK}
+			Amplitude Modulation (AM) is a modulation technique where the amplitude of a carrier signal is varied in proportion to the instantaneous amplitude of a modulating signal (message signal, $m(t)$). It is widely used in analog audio and video broadcasting and communication systems.
+			The modulated signal $s(t)$ in the time domain is given by:
+			
+			\begin{equation}
+				s(t) = A_c [1 + m \cdot x(t)] \cdot \cos(2\pi f_c t)
+			\end{equation}\label{eqn:amplitude_mod_simp}
+			Where:
+			\begin{itemize}[leftmargin=1cm]
+				\item $A_c$ is the amplitude of the carrier signal,
+				\item $m$ is the modulation index, representing the extent of modulation,
+				\item $x(t)$ is the baseband message signal (modulating signal),
+				\item $f_c$ is the frequency of the carrier signal.
+			\end{itemize}
+			
+			In eq. \ref{eqn:amplitude_mod_simp},  $A_c [1 + m \cdot x(t)]$ , represents the instantaneous amplitude of the modulated signal, and $ cos(2\pi f_c t)$ is the carrier signal. \linebreak
+			The modulation index, $m$, determines the depth of modulation. If $m=0$, there is no modulation, and the output is just the carrier signal. As $m$ increases, the amplitude of the carrier signal varies more with the message signal. It is also possible for the carrier to "cross" the time axis, resulting in a phase inversion, the circuit to transmit and receive this will be much more complex.\linebreak
+			
+			\paragraph{The modulation index} is defined as the ratio of the peak amplitude of the modulating signal to the peak amplitude of the carrier signal. It is often expressed as a percentage. See equation \ref{eqn:modulation_index}:
+			\begin{equation}
+				m = \frac{\text{Amplitude of modulating signal}}{\text{Amplitude of carrier signal}} \times 100\%
+			\end{equation}\label{eqn:modulation_index}
+			
+			\paragraph{Frequency components} can be created from the expansion of the modulated signal, $s(t)$:
+			\begin{equation}
+				s(t) = A_c \cos(2\pi f_c t) + \frac{mA_c}{2} [x(t) \cos(2\pi (f_c - f_m) t) + x(t) \cos(2\pi (f_c + f_m) t)],
+			\end{equation}\label{eqn:frequency_components}
+			Note: $f_m$ is the frequency of the modulating signal. \linebreak
+			
+			However,\textbf{ AM is somewhat inefficient}; the \textbf{carrier doesn't contain any message information} but we are \textbf{still using power to transmit it.}
+			
+			In AM, the frequency \textbf{spectrum} of the \textbf{signal consists of the carrier frequency and two sidebands} located above and below the carrier frequency, each containing the same information from the modulating signal. One can obtain the carrier from either of the bands (they are the conjugate of each other, this is a Hermitian property). So if one wished to save more power on transmission, \textbf{one of the side bands can be removed.} \linebreak
+			
+			
+			
+			
+			
+			
+			
+			
+			In the context of digital communication, a symbol refers to a distinct unit of information that is transmitted over a communication channel. Symbols are the basic building blocks of digital communication systems and are used to represent data. The term "symbol" is often associated with modulation and encoding schemes, where information is converted into a specific format suitable for transmission.
+			
+			Here are some key points about symbols in digital communication:
+			
+			Representation of Information: A symbol can represent a binary digit (bit) or a combination of bits. The number of distinct symbols determines the modulation order. For example, in binary modulation schemes like Binary Phase-Shift Keying (BPSK), each symbol represents one bit (0 or 1). In higher-order modulation schemes like Quadrature Amplitude Modulation (QAM), each symbol represents multiple bits.
+			
+			Modulation Schemes: Modulation involves mapping symbols to specific signals that are transmitted over the communication channel. The choice of modulation scheme determines how symbols are represented in the physical signal. Common modulation schemes include BPSK, QPSK, 16-QAM, and 64-QAM.
+			
+			Symbol Rate: The symbol rate, also known as the baud rate, is the number of symbols transmitted per second. It is related to the bit rate by the modulation order. For example, in BPSK, the symbol rate is equal to the bit rate, while in QPSK, each symbol represents 2 bits, and the symbol rate is half the bit rate.
+			
+			Duration and Timing: Each symbol has a specific duration, which is related to the symbol period. The symbol period is the time interval allocated to transmit one symbol. The relationship between the symbol period and the bit rate is given by T=1/RT=1/R, where TT is the symbol period, and RR is the symbol rate.
+			
+			Role in Pulse Shaping: Symbols are essential in pulse shaping, where the goal is to design the transmitted pulses to meet certain criteria (e.g., the Nyquist criterion) to minimize intersymbol interference. The shape and duration of the transmitted pulses are influenced by the symbols being transmitted.
+			
+			In summary, a symbol in digital communication represents a discrete unit of information that is transmitted over a communication channel. The concept is closely tied to modulation schemes, encoding, and the overall design of digital communication systems. Symbols play a crucial role in conveying information reliably and efficiently in digital communication.
+	
+	\pagebreak
+	
+	
+	**Angle Modulation: Frequency Modulation (FM) and Phase Modulation (PM)**
+	
+	**Frequency Modulation (FM):**
+	
+	Frequency Modulation involves varying the instantaneous frequency of a carrier signal in proportion to the amplitude of the modulating signal. The modulating signal causes the frequency of the carrier wave to deviate from its center frequency. The instantaneous frequency \(f(t)\) of the FM signal can be expressed as:
+	
+	\[ f(t) = f_c + k_f \cdot m(t) \]
+	
+	where:
+	- \( f(t) \) is the instantaneous frequency.
+	- \( f_c \) is the carrier frequency.
+	- \( k_f \) is the frequency sensitivity or modulation index.
+	- \( m(t) \) is the message signal.
+	
+	**Phase Modulation (PM):**
+	
+	Phase Modulation involves varying the phase of a carrier signal in response to the modulating signal. The instantaneous phase \(\phi(t)\) of the PM signal is given by:
+	
+	\[ \phi(t) = \phi_c + k_p \cdot m(t) \]
+	
+	where:
+	- \( \phi(t) \) is the instantaneous phase.
+	- \( \phi_c \) is the carrier phase.
+	- \( k_p \) is the phase sensitivity or modulation index for PM.
+	- \( m(t) \) is the message signal.
+	
+	**Relationship between FM and PM:**
+	
+	For small values of modulation index, FM and PM are closely related. The relationship between the frequency deviation (\( \Delta f \)) in FM and the phase deviation (\( \Delta \phi \)) in PM is given by:
+	
+	\[ \Delta f = \frac{k_f}{2\pi} \cdot A_m \]
+	
+	\[ \Delta \phi = k_p \cdot A_m \]
+	
+	where:
+	- \( A_m \) is the peak amplitude of the message signal.
+	
+	**Carson's Rule:**
+	
+	For wideband signals, Carson's rule provides an estimate of the bandwidth (\(B\)) required for FM signals:
+	
+	\[ B \approx 2 \cdot (f_m + f_{\Delta}) \]
+	
+	where:
+	- \( f_m \) is the maximum frequency component in the message signal.
+	- \( f_{\Delta} \) is the frequency deviation.
+	
+	**Frequency and Phase Relationships:**
+	
+	The relationship between frequency and phase in FM and PM can be expressed as:
+	
+	\[ \frac{d\phi(t)}{dt} = 2\pi \cdot f(t) \]
+	
+	This equation highlights the direct relationship between the rate of change of phase and the instantaneous frequency.
+	
+	In summary, angle modulation, encompassing both Frequency Modulation (FM) and Phase Modulation (PM), involves varying the frequency or phase of a carrier signal in response to a modulating signal. These modulation techniques are widely used in communication systems for their resistance to noise and interference.
+	
+	
+	
+	
+	**Pulse Amplitude Modulation (PAM):**
+	
+	Pulse Amplitude Modulation (PAM) is a modulation technique in which the amplitude of a series of pulses is varied according to the instantaneous amplitude of a modulating signal. PAM is a fundamental form of modulation used in digital communication systems.
+	
+	**Basic Idea:**
+	
+	In PAM, the information from the message signal is encoded in the amplitude of discrete pulses. The modulating signal is sampled at regular intervals, and each sample is represented by a pulse with an amplitude proportional to the sample value.
+	
+	**Mathematical Representation:**
+	
+	Assuming the message signal is \(m(t)\), the PAM signal \(s(t)\) can be expressed as:
+	
+	\[ s(t) = \sum_{n=-\infty}^{\infty} m(nT) \cdot p(t - nT) \]
+	
+	where:
+	- \( T \) is the sampling interval.
+	- \( m(nT) \) is the sample value of the message signal at time \(nT\).
+	- \( p(t) \) is the pulse shape.
+	
+	A common choice for the pulse shape is a rectangular pulse, leading to the simplified expression:
+	
+	\[ s(t) = \sum_{n=-\infty}^{\infty} m(nT) \cdot \text{rect}\left(\frac{t - nT}{T}\right) \]
+	
+	**Rectangular Pulse Function:**
+	
+	The rectangular pulse function, \(\text{rect}(t)\), is defined as:
+	
+	\[ \text{rect}(t) = 
+	\begin{cases} 
+		1 & \text{if } |t| \leq \frac{1}{2} \\
+		0 & \text{otherwise}
+	\end{cases}
+	\]
+	
+	**Demodulation:**
+	
+	Demodulation in PAM typically involves sampling the received signal at the appropriate times and using these samples to reconstruct the original message signal. The process is often done using a low-pass filter to eliminate high-frequency components and retain the original message signal.
+	
+	**Advantages:**
+	
+	- Simplicity: PAM is straightforward to implement and understand.
+	
+	- Digital-to-Analog Conversion: PAM is the basis for digital-to-analog conversion in pulse code modulation (PCM) systems.
+	
+	**Disadvantages:**
+	
+	- Susceptibility to Noise: PAM signals are sensitive to noise, which can affect the accuracy of signal recovery.
+	
+	In summary, Pulse Amplitude Modulation (PAM) involves encoding information in the amplitude of discrete pulses. It serves as a fundamental building block for various modulation techniques and is widely used in digital communication systems.
+	
+	
+	
+	**Baseband Modulation:**
+	
+	Baseband modulation refers to the process of modulating a digital signal directly without shifting its frequency. In baseband modulation, the information-bearing signal is typically represented by variations in voltage or current levels. This contrasts with passband modulation, where the signal is modulated at a higher frequency before transmission.
+	
+	**Basic Idea:**
+	
+	In baseband modulation, the original information signal is used to directly modulate a carrier without translating it to a higher frequency. This is commonly done in communication systems where the distance between the transmitter and receiver is short, and there's no need for the complications of frequency translation.
+	
+	**Mathematical Representation:**
+	
+	Let \(m(t)\) be the baseband message signal, and \(s(t)\) be the baseband modulated signal. The relationship can be expressed as:
+	
+	\[ s(t) = A \cdot m(t) \]
+	
+	where:
+	- \( A \) is the amplitude of the baseband modulated signal.
+	
+	This is a simple amplitude modulation where the amplitude of the carrier signal is directly proportional to the instantaneous amplitude of the message signal.
+	
+	**Binary Baseband Modulation:**
+	
+	For binary baseband modulation, where the message signal is binary (e.g., 0s and 1s), the modulation can be represented as:
+	
+	\[ s(t) = A \cdot m(t) \]
+	
+	where \(m(t)\) is the binary message signal.
+	
+	**Demodulation:**
+	
+	Demodulation in baseband modulation involves extracting the original message signal from the modulated waveform. This can be achieved through techniques such as envelope detection for amplitude modulation or threshold detection for binary modulation.
+	
+	**Applications:**
+	
+	Baseband modulation is commonly used in scenarios where the transmission distance is short, and the complexities of radio frequency transmission are unnecessary. It is prevalent in wired communication systems, such as Ethernet for computer networks.
+	
+	**Advantages:**
+	
+	- **Simplicity:** Baseband modulation is simpler to implement compared to passband modulation.
+	
+	- **Efficiency:** In short-distance communication, baseband modulation can be more efficient in terms of power and bandwidth usage.
+	
+	**Disadvantages:**
+	
+	- **Limited Range:** Baseband modulation is generally suitable for short-range communication due to signal degradation over distance.
+	
+	In summary, baseband modulation involves directly modulating a carrier signal with a low-frequency information signal. It is commonly used in short-distance communication scenarios, providing a simple and efficient modulation approach.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	**Phase Shift Keying (PSK):**
+	
+	Phase Shift Keying (PSK) is a digital modulation scheme that conveys data by changing the phase of the carrier signal. In PSK, the carrier signal is shifted between different phase states, each corresponding to different symbols or bit patterns. PSK is widely used in communication systems, including wireless and optical communication.
+	
+	**Basic Idea:**
+	
+	In PSK, the information is encoded in the phase of the carrier signal. Each distinct phase represents a different symbol or combination of bits. The phase of the carrier is changed at specific points in time, corresponding to the symbols of the digital signal.
+	
+	**Mathematical Representation:**
+	
+	For Binary Phase Shift Keying (BPSK), which is a common form of PSK with two phase states (0 and π radians), the modulated signal \(s(t)\) can be expressed as:
+	
+	\[ s(t) = A \cdot \cos(2\pi f_c t + \phi(t)) \]
+	
+	where:
+	- \( A \) is the amplitude of the carrier signal.
+	- \( f_c \) is the carrier frequency.
+	- \( \phi(t) \) is the phase information, which changes based on the binary input signal.
+	
+	For BPSK, \( \phi(t) \) takes on two possible values: 0 radians or \( \pi \) radians, corresponding to the two binary symbols (0 and 1).
+	
+	In general, for M-ary PSK (where M is the number of phase states), the phase information \( \phi(t) \) can be expressed as:
+	
+	\[ \phi(t) = \frac{2\pi k}{M} \]
+	
+	where \( k \) is an integer representing the selected phase state.
+	
+	**Signal Constellation:**
+	
+	The signal constellation for PSK is a set of points on the complex plane, each corresponding to a different phase state. For BPSK, there are two points: one at \(A\) and another at \(-A\).
+	
+	For QPSK (Quadrature PSK), which has four phase states, the signal constellation has four points, typically located at \(A(\cos(\theta), \sin(\theta))\), \(A(\cos(\theta + \frac{\pi}{2}), \sin(\theta + \frac{\pi}{2}))\), \(A(\cos(\theta + \pi), \sin(\theta + \pi))\), and \(A(\cos(\theta + \frac{3\pi}{2}), \sin(\theta + \frac{3\pi}{2}))\).
+	
+	**Demodulation:**
+	
+	Demodulation in PSK involves detecting the phase of the received signal and mapping it back to the corresponding symbol. This is often done using phase discrimination techniques or by employing a phase-locked loop.
+	
+	**Advantages:**
+	
+	- **Bandwidth Efficiency:** PSK is bandwidth-efficient, allowing for a high data rate within a limited bandwidth.
+	
+	- **Robustness:** PSK is less susceptible to amplitude variations and noise compared to amplitude-based modulation schemes.
+	
+	In summary, PSK is a digital modulation scheme that encodes information in the phase of the carrier signal. It is widely used in various communication systems due to its efficiency and robustness.
+	
+	
+	
+	
+	
+	
+	
+	**Frequency Shift Keying (FSK):**
+	
+	Frequency Shift Keying (FSK) is a digital modulation scheme in which the carrier frequency is varied to represent different symbols or bits. FSK is widely used in various communication systems, including data transmission over telephone lines and radio frequency communication.
+	
+	**Basic Idea:**
+	
+	In FSK, the binary information is encoded by shifting the frequency of the carrier signal between two or more discrete frequencies. Each frequency corresponds to a different symbol or bit. FSK is particularly suitable for applications where bandwidth efficiency is not a primary concern.
+	
+	**Mathematical Representation:**
+	
+	For Binary Frequency Shift Keying (BFSK), the modulated signal \(s(t)\) can be expressed as:
+	
+	\[ s(t) = A \cdot \cos(2\pi f_1 t) \quad \text{for symbol } 0 \]
+	
+	\[ s(t) = A \cdot \cos(2\pi f_2 t) \quad \text{for symbol } 1 \]
+	
+	where:
+	- \( A \) is the amplitude of the carrier signal.
+	- \( f_1 \) and \( f_2 \) are the two discrete frequencies corresponding to the two binary symbols.
+	
+	In general, for M-ary FSK (where M is the number of frequencies), the modulated signal is expressed as:
+	
+	\[ s(t) = A \cdot \cos(2\pi f_k t) \]
+	
+	where \( k \) is an integer representing the selected frequency.
+	
+	**Signal Constellation:**
+	
+	The signal constellation for FSK consists of discrete frequencies, with each frequency representing a different symbol. For BFSK, there are two frequencies, typically denoted as \(f_1\) and \(f_2\).
+	
+	For M-ary FSK, there are M different frequencies, each corresponding to a different symbol.
+	
+	**Demodulation:**
+	
+	Demodulation in FSK involves detecting the frequency of the received signal and mapping it back to the corresponding symbol. This is often done using frequency discrimination techniques or by employing a frequency-locked loop.
+	
+	**Advantages:**
+	
+	- **Simple Implementation:** FSK is relatively simple to implement, both in terms of modulation at the transmitter and demodulation at the receiver.
+	
+	- **Resilience to Amplitude Variations:** FSK is less affected by amplitude variations compared to amplitude-based modulation schemes.
+	
+	**Disadvantages:**
+	
+	- **Bandwidth Inefficiency:** FSK can be less bandwidth-efficient than modulation schemes like Phase Shift Keying (PSK) for high data rates.
+	
+	In summary, Frequency Shift Keying (FSK) is a digital modulation scheme that encodes information by varying the carrier frequency between discrete values. It is commonly used in various communication applications due to its simplicity and resilience to amplitude variations.
+	
+	
+	
+	
+	
+	
+	
+	The optimal receiver, also known as the Maximum Likelihood (ML) receiver, is a receiver design used in communication systems to maximize the likelihood of correctly detecting transmitted symbols in the presence of noise and other impairments. The goal of the optimal receiver is to make the most probable decision about the transmitted symbol based on the received signal.
+	
+	**Basic Idea:**
+	
+	The optimal receiver makes decisions by selecting the transmitted symbol that is most likely given the received signal. It is based on statistical principles and assumes that the transmitted symbols are affected by noise, resulting in uncertainty in the received signal.
+	
+	**Mathematical Formulation:**
+	
+	Let \(x\) represent the received signal, and \(s_i\) represent the \(i\)-th possible transmitted symbol. The optimal receiver chooses the symbol \(s_k\) that maximizes the likelihood function \(P(x|s_k)\):
+	
+	\[ \hat{s} = \arg\max_{i} P(x|s_i) \]
+	
+	This decision rule is equivalent to choosing the symbol that maximizes the conditional probability of observing the received signal \(x\) given that the symbol \(s_i\) was transmitted.
+	
+	**Mathematical Details:**
+	
+	The likelihood function \(P(x|s_i)\) is often modeled based on the probability density function (pdf) of the received signal conditioned on the transmitted symbol. For example, in additive white Gaussian noise (AWGN) channels, where the noise follows a Gaussian distribution, the likelihood function is given by:
+	
+	\[ P(x|s_i) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left(-\frac{(x - s_i)^2}{2\sigma^2}\right) \]
+	
+	where:
+	- \( \sigma^2 \) is the variance of the noise.
+	
+	The optimal receiver selects the symbol with the highest likelihood, maximizing the chance of making the correct decision.
+	
+	**Optimal Receiver for Different Modulation Schemes:**
+	
+	- **Optimal Receiver for Binary Modulation (e.g., BPSK):**
+	\[ \hat{b} = \text{sign}(x) \]
+	
+	- **Optimal Receiver for M-ary Modulation (e.g., M-ary PSK or QAM):**
+	\[ \hat{i} = \arg\max_{i} \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left(-\frac{\|x - s_i\|^2}{2\sigma^2}\right) \]
+	
+	where:
+	- \( \hat{b} \) is the estimated binary symbol.
+	- \( \hat{i} \) is the estimated index for M-ary modulation.
+	
+	**Optimal Receiver in Practice:**
+	
+	While the optimal receiver provides a theoretical performance upper bound, its implementation can be challenging in practice, especially when dealing with a large number of possible symbols or complex signal models. In many communication systems, suboptimal receivers, such as matched filters or algorithms based on soft decision metrics, are used due to their computational efficiency.
+	
+	In summary, the optimal receiver, based on maximum likelihood estimation, aims to maximize the likelihood of correctly detecting transmitted symbols in the presence of noise. It is a fundamental concept in digital communication systems, providing a theoretical framework for symbol detection.
+	
+	
+	
+	
+	
+	
+	**Evaluation of Posterior Probability:**
+	
+	The evaluation of posterior probability is a fundamental concept in statistical inference and decision theory. It involves estimating the probability of a hypothesis or an event given observed data. In Bayesian statistics, the posterior probability is computed using Bayes' Theorem, which combines prior knowledge with new evidence.
+	
+	**Basic Idea:**
+	
+	The key idea is to update our belief about the probability of a hypothesis or event based on new evidence or data. The evaluation of posterior probability is central to making informed decisions in the face of uncertainty.
+	
+	**Bayes' Theorem:**
+	
+	Bayes' Theorem expresses the relationship between the prior probability (\(P(\text{Hypothesis})\)), the likelihood of observing the data given the hypothesis (\(P(\text{Data | Hypothesis})\)), and the posterior probability (\(P(\text{Hypothesis | Data})\)):
+	
+	\[ P(\text{Hypothesis | Data}) = \frac{P(\text{Data | Hypothesis}) \cdot P(\text{Hypothesis})}{P(\text{Data})} \]
+	
+	where:
+	- \( P(\text{Hypothesis | Data}) \) is the posterior probability.
+	- \( P(\text{Data | Hypothesis}) \) is the likelihood of observing the data given the hypothesis.
+	- \( P(\text{Hypothesis}) \) is the prior probability.
+	- \( P(\text{Data}) \) is the probability of observing the data (the normalizing constant).
+	
+	**Posterior Probability in Decision Making:**
+	
+	In decision making, the posterior probability can be used to choose the most likely hypothesis or make predictions. For example, in binary hypothesis testing (H0 vs. H1), the posterior probability of H1 given the observed data can be compared to a threshold to make a decision.
+	
+	\[ \text{Decision: } \quad
+	\begin{cases}
+		\text{H1, if } P(\text{H1 | Data}) > \text{Threshold} \\
+		\text{H0, otherwise}
+	\end{cases}
+	\]
+	
+	**Sequential Updating:**
+	
+	The Bayesian framework allows for sequential updating of beliefs as new data becomes available. After obtaining new evidence, the posterior probability becomes the prior probability for the next update, creating a continual learning process.
+	
+	**Example:**
+	
+	Consider a medical diagnosis scenario where a patient is tested for a disease. The posterior probability of having the disease after the test is computed using Bayes' Theorem, taking into account the prior probability of having the disease and the likelihood of obtaining the test result given the disease status.
+	
+	\[ P(\text{Disease | Test Result}) = \frac{P(\text{Test Result | Disease}) \cdot P(\text{Disease})}{P(\text{Test Result})} \]
+	
+	**Advantages:**
+	
+	- **Incorporation of Prior Knowledge:** Bayesian inference allows the incorporation of prior knowledge into the analysis, providing a systematic way to update beliefs.
+	
+	- **Flexible Framework:** Bayesian methods are flexible and can be applied to various types of problems, including parameter estimation, hypothesis testing, and prediction.
+	
+	In summary, the evaluation of posterior probability, guided by Bayes' Theorem, is a powerful tool in Bayesian statistics for updating beliefs based on new evidence. It plays a crucial role in decision making under uncertainty and sequential learning scenarios.
+	
+	
+	
+	
+	
+	
+	
+	**Error Probabilities in Digital Modulation:**
+	
+	In digital communication systems, error probabilities are key performance metrics used to quantify the accuracy of data transmission. These metrics assess the likelihood of errors occurring during the transmission and reception of digital signals. Two primary error probabilities are the Bit Error Rate (BER) and the Symbol Error Rate (SER).
+	
+	**Bit Error Rate (BER):**
+	
+	The Bit Error Rate is the probability of an error occurring in a single bit of the transmitted signal. It is typically denoted as \(P_b\) and is defined as:
+	
+	\[ P_b = P(\text{received bit} \neq \text{transmitted bit}) \]
+	
+	For binary modulation schemes like Binary Phase Shift Keying (BPSK) or Binary Frequency Shift Keying (BFSK), where each symbol represents one bit, the BER is a crucial metric. The BER can be expressed as the probability of an error given the received signal \(y\) and the transmitted signal \(x\):
+	
+	\[ P_b = P(y \neq x) \]
+	
+	**Symbol Error Rate (SER):**
+	
+	The Symbol Error Rate is the probability of an error occurring in the transmission of an entire symbol. It is denoted as \(P_s\) and is defined as:
+	
+	\[ P_s = P(\text{received symbol} \neq \text{transmitted symbol}) \]
+	
+	For modulation schemes with symbols representing multiple bits, such as Quadrature Amplitude Modulation (QAM) or Phase Shift Keying (PSK), the SER is a more appropriate metric than the BER. The SER can be expressed as:
+	
+	\[ P_s = P(\hat{s} \neq s) \]
+	
+	where \(\hat{s}\) is the estimated symbol and \(s\) is the transmitted symbol.
+	
+	**Error Probabilities in AWGN Channel:**
+	
+	In an Additive White Gaussian Noise (AWGN) channel, where noise follows a Gaussian distribution, the error probabilities can be expressed in terms of the signal-to-noise ratio (SNR). The relationship between BER and SNR (\(E_b/N_0\) or \(\gamma\)) is often characterized by curves known as BER curves.
+	
+	For BPSK in AWGN:
+	
+	\[ P_b \approx Q\left(\sqrt{2 \cdot \gamma}\right) \]
+	
+	For QPSK in AWGN:
+	
+	\[ P_s \approx 2Q\left(\sqrt{\frac{2E_s}{N_0}}\right) \]
+	
+	where:
+	- \( Q(x) \) is the Q-function, representing the tail probability of a standard normal distribution.
+	- \( E_b \) is the energy per bit.
+	- \( N_0 \) is the one-sided noise power spectral density.
+	- \( \gamma \) is the SNR for BPSK.
+	- \( E_s \) is the energy per symbol.
+	
+	**Error Probabilities in Rayleigh Fading Channel:**
+	
+	In a Rayleigh fading channel, where the channel experiences multipath fading, the error probabilities are influenced by the fading characteristics. The expressions for error probabilities in fading channels are more complex and often involve integrals over the fading distribution.
+	
+	Understanding and analyzing error probabilities is crucial for designing and optimizing digital communication systems, allowing engineers to make informed decisions about modulation schemes, coding, and other system parameters to achieve the desired performance.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	**Quadrature Amplitude Modulation (QAM):**
+	
+	Quadrature Amplitude Modulation (QAM) is a modulation scheme that conveys data by varying the amplitude of two signal waves, known as the in-phase (I) and quadrature (Q) components. QAM is widely used in modern communication systems, including digital television, cable modems, and wireless communication.
+	
+	**Basic Idea:**
+	
+	QAM works by combining two amplitude-modulated signals that are 90 degrees out of phase with each other. These two signals are usually referred to as the in-phase (I) and quadrature (Q) components. The combined signal can be represented in the complex plane, where the real part corresponds to the in-phase component, and the imaginary part corresponds to the quadrature component.
+	
+	**Mathematical Representation:**
+	
+	The QAM signal can be expressed as:
+	
+	\[ s(t) = I \cdot \cos(2\pi f_c t) - Q \cdot \sin(2\pi f_c t) \]
+	
+	where:
+	- \( s(t) \) is the QAM signal.
+	- \( I \) is the amplitude of the in-phase component.
+	- \( Q \) is the amplitude of the quadrature component.
+	- \( f_c \) is the carrier frequency.
+	- \( t \) is time.
+	
+	The in-phase (\( I \)) and quadrature (\( Q \)) components are usually modulated independently, allowing for the representation of multiple bits per symbol.
+	
+	**Constellation Diagram:**
+	
+	In QAM, a constellation diagram is often used to visualize the amplitude and phase of each symbol. For \( M \)-ary QAM, where \( M \) is the number of symbols, the constellation will have \( M \) points.
+	
+	The positions of these points in the constellation diagram represent different amplitude and phase combinations, and each point corresponds to a unique symbol.
+	
+	**Signal-to-Noise Ratio (SNR):**
+	
+	The performance of QAM is often evaluated in terms of Signal-to-Noise Ratio (SNR). The relationship between the number of bits per symbol (\( \log_2(M) \)) and SNR is given by:
+	
+	\[ \text{SNR} = 6 \cdot \frac{\log_2(M)}{E_b/N_0} \]
+	
+	where:
+	- \( E_b \) is the energy per bit.
+	- \( N_0 \) is the one-sided noise power spectral density.
+	
+	In summary, QAM is a modulation technique that efficiently utilizes the amplitude of two signals to transmit digital information, and its performance is often characterized by constellation diagrams and SNR metrics.
+	
+	
+	\pagebreak
+	
+	
+	
+%		Define and describe the equations related to the concept of ”complex envelope”.
+%		
+%		
+%		
+%		The concept of a complex envelope is often used in signal processing and communication theory, particularly in the context of analyzing modulated signals. The complex envelope is a mathematical representation that simplifies the analysis of modulated signals by separating the slowly varying envelope from the rapidly oscillating carrier wave. This separation is useful because it allows for easier analysis and manipulation of the modulated signal.
+%		
+%		Let's consider a modulated signal represented by the equation:
+%		
+%		s(t)=A(t)cos⁡(2πfct+ϕ(t))s(t)=A(t)cos(2πfc​t+ϕ(t))
+%		
+%		where:
+%		
+%		s(t)s(t) is the modulated signal,
+%		A(t)A(t) is the time-varying amplitude (envelope),
+%		fcfc​ is the carrier frequency,
+%		ϕ(t)ϕ(t) is the phase modulation.
+%		
+%		To analyze this signal using the complex envelope representation, we define the complex envelope sc(t)sc​(t) as follows:
+%		
+%		sc(t)=A(t)ejϕ(t)sc​(t)=A(t)ejϕ(t)
+%		
+%		In this expression:
+%		
+%		jj is the imaginary unit (j2=−1j2=−1),
+%		A(t)A(t) is the envelope (slowly varying amplitude),
+%		ϕ(t)ϕ(t) is the phase.
+%		
+%		Now, if we want to express the original modulated signal s(t)s(t) in terms of its complex envelope, we can use Euler's formula to write s(t)s(t) as:
+%		
+%		s(t)=Re{sc(t)ej2πfct}s(t)=Re{sc​(t)ej2πfc​t}
+%		
+%		Here, Re{⋅}Re{⋅} denotes the real part. This equation shows how the modulated signal can be expressed as the real part of the product of the complex envelope and a carrier term.
+%		
+%		The advantage of using the complex envelope is that it simplifies the analysis of modulated signals, making it easier to study and design communication systems. The complex envelope concept is particularly useful in the context of amplitude modulation (AM) and frequency modulation (FM) systems.
+%		
+%		
+%		
+%		
+%		
+%		What is the phase term used in this representation?
+%		
+%		
+%		
+%		
+%		In the context of the complex envelope representation, the phase term ϕ(t)ϕ(t) is associated with the phase modulation of the carrier signal in a modulated waveform. Let me provide some additional clarification.
+%		
+%		The general form of a modulated signal is given by:
+%		
+%		s(t)=A(t)cos⁡(2πfct+ϕ(t))s(t)=A(t)cos(2πfc​t+ϕ(t))
+%		
+%		Here:
+%		
+%		s(t)s(t) is the modulated signal.
+%		A(t)A(t) is the time-varying amplitude (envelope).
+%		fcfc​ is the carrier frequency.
+%		ϕ(t)ϕ(t) is the phase modulation term.
+%		
+%		In the context of the complex envelope representation, we define the complex envelope sc(t)sc​(t) as:
+%		
+%		sc(t)=A(t)ejϕ(t)sc​(t)=A(t)ejϕ(t)
+%		
+%		In this expression, ϕ(t)ϕ(t) represents the phase modulation. The term ejϕ(t)ejϕ(t) corresponds to the complex phasor that captures both the amplitude and phase information of the carrier signal. Here, jj is the imaginary unit, and ϕ(t)ϕ(t) represents the instantaneous phase at time tt.
+%		
+%		The key idea is that the complex envelope separates the slowly varying amplitude (A(t)A(t)) from the rapidly oscillating phase term (ejϕ(t)ejϕ(t)). This separation simplifies the analysis of modulated signals, making it easier to study and design communication systems.
+%		
+%		So, in summary, the phase term ϕ(t)ϕ(t) in the complex envelope representation is associated with the phase modulation of the carrier signal in the modulated waveform.
+%		
+%		
+%		
+%		
+%		
+%		if f_c is describing the oscillation of the signal carrier, why is there a phase term? When might one change the value of this term and for what purpose?
+%		
+%		
+%		
+%		The presence of the phase term ϕ(t)ϕ(t) in the expression for the modulated signal s(t)s(t) accounts for phase modulation. In modulation schemes such as phase modulation (PM) or frequency modulation (FM), the phase of the carrier signal is modulated to transmit information. Let me provide some clarification on the role of the phase term and when and why one might change its value.
+%		Role of the Phase Term (ϕ(t)ϕ(t)):
+%		
+%		In the expression for the modulated signal:
+%		s(t)=A(t)cos⁡(2πfct+ϕ(t))s(t)=A(t)cos(2πfc​t+ϕ(t))
+%		
+%		The term ϕ(t)ϕ(t) represents the instantaneous phase of the carrier signal at time tt.
+%		Changing the value of ϕ(t)ϕ(t) introduces phase modulation, where the phase of the carrier signal varies with time.
+%		
+%		Phase Modulation (PM):
+%		
+%		In phase modulation, the information is encoded by varying the instantaneous phase of the carrier signal. The phase term ϕ(t)ϕ(t) is modulated to carry the information signal. The rate at which ϕ(t)ϕ(t) changes is proportional to the frequency of the information signal.
+%		When and Why Change the Phase Term:
+%		
+%		Communication Systems: Phase modulation is commonly used in communication systems. By changing the phase of the carrier signal, information can be transmitted in a robust manner.
+%		
+%		Frequency Modulation (FM): In frequency modulation, the frequency of the carrier signal is modulated, but this modulation is inherently linked to changes in phase. The instantaneous frequency is the rate of change of phase, and FM signals are often analyzed in terms of phase.
+%		
+%		Signal Processing and Information Transmission: Changing the value of ϕ(t)ϕ(t) allows for encoding different types of information in the signal. For example, in digital communication, changing the phase can represent different symbols or bits.
+%		
+%		Phase Shift Keying (PSK) Modulation: In PSK modulation, the phase of the carrier signal is explicitly modulated to represent different symbols. Binary PSK, for instance, uses two different phases to represent binary 0 and 1.
+%		
+%		Summary:
+%		
+%		The phase term ϕ(t)ϕ(t) is a crucial element in modulation schemes where phase modulation is employed. Changing the value of ϕ(t)ϕ(t) allows for encoding information in the phase of the carrier signal, making it a versatile tool in communication systems and signal processing applications.
+%		
+%		
+\end{document}

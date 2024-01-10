@@ -1,0 +1,71 @@
+%% BOHR HYDROGEN MODEL, ENERGY LEVELS, WITH TRANSITION PHOTONS
+%%%% https://tikz.net/function_average/ %%%%
+
+\documentclass{standalone}
+
+\input{QT-1-3-Diagrams-and-Graphs-Preamble}
+
+\begin{document}
+	
+	\def\xmax{2.5} % max x axis
+	\def\xmin{0.5} % max y axis
+	\def\ymax{0.5} % max y axis
+	\def\ymin{-13.6} % min y axis
+	\begin{tikzpicture}
+		
+		\draw[->,dashed,color=heading] (0,\ymin-0.1) -- (0,\ymax) node[above left] {\small Energy (eV)}; % y axis
+		\draw[dashed,color=heading] (\xmin-0.6,\ymin) -- (\xmax+0.6,\ymin) {}; % x axis
+		
+		
+		\draw[color=blue!95,fill=blue!05,opacity=0.75] (\xmin,\ymin) rectangle (\xmax,-0.3777);
+		
+		
+		\path[draw,shape=coordinate]
+		(\xmin,-0.3777) coordinate(c1) 
+		(\xmax,-0.3777) coordinate(c2)
+		(\xmin,\ymax+0.35) 	coordinate(c3) 
+		(\xmax,\ymax+0.35) 	coordinate(c4);
+		\filldraw[dashed,color=red!95,fill=red!05] (c3) -- (c1) -- (c2) -- (c4);
+		\pattern[pattern=north east lines,pattern color=red!45] (c3) -- (c1) -- (c2) -- (c4) -- cycle;
+		
+		
+		
+		\draw[color=blue!95] (\xmin-0.1,\ymin) -- (\xmax+0.1,\ymin) {}; % Energy Level One
+		\draw[color=blue!65] (\xmin-0.1,-3.4) -- (\xmax+0.1,-3.4) {}; % Energy Level Two
+		\draw[color=blue!65] (\xmin-0.1,-1.5111) -- (\xmax+0.1,-1.5111) {}; % Energy Level Three
+		\draw[color=blue!65] (\xmin-0.1,-0.85) -- (\xmax+0.1,-0.85) {}; % Energy Level Four
+		\draw[color=blue!65] (\xmin-0.1,-0.544) -- (\xmax+0.1,-0.544) {}; % Energy Level Five
+		\draw[color=blue!65] (\xmin-0.1,-0.3777) -- (\xmax+0.1,-0.3777) {}; % Energy Level Six
+		
+		
+		
+		\draw[color=blue!95] (\xmin-0.6,\ymin) node[color=blue!95,left] {\scriptsize $E_1$} -- (\xmin-0.4,\ymin) {}; % Energy Level One
+		\draw[color=blue!65] (\xmin-0.6,-3.4) node[color=blue!95,left] {\scriptsize $E_2$} -- (\xmin-0.4,-3.4) {}; % Energy Level Two
+		\draw[color=blue!65] (\xmin-0.6,-1.5111) node[color=blue!95,left] {\scriptsize $E_3$} -- (\xmin-0.4,-1.5111) {}; % Energy Level Three
+		\draw[color=blue!65] (\xmin-0.6,-0.85) node[color=blue!95,left] {\scriptsize $E_4$} -- (\xmin-0.4,-0.85) {}; % Energy Level Four
+		
+		\draw[color=blue!65] (\xmin-1,-0.544) -- (\xmin-0.4,-0.544) {}; % Energy Level Five
+		\draw[color=blue!65] (\xmin-1,-0.544) -- (\xmin-1.25,-0.4) node[color=blue!95,left=-1pt] {\scriptsize $E_5$} {}; % Energy Level Five
+		
+		\draw[color=blue!65] (\xmin-1,-0.3777) -- (\xmin-0.4,-0.3777) {}; % Energy Level Six
+		\draw[color=blue!65] (\xmin-1,-0.3777) -- (\xmin-1.35,0.3) node[color=blue!95,left=-1pt] {\scriptsize $E_6$} {};  % Energy Level Six
+		
+		
+		
+		\draw[{Circle[length=1mm]}->,shorten <=-0.5mm,color=SciencePurple] (\xmin+0.25,-3.4) to [bend left = 7.5] (\xmin+0.25,\ymin); % Transition TWO to ONE
+		\draw[bigphoton,color=SciencePurple,opacity=0.85] (\xmax-1.2,-8.5) -- (\xmax+1.25,-8.5); % Transition TWO to ONE
+		
+		\draw[{Circle[length=1mm]}->,shorten <=-0.5mm,color=ScienceBlue] (\xmin+0.75,-1.5111) to [bend left = 12.5] (\xmin+0.75,-3.4); % Transition THREE to TWO
+		\draw[bigphoton,color=ScienceBlue,opacity=0.85] (\xmax-0.95,-2.4) -- (\xmax+1.25,-2.4); % Transition THREE to TWO
+		
+		\draw[{Circle[length=1mm]}->,shorten <=-0.5mm,color=ScienceGreen] (\xmin+1.25,-0.85) to [bend left = 17.5] (\xmin+1.25,-1.5111); % Transition FOUR to THREE
+		\draw[bigphoton,color=ScienceGreen,opacity=0.85] (\xmax-0.5,-1.175) -- (\xmax+2,-1.175); % Transition FOUR to THREE
+		
+		\draw[{Circle[length=1mm]}->,shorten <=-0.5mm,color=ScienceYellow] (\xmin+1.5,-0.544) to [bend left = 22.5] (\xmin+1.5,-0.85); % Transition FIVE to FOUR
+		\draw[bigphoton,color=ScienceYellow,opacity=0.85] (\xmax-0.3,-0.7) -- (\xmax+3.5,-0.7); % Transition FIVE to FOUR
+		
+		\draw[{Circle[length=1mm]}->,shorten <=-0.5mm,color=ScienceOrange] (\xmin+1.8,-0.3777) to [bend left = 26] (\xmin+1.8,-0.544); % Transition FIVE to FOUR
+		\draw[bigphoton,color=ScienceOrange,opacity=0.85] (\xmax+0.1,-0.45) -- (\xmax+5,-0.45); % Transition FIVE to FOUR
+		
+	\end{tikzpicture}
+\end{document}

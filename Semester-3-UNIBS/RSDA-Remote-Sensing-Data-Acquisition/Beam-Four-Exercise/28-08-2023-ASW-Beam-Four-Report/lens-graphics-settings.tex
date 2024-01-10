@@ -1,0 +1,21 @@
+\tikzset{>=latex}
+\usetikzlibrary{decorations.markings, calc}
+
+% New Command
+%% Middle Line Label
+\newcommand{\midlabelline}[3]{
+	\node (midlabel) at ($ (#1)!.5!(#2) $) {#3};
+	\draw[<-] (#1) --  (midlabel);
+	\draw[->] (midlabel) -- (#2);
+}
+%% Point
+\newcommand{\point}[3]{
+	\draw[fill=black] (#1) circle (1pt) node[#3] {#2};
+}
+
+% Styles
+%% Arrow in the Middle
+\tikzset{arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position 0.52 with \arrow{stealth}}}}
+
+% Define Color
+\definecolor{glass}{cmyk}{0.2,0,0,0}

@@ -1,0 +1,101 @@
+\documentclass[colorlinks,11pt,a4paper,normalphoto,withhyper,ragged2e]{altareport}
+
+
+\input{DMCC-Notes-Preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% TITLE PAGE INFO %%%%%%%%%%
+\ReportTitle{Digital Modulation and Channel Coding}
+\SubTitle{Class Notes}
+\Author{Andrew Simon Wilson}
+\ReportDate{\today}
+\FacultyOrLocation{EMIMEO Programme}
+\ModCoord{Prof. Pierangelo Migliorati}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% YOUR NAME, PROFESSION, PORTRAIT, CONTACT INFO, SOCIAL MEDIA ETC. %%%%%%%%%%
+\name{Andrew Simon Wilson, BEng}
+\tagline{Post-graduate Master's Student - EMIMEO Programme}
+
+\personalinfo{
+	\email{andrew.wilson@protonmail.com}
+	\linkedin{andrew-simon-wilson} 
+	\github{AS-Wilson}
+	\phone{+44 7930 560 383}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+	
+	%%%%% TITLE PAGE %%%%%
+	\MakeReportTitlePage
+	
+	
+	%%%%% CONTENTS %%%%%
+	\pagenumbering{roman} % Start roman numbering
+	\setcounter{page}{1}
+	
+	
+	
+	
+	\section*{Author Details}
+	
+		%%%%% AUTHOR DETAILS %%%%%
+		\makeauthordetails
+		
+		%% You can add multiple photos on the left or right
+		% \photoR{3cm}{Images/a-wilson-potrait.jpg}
+		% \photoL{3cm}{Yacht_High,Suitcase_High}
+		
+		
+		%%%%% TABLE OF CONTENTS %%%%%
+		%% Table of contents print level -1: part, 0: chapter, 1: section, 2:sub-section, 3:sub-sub-section, etc.
+		\setcounter{tocdepth}{2} 
+		\tableofcontents %% Prints a list of all sections based on the above command
+		%\listoffigures %% Prints a list of all figures in the report
+		%\listoftables %% Prints a list of all tables in the report
+	
+	
+	
+	
+	%%%%%%%%%% DOCUMENT "INNER" SETTINGS %%%%%%%%%%
+	\fontsize{11pt}{12pt}\selectfont % Set default ont size
+	
+	%% https://mirror.kumi.systems/ctan/obsolete/info/math/voss/mathmode/Mathmode.pdf
+	% Set pre and post equation spacing
+	\abovedisplayskip=0pt
+	\abovedisplayshortskip=2pt
+	\belowdisplayskip=12pt
+	\belowdisplayshortskip=12pt
+	
+	
+	
+	
+	%%%%%%%%%% DOCUMENT CONTENT BEGINS HERE %%%%%%%%%%
+	
+	%%%%% INTRO %%%%%
+	\section*{Explanation and Introduction of this Document}
+		I spent have spent a lot of time developing the template used to make this {\LaTeX} document, I want others to benefit from this work so the source code for this template is available on GitHub \cite{latex_template_github}.
+		
+		
+	\newpage
+	\pagenumbering{arabic} % Start document numbering - roman numbering
+	
+	
+	\subfile{DMCC-1-Notes-SUBFILES/DMCC-1-Modulation-SUBFILE/DMCC-1-1-Modulation-subfile.tex}
+		
+	
+	
+	
+	
+	
+	
+	
+	\newpage
+	\setstretch{1}  % Reduce bibliography line spacing
+%	\bibliography{references.bib}
+	\bibliographystyle{IEEETran}
+\end{document}

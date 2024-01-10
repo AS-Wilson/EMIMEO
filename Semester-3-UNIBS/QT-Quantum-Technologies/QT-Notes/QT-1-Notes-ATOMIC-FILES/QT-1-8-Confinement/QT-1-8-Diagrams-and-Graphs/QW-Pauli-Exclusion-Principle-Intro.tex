@@ -1,0 +1,62 @@
+% THE 1D QUANTUM WELL - THE PAULI EXCLUSION PRINCIPLE
+
+\documentclass{standalone}
+
+
+\input{QT-1-8-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}
+		\def\xmin{0} % min x axis
+		\def\xmax{3}     % max x axis
+		\def\BaseE{0.4}
+		\def\L{2.85}
+		\def\nSamples{100}
+		
+		
+		\draw[->,thick,dashed] ({\xmin-0.2},0) -- ({\xmax+0.2},0) node[below=1] {\scriptsize $x$};
+		\draw[->,thick,dashed] (\xmin,-0.2) -- (\xmin,{\BaseE*7.5}) node[above,left] {\scriptsize $E$} {};
+		
+		
+		\draw[ScienceRed,thick] ({\xmin-0.15},\BaseE) node[left] {\tiny $E_1$} -- ({\xmin+0.1},\BaseE) {};
+		\draw[ScienceOrange,thick] ({\xmin-0.15},{\BaseE*2}) node[left] {\tiny $E_2$} -- ({\xmin+0.1},{\BaseE*2}) {};
+		\draw[ScienceYellow,thick] ({\xmin-0.15},{\BaseE*3}) node[left] {\tiny $E_3$} -- ({\xmin+0.1},{\BaseE*3}) {};
+		\draw[ScienceGreen,thick] ({\xmin-0.15},{\BaseE*4}) node[left] {\tiny $E_4$} -- ({\xmin+0.1},{\BaseE*4}) {};
+		\draw[ScienceBlue,thick] ({\xmin-0.15},{\BaseE*5}) node[left] {\tiny $E_5$} -- ({\xmin+0.1},{\BaseE*5}) {};
+		\draw[SciencePurple,thick] ({\xmin-0.15},{\BaseE*6}) node[left] {\tiny $E_6$} -- ({\xmin+0.1},{\BaseE*6}) {};
+		
+		\draw[ScienceRed,dashed] ({\xmin-0.15},\BaseE) -- (\L,\BaseE) {};
+		\draw[ScienceOrange,dashed] ({\xmin-0.15},{\BaseE*2}) -- (\L,{\BaseE*2}) {};
+		\draw[ScienceYellow,dashed] ({\xmin-0.15},{\BaseE*3}) -- (\L,{\BaseE*3}) {};
+		\draw[ScienceGreen,dashed] ({\xmin-0.15},{\BaseE*4}) -- (\L,{\BaseE*4}) {};
+		\draw[ScienceBlue,dashed] ({\xmin-0.15},{\BaseE*5}) -- (\L,{\BaseE*5}) {};
+		\draw[SciencePurple,dashed] ({\xmin-0.15},{\BaseE*6}) -- (\L,{\BaseE*6}) {};
+		
+		\begin{scope}
+			\foreach \i in {1,...,6}{
+				\ifodd\i
+					\draw[-{Stealth[length=2pt]},thick,ScienceRed] ({\xmax*0.2},{(\i*\BaseE)-(\BaseE*0.4)}) -- ({\xmax*0.2},{(\i*\BaseE)+(\BaseE*0.4)});
+					\draw[-{Stealth[length=2pt]},thick,ScienceBlue] ({\xmax*0.8},{(\i*\BaseE)+(\BaseE*0.4)}) -- ({\xmax*0.8},{(\i*\BaseE)-(\BaseE*0.4)});
+					
+					\draw[fill=ScienceGreen!60] ({\xmax*0.2},{\i*\BaseE}) circle [radius = 0.065];
+					\node[anchor=center] at ({\xmax*0.2},{\i*\BaseE}) {\tiny -};
+					
+					\draw[fill=ScienceGreen!60] ({\xmax*0.8},{\i*\BaseE}) circle [radius = 0.065];
+					\node[anchor=center] at ({\xmax*0.8},{\i*\BaseE}) {\tiny -};
+					
+				\else
+					\draw[-{Stealth[length=2pt]},thick,ScienceRed] ({\xmax*0.4},{(\i*\BaseE)-(\BaseE*0.4)}) -- ({\xmax*0.4},{(\i*\BaseE)+(\BaseE*0.4)});
+					\draw[-{Stealth[length=2pt]},thick,ScienceBlue] ({\xmax*0.6},{(\i*\BaseE)+(\BaseE*0.4)}) -- ({\xmax*0.6},{(\i*\BaseE)-(\BaseE*0.4)});
+					
+					\draw[fill=ScienceGreen!60] ({\xmax*0.4},{\i*\BaseE}) circle [radius = 0.065];
+					\node[anchor=center] at ({\xmax*0.4},{\i*\BaseE}) {\tiny -};
+					
+					\draw[fill=ScienceGreen!60] ({\xmax*0.6},{\i*\BaseE}) circle [radius = 0.065];
+					\node[anchor=center] at ({\xmax*0.6},{\i*\BaseE}) {\tiny -};
+				\fi
+			}
+		\end{scope}
+		
+	\end{tikzpicture}
+\end{document}

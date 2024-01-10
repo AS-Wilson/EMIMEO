@@ -1,0 +1,37 @@
+%%%% https://tikz.net/photoelectric_effect/ %%%%
+
+
+\IfStandalone{\def\datapath{../../../}}{\def\datapath{}}
+
+\input{\datapath QT-Notes-Preambles/QT-Notes-Diagrams-and-Graphs-DEFAULT-Preamble.tex}
+
+% Circuits
+\usepackage{circuitikz}
+%% Specifications
+\ctikzset{bipoles/thickness=1.2}
+
+% Styles
+\tikzset{>=latex}
+
+% Tikz Library
+\usetikzlibrary{angles,quotes}
+
+% Define Color
+\tikzstyle{bigphoton}=[-{Latex[length=8,width=6]},red!95!black!50,opacity=0.85,very thin,decorate,decoration={snake,amplitude=2.8,segment length=8,post length=8}]
+
+
+
+%%%% https://tikz.net/function_average/ %%%%
+\usepackage{physics}
+\usepackage[outline]{contour} % glow around text
+\contourlength{1.0pt}
+
+\tikzset{>=latex} % for LaTeX arrow head
+\colorlet{myred_}{red!85!black}
+\colorlet{myblue_}{blue!80!black}
+\colorlet{mydarkred_}{myred_!80!black}
+\colorlet{mydarkblue_}{myblue_!60!black}
+\tikzstyle{xline}=[myblue_,thick]
+\def\tick#1#2{\draw[thick] (#1) ++ (#2:0.09) --++ (#2-180:0.18)}
+\tikzstyle{myarr_}=[myblue_!50,-{Latex[length=3,width=2]}]
+\def\N{100}

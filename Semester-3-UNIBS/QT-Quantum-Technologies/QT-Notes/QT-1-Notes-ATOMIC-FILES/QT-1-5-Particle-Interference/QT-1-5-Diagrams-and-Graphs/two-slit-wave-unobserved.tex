@@ -1,0 +1,203 @@
+%% TWO SLIT - UNOBSEVRED, FINAL WAVE-LIKE BEHAVIOUR
+
+% https://tikz.net/optics_twoslit/
+% https://www.overleaf.com/learn/latex/Counters
+% https://tex.stackexchange.com/questions/29989/how-does-the-counter-in-tikz-foreach-work
+% https://tex.stackexchange.com/questions/45848/rotate-node-text-and-use-relative-positioning-in-tikz
+% https://tex.stackexchange.com/questions/625022/using-tikz-to-plot-angle-notations-and-various-arrows
+% https://tex.stackexchange.com/questions/449675/how-to-draw-a-coil-such-that-you-can-see-if-its-right-or-left-handed
+\documentclass{standalone}
+
+
+\input{QT-1-5-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}[
+		nodal/.style={ScienceGreen!50,dashed,thin},
+		declare function={
+			xMaximaPosition(\Integer) = \ScreenDistL*tan(asin((\Integer*\lambdaDB)/\dSlitSeparationDistance)); % Function to calculate position of screen MAXIMA - "x" in experiment, \y in our tikz diagram - value
+			xMinimaPosition(\Integer) = \ScreenDistL*tan(asin(((\Integer+0.5)*\lambdaDB)/\dSlitSeparationDistance)); % Function to calculate position of screen MINIMA - "x" in experiment, \y in our tikz diagram - value
+			xRecalculate(\x) = \ScreenDistL-(((\x-\WallTotalSizeinX/2)*\ScreenDistL)/\x); % function to recaluclate - "x" in experiment, \y in our tikz diagram - for maxima/minima in the case we hit the screen out side the limits of the tikz diagram
+		}]
+		
+		\def\ScreenDistL{8}       						% L -- Distance between walls
+		\def\WallTotalSizeinX{5}       					% X -- Total wall height
+		\def\WallThickness{0.1}      					% t -- wall thickness
+		
+		\def\dSlitSeparationDistance{1}      			% d -- Centre to centre slit distance
+		\def\lambdaDB{0.1}  							% De Broglie Wavelength of electrons
+		\def\kVectorNumber{2*3.14159265/\lambdaDB} 		% k -- vectornumber / wavenumber
+		
+		\def\SlitAperture{0.22}      					% b -- Slit aperture width / size
+		
+		\pgfmathparse{int(\ScreenDistL/\lambdaDB*2)} % Had to make calculation like this cause tik / pgf was being weird
+		\def\NumberOfWavesN{\pgfmathresult}        		% Number of slit emanating and electron gun waves to produce
+		
+		\def\nMaxAndnMinLinesPerSide{2}					% For doing the right number of MAXIMA/MINIMA lines
+		
+		\def\ang{60}									% Angle or creating all limited spherical waves
+		
+		\def\xPositionDetector{0.9}       				% fractional height of projection point, makes point P stand off detector a bit and look neater
+		\def\nSamples{1000}								% Number of samples to compute for the intenstiy graph
+		
+		
+		%% Coordinates for the wall
+		\coordinate (LeftWallUpper) at (-\WallThickness/2,\WallTotalSizeinX/2);
+		\coordinate (LeftWallLower) at (\WallThickness/2,-\WallTotalSizeinX/2);
+		
+		\coordinate (FirstSlitCentre) at (0,\dSlitSeparationDistance/2);
+		\coordinate (FirstSlitUpper) at (\WallThickness/2,\dSlitSeparationDistance/2+\SlitAperture/2);
+		\coordinate (FirstSlitLower) at (-\WallThickness/2,\dSlitSeparationDistance/2-\SlitAperture/2);
+		
+		\coordinate (SecondSlitCentre) at (0,-\dSlitSeparationDistance/2);
+		\coordinate (SecondSlitUpper) at (\WallThickness/2,-\dSlitSeparationDistance/2+\SlitAperture/2);
+		\coordinate (SecondSlitLower) at (-\WallThickness/2,-\dSlitSeparationDistance/2-\SlitAperture/2);
+		
+		\coordinate (RightWallUpper) at (\ScreenDistL-\WallThickness/2,\WallTotalSizeinX/2);
+		\coordinate (RightWallLower) at (\ScreenDistL+\WallThickness/2,-\WallTotalSizeinX/2);
+		
+		
+		%% WALL
+		\fill[ScienceBlue!40]
+			(LeftWallUpper) rectangle (FirstSlitUpper)
+			(FirstSlitLower) rectangle (SecondSlitUpper)
+			(SecondSlitLower) rectangle (LeftWallLower)
+			(RightWallUpper) rectangle (RightWallLower);
+		
+		
+					
+		%% ELECTRON GUN SYMBOL
+		\ElectronGun{2}{0.75}{-\ScreenDistL*0.65}{0}
+		\draw[color=darkgray!85] (-\ScreenDistL*0.65,0) node[color=darkgray!75, above = 8] {\small Electron Gun};
+		
+		
+		
+		%% RADIAL WAVES EMANATING FROM THE SLITS
+		\begin{scope}
+			\clip (LeftWallUpper) rectangle (RightWallLower);
+			%\clip (-\t/2,0.7*\a) -- (0.6*\L,\H/2) -- (\L,\H/2) --
+			%      (\L,-\H/2) -- (0.6*\L,-\H/2) -- (-\t/2,-0.7*\a) -- cycle;
+		
+			% WAVES
+			\foreach \i [evaluate={\R=\i*\lambdaDB/2;}] in {1,...,\NumberOfWavesN}{
+				\ifodd\i
+					\draw[ScienceGreen!90,line width=0.55] (0,\dSlitSeparationDistance/2)++(\ang:\R) arc (\ang:-\ang:\R);
+					\draw[ScienceYellow!90,line width=0.55] (0,-\dSlitSeparationDistance/2)++(\ang:\R) arc (\ang:-\ang:\R);
+				\else
+					\draw[ScienceGreen!60,line width=0.075] (0,\dSlitSeparationDistance/2)++(\ang:\R) arc (\ang:-\ang:\R);
+					\draw[ScienceYellow!60,line width=0.075] (0,-\dSlitSeparationDistance/2)++(\ang:\R) arc (\ang:-\ang:\R);
+				\fi
+			}
+		\end{scope}
+		
+		
+		
+		%% ELECTRON GUN WAVES / ELECTRON WAVES 
+		\begin{scope}
+			\clip (-\ScreenDistL*0.65,\WallTotalSizeinX/2) rectangle ([shift={(-\WallThickness,0)}]LeftWallLower);
+	
+			% INITIAL ELECTRON WAVES
+			\foreach \i [
+				evaluate={
+					\R=(\i*\lambdaDB/2);
+					\ad=(exp(\i*0.01));
+					\arc=26-(exp(\i*0.01))/2;
+					\antarc=-26+(exp(\i*0.01))/2;
+				}] in {1,...,\NumberOfWavesN}{
+					\ifodd\i
+						\draw[ScienceBlue!90,line width=0.55] (-\ScreenDistL*0.55,0)++(\arc:\R) arc (\arc:-\arc:\R);
+					\else
+						\draw[ScienceBlue!60,line width=0.075] (-\ScreenDistL*0.55,0)++(\arc:\R) arc (\arc:-\arc:\R);
+					\fi
+				}
+		\end{scope}
+		
+		
+		
+		%% MINIMA AND MAXIMA LINES (NODAL LINES)
+		\begin{scope}
+			% First MAXIMA -- Max Intensity, for some reason pgf/tikz is being weird
+			\draw[nodal,ScienceRed] (0,0) -- (\ScreenDistL,0);
+			
+			% Draw the first to MINIMA, for some reason pgf/tikz is being weird
+			\draw[nodal,ScienceOrange] (0,0) -- (\ScreenDistL,{\ScreenDistL*tan(asin(((0.5)*\lambdaDB)/\dSlitSeparationDistance))});
+			\draw[nodal,ScienceOrange] (0,0) -- (\ScreenDistL,{-\ScreenDistL*tan(asin(((0.5)*\lambdaDB)/\dSlitSeparationDistance))});
+			
+			\foreach \nNat [evaluate={
+				\xminima=xMinimaPosition(\nNat);
+				\xmaxima=xMaximaPosition(\nNat);
+				\newxmaxima=xRecalculate(\xmaxima);
+				\newxminima=xRecalculate(\xminima);
+			}] in {1,...,\nMaxAndnMinLinesPerSide}{
+				\pgfmathparse{\xminima>\WallTotalSizeinX*0.5 ? int(1) : int(0)}
+				\ifnum\pgfmathresult=1
+				%					\pgfmathparse{xRecalculate(\xminima,asin(\xminima))}
+					\coordinate (MinimaLeft) at (\newxminima,{\WallTotalSizeinX/2});
+					\coordinate (MinimaRight) at (\newxminima,-{\WallTotalSizeinX/2});
+				\else
+					\coordinate (MinimaLeft) at (\ScreenDistL,\xminima);
+					\coordinate (MinimaRight) at (\ScreenDistL,-\xminima);
+				\fi
+				
+				\pgfmathparse{\xmaxima>\WallTotalSizeinX*0.5 ? int(1) : int(0)}
+				\ifnum\pgfmathresult=1
+	%					\pgfmathparse{xRecalculate(\xmaxima,asin(\xmaxima))}
+					\coordinate (MaximaLeft) at (\newxmaxima,{\WallTotalSizeinX/2}); 
+					\coordinate (MaximaRight) at (\newxmaxima,-{\WallTotalSizeinX/2});
+				\else
+					\coordinate (MaximaLeft) at (\ScreenDistL,\xmaxima);
+					\coordinate (MaximaRight) at (\ScreenDistL,-\xmaxima);
+				\fi
+				
+				\draw[nodal,ScienceOrange] (0,0) -- (MinimaLeft);
+				\draw[nodal,ScienceOrange] (0,0) -- (MinimaRight);
+				
+				\draw[nodal,ScienceRed] (0,0) -- (MaximaLeft);
+				\draw[nodal,ScienceRed] (0,0) -- (MaximaRight);
+			}
+		\end{scope}
+		
+		
+		
+		
+		 % INTENSITY FUNCTION PLOT
+		\begin{scope}[shift={(1.05*\ScreenDistL,0)}]
+			
+			\pgfkeys{/pgf/trig format=rad} %% Took me ages to figure tht none of the equations were working cause tex works in degrees by defaut, this sets all trig functions to radians by default
+			
+			\draw[->,thick] (-0.08*2,0) -- (1.3*2,0) node[right=-2] {$\expval{N}$}; % I axis
+			\draw[->,thick] (0,-0.52*\WallTotalSizeinX) -- (0,0.54*\WallTotalSizeinX) node[right] {$x$}; % y axis
+			
+			
+			%% http://www.physicsbootcamp.org/section-diffraction-through-a-double-slit-light.html#subsection-Derivation-of-the-Intensity-Formula-Double-Slit
+			%% http://www.physicsbootcamp.org/section-diffraction-through-a-double-slit-light.html
+			%%%% Equation Explanation
+			% a = slit sep distance = \dSlitSeparationDistance
+			% b = slit width = \SlitAperture
+			% A = (pi * a * x) / (L * Lambda) = (pi * \dSlitSeparationDistance * \y) / (\ScreenDistL * \lambdaDB)
+			% B = (pi * b * x) / (L * Lambda) = (pi * \SlitAperture * \y) / (\ScreenDistL * \lambdaDB)
+			% I = I_0 * (sin(B)/B)^2 * cos^2(A) = 1 * 2 * (( sin( (pi * \SlitAperture * sin(atan(\y/\ScreenDistL))) / \lambdaDB) / ((pi * \SlitAperture * sin(atan(\y/\ScreenDistL))) / \lambdaDB) )^2 *( (1 + cos(2 *((pi * \dSlitSeparationDistance * sin( atan(\y/\ScreenDistL) )) / \lambdaDB))) / 2 ))
+			\draw[SciencePurple,thick,variable=\y,smooth,samples=\nSamples,domain=-\WallTotalSizeinX/2:\WallTotalSizeinX/2] 
+			plot({2 * (
+				( sin( (pi * \SlitAperture * sin(atan(\y/\ScreenDistL))) / \lambdaDB) / ((pi * \SlitAperture * sin(atan(\y/\ScreenDistL))) / \lambdaDB) )^2 
+				*
+				( (1 + cos(2 *((pi * \dSlitSeparationDistance * sin( atan(\y/\ScreenDistL) )) / \lambdaDB))) / 2 )
+				)
+				},\y);
+			
+		\end{scope}
+		
+		
+		% DETECTOR SYMBOL
+		\coordinate (Dectector) at (\ScreenDistL-\WallThickness,\xPositionDetector*\WallTotalSizeinX/2); % placment coordinate for detector
+		\DETECTOR{0.2}{0.75}{\ScreenDistL-\WallThickness}{\xPositionDetector*\WallTotalSizeinX/2} % Detector Symbol itself
+		
+		% draw the arrow and text to show that the detector is moving along the screen, then draw the wee circle for the arrow for nice look
+		\draw[<->,darkgray!75] ([shift={(2*\WallThickness,3*\WallThickness)}]Dectector) -- ([shift={(2*\WallThickness,-3*\WallThickness)}]Dectector) node[above=24,right=3,inner sep=3,anchor=south]{\scriptsize Moving}; 
+		\fill[color=darkgray!75] ([shift={(2*\WallThickness,0)}]Dectector) circle (0.4*\WallThickness);
+		
+		
+		
+	\end{tikzpicture}
+\end{document}

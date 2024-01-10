@@ -1,0 +1,30 @@
+\usepackage{fontspec}
+	\setmainfont{Roboto Slab}
+	\setsansfont{Lato}
+	\renewcommand{\familydefault}{\sfdefault}
+	\setlength{\intextsep}{4pt} % Set defualt spacing around floats
+	\definecolor{CommentGreen}{HTML}{228B22}
+%	\captionsetup{aboveskip=5pt, belowskip=5pt} % Reduce space around captions
+
+%% Math Env Text Settings
+\usepackage{mathtools}
+\usepackage{unicode-math}
+	\setmathfont{XITS Math}
+\usepackage{amsmath}
+\usepackage{bm}
+%	\everymath=\expandafter{\the\everymath\displaystyle}
+
+
+%% https://tex.stackexchange.com/questions/8434/how-to-scale-math-font-only#8448
+\DeclareMathSizes{11pt}{12pt}{7pt}{7pt}
+\DeclareMathSizes{14pt}{15pt}{9pt}{9pt}
+
+%% https://tex.stackexchange.com/questions/122574/globally-changing-math-line-spacing
+\setlength{\jot}{7pt}
+
+%% https://www.overleaf.com/learn/latex/Spacing_in_math_mode
+%% https://tex.stackexchange.com/questions/41913/how-to-get-less-spacing-in-math-mode
+%% https://mirror.kumi.systems/ctan/obsolete/info/math/voss/mathmode/Mathmode.pdf
+\thinmuskip=5mu % (by default it is equal to 3 mu)
+\medmuskip=5mu  % (by default it is equal to 4 mu)
+\thickmuskip=7mu  % (by default it is equal to 5 mu)

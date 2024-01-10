@@ -1,0 +1,26 @@
+
+\IfStandalone{\def\datapath{../../../}}{\def\datapath{}}
+
+\input{\datapath QT-Notes-Preambles/QT-Notes-Diagrams-and-Graphs-DEFAULT-Preamble.tex}
+
+% https://tex.stackexchange.com/questions/441917/is-there-a-simple-way-to-use-stick-figures-into-pgf-tikz-drawings
+\usepackage{tikzsymbols}
+\usetikzlibrary{shapes.symbols}
+
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows,arrows.meta,math}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{angles,quotes} % for pic (angle labels)
+\usetikzlibrary{fadings}
+
+% https://tikz.dev/library-3d
+\usetikzlibrary{3d}
+
+% https://latexdraw.com/draw-a-sphere-in-latex-using-tikz/
+\usepackage{tikz-3dplot}
+
+% Define Color
+\tikzstyle{bigphoton}=[-{Latex[length=8,width=6]},red!95!black!50,opacity=0.85,very thin,decorate,decoration={snake,amplitude=2.8,segment length=8,post length=8}]
+
+\contourlength{1.4pt}
+

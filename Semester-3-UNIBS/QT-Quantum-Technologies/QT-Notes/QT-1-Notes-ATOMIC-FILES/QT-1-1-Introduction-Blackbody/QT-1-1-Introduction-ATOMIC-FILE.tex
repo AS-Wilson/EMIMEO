@@ -1,0 +1,147 @@
+%%%%%%%%%% QT-1-1-Introduction-ATOMIC-FILE.tex %%%%%%%%%%
+%%%%%%%%%% 	QT NOTES - INTRODUCTION SUBFILE	   %%%%%%%%%%
+\documentclass[../../Quantum-Technologies-Notes]{subfiles}
+
+\ReportTitle{Section One - Introduction, Black Body Radiation}
+
+
+\begin{document}
+	
+	\ifSubfilesClassLoaded{ \pagestyle{fancy} }{}
+	
+	\section{Introduction}
+	
+		\subsection{Introduction}
+		
+			Richard Feynman was a nobel prize winner (for the formulation of QED) and one of the many physicists involve in the Manhattan project (among many, many other things). He gave a set of rather famous, public lectures at Cornell in 1964 called the \textit{Messenger Lectures}. At the beginning of his 6th lecture, when comparing the number of people who understand GR to the number that understand quantum physics, he famously said: \linebreak
+				\begin{addmargin}{1cm}
+					\textit{\textbf{``... I think I can safely say that nobody understands quantum mechanics!''}}
+				\end{addmargin} 
+				
+			\vspace{1cm}
+				
+			This quote is exceedingly well known and it is very likely I am not the first person to present it to you. A more interesting quote of his that less people seem to know, despite it being something rather interesting for \textit{any} physicist to say, is what he said immediately following: \linebreak
+			\begin{addmargin}{1cm}
+				\textit{``Now, if you appreciate this, and don’t take the lecture too seriously that you really have to understand, in terms of some model, what I’m going to describe, and just relax and enjoy it, I’m going to tell you what nature behaves like, and if you will simply admit that maybe she does behave like this, you will find her a delightful, entrancing thing.''}
+			\end{addmargin}
+			
+			\vspace{1cm}
+			
+			This course is, in many ways, designed as such. Your background likely isn't suitable to make a successful attempt at truly understanding Quantum Mechanics (even the experts don't understand it). At many times (if you are like me) you will find yourself completely lost or wondering where some piece of mathematics or physics came from during the adventure of this course. And if you take an overly serious approach to it, you will find yourself pulling your hair out (I made this document in an attempt to better understand and I failed three times). \linebreak
+			\textbf{But} if you suspend, for just a moment (or quite a few), your disbelief, you will find the lectures of Professor Artoni fascinating and thoroughly enjoyable. \linebreak
+			
+			
+			
+			\vspace{15mm}
+			
+			\textbf{\LARGE\color{heading}TODO - Not quite sure what should be put here.} % TODO: Write introduction
+			
+			\vspace{25mm}
+		
+		
+		
+		\subsection{Max Planck, The Concept of ``Quanta'', and Planck’s Constant}
+			Quantum theory and mechanics was initially developed and discovered by one man: \linebreak 
+			Max Karl Ernst Ludwig Planck {\fontsize{8}{9}\selectfont (23/04/1858 Kiel, Duchy of Horstein \~{} 04/10/1957, Göttingen, West Germany)}. Or, as he is more commonly known, simply, \textbf{\textit{Max Planck}}. \linebreak
+			
+			He happened upon the principle phenomena involved in quantum physics during research on black body radiation. He published these papers from 1900 - 1901 and they earned him the Nobel prize for physics in 1918. \linebreak
+			Planck's initial discovery is the foundation of all of quantum physics and is known as ``Planck's Postulate'', it states that all electromagnetic radiation is made of very small ``particles'' known as quanta. These quanta have an energy given by the quanta's frequency and a constant, known as ``Planck's Constant'': \linebreak
+			\begin{equation}
+				E_h = \Planckconst \nu = \frac{\Planckconst C}{\lambda} \rightarrow \text{Energy of One Single Quanta}
+			\end{equation} \linebreak
+			So if one was to "send" 10 quanta the energy delivered will be 10 quanta, discrete and finite, and given by $10 \cdot \Planckconst\nu = 10\cdot E_h$. To be absolutely clear at a given frequency, $\nu$, the amount of energy that can be sent will be integer multiples of Planck's equation, it will be \textit{discrete}. \linebreak
+			Quanta are also very commonly referred to by another name; \textit{Photons}. Photons are what make up light, and the discoveries of Planck and others were incredibly important to forwarding science to what it is today. Another incredibly important discovery of quantum physics which is very commonly now is the dual wave-particle nature or behaviour of very small particles. But we shall discuss all of this in more detail photons, quanta and some of the very first implications of Planck's equation very soon. \linebreak
+		
+		\pagebreak
+		
+		
+		
+		
+		\subsection{Black Body Radiation}
+			A black body is something which is in complete temperature equilibrium, i.e. it's temperature is not changing, it is emitting as much temperature as it is receiving. The earliest form, which likely would have provided the measurements that allowed Planck's to develop his theorem, is shown in Figure \ref{fig:hole_w_cav_ideal_black_body}\cite{wiki_black_body_cav_w_hole}. \linebreak
+			
+			%%%% https://tikz.net/blackbody/ %%%%
+			\begin{figure}[!h]
+				\centering
+				%% BLACKBODY SOLO
+				\includestandalone{QT-1-1-Diagrams-and-Graphs/black-body-solo}
+				\caption{The Construction of an Ideal Black Body, a Platinum Cavity with a Small Hole.}
+				\label{fig:hole_w_cav_ideal_black_body}
+			\end{figure}
+			\vspace{10mm}
+			
+			
+			\columnratio{0.5}	
+			
+			\begin{paracol}{2}
+				
+				The sun is (nearly) a black body and will absorb EM radiation (in the form of photons) and then emit radiation according to a curve, as shown in Figure \ref{fig:ideal_black_body_radiating_w_light}. But, the interesting, and rather baffling, thing about black bodies is that they will emit photons even when in equilibrium and when no photon has impinged upon them! \linebreak
+				
+				From at least around the mid-1800s scientists had been trying to describe the spectrum of black body radiation, the curve of radiated power versus wavelength (or the spectrum) is shown in Figure \ref{fig:curve_black_body_radiation}. They could quite well describe and model the higher wavelengths of this curve (and the very low wavelengths) but they couldn't yet find a way to describe the ``middle'' portion, roughly around the wavelengths of visible light and IR radiation. \linebreak
+				
+				The classical curve of black body radiation is given by the Rayleigh-Jeans equation, two very important figures in the field of optics and physics. They could only describe the upper wavelengths of black body radiation, that would soon change. \linebreak
+				
+				\switchcolumn
+				
+				
+				%%%% https://tikz.net/blackbody/ %%%%
+				\begin{figure}[!ht]
+					\centering
+					%% BLACKBODY RADIATION WITH STIMULATING RADIATION
+					\includestandalone{QT-1-1-Diagrams-and-Graphs/black-body-radiate-with-stim}
+					\caption{The Ideal Black Body Radiating after Receiving In-Falling Light (One Photon). \footnotesize Note; the yellow ray is the incident photon.}
+					\label{fig:ideal_black_body_radiating_w_light}
+				\end{figure}
+				
+				
+				\begin{figure}[!ht]
+					\centering
+					%% BLACKBODY RADIATION WITHOUT STIMULATING RADIATION
+					\includestandalone{QT-1-1-Diagrams-and-Graphs/black-body-radiate-wout-stim}
+					\caption{The Ideal Black Body still Radiating without In-Falling Light.}
+					\label{fig:ideal_black_body_radiating_wout_light}
+				\end{figure}
+				
+			\end{paracol}
+			
+			
+			It is said that Planck's mentor (in a story that must have occurred a hundred times before in science) told him it was not possible to describe the black body phenomena and that the limits of science had been reached. He ultimately revolutionised this field of study, based on the experimental results observed by others he formulated Planck's Law for black body radiation, given by Equation \ref{eqn:plancks_law_black_body}.\linebreak
+			
+			\columnratio{0.4}
+			\begin{paracol}{2}
+				
+				\fontsize{14pt}{15pt}\selectfont
+				
+				\begin{equation}
+					q_{\lambda} = \frac{2\pi c^2 h \lambda^{-5}}{e^{\frac{ch}{k_B \lambda T}}-1}
+					\label{eqn:plancks_law_black_body}
+				\end{equation}
+				
+				\switchcolumn
+				
+				\fontsize{11pt}{12pt}\selectfont
+				
+				\vspace{-10mm}
+				\begin{align*}
+					\text{Where:}& \\
+					\lambda &= \text{Wavelength} \\
+					k_B &= \text{Boltzmann's Constant} \\
+					c &= \text{Celerity, Speed of Light in a Vacuum} \\
+					q_{\lambda} &= \text{Energy Flux} \\
+					\Planckconst &= \text{Planck's Constant} \\
+					T &= \text{Temperature}
+				\end{align*}
+				
+			\end{paracol}
+			
+			This equation perfectly described the emission curve of a black body based on temperature, shown below in Figure \ref{fig:curve_black_body_radiation}. Planck had unwittingly stumbled upon the basis of one of the most incredible fields of study in physics, and arguably one of the most important. He would go on to use this to develop quantum theory and the rest is history! \linebreak
+			
+			%%%% https://tikz.net/blackbody_plots/ %%%%
+			\begin{figure}[!h]
+				\centering
+				%% BLACKBODY RADIATION GRAPH WITH APPROXIMATIONS
+				\includestandalone{QT-1-1-Diagrams-and-Graphs/black-body-radiation-graph}
+				\caption{Black Body Radiation Curve at Different Temperatures, the Classical Model (Rayleigh-Jones Curve) is Marked with a Dashed Line.}
+				\label{fig:curve_black_body_radiation}
+			\end{figure}
+\end{document}

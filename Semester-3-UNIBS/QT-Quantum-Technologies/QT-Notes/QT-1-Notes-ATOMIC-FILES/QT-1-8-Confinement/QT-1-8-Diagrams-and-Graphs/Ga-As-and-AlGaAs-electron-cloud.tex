@@ -1,0 +1,30 @@
+% ELECTRONS IN GaAs - AlGaAs MIXTURE
+
+\documentclass{standalone}
+
+
+\input{QT-1-8-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}
+		\def\xmin{-3.8} % min x axis
+		\def\xmax{5}     % max x axis
+		
+		\draw[thick,dashed,SciencePurple] (0,-0.2) node[below=2,SciencePurple] {\tiny Materials' Interface} -- (0,2.5) {};
+		\node[right=10,ScienceBlue] at (0,2.5) {\small AlGaAs};
+		\node[left=10,ScienceRed] at (0,2.5) {\small GaAs};
+		
+		
+		\node[cloud,draw=ScienceBlue!60,text=ScienceBlue!75,fill=gray!10,minimum width=0.1cm,minimum height=0.1cm,inner sep=0pt,outer sep=0pt] (A) at (0.55,0.35) {$e^-$};
+		\node[cloud,draw=ScienceBlue!60,text=ScienceBlue!75,fill=gray!10,minimum width=0.1cm,minimum height=0.1cm,inner sep=0pt,outer sep=0pt] (A) at (0.6,2) {$e^-$};	
+		\node[cloud,draw=ScienceBlue!60,text=ScienceBlue!75,fill=gray!10,minimum width=0.1cm,minimum height=0.1cm,inner sep=0pt,outer sep=0pt] (A) at (0.75,1.4) {$e^-$};
+		\node[cloud,draw=ScienceBlue!60,text=ScienceBlue!75,fill=gray!10,minimum width=0.1cm,minimum height=0.1cm,inner sep=0pt,outer sep=0pt] (A) at (1.33,1.867) {$e^-$};	
+		\node[cloud,draw=ScienceBlue!60,text=ScienceBlue!75,fill=gray!10,minimum width=0.1cm,minimum height=0.1cm,inner sep=0pt,outer sep=0pt] (A) at (1.2,0.25) {$e^-$};
+		\node[cloud,draw=ScienceBlue!60,text=ScienceBlue!75,fill=gray!10,minimum width=0.1cm,minimum height=0.1cm,inner sep=0pt,outer sep=0pt] (A) at (1.15,1.25) {$e^-$};	
+		\node[cloud,draw=ScienceBlue!60,text=ScienceBlue!75,fill=gray!10,minimum width=0.1cm,minimum height=0.1cm,inner sep=0pt,outer sep=0pt] (A) at (1.45,0.85) {$e^-$};
+		
+		\node[ScienceBlue,align=left,font=\scriptsize\linespread{1}\selectfont] at (3.25,1.25) {Cloud of electrons \\ confined in the volume \\ of this material};
+		
+	\end{tikzpicture}
+\end{document}

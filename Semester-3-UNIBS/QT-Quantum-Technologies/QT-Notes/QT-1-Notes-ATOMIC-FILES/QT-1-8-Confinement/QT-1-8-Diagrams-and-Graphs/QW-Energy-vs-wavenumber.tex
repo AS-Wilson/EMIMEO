@@ -1,0 +1,75 @@
+% INTENSITY FUNCTION PLOT
+\documentclass{standalone}
+
+
+\input{QT-1-8-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}
+	
+		\begin{scope}
+			\pgfkeys{/pgf/fpu=true,/pgf/fpu/output format=fixed}
+			\pgfkeys{/pgf/trig format=rad} %% Sets all trig functions to radians by default
+			
+			\def\xmin{-0.1} % min x axis
+			\def\xmax{8}     % max x axis
+			
+			\def\ymax{2*pi+1}
+			\def\Limit{6.5}
+			
+			\def\nSamples{100}
+			
+			\def\m{9109}
+			\def\hbar{1.055}
+			
+			\def\v{pi*1e-3}
+			\def\E{pi*4.996001e-7}
+			\def\a{1}
+			
+			\def\nOne{1}
+			\def\nTwo{2}
+			
+			\def\nSamples{10000}
+			
+			\pgfmathparse{\hbar/sqrt(2*\m*\v)}
+			\def\kNaught{\pgfmathresult}
+			
+			\def\ymin{-0.1}
+			
+			
+			\pgfkeys{/pgf/fpu=false}
+			
+			
+			\draw[->,thick,dashed] ({\xmin+0.1},\ymin) -- ({\xmin+0.1},\ymax) node[left=2] {$E$}; % E axis
+			\draw[->,thick,dashed] (\xmin,{\ymin+0.1}) node[left=1] {\small$0$} -- (\xmax,{\ymin+0.1}) node[below=2] {$k$}; % x axis
+			
+			\draw[black!75] (-0.1,{pi}) node[left=1] {\small$\pi$} -- (0.05,{pi});
+			\draw[black!75] (-0.1,{2*pi}) node[left=1] {\small$2 \pi$} -- (0.05,{2*pi});
+			
+			
+			\pgfkeys{/pgf/fpu=true,/pgf/fpu/output format=fixed}
+			\draw[black!75] (7.17089,0) -- (7.17089,-0.1) node[below] {\scriptsize $k_0$};
+			\draw[magenta,dashed] (2.44555,{( -2 * asin( ((\hbar*2.44555)/sqrt(2*\m*\v)) ) ) + (pi * \nOne)}) -- (2.44555,{\ymin-0.05}) node[below=1] {\footnotesize$k_1$};
+			\draw[teal,dashed] (4.81196,{( -2 * asin( ((\hbar*4.81196)/sqrt(2*\m*\v)) ) ) + (pi * \nTwo)}) -- (4.81196,{\ymin-0.05}) node[below=1] {\footnotesize$k_2$}; 
+			
+			\draw[SciencePurple,thick,variable=\x,smooth,samples=\nSamples,domain=0:\Limit] plot(\x,{\a*\x});
+			\node[SciencePurple,above right=1] at (6.5,6.5) {\scriptsize $ka$};
+			
+			
+			\draw[ScienceRed,thick,variable=\k,smooth,samples=\nSamples,domain=0:7.17089] plot(\k,{( -2 * asin( ((\hbar*\k)/sqrt(2*\m*\v)) ) ) + (pi * \nOne)});
+			\draw[ScienceBlue,thick,variable=\k,smooth,samples=\nSamples,domain=0:7.17089] plot(\k,{( -2 * asin( ((\hbar*\k)/sqrt(2*\m*\v)) ) ) + (pi * \nTwo)});
+			
+			
+			\fill[magenta] (2.44555,{( -2 * asin( ((\hbar*2.44555)/sqrt(2*\m*\v)) ) ) + (pi * \nOne)}) circle (0.05cm);
+			\fill[teal] (4.81196,{( -2 * asin( ((\hbar*4.81196)/sqrt(2*\m*\v)) ) ) + (pi * \nTwo)}) circle (0.05cm);
+			
+			\fill[ScienceRed] (7.17089,0) node[above right=1,align=left,font=\scriptsize\linespread{1}\selectfont] {RHS, \\\footnotesize $n=1$, $k=k_0$} circle (0.05cm);
+			\fill[ScienceBlue] (7.17089,{( -2 * asin( ((\hbar*7.17089)/sqrt(2*\m*\v)) ) ) + (pi * \nTwo)}) node[above=1,right=1,align=left,font=\scriptsize\linespread{1}\selectfont] {RHS, \\\footnotesize $n=2$, $k=k_0$} circle (0.05cm);
+			
+			
+			
+		\end{scope}
+		
+	\end{tikzpicture}
+\end{document}

@@ -1,0 +1,37 @@
+
+\IfStandalone{\def\datapath{../../../}}{\def\datapath{}}
+
+\input{\datapath QT-Notes-Preambles/QT-Notes-COLOURS-Preamble.tex}
+\input{\datapath QT-Notes-Preambles/QT-Notes-MATH-AND-TEXT-Preamble.tex}
+
+
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage{pgfplots}
+
+\usepackage{physics}
+\usepackage{etoolbox} %ifthen
+\usepackage[outline]{contour} % glow around text
+
+
+%%%%%%%%%% PGFPLOTS & PGFPLOTS SETTINGS %%%%%%%%%%
+\pgfplotsset{compat=newest,
+	width=6cm,
+	height=3cm,
+	scale only axis=true,
+	max space between ticks=25pt,
+	try min ticks=5,
+	every axis/.style={
+		axis y line=left,
+		axis x line=bottom,
+		axis line style={thick,->,>=latex, shorten >=-.4cm}
+	},
+	every axis plot/.append style={thick},
+	tick style={black, thick}
+}
+\tikzset{
+	semithick/.style={line width=0.8pt},
+}
+
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{dateplot}

@@ -1,0 +1,134 @@
+%%%%%%%%%% QT-1-2-The-PhotoElectric-Effect-ATOMIC-FILE.tex %%%%%%%%%%
+%%%%%%%%%% 	QT NOTES - THE PHOTOELECTRIC EFFECT SUBFILE	   %%%%%%%%%%
+\documentclass[../../Quantum-Technologies-Notes]{subfiles}
+
+\ReportTitle{QT - Section Two - The Photoelectric Effect}
+
+
+
+\begin{document}
+	
+	\ifSubfilesClassLoaded{ \pagestyle{fancy} }{}
+	
+	
+	\section{The Photoelectric Effect}
+		In 1905 Albert Einstein would use the findings of Planck's papers to finally describe the results of an experiment which had, until then, not been fully understood. The resulting effect was named the ``Photoelectric Effect''  \cite{wiki_photoelectric_effect}, it states ``that electrons are emitted when electromagnetic radiation, such as light, hits a material''. Electrons emitted in this way are known as ``Photoelectrons'' and this discovery was another key step in the development of quantum theory. It still finds uses in practical applications for chemistry and solid-state electronics today. \linebreak
+	
+	
+		\subsection{The Photoelectric Experiment}
+			The diagram of the photoelectric experiment is shown in Figure \ref{fig:photoelectric_effect_experiment_low_freq}, it consists of an ammeter, controlled DC voltage source, a collector, a photocathode, and a light source emitting monochromatic light.\linebreak
+			If the DC voltage is kept constant and lower frequency light, of frequency $\nu_1$, is emitted towards the photocathode (as in Figure \ref{fig:photoelectric_effect_experiment_low_freq}) there is no current measured at the ammeter, no mater how long the light is shone or how intensely. \linebreak 
+			However if light of a higher frequency, $\nu_2$, is shone at the photocathode (as in Figure \ref{fig:photoelectric_effect_experiment_high_freq}), the ammeter begins to immediately show current! \linebreak
+		
+			\begin{figure}[!h]
+				\centering
+				%% PHOTOELECTRIC EFFECT LOW FREQUENCY
+				\includestandalone{QT-1-2-Diagrams-and-Graphs/photoelectric-effect-low-freq}
+				\caption{A Diagram of the Photoelectric Experiment. Lower frequency light is being emitted and there is no activity in the experiment.}
+				\label{fig:photoelectric_effect_experiment_low_freq}
+			\end{figure}
+			
+			
+			\pagebreak
+			
+			
+			\begin{figure}[!h]
+				\centering
+				%% PHOTOELECTRIC EFFECT HIGH FREQUENCY
+				\includestandalone{QT-1-2-Diagrams-and-Graphs/photoelectric-effect-high-freq}
+				\caption{A Diagram of the Photoelectric Experiment. Higher frequency light is being emitted and electrons are passing across to the collector, and current is measured at the ammeter.}
+				\label{fig:photoelectric_effect_experiment_high_freq}
+			\end{figure}
+			
+			
+			The experimental results described by the photoelectric effect inherently disagree with, and were unexplained by, classical electromagnetics which predicts that \textit{continuous} light waves transfer energy to electrons, which would then be emitted when they accumulate enough energy. An alteration in the intensity of light would theoretically (according to classical EM) change the kinetic energy of the emitted electrons, with sufficiently dim light resulting in a delayed emission. The experimental results instead showed that electrons are dislodged \textbf{only} when the light exceeds a certain frequency - regardless of the light's intensity or duration of exposure. \linebreak
+			
+			Another thing to note here is that, if we wished, we could increase the potential of the DC voltage source the flow of electrons would eventually stop again, and a higher frequency would be required to cause the transport of electrons across the gap. \linebreak
+		
+		
+		\pagebreak
+		
+		\subsection{The Photoelectric Equation}
+			So, as previously stated, in 1905 Albert Einstein used the findings of Planck to finally describe the results of the photoelectric experiment. He made an approximation, and stated the one quanta is absorbed by one electron (this is an approximation that he made to simplify his calculations, it is not true in every case). Then he stated that before the quanta is absorbed by the electron it's total energy is given by Equation \ref{eqn:photoelectric_1}. This is a simple, linear equation, rearranged in eq. \ref{eqn:photoelectric_2} it states what the \textit{kinetic} energy of the quanta is before interacting with the electron. 
+		
+		
+		\medskip
+		
+		
+			\columnratio{0.4}
+			\begin{paracol}{2}
+				
+				\fontsize{14pt}{15pt}\selectfont
+				
+				\begin{gather}
+					\label{eqn:photoelectric_1} \Planckconst \nu = E_k + \Phi \\
+					\label{eqn:photoelectric_2} E_k = \Planckconst \nu - \Phi
+				\end{gather}
+				
+				\switchcolumn
+				
+				\fontsize{11pt}{12pt}\selectfont
+				
+				\vspace{-10mm}
+				\begin{align*}
+					\text{Where:}& \\
+					E_k &= \text{Kinetic Energy} \\
+					\Phi &= \text{Potential Energy (work function)} \\
+					\nu &= \text{Frequency} \\
+					\Planckconst &= \text{Planck's Constant}
+				\end{align*}
+			\end{paracol}
+			
+			\columnratio{0.7}
+			\begin{paracol}{2}
+				Equation \ref{eqn:photoelectric_2} provides a clearer explanation for why we were not propagating any photons across the gap when the frequency of the light was too low, we had to be over a threshold frequency, $\nu_{th}$, in order to overcome the potential! \linebreak
+				Figure \ref{fig:photoelectric_effect_threshold} shows this rather simple relationship. There are also some other insights to be gleamed here, namely, that $E_K$ cannot be negative, that the work function is clearly material dependent, and that we can state a relationship to calculate the threshold frequency, given in Equation \ref{eqn:photoelectric_th}:
+				
+				\switchcolumn
+				%% Kinetic energy - linear
+				\begin{figure}[!h]
+					\centering
+					%% PHOTOELECTRIC EFFECT GRAPH
+					\includestandalone{QT-1-2-Diagrams-and-Graphs/photoelectric-effect-graph}
+					\caption{Something... TODO } % TODO: Photoelectric Effect Graph
+					\label{fig:photoelectric_effect_threshold}
+				\end{figure}
+			\end{paracol}
+			
+			\begin{align}
+				& \Planckconst \nu \geq 0 \nonumber\\
+				\therefore \; & \Planckconst \nu \geq \Phi \nonumber\\
+				\implies & \nu \geq \frac{\Phi}{\Planckconst} \nonumber\\
+				\label{eqn:photoelectric_th} \therefore \; & \nu_{th} = \frac{\Phi}{\Planckconst}
+			\end{align}
+			
+			Since we can also state the potential energy, $E_k$ in terms of charge and voltage, this means that we can obtain another equation (\ref{eqn:photoelectric_vstop}) to express $E_k$ based on the biasing voltage required to stop the electrons from flowing when particular frequencies of light are incident on the plates.
+			
+			\begin{align}
+				& E_k = C \times V_{stop} \nonumber\\
+				\label{eqn:photoelectric_vstop} \therefore \; & E_k = e \times V_{stop}
+			\end{align}
+		
+		
+		\subsection{A Quick Example}
+			Let's (as a demonstrative example) calculate how many quanta we might have traveling in a given beam of light... \linebreak
+			You probably know the meaning of flux quite well in classical electromagnetic theory (namely a vector quantity describing the magnitude and direction of the flow of electromagnetic energy). But we can (an probably must) redefine the meaning of flux with our new-found knowledge of quanta, considering the discrete definition of quanta instead of non-discrete EM energy, see Equation \ref{eqn:quantum_flux}:
+			
+			\begin{equation} \label{eqn:quantum_flux}
+				\text{\normalsize Flux}, F = \frac{\text{\normalsize no. of quanta}, n}{\text{\normalsize area}, a \times \text{\normalsize time}, t}
+			\end{equation}
+			
+			\vspace{5mm}
+			
+			Given the definition of intensity, shown in \ref{eqn:intenisty_def}, let's say the intensity and wavelength of the light beam are $I=2w/m^2$ and $\lambda=250nm$ respectively. We'll begin by calculating the energy of one single quanta (Equation \ref{eqn:ex_1_energy_single_quant}), then we'll calculate the number of quanta emitted by our light beam (Equation \ref{eqn:ex_1_quant_in_beam}), and finally we could combine those two equations to get the total energy once given beam diameter (or area) and time.
+			
+			\begin{align}
+				& \text{Energy of a single quanta} \nonumber\\
+				& E = \Planckconst \nu = \frac{\Planckconst c}{\lambda} = \frac{12.4 \times 10^3 eV \cdot \si{\angstrom}}{250 \times 10^{-9} m } \text{\hspace{5mm}\footnotesize Remember an Angstrom is $1 \times 10^{-10}$ metres} \nonumber\\
+				& \label{eqn:ex_1_energy_single_quant} \implies \text{\normalsize 1 Quanta } = 4.96\ eV \\
+				& \text{Number of quanta in the beam} \nonumber\\
+				& \label{eqn:intenisty_def} \text{\small Intensity }= 2\ \frac{w}{m^2} = 2\ \frac{J}{m^2 \times s} \\
+				& \therefore \ \frac{N}{m^2s} = 2\ \frac{J}{m^2 \times s} \times \frac{1}{\Planckconst \nu} = 2\ \frac{J}{m^2 \times s} \times \frac{1}{4.96 \cdot 1.602 \times 10^{-19} J} \nonumber\\
+				& \label{eqn:ex_1_quant_in_beam} \text{\small   No. of Quanta /$m^2s$} \approx  2.52 \times 10^{18}
+			\end{align}
+\end{document}

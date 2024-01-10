@@ -1,0 +1,60 @@
+% QW REALISTIC MATERIAL BOUNDARIES
+
+\documentclass{standalone}
+
+
+\input{QT-1-8-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}[measure/.style={{Stealth[length=4pt]}-{Stealth[length=4pt]},black!50}]
+		\def\xmin{0} % min x axis
+		\def\xmax{6}     % max x axis
+		
+		\def\MatThickness{0.25*\xmax}
+		\def\MatWidth{10}
+		
+		
+	
+		\begin{scope}
+	%	\clip (0,0) tape[rotate=90] (\MatWidth,\MatThickness);
+			\fill[ScienceRed!20] (0,0) rectangle (\MatWidth,\MatThickness);
+			\pattern[pattern=north east lines,pattern color=ScienceRed!45] (0,0) -- (0,\MatThickness) -- (\MatWidth,\MatThickness) -- (\MatWidth,0) -- cycle;
+		
+			
+			\begin{scope}[shift={(0,\MatThickness)}]
+				\fill[ScienceGreen!20] (0,0) rectangle (\MatWidth,\MatThickness);
+				\pattern[pattern=north east lines,pattern color=ScienceGreen!45] (0,0) -- (0,\MatThickness) -- (\MatWidth,\MatThickness) -- (\MatWidth,0) -- cycle;
+			\end{scope}
+			
+			\begin{scope}[shift={(0,{\MatThickness*2})}]
+				\fill[ScienceBlue!20] (0,0) rectangle (\MatWidth,\MatThickness);
+				\pattern[pattern=north east lines,pattern color=ScienceBlue!45] (0,0) -- (0,\MatThickness) -- (\MatWidth,\MatThickness) -- (\MatWidth,0) -- cycle;
+			\end{scope}
+			
+			\draw[very thick,ScienceRed] (0,0) -- (\MatWidth,0);
+			
+			\draw[very thick,ScienceYellow] (0,\MatThickness) -- (\MatWidth,\MatThickness);
+			
+			\draw[very thick,cyan!50] (0,{2*\MatThickness}) -- (\MatWidth,{2*\MatThickness});
+			
+			\draw[very thick,ScienceBlue] (0,{3*\MatThickness}) -- (\MatWidth,{3*\MatThickness});
+		
+		\end{scope}
+		
+		\draw[->,thick,dashed] ({\MatWidth/2},{\xmin-0.2}) -- ({\MatWidth/2},{\xmax+0.2}) node[right=1] {\scriptsize $x$};
+		
+		\draw[->,ScienceGreen] ({\MatWidth+0.5},{1.5*\MatThickness}) -- ({\MatWidth+1},{1.5*\MatThickness}) node [right=1] {\scriptsize Material Three, \footnotesize$V=0$};
+		\draw[->,ScienceRed] ({\MatWidth+0.5},{0.5*\MatThickness}) -- ({\MatWidth+1},{0.5*\MatThickness}) node [right=1] {\scriptsize Material Two, \footnotesize$V = V_1$};
+		\draw[->,ScienceBlue] ({\MatWidth+0.5},{2.5*\MatThickness}) -- ({\MatWidth+1},{2.5*\MatThickness}) node [right=1] {\scriptsize Material One, \footnotesize$V = V_2$};
+		
+		\coordinate (electronman) at ({0.65*\MatWidth},{1.5*\MatThickness});
+		\node[ScienceGreen] at (electronman) {\Strichmaxerl[2]};
+		\node[right=2,ScienceGreen] at (electronman) {\small $e^-$};
+		
+		\node[ScienceRed] at ({0-1},{0.5*\MatThickness}) {\scriptsize $A$};
+		\node[ScienceGreen] at ({0-1},{1.5*\MatThickness}) {\scriptsize $B$};
+		\node[ScienceBlue] at ({0-1},{2.5*\MatThickness}) {\scriptsize $C$};
+		
+	\end{tikzpicture}
+\end{document}

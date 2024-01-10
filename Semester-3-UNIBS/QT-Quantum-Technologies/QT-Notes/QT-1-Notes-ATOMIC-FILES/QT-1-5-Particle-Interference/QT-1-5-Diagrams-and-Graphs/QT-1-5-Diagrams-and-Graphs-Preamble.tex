@@ -1,0 +1,145 @@
+% https://tikz.net/optics_twoslit/
+% https://www.overleaf.com/learn/latex/Counters
+% https://tex.stackexchange.com/questions/29989/how-does-the-counter-in-tikz-foreach-work
+% https://tex.stackexchange.com/questions/45848/rotate-node-text-and-use-relative-positioning-in-tikz
+% https://tex.stackexchange.com/questions/625022/using-tikz-to-plot-angle-notations-and-various-arrows
+% https://tex.stackexchange.com/questions/449675/how-to-draw-a-coil-such-that-you-can-see-if-its-right-or-left-handed
+
+
+
+\IfStandalone{\def\datapath{../../../}}{\def\datapath{}}
+
+\input{\datapath QT-Notes-Preambles/QT-Notes-Diagrams-and-Graphs-DEFAULT-Preamble.tex}
+
+
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows,arrows.meta,math}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{angles,quotes} % for pic (angle labels)
+\usetikzlibrary{fadings}
+\tikzset{>=latex} % for LaTeX arrow head
+\contourlength{1.4pt}
+
+\colorlet{myshadow}{blue!30!black!90}
+\tikzstyle{wave}=[ScienceBlue,thick]
+\tikzstyle{mydashed}=[black!70,dashed,thin]
+\tikzstyle{mymeas}=[{Latex[length=3,width=2]}-{Latex[length=3,width=2]},thin]
+\tikzstyle{mysmallarr}=[-{Latex[length=3,width=2]}]
+
+\usetikzlibrary{decorations.pathmorphing}
+
+\newcommand\rightAngle[4]{
+	\pgfmathanglebetweenpoints{\pgfpointanchor{#2}{center}}{\pgfpointanchor{#3}{center}}
+	\coordinate (tmpRA) at ($(#2)+(\pgfmathresult+45:#4)$);
+	\draw[white,line width=0.6] ($(#2)!(tmpRA)!(#1)$) -- (tmpRA) -- ($(#2)!(tmpRA)!(#3)$);
+	\draw[ScienceRed] ($(#2)!(tmpRA)!(#1)$) -- (tmpRA) -- ($(#2)!(tmpRA)!(#3)$);
+}
+\newcommand\lineend[2]{
+	\def\w{0.1} \def\c{30}
+	\draw[ScienceGreen] (#1)++(#2:\w) to[out=#2-180-\c,in=#2+\c] (#1)
+	to[out=#2+\c-180,in=#2-\c]++ (#2-180:\w);
+}
+\def\tick#1#2{\draw[thick] (#1) ++ (#2:0.1) --++ (#2-180:0.2)}
+
+% INTERFERENCE FADING
+\begin{tikzfadingfrompicture}[name=interference]
+	\def\lambd{0.5} % wavelength
+	\foreach \r in {1,...,15}
+	\foreach \j in {1,...,25}
+	\path [line width=\lambd*\j,draw=transparent!0,opacity=0.04]
+	(0,0) circle (\lambd*\r); %(0:\r) arc (0:180:\r);
+\end{tikzfadingfrompicture}
+
+% INTERFERENCE FADING
+\begin{tikzfadingfrompicture}[name=interference]
+	\def\lambd{0.5} % wavelength
+	\foreach \r in {1,...,15}
+	\foreach \j in {1,...,25}
+	\path [line width=\lambd*\j,draw=transparent!0,opacity=0.04]
+	(0,0) circle (\lambd*\r); %(0:\r) arc (0:180:\r);
+\end{tikzfadingfrompicture}
+
+
+\newcommand\DETECTOR[4]{
+	\def\Width{#1}
+	\def\Height{#2}
+	\def\x{#3}
+	\def\y{#4}
+	
+	\path[draw,shape=coordinate]
+	(\x-0.5*\Width,\y-0.5*\Height) coordinate(BotL) 
+	(\x+0.5*\Width,\y-0.5*\Height) coordinate(BotR)
+	(\x+0.5*\Width,\y+0.5*\Height) coordinate(TopR) 
+	(\x-0.5*\Width,\y+0.5*\Height) coordinate(TopL)
+	(\x-0.5*\Width,\y+0.15*\Height) coordinate(EntryTop)
+	(\x+0.1*\Width,\y+0.15*\Height) coordinate(InnerTop)
+	(\x+0.1*\Width,\y-0.15*\Height) coordinate(InnerBot)
+	(\x-0.5*\Width,\y-0.15*\Height) coordinate(EntryBot);
+	\filldraw[color=black,fill=darkgray!25] (BotL) -- (BotR) -- (TopR) -- (TopL) -- (EntryTop) -- (InnerTop) -- (InnerBot) -- (EntryBot) -- (BotL);
+}
+
+
+\newcommand\DETECTORATSLITTOP[4]{
+	\def\Width{#1}
+	\def\Height{#2}
+	\def\x{#3}
+	\def\y{#4}
+	
+	\path[draw,shape=coordinate]
+	(\x-0.5*\Width,\y-0.5*\Height) coordinate(BotL)
+	(\x-0.5*\Width,\y+0.5*\Height) coordinate(TopL)
+	(\x+0.5*\Width,\y+0.5*\Height) coordinate(TopR) 
+	(\x+0.5*\Width,\y-0.5*\Height) coordinate(BotR)
+	
+	(\x+0.2*\Width,\y-0.5*\Height) coordinate(EntryR)
+	(\x+0.2*\Width,\y+0.15*\Height) coordinate(InnerR)
+	(\x-0.2*\Width,\y+0.15*\Height) coordinate(InnerL)
+	(\x-0.2*\Width,\y-0.5*\Height) coordinate(EntryL);
+	\filldraw[color=black,fill=darkgray!25] (BotL) -- (TopL) -- (TopR) -- (BotR) -- (EntryR) -- (InnerR) -- (InnerL) -- (EntryL) -- (BotL);
+}
+
+
+\newcommand\DETECTORATSLITBOTTOM[4]{
+	\def\Width{#1}
+	\def\Height{#2}
+	\def\x{#3}
+	\def\y{#4}
+	
+	\path[draw,shape=coordinate]
+	(\x-0.5*\Width,\y+0.5*\Height) coordinate(TopL)
+	(\x-0.5*\Width,\y-0.5*\Height) coordinate(BotL)
+	(\x+0.5*\Width,\y-0.5*\Height) coordinate(BotR)
+	(\x+0.5*\Width,\y+0.5*\Height) coordinate(TopR) 	
+	
+	(\x+0.2*\Width,\y+0.5*\Height) coordinate(EntryR)
+	(\x+0.2*\Width,\y-0.15*\Height) coordinate(InnerR)
+	(\x-0.2*\Width,\y-0.15*\Height) coordinate(InnerL)
+	(\x-0.2*\Width,\y+0.5*\Height) coordinate(EntryL);
+	\filldraw[color=black,fill=darkgray!25] (TopL) -- (BotL) -- (BotR) -- (TopR) -- (EntryR) -- (InnerR) -- (InnerL) -- (EntryL) -- (TopL);
+}
+
+
+% Electron Gun
+\newcommand\ElectronGun[4]{
+	\def\Width{#1}
+	\def\Height{#2}
+	\def\x{#3}
+	\def\y{#4}
+	
+	\path[draw,shape=coordinate]
+	(\x+0.5*\Width,\y-0.15*\Height) coordinate(ExitBot)
+	(\x+0.5*\Width,\y-0.5*\Height) coordinate(BotR)
+	(\x-0.5*\Width,\y-0.5*\Height) coordinate(BotL)
+	(\x-0.5*\Width,\y+0.5*\Height) coordinate(TopL)
+	(\x+0.5*\Width,\y+0.5*\Height) coordinate(TopR) 
+	(\x+0.5*\Width,\y+0.15*\Height) coordinate(ExitTop);
+	\filldraw[color=black,fill=darkgray!25] (ExitBot) -- (BotR) -- (BotL) -- (TopL) -- (TopR) -- (ExitTop);
+	
+	\draw[decoration={coil,aspect=0.4,segment length=\Height*3.333,amplitude=\Width*2},decorate,color=ScienceRed,fill=darkgray!25] (\x-0.3*\Height,\y+0.4*\Height) -- (\x-0.3*\Height,\y-0.4*\Height);
+	
+	\draw[color=ScienceRed] (\x-0.3*\Height,\y+0.4*\Height) -- (\x-\Width*0.6,\y+0.4*\Height);
+	\draw[color=ScienceRed] (\x-0.3*\Height,\y-0.4*\Height) -- (\x-\Width*0.6,\y-0.4*\Height);
+}
+
+
+

@@ -1,0 +1,48 @@
+% THE 1D REALISTIC QUANTUM WELL - ENERGY LEVELS
+
+\documentclass{standalone}
+
+
+\input{QT-1-8-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}[measure/.style={{Stealth[length=4pt]}-{Stealth[length=4pt]},black!75}]
+		\def\xmin{-3} % min x axis
+		\def\xmax{8}     % max x axis
+		\def\a{4}
+		\def\L{7}
+		\def\BaseE{0.25}
+		\def\nSamples{100}
+		
+		\def\Vone{9*\BaseE}
+		\def\Vtwo{5.5*\BaseE}
+		
+		
+		\draw[->,thick,dashed] ({\xmin-0.2},0) -- ({\xmax+0.2},0) node[below=1] {\small $x$};
+		\draw[->,thick,dashed] (\L,-0.2) -- (\L,{\BaseE*12}) node[above,right] {\small $E$, \tiny$V(x)$};
+		
+		\draw (0,-0.1) node[below] {\tiny $0$} -- (0,0.05) {};
+		\draw ({\a},-0.1) node[below] {\tiny $a$} -- ({\a},0.05) {};
+		
+		\coordinate (V1L) at (\xmin,\Vone);
+		\coordinate (V1R) at (0,\Vone);
+		\coordinate (ZeL) at (0,0);
+		\coordinate (ZeR) at (\a,0);
+		\coordinate (V2L) at (\a,\Vtwo);
+		\coordinate (V2R) at (\xmax,\Vtwo);
+		
+		\draw[thick,ScienceRed] (V1L) -- (V1R) -- (ZeL) -- (ZeR) -- (V2L) -- (V2R);
+		
+		\draw[measure] ({\xmin+abs(\xmin*0.5)},0) -- ({\xmin+abs(\xmin*0.5)},\Vone) node[midway,fill=white,inner sep=1] {\scriptsize $V_1$};
+		
+		\draw[measure] ({\xmax-(\xmax*0.25)},0) -- ({\xmax-(\xmax*0.25)},\Vtwo) node[midway,fill=white,inner sep=1] {\scriptsize $V_2$};
+		
+		\draw[ScienceGreen!75,dashed] ({-0.2},{\Vtwo*0.15}) -- ({\a+0.2},{\Vtwo*0.15}) node[right=1,ScienceGreen] {\scriptsize $E_1$};
+		
+		\draw[ScienceGreen!75,dashed] ({-0.2},{\Vtwo*0.7}) -- ({\a+0.2},{\Vtwo*0.7}) node[right=1,ScienceGreen] {\scriptsize $E_2$};
+		
+		\draw[dotted, thick,ScienceGreen!75] ({\a*0.5},{\Vtwo*0.9}) -- ({\a*0.5},{\Vtwo*0.95});
+		
+	\end{tikzpicture}
+\end{document}

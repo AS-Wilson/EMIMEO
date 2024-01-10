@@ -1,0 +1,63 @@
+% THE 1D QUANTUM WELL -- WAVE FUNCTION SOLUTIONS -- PROBABILITIES
+% https://tex.stackexchange.com/questions/44252/best-way-to-draw-a-quantum-harmonic-oscillator
+\documentclass{standalone}
+
+
+\input{QT-1-8-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}
+		\def\xmin{0} % min x axis
+		\def\xmax{6}     % max x axis
+		\def\L{5}
+		\def\BaseE{0.5}
+		\def\nSamples{100}
+		
+		
+		\draw[->,thick,dashed] ({\xmin-0.2},0) -- ({\xmax+0.2},0) node[below=1] {\scriptsize $x$};
+		
+		\draw[->,thick,dashed] (\xmin,-0.2) node[below] {\scriptsize $0$} -- (\xmin,{\BaseE*12}) node[above,left] {\scriptsize $E$, \tiny$V(0\sim\infty)=\infty$} {};
+		\draw[->,thick,dashed] (\L,-0.2) node[below] {\scriptsize $L$} -- (\L,{\BaseE*12}) node[above,right] {\scriptsize $E$, \tiny$V(0\sim\infty)=\infty$} {};
+		
+		\draw ({\L/2},-0.1) node[below] {\tiny $\frac{L}{2}$} -- ({\L/2},0.05) {};
+		
+		
+		\draw ({\xmin-0.15},\BaseE) node[left] {\tiny $E_1$} -- ({\xmin+0.1},\BaseE) {};
+		\draw ({\xmin-0.15},{\BaseE*4}) node[left] {\tiny $E_2$} -- ({\xmin+0.1},{\BaseE*4}) {};
+		\draw ({\xmin-0.15},{\BaseE*9}) node[left] {\tiny $E_3$} -- ({\xmin+0.1},{\BaseE*9}) {};
+		
+		
+		\draw[ScienceRed,thick] ({\L-0.1},\BaseE) -- ({\L+0.15},\BaseE) node[right=1] {\tiny $\left| \Psi_1(x) \right|^2$} {};
+		\draw[ScienceOrange,thick] ({\L-0.1},{\BaseE*4}) -- ({\L+0.15},{\BaseE*4}) node[right=1] {\tiny $\left| \Psi_2(x) \right|^2$} {};
+		\draw[ScienceGreen,thick] ({\L-0.1},{\BaseE*9}) -- ({\L+0.15},{\BaseE*9}) node[right=1] {\tiny $\left| \Psi_3(x) \right|^2$}{};
+		
+		
+		
+		 % INTENSITY FUNCTION PLOT
+		\begin{scope}[shift={(0,\BaseE)}]
+			\pgfkeys{/pgf/trig format=rad} %% Took me ages to figure tht none of the equations were working cause tex works in degrees by defaut, this sets all trig functions to radians by default
+			\draw[thin,dashed] ({\xmin-0.1},0) -- ({\L+0.1},0) {}; % 0 prob, x Axis
+			
+			\fill[ScienceRed!10,thick,variable=\x,smooth,samples=\nSamples,domain=\xmin:\L] plot(\x,{ (2/\L * (sin((pi / \L) * \x))^2) });
+			\draw[ScienceRed!90,thick,variable=\x,smooth,samples=\nSamples,domain=\xmin:\L] plot(\x,{ (2/\L * (sin((pi / \L) * \x))^2) });
+		\end{scope}
+		
+		\begin{scope}[shift={(0,{\BaseE*4})}]
+			\pgfkeys{/pgf/trig format=rad} %% Took me ages to figure tht none of the equations were working cause tex works in degrees by defaut, this sets all trig functions to radians by default
+			\draw[thin,dashed] ({\xmin-0.1},0) -- ({\L+0.1},0) {}; % 0 prob, x Axis
+			
+			\fill[ScienceOrange!10,thick,variable=\x,smooth,samples=\nSamples,domain=\xmin:\L] plot(\x,{ 2/\L * (sin((pi / \L) * 2 * \x))^2) });
+			\draw[ScienceOrange!90,thick,variable=\x,smooth,samples=\nSamples,domain=\xmin:\L] plot(\x,{ 2/\L * (sin((pi / \L) * 2 * \x))^2) });
+		\end{scope}
+		
+		\begin{scope}[shift={(0,{\BaseE*9})}]
+			\pgfkeys{/pgf/trig format=rad} %% Took me ages to figure tht none of the equations were working cause tex works in degrees by defaut, this sets all trig functions to radians by default
+			\draw[thin,dashed] ({\xmin-0.1},0) -- ({\L+0.1},0) {}; % 0 prob, x Axis
+			
+			\fill[ScienceGreen!10,thick,variable=\x,smooth,samples=\nSamples,domain=\xmin:\L] plot(\x,{ 2/\L * (sin((pi / \L) * 3 * \x))^2) });
+			\draw[ScienceGreen!90,thick,variable=\x,smooth,samples=\nSamples,domain=\xmin:\L] plot(\x,{ 2/\L * (sin((pi / \L) * 3 * \x))^2) });
+		\end{scope}
+		
+	\end{tikzpicture}
+\end{document}

@@ -1,0 +1,28 @@
+%% PHOTOELECTRIC EFFECT GRAPH
+%%%% https://tikz.net/function_average/ %%%%
+%%%% https://tikz.net/photoelectric_effect/ %%%%
+\documentclass{standalone}
+
+
+\input{QT-1-2-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	
+	\def\xmax{2.2} % max x axis
+	\def\ymax{1.6} % max y axis
+	\begin{tikzpicture}
+		\message{^^JLinear}
+		\def\a{0.17*\xmax}  % first limit
+		\def\b{0.76*\xmax}  % last limit
+		\def\k{\ymax/\xmax} % slope coefficient
+		
+		\draw[->,thick] (0,-0.15*\ymax) -- (0,\ymax+0.1) node[left] {$E_k$}; % y axis
+		
+		\draw[->,thick] (-0.15*\ymax,0) -- (\xmax+0.1,0) node[right=1,below] {$\nu$}; % x axis
+		
+		\draw[xline,line cap=round]
+		(\a,0) -- (0.9*\xmax,0.9*\k*\xmax);
+		\tick{\a,0}{90} node[below=-2,scale=0.8] {\strut $\nu_{th}$};
+	\end{tikzpicture}
+\end{document}

@@ -1,0 +1,81 @@
+%% PHOTOELECTRIC EFFECT HIGH FREQUENCY
+
+%%%% https://tikz.net/photoelectric_effect/ %%%%
+\documentclass{standalone}
+
+
+\input{../../../QT-Notes-Preambles/QT-Notes-COLOURS-Preamble.tex}
+\input{../../../QT-Notes-Preambles/QT-Notes-MATH-AND-TEXT-Preamble.tex}
+\input{QT-1-2-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}[scale=1, line width=1]
+		%			% Grid
+		%				\draw[help lines] (0,0) grid (11,11);
+		
+		% Circuits		
+		\draw (4,6) -- (2,6) to[rmeterwa, t=$A$] ++(0,-4) -- (2,2) to[controlled voltage source, l_={
+			\begin{tabular}{c}
+				\Large $V$ \\
+				\footnotesize (Controlled Voltage Source)
+		\end{tabular}}] ++(6,0) -- (8,6) -- (6,6);
+		\filldraw (4,6) circle [radius=0.05];
+		
+		% Dashed Arrows
+		\draw[color=ScienceGreen!40,dashed,<-] (4,6) -- +(1.7,1)coordinate(A);
+		\draw[color=ScienceGreen!40,dashed,<-] (4,6)coordinate(B) -- +(1.7,-1)coordinate(C);
+		
+		% Arc		
+		\pic [draw, angle radius = 2cm, line width = 5] {angle=C--B--A};
+		
+		% Photocell
+		\draw[color=black, line width=5, opacity=0] (5,6) circle [radius=1.8];
+		
+		% Laser
+		\draw[fill=yellow, line width=1, rotate=12] (2.8,9.31) -- ++(1,-1) -- ++(0.1,0.1) -- ++(-1,1) -- +(-0.1,-0.1);
+		%% Rays
+		\draw[bigphoton,color=ScienceBlue,opacity=0.5] (2,9) -- (5.7,5);
+		\draw[bigphoton,color=ScienceBlue,opacity=0.5] (2,9) -- (5.7,6.95);
+		
+		% Electrons				
+		\draw[fill=ScienceGreen!60] (4.5,5.7) circle [radius = 0.15];
+		\draw[fill=ScienceGreen!60] (5,6.6) circle [radius = 0.15];
+		%% Minus Symbol
+		\node at (5,6.575) {$\symbf{-}$};
+		\node at (4.5,5.675) {$\symbf{-}$};
+		
+		% Current
+		\draw[ScienceBlue, ->, line width = 2] (1.25,4.5) -- +(0,-1);
+		
+		% Nodes
+		\node at (5.5,2.5) {\large $+$};
+		\node at (4.5,2.5) {\large $-$};
+		\node at (0.5,4.1) {
+			\begin{tabular}{c}
+				\large $I$ \\
+				\footnotesize (Current)
+		\end{tabular}};
+		\node at (3.8,5.15) {
+			\begin{tabular}{c}
+				\large $C$ \\
+				\scriptsize (Collector)
+		\end{tabular}};
+		\node at (7,6.5) {
+			\begin{tabular}{l}
+				\large $P$ \\
+				\scriptsize (Photocathode)
+		\end{tabular}};
+		\node at (2.4,10) {
+			\begin{tabular}{c}
+				\large Light Source \\
+				\small (Laser)
+		\end{tabular}};
+		\node at (2.15,7.2) {
+			\begin{tabular}{c}
+				\large Light \\
+				\scriptsize (Individual Photons) \\
+				\normalsize $ \nu_2 $, $\nu_2 > \nu_1$
+		\end{tabular}};
+	\end{tikzpicture}
+\end{document}

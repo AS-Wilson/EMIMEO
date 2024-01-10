@@ -1,0 +1,39 @@
+% POSSIBLE PDF OF THE REALISTIC QUANTUM WELL
+%% https://tikz.net/delta_function/
+
+\documentclass{standalone}
+
+
+\input{QT-1-8-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}
+		\def\xmin{-1.7} % min x axis
+		\def\xmax{1.7}     % max x axis
+		\def\ymin{-0.4}    % min y axis
+		\def\ymax{1.6}     % max y axis
+		
+		\tikzstyle{xline}=[ScienceRed,very thick]
+		\def\N{100}
+		
+		
+		\def\A{0.75*\ymax} % amplitude
+		
+		\def\T{0.35*\xmax} % width
+		
+		\draw[->,thick,dashed] (0,\ymin) -- (0,\ymax) node[left] {\scriptsize $PDF$};
+		
+		\draw[<->,thick,dashed] (-\xmax,0) -- (\xmax+0.1,0) node[below=1,right=1] {\scriptsize $x$};
+		
+		\draw[xline,very thick,smooth,samples=\N,variable=\x,domain={-0.9*\xmax}:{0.9*\xmax}] plot(\x,{\A*exp(-((\x*\x)/(\T*\T))/2)});
+		
+		
+		
+		\draw[black!75,dashed] ({\xmin*0.75},-0.2) node[below=1] {\scriptsize $0$} -- ({\xmin*0.75},\ymax);
+		\draw[black!75,dashed] ({\xmax*0.75},-0.2) node[below=1] {\scriptsize $a$} -- ({\xmax*0.75},\ymax);
+		
+		
+	\end{tikzpicture}
+\end{document}
+

@@ -1,0 +1,267 @@
+\documentclass[colorlinks,11pt,a4paper,normalphoto,withhyper,ragged2e]{altareport}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% DEFAULT PACKAGES & SETTINGS %%%%%%%%%%
+\usepackage{setspace} %1.5 line spacing
+\usepackage{notoccite} %% Citation numbering
+\usepackage{lscape} %% Landscape table
+\usepackage{caption} %% Adds a newline in the table caption
+\usepackage[rgb]{xcolor}
+
+%% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+\usepackage[none]{hyphenat}
+
+%%% Document/Theme Fonts, Space and Text Settings
+\usepackage{fontspec}
+\setmainfont{Roboto Slab}
+\setsansfont{Lato}
+\renewcommand{\familydefault}{\sfdefault}
+\captionsetup{font=footnotesize} % Make Captions a sensible size
+\setlength{\intextsep}{4pt} % Set defualt spacing around floats
+% \captionsetup{aboveskip=5pt, belowskip=5pt} % Reduce space around captions
+\geometry{left=1.25cm,right=1.25cm,top=2.5cm,bottom=2.5cm,columnsep=8mm} % Change the page layout
+\setstretch{1.5}   % 1.5 line spacing
+\definecolor{CommentGreen}{HTML}{228B22}
+\justifying
+
+%% Math Env Text Settings
+\usepackage{mathtools}
+\usepackage{unicode-math}
+\setmathfont{XITS Math}
+\usepackage{amsmath}
+\usepackage{bm}
+%\everymath=\expandafter{\the\everymath\displaystyle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% DOCUMENT SPECIFIC PACKAGES AND SETTINGS %%%%%%%%%%
+\usepackage{relsize}
+
+%\usepackage{pythontex} % Run python code in this latex doc
+
+%%%%% Settings for python pgf graphs %%%%%
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta}
+
+\pgfplotsset{compat=newest,
+    width=6cm,
+    height=3cm,
+    scale only axis=true,
+    max space between ticks=25pt,
+    try min ticks=5,
+    every axis/.style={
+        axis y line=left,
+        axis x line=bottom,
+        axis line style={thick,->,>=latex, shorten >=-.4cm}
+    },
+    every axis plot/.append style={thick},
+    tick style={black, thick}
+}
+\tikzset{
+    semithick/.style={line width=0.8pt},
+}
+
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{dateplot}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% USEFUL SETTINGS %%%%%%%%%%
+%% Change some font sizes, this will override the defaults
+\renewcommand{\ReportTitleFont}{\Huge\rmfamily\bfseries} %% Title Page - Main Title
+\renewcommand{\ReportSubTitleFont}{\huge\bfseries} %% Title Page - Sub-Title
+\renewcommand{\ReportSectionFont}{\LARGE\rmfamily\bfseries} %% Section Title
+\renewcommand{\ReportSubSectionFont}{\large\bfseries} %% SubSection Title
+\renewcommand{\FootNoteFont}{\footnotesize} %% Footnotes and Header/Footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% THEMES %%%%%%%%%%
+%% Standard theme options are below, leave blank for B&W / no colours (BoringDefault). Note the theme will be set to default if you enter a non-exsistant theme name.
+\SetTheme{UNIBS}
+%% UNIBS
+%% UNILIM
+%% PastelBlue
+%% GreenAndGold
+%% Purple
+%% PastelRed
+%% BoringDefault (Leave blank / enter anything not found above)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% TITLE PAGE INFO %%%%%%%%%%
+\ReportTitle{Quantum Technologies}
+\SubTitle{\textbf{Exam and Study Aid} - Important Values and Definitions}
+\Author{Andrew Simon Wilson}
+\ReportDate{\today}
+\FacultyOrLocation{EMIMEO Programme}
+\ModCoord{Prof. Artoni Maurizio}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% TEST AREA %%%%%%%%%%
+\selectcolormodel{natural}
+\usepackage{booktabs}
+\usepackage{ninecolors}
+\selectcolormodel{rgb}
+
+\usepackage{tabularray}
+
+\UseTblrLibrary{booktabs,siunitx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{document}
+
+\MakeReportTitlePage
+
+
+%%%%% CONTENTS %%%%%
+\pagenumbering{roman} % Start roman numbering
+\setcounter{page}{1}
+
+
+%%%%%%%%%% YOUR NAME, PROFESSION, PORTRAIT, CONTACT INFO, SOCIAL MEDIA ETC. %%%%%%%%%%
+\name{Andrew Simon Wilson, BEng}
+\tagline{Post-graduate Master's Student - EMIMEO Programme}
+
+\personalinfo{
+  \email{andrew.wilson@protonmail.com}
+  \linkedin{andrew-simon-wilson} 
+  \github{AS-Wilson}
+  \phone{+44 7930 560 383}
+}
+
+%% You can add multiple photos on the left or right
+% \photoR{3cm}{Images/a-wilson-potrait.jpg}
+% \photoL{3cm}{Yacht_High,Suitcase_High}
+
+\section*{Author Details}
+\makeauthordetails
+
+%% Table of contents print level -1: part, 0: chapter, 1: section, 2:sub-section, 3:sub-sub-section, etc.
+\setcounter{tocdepth}{2} 
+\tableofcontents %% Prints a list of all sections based on the above command
+%\listoffigures %% Prints a list of all figures in the report
+%\listoftables %% Prints a list of all tables in the report
+
+%%%%%%%%%% DOCUMENT "INNER" SETTINGS %%%%%%%%%%
+\fontsize{11pt}{12pt}\selectfont % Set default ont size
+
+%% https://mirror.kumi.systems/ctan/obsolete/info/math/voss/mathmode/Mathmode.pdf
+% Set pre and post equation spacing
+\abovedisplayskip=0pt
+\abovedisplayshortskip=2pt
+\belowdisplayskip=12pt
+\belowdisplayshortskip=12pt
+
+
+
+%%%%%%%%%% DOCUMENT CONTENT BEGINS HERE %%%%%%%%%%
+
+%%%%% INTRO %%%%%
+\section*{Explanation and Introduction of this Document}
+I wrote this document for the students studying Quantum Technologies to have a nice handout set for the important definitions involved in the course. I hope that it is sufficient for this task and it helps all of your studies. \linebreak
+I spent have spent a lot of time developing the template used to make this {\LaTeX} document, I want others to benefit from this work so the source code for this template is available on GitHub \cite{latex_template_github}.
+\newpage
+\pagenumbering{arabic} % Start document numbering - roman numbering
+	
+	
+	
+
+	\section{Constants \& Relevant Definitions}
+		
+		\subsection{Constants}
+			
+			%% QUANTUM RELEVANT CONSTANTS - INPUT THE CONSTANTS ATOMIC FILE
+			\input{constants-ATOMIC-FILE.tex}
+		
+		
+		\subsection{Relevant Classical Definitions}
+			
+			\textbf{\LARGE\color{heading}TODO - Relevant Classical Definitions.} % TODO: Relevant Classical Definitions
+			
+			%% QUANTUM RELEVANT CLASSICAL DEFINITIONS - INPUT THE CALSSICAL DEFINITIONS ATOMIC FILE
+			\input{classical-definitions-ATOMIC-FILE.tex}
+			
+			
+			
+			\pagebreak
+	
+	
+	
+	
+	\section{Units Involved and Some Important Starting Equations}
+		
+		%% QUANTUM RELEVANT UNITS AND OTHER EQUATIONS - INPUT THE UNITS AND OTHER EQS ATOMIC FILE
+		\input{units-and-other-eqs-ATOMIC-FILE.tex}
+		
+		
+		\bigskip
+	
+	
+	
+	
+	\section{Conversions}
+		
+		%% QUANTUM RELEVANT UNIT CONVERSIONS - INPUT THE UNIT CONVERSIONS ATOMIC FILE
+		\input{conversions-ATOMIC-FILE.tex}
+		
+		
+		\pagebreak
+	
+	
+	
+	
+	
+	\section{Properties of Elemental Particles}
+		
+		
+		%% ELECTRON PROPERTIES - INPUT THE PROTON PROPERTIES ATOMIC FILE
+		\input{electron-properties-ATOMIC-FILE.tex}
+		
+		
+		\bigskip
+		
+		
+		%% PROTON PROPERTIES - INPUT THE PROTON PROPERTIES ATOMIC FILE
+		\input{proton-properties-ATOMIC-FILE.tex}
+		
+		
+		\pagebreak
+		
+		
+		{\color{subheading}\ReportSubSectionFont{Properties of Elemental Particles Cont...}}
+		
+		
+		\bigskip
+		
+		
+		%% NEUTRON PROPERTIES - INPUT THE PROTON PROPERTIES ATOMIC FILE
+		\input{neutron-properties-ATOMIC-FILE.tex}
+		
+		
+		
+		
+		\pagebreak
+	
+	
+	
+	
+\newpage
+\setstretch{1}  % Reduce bibliography line spacing
+\bibliography{references.bib}
+\bibliographystyle{IEEETran}
+\end{document}

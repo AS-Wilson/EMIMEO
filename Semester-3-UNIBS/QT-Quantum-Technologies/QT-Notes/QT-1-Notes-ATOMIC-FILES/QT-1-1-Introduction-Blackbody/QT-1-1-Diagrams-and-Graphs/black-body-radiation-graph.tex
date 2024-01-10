@@ -1,0 +1,77 @@
+%% BLACKBODY RADIATION GRAPH WITH APPROXIMATIONS
+%%%% https://tikz.net/blackbody/ %%%%
+%%%% https://tikz.net/blackbody_plots/ %%%%
+\documentclass{standalone}
+
+\input{QT-1-1-Diagrams-and-Graphs-Preamble}
+
+\begin{document}
+	% BLACK BODY - 3000, 4000, 5000K
+	\begin{tikzpicture}
+		\message{^^JBlack body}
+		\def\N{60}
+		\def\xmax{3100}
+		\def\ymax{1.32e10}
+		\def\tick#1#2{\draw[thick] (#1+.01*\ymax) -- (#1-.01*\ymax) node[below=-.5pt,scale=0.75,angle=45] {#2};}
+		\begin{axis}[
+			every axis plot/.style={
+				mark=none,samples=\N,domain=5:\xmax,smooth},
+			xmin=(-.05*\xmax), xmax=(1.05*\xmax),
+			ymin=(-.08*\ymax), ymax=(1.08*\ymax),
+			restrict y to domain=0:\ymax,
+			axis lines=middle,
+			axis line style=thick,
+			%enlargelimits=upper, % extend the axes a bit to the right and top
+			tick style={black,thick},
+			tick label style={scale=0.7},
+			x tick label style={rotate=-45},
+%			xtick style={draw=none},
+%			xticklabels={rotate=45},
+			xlabel={Wavelength $\lambda$ [nm]},
+			ylabel={Power $P$ [kW/srm$^2$nm]},
+			xlabel style={at={(rel axis cs:0.5,0)},below=4pt,font=\small},
+			ylabel style={at={(rel axis cs:-0.1,0.5)},rotate=90},
+			width=9cm, height=7cm,
+			%clip=false
+			tick scale binop=\times,
+			every y tick scale label/.style={at={(rel axis cs:0,1)},anchor=south}]
+			]
+			
+			% RAINBOW
+			\shade[shading=rainbow,shading angle=90,opacity=0.5] (380,0) rectangle (740,\ymax);
+			\node[above=-1pt,scale=0.8] at (200,\ymax) {\strut UV}; % 10 - 400 nm
+			\node[above=-1pt,scale=0.8] at (570,\ymax) {\strut optical}; % 380 - 740 nm
+			\node[above=-1pt,scale=0.8] at (920,\ymax) {\strut IR}; % 740 - 1050 nm
+			
+			% PLANCK
+			\addplot[very thick,red]    {planck(x,3000)};
+			\addplot[very thick,orange] {planck(x,4000)};
+			\addplot[very thick,samples=3*\N,blue] {planck(x,5000)};
+			%\addplot[dashed,thick,red,domain=1000:4000]    {rayleighjeans(x,3000)};
+			%\addplot[dashed,thick,orange,domain=1000:4000] {rayleighjeans(x,4000)};
+			\addplot[dashed,thick,blue,domain=1000:4000]   {rayleighjeans(x,5000)};
+			%\addplot[dashed,thick,red,domain=1000:4000]    {wien(x,3000)};
+			%\addplot[dashed,thick,orange,domain=1000:4000] {wien(x,4000)};
+			%\addplot[dashed,thick,blue,domain=1000:4000]   {wien(x,5000)};
+			
+			%% MAXIMUM (Wien's displacement law)
+			%\addplot[ScienceGreen,very thin,variable=T,domain=2500:6000]
+			%  ({lampeak(T)},{planck(lampeak(T),T)});
+			
+			% LABELS
+			\node[above=0pt,scale=0.75,red] at (1150,{planck(1150,3000)}) {\SI{3000}{K}};
+			\node[above right=-1pt,scale=0.75,orange!80!black] at (740,{planck(740,4000)}) {\SI{4000}{K}};
+			\node[above right=-1pt,scale=0.75,blue] at (800,{planck(800,5000)}) {\SI{5000}{K}};
+			\node[above right=-1pt,scale=0.75,blue] at (1500,{rayleighjeans(1500,5000)}) {\SI{5000}{K} Rayleigh-Jeans};
+			
+			%% TICKS
+			%\tick{500,0}{500}
+			%\tick{1000,0}{1000}
+			%\tick{1500,0}{1500}
+			%\tick{2000,0}{2000}
+			%\tick{2500,0}{2500}
+			%\tick{3000,0}{3000}
+			
+		\end{axis}
+	\end{tikzpicture}
+\end{document}

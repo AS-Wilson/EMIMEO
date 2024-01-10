@@ -1,0 +1,68 @@
+%% TWO SLIT - UNOBSEVRED, RAY PATH DIFFERENCE DEMONSTRATION
+
+% https://tikz.net/optics_twoslit/
+% https://www.overleaf.com/learn/latex/Counters
+% https://tex.stackexchange.com/questions/29989/how-does-the-counter-in-tikz-foreach-work
+% https://tex.stackexchange.com/questions/45848/rotate-node-text-and-use-relative-positioning-in-tikz
+% https://tex.stackexchange.com/questions/625022/using-tikz-to-plot-angle-notations-and-various-arrows
+% https://tex.stackexchange.com/questions/449675/how-to-draw-a-coil-such-that-you-can-see-if-its-right-or-left-handed
+% TWO SLIT PATH DIFFERENCE
+
+
+\documentclass{standalone}
+
+
+\input{QT-1-5-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}
+		
+		\def\L{9}       % distance between walls
+		\def\H{4}       % total wall height
+		\def\f{0.9}       % fractional height of projection point
+		\def\ang{atan((\f*\H+\a)/\L/2)} % theta
+		\def\t{0.1}      % wall thickness
+		\def\a{1.5}       % slit distance
+		\def\d{0.20}      % slit size
+		\coordinate (T) at (0,\a/2);
+		\coordinate (B) at (0,-\a/2);
+		\coordinate (L) at (0,0);
+		\coordinate (R) at (\L,0);
+		\coordinate (P) at (\L-0.2,\f*\H/2);
+		\coordinate (M) at ($(B)!(T)!(P)$);
+		
+		% LINES
+		\draw[ScienceGreen,thick] (T) -- (P) node[midway,above=-1] {\small $\overrightarrow{r}_1$};
+		\draw[ScienceGreen,thick] (B) -- (P) node[midway,below=3,right=6] {\small $\overrightarrow{r}_2$}; %right=6,below right=-4
+		\draw[ScienceRed,dashed] (M) -- (T);
+		
+		
+		% ANGLES
+		\draw pic[mysmallarr,"\small $\theta'$",ScienceRed,draw=ScienceRed,angle radius=26,angle eccentricity=1.25]
+		{angle = B--T--M};
+		\rightAngle{T}{M}{P}{0.3}
+		
+		% MEASURES
+		\draw[<->,black] (0,-0.47*\H) --++ (\L,0) node[midway,fill=white,inner sep=3] {\small $L$};
+		\draw[<->,black] (-4*\t,-\a/2) --++ (0,\a) node[midway,fill=white,inner sep=3] {\small $d$};
+		\draw[<->,black] ([shift={({\ang-90}:0.2)}]B) -- ([shift={({\ang-90}:0.2)}]M)
+		node[midway,above=1,below right=-1]{\small $a\sine{\theta'}$};
+		
+		
+		% WALL
+		\fill[ScienceBlue!30!]
+		(0,\a/2-\d/2) rectangle (-\t,-\a/2+\d/2)
+		(0,\a/2+\d/2) rectangle (-\t,\H/2)
+		(0,-\a/2-\d/2) rectangle (-\t,-\H/2)
+		(\L,-\H/2) rectangle (\L+\t,\H/2);
+		\fill[ScienceGreen!80!black] (P) circle (0.6*\t) node[right=1,above left=-1.5] {P};
+		
+		
+		% Detector
+		\DETECTOR{0.2}{0.75}{\L-\t}{\f*\H/2}
+		\draw[<->,darkgray!75] ([shift={(4*\t,3*\t)}]P) -- ([shift={(4*\t,-3*\t)}]P) node[midway,right=3,fill=white,inner sep=3,rotate=90,anchor=north]{\scriptsize Moving};
+		\fill[color=darkgray!75] ([shift={(4*\t,0)}]P) circle (0.4*\t);			
+		
+	\end{tikzpicture}
+\end{document}

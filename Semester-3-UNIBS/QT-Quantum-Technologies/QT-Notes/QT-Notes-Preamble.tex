@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% DEFAULT PACKAGES & SETTINGS %%%%%%%%%%
+
+
+%%%%%%%%%% INPUT PREDEFINED PREAMBLES THAT ARE USED ALL OVER %%%%%%%%%%
+\input{QT-Notes-Preambles/QT-Notes-COLOURS-Preamble.tex}
+%%%%%%%%%% TEXT AND MATH RELATED PACKAGES AND SETTINGS %%%%%%%%%%
+\input{QT-Notes-Preambles/QT-Notes-MATH-AND-TEXT-Preamble.tex}
+	\captionsetup{font=footnotesize} % Make Captions a sensible size
+	\geometry{left=1.25cm,right=1.25cm,top=2.5cm,bottom=2.5cm,columnsep=8mm} % Change the page layout
+	\setstretch{1.5}   % 1.5 line spacing
+	\justifying
+	
+\usepackage{scrextend}
+
+
+%%%%%%%%%% OTHER PACKAGES AND SETTINGS %%%%%%%%%%
+% Avoid recompiling grpahs unless there are changes
+% https://tex.stackexchange.com/questions/148971/avoiding-recompilation-of-unchanged-part-of-a-document
+\usepackage[mode=buildnew]{standalone}
+
+
+%%%%%%%%%% ALTA REPORT THEMES %%%%%%%%%%
+%% Standard theme options are below, leave blank for B&W / no colours (BoringDefault). Note the theme will be set to default if you enter a non-exsistant theme name.
+\SetTheme{UNIBS}
+%% UNIBS
+%% UNILIM
+%% PastelBlue
+%% GreenAndGold
+%% Purple
+%% PastelRed
+%% BoringDefault (Leave blank / enter anything not found above)
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% SUB DOCUMENT PREAMBLES, SPECIFIC PACKAGES, AND SETTINGS %%%%%%%%%%
+%%%%% 1 - BLACKBODY RADIATION WITH STIMULATING RADIATION %%%%%
+%% https://tikz.net/blackbody/
+%% https://tikz.net/blackbody_plots/
+\input{QT-1-Notes-ATOMIC-FILES/QT-1-1-Introduction-Blackbody/QT-1-1-Diagrams-and-Graphs/QT-1-1-Diagrams-and-Graphs-Preamble}
+
+%%%%% 2 - PHOTOELECTRIC EFFECT %%%%%
+%%%% https://tikz.net/photoelectric_effect/ %%%%
+\input{QT-1-Notes-ATOMIC-FILES/QT-1-2-The-PhotoElectric-Effect/QT-1-2-Diagrams-and-Graphs/QT-1-2-Diagrams-and-Graphs-Preamble}
+
+%%%%% 3 - BOHR MODEL %%%%%
+%%%% https://tikz.net/photoelectric_effect/ %%%%
+\input{QT-1-Notes-ATOMIC-FILES/QT-1-3-Bohrs-Model-of-Hydrogen/QT-1-3-Diagrams-and-Graphs/QT-1-3-Diagrams-and-Graphs-Preamble}
+
+%%%%% 4 - DE BROGLIE / WAVE NATURE OF MATTER HAS NO DIAGRAMS %%%%%
+
+%%%%% 5 - ATOMIC (XRAY) DIFFRACTION# AND THE TWO SLITS %%%%%
+%% https://tikz.net/optics_twoslit/
+% https://tikz.net/optics_twoslit/
+% https://www.overleaf.com/learn/latex/Counters
+% https://tex.stackexchange.com/questions/29989/how-does-the-counter-in-tikz-foreach-work
+% https://tex.stackexchange.com/questions/45848/rotate-node-text-and-use-relative-positioning-in-tikz
+% https://tex.stackexchange.com/questions/625022/using-tikz-to-plot-angle-notations-and-various-arrows
+% https://tex.stackexchange.com/questions/449675/how-to-draw-a-coil-such-that-you-can-see-if-its-right-or-left-handed
+\input{QT-1-Notes-ATOMIC-FILES/QT-1-5-Particle-Interference/QT-1-5-Diagrams-and-Graphs/QT-1-5-Diagrams-and-Graphs-Preamble}
+
+%%%%% 6 - THE SCHRÖDINGER EQUATION - DELTA APPROX, GAUSSIAN WAVE PACKET, RUNNING MAN %%%%%
+%% DOI: 10.1155/2011/415921
+%% https://tikz.net/delta_function/
+%% https://tex.stackexchange.com/questions/441917/is-there-a-simple-way-to-use-stick-figures-into-pgf-tikz-drawings
+\input{QT-1-Notes-ATOMIC-FILES/QT-1-6-The-Schroedinger-Equation/QT-1-6-Diagrams-and-Graphs/QT-1-6-Diagrams-and-Graphs-Preamble}
+
+%%%%% 7 - OBSERVABLES HAS NO DIAGRAMS %%%%%
+
+%%%%%  8 - CONFINEMENT %%%%% 
+%% 
+\input{QT-1-Notes-ATOMIC-FILES/QT-1-8-Confinement/QT-1-8-Diagrams-and-Graphs/QT-1-8-Diagrams-and-Graphs-Preamble}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% STAGING /TEST AREA - NEW PACKAGES, SETTINGS %%%%%%%%%%
+\selectcolormodel{natural}
+\usepackage{booktabs}
+\usepackage{ninecolors}
+\selectcolormodel{rgb}
+\usepackage{tabularray}
+\UseTblrLibrary{booktabs}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% ORDER OF THE FOLLOWING MATTERS - PUT AS LATE AS POSSIBLE IN THE PREAMBLE %%%%%%%%%%
+\makeatletter
+\patchcmd{\nocite}{\ifx\@onlypreamble\document}{\iftrue}{}{}
+\makeatother
+
+%%%% Subfile package so that I have a tidy hierarchy and faster compile times
+%% Advised by documentation to keep near the end of the preamble
+%https://ctan.uib.no/macros/latex/contrib/subfiles/subfiles.pdf
+\usepackage{subfiles}
+

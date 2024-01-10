@@ -1,0 +1,23 @@
+% RUNNING MAN
+%% https://tex.stackexchange.com/questions/441917/is-there-a-simple-way-to-use-stick-figures-into-pgf-tikz-drawings
+
+
+\documentclass{standalone}
+
+
+\input{QT-1-6-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}
+		\def\xmin{-5} % min x axis
+		\def\xmax{5}     % max x axis
+		
+		\draw[->,thick,dashed] (-\xmax,0) -- (\xmax+0.1,0) node[below=1,right=1] {$x$};
+		
+		\node at (0,0.5) {\Strichmaxerl[2]};
+		\draw[->] (-0.5,0.5) -- ({0.5*\xmin},0.5) node[left=-5,above] {\footnotesize $e^{-ikx}$} node[below] {\scriptsize ''Running Negative''};
+		\draw[->] (0.5,0.5) -- ({0.5*\xmax},0.5) node[right,above] {\footnotesize $e^{ikx}$} node[below] {\scriptsize ''Running Positive''};
+		
+	\end{tikzpicture}
+\end{document}

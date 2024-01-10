@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% DEFAULT PACKAGES & SETTINGS %%%%%%%%%%
+
+
+%%%%%%%%%% INPUT PREDEFINED PREAMBLES THAT ARE USED ALL OVER %%%%%%%%%%
+\input{DMCC-Notes-Preambles/DMCC-Notes-COLOURS-Preamble.tex}
+%%%%%%%%%% TEXT AND MATH RELATED PACKAGES AND SETTINGS %%%%%%%%%%
+\input{DMCC-Notes-Preambles/DMCC-Notes-MATH-AND-TEXT-Preamble.tex}
+	\captionsetup{font=footnotesize} % Make Captions a sensible size
+	\geometry{left=1.25cm,right=1.25cm,top=2.5cm,bottom=2.5cm,columnsep=8mm} % Change the page layout
+	\setstretch{1.5}   % 1.5 line spacing
+	\justifying
+	
+\usepackage{scrextend}
+
+
+%%%%%%%%%% OTHER PACKAGES AND SETTINGS %%%%%%%%%%
+% Avoid recompiling grpahs unless there are changes
+% https://tex.stackexchange.com/questions/148971/avoiding-recompilation-of-unchanged-part-of-a-document
+\usepackage[mode=buildnew]{standalone}
+
+
+%%%%%%%%%% ALTA REPORT THEMES %%%%%%%%%%
+%% Standard theme options are below, leave blank for B&W / no colours (BoringDefault). Note the theme will be set to default if you enter a non-exsistant theme name.
+\SetTheme{UNIBS}
+%% UNIBS
+%% UNILIM
+%% PastelBlue
+%% GreenAndGold
+%% Purple
+%% PastelRed
+%% BoringDefault (Leave blank / enter anything not found above)
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% STAGING /TEST AREA - NEW PACKAGES, SETTINGS %%%%%%%%%%
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% ORDER OF THE FOLLOWING MATTERS - PUT AS LATE AS POSSIBLE IN THE PREAMBLE %%%%%%%%%%
+\makeatletter
+\patchcmd{\nocite}{\ifx\@onlypreamble\document}{\iftrue}{}{}
+\makeatother
+
+%%%% Subfile package so that I have a tidy hierarchy and faster compile times
+%% Advised by documentation to keep near the end of the preamble
+%https://ctan.uib.no/macros/latex/contrib/subfiles/subfiles.pdf
+\usepackage{subfiles}
+

@@ -1,0 +1,167 @@
+%%%%%%%%%% QT-1-3-Bohrs-Model-of-Hydrogen-ATOMIC-FILE.tex %%%%%%%%%%
+%%%%%%%%%% 	QT NOTES - BOHR'S MODEL OF HYDROGEN SUBFILE	   %%%%%%%%%%
+\documentclass[../../Quantum-Technologies-Notes]{subfiles}
+
+\ReportTitle{Section Three - Bohr's Model of Hydrogen}
+
+
+
+\begin{document}
+	
+	\ifSubfilesClassLoaded{ \pagestyle{fancy} }
+	
+	
+	\section{Bohr’s Model of the Hydrogen Atom}
+		
+		\subsection{Bohr’s Hypothesis - Angular Momentum is Quantised}
+			In 1913 Niels Bohr took a visit to Ernest Rutherford, Hans Geiger, and Ernest Marsden's lab in Manchester as a result of this visit he offered an answer to some strange and, at the time, unexplained measurements they had made involving electrons. \linebreak
+			Bohr hypothesized that the energies of the atom are quantised (along with a number of other properties) and that as a consequence this would result in a particular model or interpretation of the hydrogen atom. Any transition up to a higher energy level requires absorption of the appropriate frequency photon, and any down transition the emission of a photon of similar frequency. Explicitly, Bohr's hypothesis is derived below, then written in Equation \ref{eqn:bohrs_hypthesis}.
+			
+			\begin{gather}
+					\text{\small Classically, Angular Momentum would be } \int L_{\theta} \;  d\theta = \Planckconst n \nonumber\\
+					\text{\small Bohr's Hypothesis } \implies \int L_{\theta} \; d\theta  =  L_{\theta} \oint^{2\pi}_0 d\theta  =  L_{\theta} \cdot 2 \pi \nonumber\\
+					\label{eqn:bohrs_hypthesis} \therefore \; L_{\theta}  =  \frac{\Planckconst}{2 \pi} n  =  \hbar n \; \; \; \text{Where } n \in \mathbb{N}
+				\end{gather}
+			
+			\vspace{5mm}
+			
+			Thus, in quantum physics, the angular momentum is quantised and an integer multiple of Planck's reduced constant, $\hbar$. We will soon look at the implications of this hypothesis and how this helped Bohr construct his model of the Hydrogen atom. \linebreak
+			
+			
+		\subsection{Bohr’s Model - An Intro for the Unfamiliar and Recap for the Familiar}
+		
+			Hydrogen Atoms are a very simple system consisting of a single proton (with a positive charge) and a single electron (with a negative charge). We say that the electron orbits with \textit{tangential} velocity, $V_R$, it sweeps and angle, $\theta$, and it orbits with a radius, $r$. As a quick reminder to classical physics, the \textit{angular momentum} of the electron with thus be:
+		
+			\begin{equation*}
+					\text{\small Angular Momentum, }\overrightarrow{L}  =  \text{radius, }\overrightarrow{r}  \wedge  \text{\small Momentum, }\overrightarrow{P}
+				\end{equation*}
+			
+			In the case of a single particle, in circular motion; Momentum has the scalar value of $\overrightarrow{P} = p = m \cdot V_R$ and the Equation becomes:
+			
+			\begin{equation*}
+					\overrightarrow{L}  =  r \cdot m \cdot V_R \cdot \hat{\theta} = L_\theta \hat{\theta}
+				\end{equation*}
+			
+			And we eventually obtain the result as per Equation \ref{eqn:bohrs_hypthesis} given Bohr's hypothesis. But let's elaborate the consequences fully, and provide some simple proof... \linebreak
+			
+			
+			\textbf{\LARGE\color{heading}TODO: Nice Bohr Model and Angular Momentum Diagram} % TODO: Nice Bohr Model and Angular Momentum Diagram
+			
+			
+		\subsection{Force Balance - The Bohr Radius}
+			In order to have electrons orbiting a central nucleus they must be under a ``centrifugal'' force.
+			
+			\begin{equation*}
+					\text{Force, }F  =  \text{mass, }m  \cdot  \frac{\text{Instant. Velocity, }V_R^2}{\text{radius, }r}
+				\end{equation*}
+			
+			\vspace{5mm}
+			
+			As we assume the only attractive/repellent forces in play here must be electromotive, the centrifugal force must therefore be equal to the electromotive forces. Given our previous definitions regarding E.M.F we can state:
+			
+			\begin{gather*}
+					\text{Force, }F  =  \text{mass, }m  \cdot  \frac{\text{Instant. Velocity, }V_R^2}{\text{radius, }r}  =  \frac{e^2}{r^2} \\
+					\therefore \;  r  =  \frac{e^2}{m  V_R^2} \\
+					\because \; V_R  =  \frac{L_\theta}{m  \cdot  r},  \; \; \; \frac{L_\theta^2}{m \cdot r^3}  =  \frac{e^2}{r^2} \; \to \; \therefore \; r  =  \frac{L_\theta}{m \cdot e^2} \\
+					\because \; L_\theta  =  \hbar n \; :
+				\end{gather*}
+			
+			\begin{equation} \label{eqn:bohr_model_radii_n}
+					 r_n  =  \frac{\hbar^2}{m \cdot e^2} \cdot n^2  \; \; \; \text{\small OR, } \; \; \; r_n  =  r_0 \cdot n^2 \; \; \; \text{Where } n \in \mathbb{N}	
+				\end{equation}
+			
+			
+			$r_n$ for the value $n=1$ in Equation \ref{eqn:bohr_model_radii_n} above is usually termed $r_0$ and is known as the "Bohr Radius" ($r_0 \approx 0.5$\r{A}), it is the inner most orbit radius an electron can have in a hydrogen atom. All other orbits are square integer multiples of this value, giving us a way of calculating the other possible orbits. It should be apparent this means that all electron orbit radii are \textbf{quantised}, we will explore the implications of this discovery in the following subsections. Table \ref{tab:bohr_model_radii} below shows some of the radii: \linebreak
+			
+			\begin{table}[h!]
+					\color{body}
+					\centering
+					\SetTblrInner{rowsep=2.5mm}
+					\begin{tblr}{width=6cm,colspec={|X[1,c,m]|X[1,c,m]|}}
+							\hline
+							{\small Orbit One, }$r_1$ & "$r_0$" $\approx 0.5${\small \r{A}}\\	
+							\hline
+							{\small Orbit Two, }$r_2$ & $r_0 \times 4 \approx 2${\small \r{A}} \\
+							\hline
+							{\small Orbit Three, }$r_3$ & $r_0 \times 9 \approx 4.5${\small \r{A}} \\
+							\hline
+						\end{tblr}
+					\caption{\label{tab:bohr_model_radii}\textit{The first three Bohr model radii}}
+				\end{table}
+			
+			\pagebreak
+			
+			
+		\subsection{Velocity}
+			As the velocity of the "orbiting" particle is dependent on the angular momentum it will be discretized also. The result of the first orbit is derived below in Equation \ref{eqn:bohr_model_velocity_1}, with the general case found in Equation \ref{eqn:bohr_model_velocity_n}.
+			
+			\begin{gather*}
+					\text{\small Recall:} \\
+					V_R = \frac{L_\theta}{m  \cdot  r} = \frac{\hbar \cdot n}{\frac{\hbar^2}{m \cdot e^2} \cdot n^2 \cdot m} = \frac{e^2}{\hbar \cdot n} \\
+					\therefore \; \text{For the first orbit we have: } \; V_{R,1} = \frac{e^2}{\hbar} \\
+					\text{\small But there is a more "convenient"/beautiful definition:} \\
+					V_{R,1} = \frac{e^2}{\hbar \cdot n} = \frac{e^2}{\hbar} \; \; \text{\small (Multiply by $\frac{c}{c}$ for a nice result)} \; V_{R,1} = \frac{e^2}{\hbar \cdot c} \cdot c \dots
+				\end{gather*}
+			
+			\begin{equation} \label{eqn:bohr_model_velocity_1}
+					V_{R,1} \equiv \alpha \cdot c \approx 3.8 \cdot 10^6 \; m/s
+				\end{equation}
+			
+			\begin{equation} \label{eqn:bohr_model_velocity_n}
+					V_{R,n} = \frac{\alpha \cdot c}{n} \; \; \; \text{Where } n \in \mathbb{N}
+				\end{equation}
+			
+			
+			Where $\alpha$ is the Fine Structure constant ($\alpha = \frac{1}{137}$), and there are other names for the orbits; $V_{R,1}$ is also called the "ground state orbit", $V_{R,2}$ is also known as the "first excited state orbit". \linebreak
+			
+			\pagebreak
+			
+			
+		\subsection{Energy and Energy Levels}
+			We will now show one of the most important implications of the quantization of angular momentum, which is that all electrons of an atom have a specific "energy level" corresponding to each orbit. As usual, the derivation is below, with the first orbit value found in Equation \ref{eqn:bohr_model_energy_1} and the general case in Equation \ref{eqn:bohr_model_energy_n}:
+			
+			
+			\begin{gather*}
+					\text{\small Recall:} \\
+					\text{\small We have energy from an attractive force, } \; E_q = - \frac{e^2}{r} \\
+					\text{\small Also kinetic energy, } \; E_k = \frac{1}{2} m \cdot V_R^2 \\
+					E = \frac{1}{2} \cdot m \cdot V_R^2 - \frac{e^2}{r} \\
+					\text{\small Sub $V_R$ \& $r$ from Equations \ref{eqn:bohr_model_velocity_n} \& \ref{eqn:bohr_model_radii_n}:} \\
+					\therefore \; E = \frac{1}{2} \cdot m \cdot \left(\frac{e^2}{\hbar \cdot n}\right)^2 - \frac{e^2}{\frac{\hbar^2}{m \cdot e^2} \cdot n^2}
+					E = \frac{1}{2} \cdot \frac{m \cdot e^4}{\hbar^2 \cdot n^2} - \frac{m e^4}{\hbar^2 \cdot n^2}
+				\end{gather*}
+			
+			\begin{gather} \label{eqn:bohr_model_energy_n}
+					E_n = - \frac{1}{2} \cdot \frac{m \cdot e^4}{\hbar^2 \cdot n^2} = - \frac{m \cdot e^4}{2 \cdot \hbar^2} \cdot \frac{1}{n^2} = - \frac{R}{n^2} \\ 
+					\text{\small Where $R=\frac{m \cdot e^4}{2 \cdot \hbar^2}$ is the Rydberg Constant and $n \in \mathbb{N}$} \nonumber
+				\end{gather}
+			
+			\begin{gather}
+					E_1 = - \frac{m \cdot e^4}{2 \cdot \hbar^2} \cdot \frac{1}{1^2} = - \frac{R}{1^2} = - \frac{m \cdot |e|^4}{2 \cdot \hbar^2} = -R \nonumber\\
+					\label{eqn:bohr_model_energy_1} E_1 \approx -13.6 \; \text{\small eV } = 13.6 \cdot 1.602 \cdot 10^{-19} \; \text{\small Joules (J)}
+				\end{gather}
+			
+			
+			
+			
+			\begin{figure}[!h]
+					\centering
+					%% BOHR HYDROGEN MODEL, JUST ENERGY LEVELS, NO TRANSITIONS
+					\includestandalone{QT-1-3-Diagrams-and-Graphs/bohr-model-energy-levels}
+				\caption{Something... TODO } % TODO: Energy levels graph
+				\label{fig:bohr_model_energy_levels}
+				\end{figure}
+			
+			
+			
+			\begin{figure}[!h]
+					\centering
+					%% BOHR HYDROGEN MODEL, ENERGY LEVELS, WITH TRANSITION PHOTONS
+					\includestandalone{QT-1-3-Diagrams-and-Graphs/bohr-model-energy-transitions}
+				\caption{Something... TODO } % TODO: Energy levels graph
+				\label{fig:bohr_model_energy_transitions}
+				\end{figure}
+			
+			
+			\pagebreak
+\end{document}

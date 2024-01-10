@@ -1,0 +1,299 @@
+\documentclass[colorlinks,11pt,a4paper,normalphoto,withhyper,ragged2e]{altareport}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% DEFAULT PACKAGES & SETTINGS %%%%%%%%%%
+\usepackage{setspace} %1.5 line spacing
+\usepackage{notoccite} %% Citation numbering
+\usepackage{lscape} %% Landscape table
+\usepackage{caption} %% Adds a newline in the table caption
+\usepackage[rgb]{xcolor}
+
+%% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+\usepackage[none]{hyphenat}
+
+%%% Document/Theme Fonts, Space and Text Settings
+\usepackage{fontspec}
+\setmainfont{Roboto Slab}
+\setsansfont{Lato}
+\renewcommand{\familydefault}{\sfdefault}
+\captionsetup{font=footnotesize} % Make Captions a sensible size
+\setlength{\intextsep}{4pt} % Set defualt spacing around floats
+% \captionsetup{aboveskip=5pt, belowskip=5pt} % Reduce space around captions
+\geometry{left=1.25cm,right=1.25cm,top=2.5cm,bottom=2.5cm,columnsep=8mm} % Change the page layout
+\setstretch{1.5}   % 1.5 line spacing
+\definecolor{CommentGreen}{HTML}{228B22}
+\justifying
+
+%% Math Env Text Settings
+\usepackage{mathtools}
+\usepackage{unicode-math}
+\setmathfont{XITS Math}
+\usepackage{amsmath}
+\usepackage{bm}
+%\everymath=\expandafter{\the\everymath\displaystyle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% DOCUMENT SPECIFIC PACKAGES AND SETTINGS %%%%%%%%%%
+\usepackage{relsize}
+
+%\usepackage{pythontex} % Run python code in this latex doc
+
+%%%%% Settings for python pgf graphs %%%%%
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta}
+
+\pgfplotsset{compat=newest,
+    width=6cm,
+    height=3cm,
+    scale only axis=true,
+    max space between ticks=25pt,
+    try min ticks=5,
+    every axis/.style={
+        axis y line=left,
+        axis x line=bottom,
+        axis line style={thick,->,>=latex, shorten >=-.4cm}
+    },
+    every axis plot/.append style={thick},
+    tick style={black, thick}
+}
+\tikzset{
+    semithick/.style={line width=0.8pt},
+}
+
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{dateplot}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% USEFUL SETTINGS %%%%%%%%%%
+%% Change some font sizes, this will override the defaults
+\renewcommand{\ReportTitleFont}{\Huge\rmfamily\bfseries} %% Title Page - Main Title
+\renewcommand{\ReportSubTitleFont}{\huge\bfseries} %% Title Page - Sub-Title
+\renewcommand{\ReportSectionFont}{\LARGE\rmfamily\bfseries} %% Section Title
+\renewcommand{\ReportSubSectionFont}{\large\bfseries} %% SubSection Title
+\renewcommand{\FootNoteFont}{\footnotesize} %% Footnotes and Header/Footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% THEMES %%%%%%%%%%
+%% Standard theme options are below, leave blank for B&W / no colours (BoringDefault). Note the theme will be set to default if you enter a non-exsistant theme name.
+\SetTheme{UNIBS}
+%% UNIBS
+%% UNILIM
+%% PastelBlue
+%% GreenAndGold
+%% Purple
+%% PastelRed
+%% BoringDefault (Leave blank / enter anything not found above)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% TITLE PAGE INFO %%%%%%%%%%
+\ReportTitle{Quantum Technologies}
+\SubTitle{\textbf{Exam Guide/``Cheat Sheet''}}
+\Author{Andrew Simon Wilson}
+\ReportDate{\today}
+\FacultyOrLocation{EMIMEO Programme}
+\ModCoord{Prof. Artoni Maurizio}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% STAGING / TEST AREA %%%%%%%%%%
+\selectcolormodel{natural}
+\usepackage{booktabs}
+\usepackage{ninecolors}
+\selectcolormodel{rgb}
+
+\usepackage{tabularray}
+
+\UseTblrLibrary{booktabs,siunitx}
+
+
+\usepackage{latexsym}
+
+%https://tex.stackexchange.com/questions/247681/how-to-create-checkbox-todo-list
+\usepackage{enumitem}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\symbf{\Box}$}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{document}
+
+\MakeReportTitlePage
+
+
+%%%%% CONTENTS %%%%%
+\pagenumbering{roman} % Start roman numbering
+\setcounter{page}{1}
+
+
+%%%%%%%%%% YOUR NAME, PROFESSION, PORTRAIT, CONTACT INFO, SOCIAL MEDIA ETC. %%%%%%%%%%
+\name{Andrew Simon Wilson, BEng}
+\tagline{Post-graduate Master's Student - EMIMEO Programme}
+
+\personalinfo{
+  \email{andrew.wilson@protonmail.com}
+  \linkedin{andrew-simon-wilson} 
+  \github{AS-Wilson}
+  \phone{+44 7930 560 383}
+}
+
+%% You can add multiple photos on the left or right
+% \photoR{3cm}{Images/a-wilson-potrait.jpg}
+% \photoL{3cm}{Yacht_High,Suitcase_High}
+
+\section*{Author Details}
+\makeauthordetails
+
+%% Table of contents print level -1: part, 0: chapter, 1: section, 2:sub-section, 3:sub-sub-section, etc.
+\setcounter{tocdepth}{2} 
+\tableofcontents %% Prints a list of all sections based on the above command
+%\listoffigures %% Prints a list of all figures in the report
+%\listoftables %% Prints a list of all tables in the report
+
+%%%%%%%%%% DOCUMENT "INNER" SETTINGS %%%%%%%%%%
+\fontsize{11pt}{12pt}\selectfont % Set default ont size
+
+%% https://mirror.kumi.systems/ctan/obsolete/info/math/voss/mathmode/Mathmode.pdf
+% Set pre and post equation spacing
+\abovedisplayskip=0pt
+\abovedisplayshortskip=2pt
+\belowdisplayskip=12pt
+\belowdisplayshortskip=12pt
+
+
+
+%%%%%%%%%% DOCUMENT CONTENT BEGINS HERE %%%%%%%%%%
+\pagebreak
+%%%%% INTRO %%%%%
+\section*{Explanation and Introduction of this Document}
+This is my exam revision document for the Quantum Technologies module. I used this to ensure I have revised everything required for the exam, additionally it is a good reference document for which equations and processes (of questions/exercises) one should memorize to ensure they are completely ready for the exam. \linebreak
+The exam format, of course, changes from year to year, but it is highly likely you will be asked questions as below. Note that usually the total number of marks is more than 10; this is so that you can still obtain a good mark despite unseen questions.\linebreak
+In any case, I have uploaded past papers to the \textit{\textbf{EMIMEO}} repo. on \href{https://github.com/AS-Wilson}{my github}, this should serve as good exam practice and reference material. \linebreak
+\begin{enumerate}[leftmargin=1cm]
+	\item \textbf{Two} theory questions, eg's:
+	\begin{enumerate}[leftmargin=1.5cm]
+		\item Demonstrate how to derive the reflectivity and transmission coefficients
+		\item Derive the equations related to Bohr's model of the hydrogen atom
+	\end{enumerate}
+	\item \textbf{Three or Four} Homework Questions (of course with some variation in numbers, values, etc.)
+	\item \textbf{Two} New questions or tasks OR somewhat complex variations to already seen derivations or homework questions
+\end{enumerate}
+
+\vspace{0.25cm}
+
+Hopefully the advice and information contained within this document and my ``notes'' file serves you well and that you will succeed in the Q.T. exam! \linebreak
+
+\vspace{0.25cm}
+
+Sincerly,\linebreak
+
+\hspace{1cm}\textit{Andrew Simon Wilson}
+%I wrote this document for the students studying Quantum Technologies to have a nice handout set for the important definitions involved in the course. I hope that it is sufficient for this task and it helps all of your studies. \linebreak
+%I spent have spent a lot of time developing the template used to make this {\LaTeX} document, I want others to benefit from this work so the source code for this template is available on GitHub \cite{latex_template_github}.
+%\newpage
+\pagenumbering{arabic} % Start document numbering - roman numbering
+
+
+\pagebreak
+	
+
+\section{Checklist}
+	{\hspace{0.25cm}\textbf{\color{heading}\Large What should I know? What questions/exercises should I be able to answer?}}
+	
+	
+	\subsection{Derivations/Equations}
+	
+		\begin{todolist}[leftmargin=1cm]
+			\item Know/"Derive" the photoelectric effect equation
+			\item Derive all Equations for Bohr's model of hydrogen
+			\begin{todolist}[leftmargin=1.5cm]
+				\item Force balance
+				\item Velocity equation
+				\item Energy levels equation
+			\end{todolist}
+			\item The De Broglie wavelength
+			\item Two slit experiment equations
+			\item Schrödinger's equations, wave functions, energy levels, and/or PDF's for:
+			\begin{todolist}[leftmargin=1.5cm]
+				\item General Form
+				\item a free particle in 1 dimension
+				\item a 1D confined particle
+				\item a 3D confined particle
+				\item the realistic \textbf{asymmetric} well 
+				\item the realistic \textbf{symmetric} well 
+				\item the quantum barrier / quantum tunnelling
+				\item the parabolic well / quantum oscillator
+			\end{todolist}
+			\item The transfer matrix equation for a barrier 
+			\item The reflection coefficient for a barrier
+			\item The transmission coefficient for a barrier
+			\item The block theorem equation
+			\item The bandgap equations
+			\item Block modes / condition in periodic structures
+			\item Commutation of two observables (Hisenburg's uncertainty principle)
+			\item The eigenfunction's of orbital angular momentum
+			\item The equation for orbital angular momentum and the Zeeman effect
+			\item The intrinsic magnetic moment equations
+			\item The intrinsic angular momentum (SPIN) equations
+			\item Matrix forms of spins
+			\item Spin probabilities
+			\item Nuclear Magnetic Resonance
+			\item Equations for the quantum bit and the applications of Pauli's operators on them
+			\item The equations for Spontaneous Parametric Down Conversion (SPDC)
+			\item The No-Cloning Theorem
+		\end{todolist}
+		
+		
+	\subsection{Exercises}
+	
+		\begin{todolist}[leftmargin=1cm]
+			\item No. of photons in a laser beam
+			\item Apply two slit equation to the diffraction grating (xray diff.)
+		\end{todolist}
+	
+	
+	
+	
+	
+	
+	\subsection{Guidance on questions}
+	
+		\begin{todolist}[leftmargin=1cm]
+			\item 2kuhibvcoiubv
+		\end{todolist}
+
+	
+	
+	
+	\pagebreak
+	
+	
+	
+	
+\section{Equations and Procedures One Must Commit to Memory}
+	
+	
+	
+	
+	\pagebreak
+	
+	
+\newpage
+\setstretch{1}  % Reduce bibliography line spacing
+\end{document}

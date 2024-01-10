@@ -1,0 +1,44 @@
+% THE 1D REALISTIC QUANTUM WELL - TUNNELLING EXAMPLE
+
+\documentclass{standalone}
+
+
+\input{QT-1-8-Diagrams-and-Graphs-Preamble}
+
+
+\begin{document}
+	\begin{tikzpicture}[measure/.style={{Stealth[length=4pt]}-{Stealth[length=4pt]},black!75}]
+		\def\xmin{-2} % min x axis
+		\def\xmax{3}     % max x axis
+		\def\a{1}
+		\def\L{7}
+		\def\BaseE{0.25}
+		\def\nSamples{100}
+		
+		\def\Vone{9*\BaseE}
+		\def\Vtwo{9*\BaseE}
+		
+		
+		\draw[->,thick,dashed] ({\xmin-0.2},0) -- ({\xmax+0.2},0) node[below=1] {\scriptsize $x$};
+		\draw[->,thick,dashed] (0,-0.2) node[below] {\small $0$} -- (0,{\BaseE*12}) node[above,right] {\scriptsize $E$, \tiny$V(x)$};
+		
+		\draw ({\a},-0.1) node[below] {\small $a$} -- ({\a},0.05) {};
+		\draw (-1.5,-0.1) node[below] {\small $d$} -- (-1.5,0.05) {};
+		
+		\coordinate (V1L) at (\xmin,\Vone);
+		\coordinate (V1R) at (0,\Vone);
+		\coordinate (ZeL) at (0,0);
+		\coordinate (ZeR) at (\a,0);
+		\coordinate (V2L) at (\a,\Vtwo);
+		\coordinate (V2R) at (\xmax,\Vtwo);
+		
+		\draw[thick,ScienceRed] (V1L) -- (V1R) -- (ZeL) -- (ZeR) -- (V2L) -- (V2R);
+		
+		\draw[measure] ({\xmin+abs(\xmin*0.5)},0) -- ({\xmin+abs(\xmin*0.5)},\Vone) node[midway,fill=white,inner sep=1] {\scriptsize $V$};
+		
+		
+		\coordinate (electronman) at (-1.5,{0.5*\Vone});
+		\node[ScienceGreen] at (electronman) {\Strichmaxerl[2]};
+		
+	\end{tikzpicture}
+\end{document}
